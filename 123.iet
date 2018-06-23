@@ -257,13 +257,12 @@
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 
 		[chara_app_pt ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110044" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     That's right. I don't mind talking about the"]
-		[maintxt_print text="     events of that day, but I don't want to do"]
-		[maintxt_print text="     anything dangerous."]
+		[maintxt_print text="     Stimmt. Es macht mir nichts, über die Ereignisse an dem Tag"]
+		[maintxt_print text="     zu sprechen, aber ich möchte nichts Gefährliches tun."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -304,13 +303,12 @@
 		[maintxt_print text="     event."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="32 type="0" pos="2"]
 
 		[voice_play no="110045" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     The same places as that day..."]
-		[maintxt_print text="     Does that mean you intend to just sit"]
-		[maintxt_print text="     around here?"]
+		[maintxt_print text="     Dieselben Orte wie an dem Tag ..."]
+		[maintxt_print text="     Heißt das, du hast nur vor, hier rumzusitzen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -328,7 +326,7 @@
 		[voice_play no="110046" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="...!"]
-		[maintxt_print text="     That's dangerous!"]
+		[maintxt_print text="     Das ist gefährlich!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -339,12 +337,11 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110047" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     For the victim."]
-		[maintxt_print text="     I don't trust you."]
+		[maintxt_print text="     Für das Opfer. Ich traue dir nicht."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -585,13 +582,12 @@
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[ezchara_del ch_name="ikki_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="rika_s" pt_name="01" em_name="metoji" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110048" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Well, I'm just going to look around"]
-		[maintxt_print text="     inside the premises, so if you want,"]
-		[maintxt_print text="     we could..."]
+		[maintxt_print text="     Also, ich will mich auf dem Grundstück mal etwas umsehen und"]
+		[maintxt_print text="     wenn du magst, könnten wir ..."]
 		[batch]
 
 		[ezchara_del ch_name="rika_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2089,13 +2085,12 @@
 
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="110049" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="...Couldn't she have hit her head on it when"]
-		[maintxt_print text="     she fell?"]
-		[maintxt_print text="     That wouldn't be strange."]
+		[maintxt_print text="     ... Könnte sie nicht ihren Kopf dort angeschlagen haben, als sie fiel?"]
+		[maintxt_print text="     Das wäre gar nicht so abwegig."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2364,13 +2359,12 @@
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110050" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     The lodge owner and I didn't really find"]
-		[maintxt_print text="     anything, either."]
-		[maintxt_print text="     So we came right back."]
+		[maintxt_print text="     Der Hauseigentümer und ich haben auch nicht wirklich was gefunden,"]
+		[maintxt_print text="     Also sind wir direkt zurückgekommen."]
 		[batch]
 
 		[ezchara_del ch_name="rika_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2534,15 +2528,14 @@
 
 		[voice_play no="110051" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="...Wait just a minute."]
+		[maintxt_print text="     ... Warte einen Augenblick."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110052" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     This makes it sound like there"]
-		[maintxt_print text="     really is a culprit."]
+		[maintxt_print text="     So klingt es, als gäbe es tatsächlich einen Täter."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -2553,20 +2546,19 @@
 	*sure13_turn2
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110053" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Didn't we all go searching for"]
-		[maintxt_print text="     evidence to prove your innocence,"]
-		[maintxt_print text="     Shin?"]
+		[maintxt_print text="     Haben wir nicht alle nach Beweisen gesucht, um deine Unschuld"]
+		[maintxt_print text="     nachzuweisen, Shin?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110054" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     What are these hand and footprints?"]
+		[maintxt_print text="     Was sind das für Hand- und Fußspuren?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2574,9 +2566,9 @@
 
 		[voice_play no="110055" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     It's almost like the person who pushed"]
-		[maintxt_print text="#Name[0] was shaken, and wandered"]
-		[maintxt_print text="     around confused."]
+		[maintxt_print text="     Es ist fast so, als wäre die Person, die"]
+		[maintxt_print text="#Name[0] gestoßen hat, aufgewühlt gewesen und ist dann irritiert"]
+		[maintxt_print text="     durch Gegend gelaufen."]
 		[batch]
 
 		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2595,16 +2587,15 @@
 
 		[voice_play no="110056" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     What about that is evidence enough to"]
-		[maintxt_print text="     prove anyone's innocence!?"]
+		[maintxt_print text="     Sind das nicht genug Beweise, um jedermanns Unschuld zu beweisen!?"]
+		[maintxt_print text="     "]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110057" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     This looks like evidence that Shin committed"]
-		[maintxt_print text="     a crime!"]
+		[maintxt_print text="     Diese Beweise deuten darauf hin, dass Shin ein Verbrechen begangen hat!"]
 		[batch]
 
 		[ezchara_del ch_name="toma_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2627,12 +2618,11 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110058" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Don't make excuses!"]
-		[maintxt_print text="     If it wasn't you, then who was it?"]
+		[maintxt_print text="     Keine Ausreden! Wenn du es nicht warst, wer war es denn dann?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2649,7 +2639,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
-		[maintxt_print text="...!"]
+		[maintxt_print text="     ... !"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -4891,13 +4881,12 @@
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="rika_s" pt_name="01" em_name="komari" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="110059" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Huh? Me?"]
-		[maintxt_print text="     I'm not really used to sleeping with people I"]
-		[maintxt_print text="     don't know."]
+		[maintxt_print text="     Hä? Ich?"]
+		[maintxt_print text="     Ich bin es nicht gewöhnt, mit Leuten zu schlafen, die ich nicht kenne."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
