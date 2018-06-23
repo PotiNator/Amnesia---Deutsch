@@ -1,0 +1,161 @@
+/*
+	KENT31日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＫＥＮＴルート　３１日目
+第１稿						２０１１年０２月０３日　果村
+第２稿　相互監修				２０１１年０２月０７日　望月
+第３稿	最終調整・修正				２０１１年０２月０９日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_31.01.00
+背景：主人公マンション－主人公自室
+時間：昼
+人物：ケント
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+	*sure1_turn0
+
+		/*-------------------------------
+		テロ『８月３１日』
+		-------------------------------*/
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[scenechange3 bgname="bg231" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+		
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		// 日付設定：31日
+		[day_set date="31"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[txtwin_proc onoff="0"]
+		
+		/*-------------------------------
+		ＳＥ：チャイムの音
+		-------------------------------*/
+		[strse_play no="89" delay="0"] /* ＳＥ再生 */
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="120"]
+		[batch]
+		
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="Oh, someone's here."]
+		[batch]
+		[maintxt_print text="Could it be Sawa?"]
+		[maintxt_print text="Or maybe Kent?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+
+		[batch]
+
+		/*-------------------------------
+		モニターのアイコン表示
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Yes, I'll be right there!"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：扉を開ける音
+		-------------------------------*/
+		[strse_play no="2" delay="0"] /* ＳＥ再生 */
+		[strse_waitcut]
+		[batch]
+
+		/*-------------------------------
+		背景：主人公マンション－廊下
+		-------------------------------*/
+		[ezbg_change name="bg035" wait="3"]
+
+		/*-------------------------------
+		ケントＩＮ
+		-------------------------------*/
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Ah, Kent, hello."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031156" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I just received a formal decision about my"]
+		[maintxt_print text="studying abroad."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Oh..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031157" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Would you like to go for a little walk?"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		【条件判断】kent_31.01.00
+		ベストエンドフラグＯＮ＞シーン：kent_31_best.01.00へ
+		ベストエンドフラグＯＦＦ＞シーン：kent_31_normal.01.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="ベストエンド" i="k"]
+		[if estimate="$k == 0"][file_change no="440" label="sure1"]
+		[elseif estimate="$k == 1"][file_change no="441" label="sure1"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+☆ノーマル、ベストで別ファイルにルート分岐します。
+-------------------------------*/

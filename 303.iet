@@ -1,0 +1,216 @@
+/*
+	トーマ３日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　トーマルート　３日目
+第１稿						２０１１年０２月０７日　望月
+第２稿　相互監修				２０１１年０２月２１日　果村
+第３稿　ＣＧナンバリング			２０１１年０２年２３日　望月
+第４稿　チェック＆加筆修正			２０１１年０２年２８日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：toma_03.01.00
+背景：病室
+時間：昼→夕方→夜
+人物：オリオン・トーマ
+モブ：看護師
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+
+//斉藤コメント　ＢＧＭ無し
+
+		[day_set date="3"]
+
+		/*------------------------------
+		テロ：『８月３日』
+		------------------------------*/
+		[scenechange3 bgname="bg203" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		/*-------------------------------
+		病院・夕方
+		-------------------------------*/
+		[scenechange3 bgname="bg146" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[day_proc onoff="1"]
+		[batch]
+		
+
+		/*-------------------------------
+		病院・夜
+		-------------------------------*/
+		[ezbg_change2 name="bg096" wait="BG_NORMAL"]
+		[batch]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="65468" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="This is bad."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="65469" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You aren't getting enough stimulation."]
+		[maintxt_print text="And also..."]
+		[batch]
+
+		[voice_play no="65470" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hey, #Name[0]!"]
+		[maintxt_print text="Answer me! Heeeey!"]
+		[batch]
+
+		/*-------------------------------
+		間
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[txtwaitset wait="60"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="65471" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I thought this might happen, but I didn't"]
+		[maintxt_print text="expect it to get this bad..."]
+		[maintxt_print text="This isn't good...!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="65472" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I thought you'd be able to get out of the"]
+		[maintxt_print text="hospital today..."]
+		[batch]
+
+		/*-------------------------------
+		オリオン看護師の真似で
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="65473" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I'm sorry. They said the MRI would be fixed"]
+		[maintxt_print text="by tomorrow. We'll just have to wait and see"]
+		[maintxt_print text="for another day."]
+		[batch]
+
+		[voice_play no="65474" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I can't believe them!"]
+		[maintxt_print text="I sure hope they don't tell us to ”wait until"]
+		[maintxt_print text="tomorrow” again!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="65475" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="And to top it off, our last ray of hope, Toma..."]
+		[batch]
+
+		[day_proc onoff="0"]
+		
+		/*-------------------------------
+		回想処理お願いします
+		-------------------------------*/
+		[ef_flash_start bgname="ef_toma_f2"]/*フラッシュバック開始*/
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		//一枚絵で　斉藤D
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40552" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="They said they won't be able to do any scans"]
+		[maintxt_print text="today, either. They just asked that you try to"]
+		[maintxt_print text="get some rest."]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+		/*-------------------------------
+		回想終了
+		-------------------------------*/
+		[ef_flash_end bgname="bg096"]/*フラッシュバック終了*/
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="1"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="65476" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...just passed on that message, and then left"]
+		[maintxt_print text="two minutes later!"]
+		[batch]
+
+		[voice_play no="65477" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="He should have stayed!"]
+		[maintxt_print text="He could've reminisced about old memories..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="65478" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Haah... Sheesh."]
+		[maintxt_print text="This environment is no good."]
+		[maintxt_print text="The hospital is too dangerous."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="65479" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Let's go home tomorrow after the MRI scan"]
+		[maintxt_print text="is done, #Name[0]!"]
+		[batch]
+
+//斉藤コメント　アイキャッチのＢＧＭ　Amnesia_eyecatch_serious02　に変更。
+
+		[ef_aicatch bgname="bg375" bgm="58" time="480"]/*アイキャッチ処理：BGMシリアス２*/
+
+		/*------------------------------
+		【トーマルート３日目終了】
+		toma_04.01.00へ
+		------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="304" label="sure1"]
+
+	[return]
+
+
+

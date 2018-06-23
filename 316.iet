@@ -1,0 +1,390 @@
+/*
+	トーマ１６日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　トーマルート　１６日目
+第１稿						２０１１年０２月１４日　望月
+第２稿　相互監修				２０１１年０２月２２日　果村
+第３稿　スチルナンバリング			２０１１年０２月２３日　望月
+第４稿　チェック＆加筆修正			２０１１年０３年０１日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：toma_16.01.00
+背景：トーマ自室
+時間：朝
+人物：オリオン・トーマ
+モブ：
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="16"]
+
+		/*------------------------------
+		テロ：『８月１６日』
+		------------------------------*/
+		[scenechange3 bgname="bg216" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg009" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="11" count="0"]
+		[batch]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="odoroki" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[day_proc onoff="1"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41111" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Good morni-- Wow, your hair's a mess."]
+		[maintxt_print text="And you've got sheet marks on your face."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41112" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="That happens because you lie on your face"]
+		[maintxt_print text="when you sleep. Look in the mirror."]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66051" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Good morn-- ...Yeah, I think you should"]
+		[maintxt_print text="take a look in the mirror, too. Although"]
+		[maintxt_print text="looking won't make those marks go away."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66052" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You fell asleep right after eating"]
+		[maintxt_print text="dinner yesterday, too. You sure"]
+		[maintxt_print text="do sleep a lot."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66053" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Anyway, Toma's making breakfast,"]
+		[maintxt_print text="so you should go wash your"]
+		[maintxt_print text="face."]
+		[batch]
+
+		/*-------------------------------
+		テロ：『５分後』
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[scenechange3 bgname="bg232" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"] 
+		[batch]
+		
+		[scenechange3 bgname="bg009" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="nikori" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[day_proc onoff="1"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41113" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Here you go."]
+		[maintxt_print text="There's plenty of coffee, too."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66054" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Yay."]
+		[maintxt_print text="Then I guess you should eat. Hm...?"]
+		[maintxt_print text="#Name[0], are you still tired?"]
+		[batch]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		/*-------------------------------
+		ゆっくり暗転
+		睡眠薬で眠り込む演出お願いします
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[blackout_start mode="2" mode2="2" color="F_BLACK" index="2" alpha="255" count="120"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		[txtwaitset wait="120"]
+		[batch]
+
+		[thread_change label="sure2"]
+		[flag_set name="switch" num="0"]
+		
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_16.02.00
+背景：トーマ自室
+時間：夕方
+人物：オリオン・トーマ
+モブ：
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		/*-------------------------------
+		画面ＢＬ
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66055" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Hey, what's wrong?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66056" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Are you okay? Can you hear my voice?"]
+		[maintxt_print text="Are you awake?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66057" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="#Name[0]...?"]
+		[batch]
+
+		/*-------------------------------
+		背景：トーマ自室・夕方
+		-------------------------------*/
+		/*-------------------------------
+		画面滲み
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		//[chara_app_pt_alp2 ch_name="ef_cg_a" pt_name="ef_cg_a13" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="110"]
+		[chara_target_point_set2 ch_name="ef_cg_a" front="0" target_id="0" x="240" y="0" size_x="100" size_y="100" size_z="100"]
+		[chara_target_count_set ch_name="ef_cg_a" front="0" target_id="0" count="0"]
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="wara" color="EVEN" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[ezbg_change2 name="bg126" wait="BG_NOW"]
+		[blackout_end mode="2" mode2="3" index="2" count="90"]
+		[txtwaitset wait="90"]
+		[batch]
+
+		[bgm_play no="12" count="0"]
+
+		[day_proc onoff="1"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66058" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It's already 5 in the evening."]
+		[maintxt_print text="Are you still sleepy?"]
+		[batch]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41114" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You sure did sleep a long time."]
+		[maintxt_print text="Do you feel refreshed now?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="EVEN" z_pos="ZPOS_BACK" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41115" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You fell asleep after eating"]
+		[maintxt_print text="breakfast today, too."]
+		[maintxt_print text="I didn't know you napped so much."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="EVEN" z_pos="ZPOS_BACK" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41116" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="C'mon, wake up."]
+		[maintxt_print text="You've got crazy bed head again."]
+		[batch]
+
+		/*-------------------------------
+		画面滲み終了
+		-------------------------------*/
+		[ezchara_del ch_name="ef_cg_a" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="EVEN" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="41117" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Ah, looks like you're finally focused."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="EVEN" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41118" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Did you take a lot of naps all the"]
+		[maintxt_print text="time at home, too?"]
+		[maintxt_print text="Are you forcing yourself awake here?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41119" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="If you're sleepy, you can nap as much as"]
+		[maintxt_print text="you want."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41120" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I feel a lot better when you're somewhere in"]
+		[maintxt_print text="sight, too."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="nikori" color="EVEN" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41121" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I almost wish you would just keep sleeping"]
+		[maintxt_print text="here forever."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="EVEN" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41122" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You always push yourself when you're"]
+		[maintxt_print text="awake, you silly princess."]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="komari" color="EVEN" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66059" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You might have Toma's support, but..."]
+		[maintxt_print text="You can't just sleep from morning to evening"]
+		[maintxt_print text="every day."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66060" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You can't do anything like this. You can't"]
+		[maintxt_print text="recover memories, or find the person who's"]
+		[maintxt_print text="trying to hurt you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66061" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You always used to sleep around seven hours"]
+		[maintxt_print text="a day before, but suddenly you're sleeping so"]
+		[maintxt_print text="much. What's wrong?"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+		[ef_aicatch bgname="eye055" bgm="57" time="420"]/*アイキャッチ処理：BGMシリアス１*/
+
+		/*------------------------------
+		【トーマルート１６日目終了】
+		toma_17.00.01へ
+		------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="317" label="sure1"]
+
+	[return]
+
+
+

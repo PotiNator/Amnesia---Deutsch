@@ -1,0 +1,1041 @@
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*=============================================================================================
+	ノベル開始
+=============================================================================================*/
+*sure1
+
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i==1"][calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i==2"][calllua function="stcm2_goto" label="sure1_turn2"]
+	[elseif estimate="$i==3"][calllua function="stcm2_goto" label="sure1_turn3"]
+	[elseif estimate="$i==4"][calllua function="stcm2_goto" label="sure1_turn4"]
+	[elseif estimate="$i==5"][calllua function="stcm2_goto" label="sure1_turn5"]
+	[elseif estimate="$i==6"][calllua function="stcm2_goto" label="sure1_turn6"]
+	[elseif estimate="$i==7"][calllua function="stcm2_goto" label="sure1_turn7"]
+	[elseif estimate="$i==8"][calllua function="stcm2_goto" label="sure1_turn8"]
+	[/if]
+
+	*sure1_turn0
+
+		/*-----------------------------
+		最初の処理
+		12行ｘ27文字
+		------------------------------*/
+		/*メニュー制限*/
+		[restrict_menu]
+		[restrict_txt]
+
+		/* 最初の背景 */
+		[ezbg_change2 name="bg171" wait="BG_NORMAL"]
+		[batch]
+
+		/* ブラックアウト・レイヤ２ */
+		[blackout_start mode="0" mode2="0" color="0" index="1" alpha="128" count="20"]
+		[txtwaitset wait="20"]
+		[batch]
+
+		/* ノベルスタート */
+		[novel_st shadow="1"]
+
+		[bgm_play no="1" count="0"]
+
+		/*-----------------------------
+		ノベルスタート
+		------------------------------*/
+		[maintxt_print text="”I'm back, Big Brother!”"]
+		[batch]
+
+		[maintxt_print text="I heard a small voice coming up from behind."]
+		[maintxt_print text="When I stopped to turn around, I saw a little girl"]
+		[maintxt_print text="arriving at the park, having just returned from"]
+		[maintxt_print text="kindergarten."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Welcome back. You're early.”"]
+		[batch]
+
+		[maintxt_print text="”When I come early, I get to see you here, right?"]
+		[maintxt_print text="I tried my best!”"]
+		[batch]
+
+		[maintxt_print text="I patted her head in approval, and she smiled"]
+		[maintxt_print text="happily."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Where's Shin?”"]
+		[batch]
+
+		[maintxt_print text="”Shin said he was going to bring us some sandbox"]
+		[maintxt_print text="toys!”"]
+		[batch]
+
+		[maintxt_print text="”Then let's wait for him.”"]
+		[batch]
+
+		[maintxt_print text="”Okay!”"]
+		[batch]
+
+		[maintxt_print text="I had actually planned on going to a friend's house"]
+		[maintxt_print text="after school, but her small face was so excited"]
+		[maintxt_print text="that I decided to call it off."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Tooomaaaa!”"]
+		[batch]
+
+		[maintxt_print text="I heard another little voice calling for me."]
+		[maintxt_print text="Brought along by his mother, Shin was carefully"]
+		[maintxt_print text="carrying a large bucket toward us."]
+		[batch]
+
+		[maintxt_print text="”You okay, Shin? I can hold it for you.”"]
+		[batch]
+
+		[maintxt_print text="”'M fine!”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="When I tried to walk to him, Shin shook his head"]
+		[maintxt_print text="and trundled over. He was out of breath from such"]
+		[maintxt_print text="strenuous work."]
+		[batch]
+
+		[maintxt_print text="”Shin, you're amazing! You tried really hard!”"]
+		[batch]
+
+		[maintxt_print text="”I can do it by myself now!”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="In the bucket were three shovels."]
+		[batch]
+
+		[maintxt_print text="He probably knew, too, if he came early that I'd be"]
+		[maintxt_print text="here, so he brought one for each of us."]
+		[batch]
+
+		[maintxt_print text="It was my turn to feel happy, so I patted Shin's"]
+		[maintxt_print text="head as well."]
+		[batch]
+
+		[maintxt_print text="It was still 3 o'clock."]
+		[maintxt_print text="We'd be able to play a long time until the evening"]
+		[maintxt_print text="bell rang..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[ezbg_change name="bg019" wait="BG_NORMAL"]
+
+		[maintxt_print text="”......That was how it used to be back in the day, I"]
+		[maintxt_print text="think.”"]
+		[batch]
+
+		[maintxt_print text="”What!? Shin was way too adorable!? That can't be"]
+		[maintxt_print text="possible!”"]
+		[batch]
+
+		[maintxt_print text="”Yeah, it's kinda hard to imagine now.”"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn1
+
+		[maintxt_print text="I couldn't help but grin at Mine's genuinely"]
+		[maintxt_print text="shocked expression."]
+		[batch]
+
+		[maintxt_print text="It was so surprising to her that she was still"]
+		[maintxt_print text="muttering amazed noises to herself."]
+		[batch]
+
+		// スマートフォン版：追加開始
+		[novel_next_page]/*ページクリア*/
+
+		[batch]
+		// スマートフォン版：追加終了
+
+		[maintxt_print text="”So, you were called 'big brother' back then?”"]
+		[batch]
+
+		[maintxt_print text="”Yup, even though we weren't real siblings or"]
+		[maintxt_print text="anything, I was like the neighborhood older"]
+		[maintxt_print text="brother.”"]
+		[batch]
+
+		[maintxt_print text="”So the girl who came today called you that, too?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="As she said this, she turned to look towards the far"]
+		[maintxt_print text="end of the office."]
+		[batch]
+
+		[maintxt_print text="At that moment, the girl in question was"]
+		[maintxt_print text="interviewing with Mr. Waka for a part-time job at"]
+		[maintxt_print text="the cafe."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Yep. I was called Big Brother by her, too.”"]
+		[batch]
+
+		[maintxt_print text="”She's a year ahead of me in school, right?”"]
+		[batch]
+
+		[maintxt_print text="”And a year younger than me. Get along with her,"]
+		[maintxt_print text="alright?”"]
+		[batch]
+
+		[maintxt_print text="”Hmmm, that might be hard.”"]
+		[batch]
+
+		[maintxt_print text="”Why? She's not a bad person.”"]
+		[batch]
+
+		[maintxt_print text="”Girls tend to hate me, usually.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Oh, it's fine. She's not the type to be bothered by"]
+		[maintxt_print text="such things. She usually gets along well with"]
+		[maintxt_print text="everyone.”"]
+		[batch]
+
+		[maintxt_print text="”Wha- you didn't even deny that people don't like"]
+		[maintxt_print text="me! You're so mean, Toma.”"]
+		[batch]
+
+		[maintxt_print text="”Even if other girls hate you, you should just keep"]
+		[maintxt_print text="doing the things you like. In fact, I think it's"]
+		[maintxt_print text="admirable that you're aware of it and still willing to"]
+		[maintxt_print text="do your own thing."]
+		[maintxt_print text="It doesn't seem right to ask for anything more.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”......”"]
+		[batch]
+
+		[maintxt_print text="”Hm? What?”"]
+		[batch]
+
+		[maintxt_print text="After staring at me for a moment, Mine gave a"]
+		[maintxt_print text="disappointed sigh."]
+		[batch]
+
+		[maintxt_print text="”That must be the reason why I'm not really"]
+		[maintxt_print text="all that attracted to you... Like, you're hard to get"]
+		[maintxt_print text="a rise out of, and you're kinda strict. But you've"]
+		[maintxt_print text="got good looks and you're easy to talk to, so you're"]
+		[maintxt_print text="kind of both things. It's such a disappointment.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Uh, thanks?”"]
+		[batch]
+
+		[maintxt_print text="A ways away, the door opened and the two that"]
+		[maintxt_print text="were inside stepped out."]
+		[batch]
+
+		[maintxt_print text="She bowed politely, and Mr. Waka nodded calmly."]
+		[batch]
+
+		[maintxt_print text="Looking up, she turned her head towards me and"]
+		[maintxt_print text="gave a cheerful smile."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I got the job!”"]
+		[batch]
+
+		[maintxt_print text="I felt both relief and surprise, and turned my gaze"]
+		[maintxt_print text="to Mr. Waka. He also gave me a quiet nod."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Toma, you seem to be blessed with a wonderful"]
+		[maintxt_print text="friend. Let us have her join our staff.”"]
+		[batch]
+
+		[maintxt_print text="”That's quite the quick decision.”"]
+		[batch]
+
+		[maintxt_print text="”When I choose a person, I usually listen to my gut"]
+		[maintxt_print text="instincts. There hasn't yet been a time when that"]
+		[maintxt_print text="instinct was wrong."]
+		[batch]
+
+		[maintxt_print text="We'll have her start her shift next week."]
+		[maintxt_print text="Conveniently, Monday's our weekly meeting."]
+		[maintxt_print text="I'll introduce her to the other staff members then.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn2
+
+		[maintxt_print text="Stepping past me, Mine walked up to her."]
+		[batch]
+
+		[maintxt_print text="After thoroughly looking her up and down, she"]
+		[maintxt_print text="smiled."]
+		[batch]
+
+		[maintxt_print text="”I'm Mine! I'm a twelfth grader, same as Shin."]
+		[maintxt_print text="Looks like we'll be working together from now on."]
+		[maintxt_print text="Nice to meet you!”"]
+		[batch]
+
+		[maintxt_print text="”It's nice to meet you, too."]
+		[maintxt_print text="Since you're my senior at this job, may I call you"]
+		[maintxt_print text="Miss Mine?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Having been asked so seriously, Mine waved her"]
+		[maintxt_print text="hands vigorously in refusal."]
+		[batch]
+
+		[maintxt_print text="”Huh, what? No, you don't have to!"]
+		[maintxt_print text="I'm younger than you, so just talk to me normally!"]
+		[maintxt_print text="In fact, be more casual. Otherwise I'll be"]
+		[maintxt_print text="uncomfortable.”"]
+		[batch]
+
+		[maintxt_print text="”Then I'll just call you Mine."]
+		[maintxt_print text="Please feel free to tell me what to do, and I'll try"]
+		[maintxt_print text="my very best.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Watching their conversation, with neither being"]
+		[maintxt_print text="timid, I considered that they might get along well,"]
+		[maintxt_print text="after all. She was already friends with Sawa, so I"]
+		[maintxt_print text="hoped that even after I left this job, the three of"]
+		[maintxt_print text="them would do well together."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[ezbg_change name="bg134" wait="BG_NORMAL"]
+
+		[maintxt_print text="On the way back from the interview, we"]
+		[maintxt_print text="meandered up the hill towards the setting sun."]
+		[batch]
+
+		[maintxt_print text="”Congrats on the job.”"]
+		[batch]
+
+		[maintxt_print text="”Thank you, Toma. Interviews are really nerve-"]
+		[maintxt_print text="wracking.”"]
+		[batch]
+
+		[maintxt_print text="As if finally relieved, she gave a small laugh."]
+		[batch]
+
+		[maintxt_print text="”Waka, I mean, the manager, apparently is super"]
+		[maintxt_print text="strict. Even though he gets a lot of applicants, he"]
+		[maintxt_print text="doesn't hire many.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I see... I'm glad that I was, then.”"]
+		[batch]
+
+		[maintxt_print text="”Well, I figured you would be fine.”"]
+		[batch]
+
+		[maintxt_print text="”Are you trying to flatter me?”"]
+		[batch]
+
+		[maintxt_print text="”Would there be any reason for me to?”"]
+		[batch]
+
+		[maintxt_print text="”......Maybe.”"]
+		[batch]
+
+		[maintxt_print text="”Not at all.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="She fell a bit silent, as if she were somewhat put"]
+		[maintxt_print text="off. I thought she might have been pouting, but I"]
+		[maintxt_print text="couldn't think of a reason why she would need to"]
+		[maintxt_print text="pout."]
+		[batch]
+
+		[maintxt_print text="This had been happening a lot lately."]
+		[maintxt_print text="I used to be able to tell exaclty what she was"]
+		[maintxt_print text="thinking, but as we grew out of childhood, it"]
+		[maintxt_print text="became harder and harder to read her thoughts."]
+		[batch]
+
+		[maintxt_print text="She probably didn't want things to stay as they"]
+		[maintxt_print text="were, but it made me feel slightly lonely."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn3
+
+		[maintxt_print text="”...Now that I think of it, when was it you guys"]
+		[maintxt_print text="started calling me by just my name?”"]
+		[batch]
+
+		[maintxt_print text="”Hm? What do you mean?”"]
+		[batch]
+
+		[maintxt_print text="”I just thinking that you've stopped calling me Big"]
+		[maintxt_print text="Brother.”"]
+		[batch]
+
+		[maintxt_print text="”...I guess that was just until elementary school."]
+		[maintxt_print text="Once we started, I stopped calling you that.”"]
+		[batch]
+
+		[maintxt_print text="”Oh, is that when?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The time I was treated as an older brother by her"]
+		[maintxt_print text="and Shin seemed now to be very short."]
+		[batch]
+
+		[maintxt_print text="But the impact of childhood is terrifyingly intense,"]
+		[maintxt_print text="and even now I was caught up in its friendly spell."]
+		[batch]
+
+		[maintxt_print text="”But still, you as a waitress, huh? Why did you"]
+		[maintxt_print text="decide to come to our cafe?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I spoke aloud a thought I had been wondering"]
+		[maintxt_print text="about for a while. It had come as a surprise to me"]
+		[maintxt_print text="when she asked me to show her where I worked."]
+		[batch]
+
+		[maintxt_print text="I had the impression that she wasn't the type to do"]
+		[maintxt_print text="customer service, even if we were to share the"]
+		[maintxt_print text="same job."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Because you're there, Toma......”"]
+		[batch]
+
+		[maintxt_print text="”Is it that you feel safer because I'm there?"]
+		[maintxt_print text="Well, I can understand that, but...”"]
+		[batch]
+
+		[maintxt_print text="Everyone was nervous at their first job."]
+		[maintxt_print text="It would be reassuring to have a friend there."]
+		[batch]
+
+		[maintxt_print text="Shin worked once in a while at that cafe for the"]
+		[maintxt_print text="same reason."]
+		[batch]
+
+		[maintxt_print text="”But you have to stand on your own."]
+		[maintxt_print text="You'll be in trouble later on if you just keep relying"]
+		[maintxt_print text="on me.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Though if she became completely independent, I'd"]
+		[maintxt_print text="end up lonelier than I cared to admit."]
+		[maintxt_print text="When I said to her these words that I didn't even"]
+		[maintxt_print text="really mean, she fell into silence."]
+		[batch]
+
+		[maintxt_print text="I'd probably stepped on a mine. I had upset her."]
+		[batch]
+
+		[maintxt_print text="”......”"]
+		[batch]
+
+		[maintxt_print text="She was pretty stubborn, and once she started"]
+		[maintxt_print text="sulking, it lasted."]
+		[maintxt_print text="I had to avoid that happening at all costs, I thought"]
+		[maintxt_print text="to myself in a panic, despite the lack of change in"]
+		[maintxt_print text="my expression."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”That's right. Do you have some free time now?"]
+		[maintxt_print text="Let's celebrate.”"]
+		[batch]
+
+		[maintxt_print text="”...Huh?”"]
+		[batch]
+
+		[maintxt_print text="I thought she would ignore me, but instead she"]
+		[maintxt_print text="looked up, puzzled."]
+		[batch]
+
+		[maintxt_print text="It was my chance to keep pushing."]
+		[batch]
+
+		[maintxt_print text="”Let's buy some cake and go to your house."]
+		[maintxt_print text="It'll be my treat. I could even buy you two or three"]
+		[maintxt_print text="slices if you want?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn4
+
+		[maintxt_print text="Her facial expression swam with indecision."]
+		[batch]
+
+		[maintxt_print text="She couldn't decide between being angry or having"]
+		[maintxt_print text="cake."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Sorry... I don't know what I did to upset you,"]
+		[maintxt_print text="but it's my fault completely."]
+		[maintxt_print text="I'd like it if you would forgive me.”"]
+		[batch]
+
+		[maintxt_print text="”...I'm not sure it's good that you don't know why"]
+		[maintxt_print text="I'm angry.”"]
+		[batch]
+
+		[maintxt_print text="”Me, too."]
+		[maintxt_print text="But it's better to apologize than to not, right?”"]
+		[batch]
+
+		[maintxt_print text="”You're always like that, Toma..... Oh, well.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="She sighed the words heavily, but that she"]
+		[maintxt_print text="sounded as if she'd given up meant that she had"]
+		[maintxt_print text="already forgiven me."]
+		[batch]
+
+		[maintxt_print text="I felt relieved and pushed my heart down out of"]
+		[maintxt_print text="my throat. I may be a pushover when it comes to"]
+		[maintxt_print text="her, but she's even more of a pushover when it"]
+		[maintxt_print text="comes to me."]
+		[batch]
+
+		[maintxt_print text="”Oh, if it's awkward for me to be in your house,"]
+		[maintxt_print text="we can stop by a cafe somewhere. Is there a cafe"]
+		[maintxt_print text="you'd like to go to?”"]
+		[batch]
+
+		[maintxt_print text="”No, it's alright. Come over to my place, Toma.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Come over to my place."]
+		[batch]
+
+		[maintxt_print text="I'd be happy if she meant it in a different way."]
+		[maintxt_print text="But I quickly shook the thought that had popped"]
+		[maintxt_print text="into my mind."]
+		[batch]
+
+		[maintxt_print text="If I thought those things... If I showed her I thought"]
+		[maintxt_print text="those things, I probably wouldn't be able to be"]
+		[maintxt_print text="with her like this anymore."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="At the very least, she wouldn't be asking me over"]
+		[maintxt_print text="so lightly. So I tried my hardest to crush those"]
+		[maintxt_print text="feelings as they came up."]
+		[batch]
+
+		[maintxt_print text="”I don't like that it looks as if I was won over by"]
+		[maintxt_print text="food, but two slices of cake would be nice."]
+		[maintxt_print text="The convenience store is fine, but if we go there,"]
+		[maintxt_print text="I'd like you to buy tea as well.”"]
+		[batch]
+
+		[maintxt_print text="The way her tone had a light sweetness around it"]
+		[maintxt_print text="was very dear to me."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn5
+
+		[ezbg_change name="bg138" wait="BG_NORMAL"]
+
+		[maintxt_print text="”Can I come in?”"]
+		[batch]
+
+		[maintxt_print text="”Yes, please do.”"]
+		[batch]
+
+		[maintxt_print text="I stepped into her not-quite-familiar room."]
+		[batch]
+
+		[maintxt_print text="This was the third time I had come here, the first"]
+		[maintxt_print text="time being when I helped her move, the second"]
+		[maintxt_print text="when she called for me to help her with the circuit"]
+		[maintxt_print text="breaker in her room."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I realized this was the first time I was invited over"]
+		[maintxt_print text="just to hang out."]
+		[batch]
+
+		[maintxt_print text="”Have you gotten used to living alone?”"]
+		[batch]
+
+		[maintxt_print text="”Somewhat... Oh, and thank you for helping me"]
+		[maintxt_print text="back then.”"]
+		[batch]
+
+		[maintxt_print text="It was unclear if she was referring to the circuit"]
+		[maintxt_print text="breaker incident, but she bowed her head towards"]
+		[maintxt_print text="me."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”You don't have to thank me for that."]
+		[maintxt_print text="It was a good learning experience.”"]
+		[batch]
+
+		[maintxt_print text="”Yeah...”"]
+		[batch]
+
+		[maintxt_print text="She sighed as she stood up straight."]
+		[batch]
+
+		[maintxt_print text="”I really can't get out of the habit of relying on you,"]
+		[maintxt_print text="can I? I didn't even need to point it out. Sorry......”"]
+		[batch]
+
+		[maintxt_print text="”I really don't mind. I think I'd get pretty lonely if"]
+		[maintxt_print text="you stopped depending on me so quickly, so it's"]
+		[maintxt_print text="okay if you do for a while longer.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”...I thought you just told me that I need to stand"]
+		[maintxt_print text="on my own.”"]
+		[batch]
+
+		[maintxt_print text="”Yeah, sorry about that. I guess I was trying a little"]
+		[maintxt_print text="too hard to show off.”"]
+		[batch]
+
+		[maintxt_print text="She laughed a little at my honest apology."]
+		[maintxt_print text="I pulled out the cake and eclairs from the shopping"]
+		[maintxt_print text="bag and placed them on the table."]
+		[batch]
+
+		[maintxt_print text="”I'll go get some cups. Go ahead and sit down.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="She walked off toward the small kitchen, while I"]
+		[maintxt_print text="sat myself down on the carpet and glanced around"]
+		[maintxt_print text="the room."]
+		[batch]
+
+		[maintxt_print text="She had been living with her parents all this time,"]
+		[maintxt_print text="but starting this summer, she would be living alone."]
+		[batch]
+
+		[maintxt_print text="The room was full of new furniture, but the reason"]
+		[maintxt_print text="it felt so warm and familiar was most likely from"]
+		[maintxt_print text="her smell."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”It's been a while since I've used the cups for"]
+		[maintxt_print text="guests.” Holding one cup in each hand, she walked"]
+		[maintxt_print text="back over."]
+		[batch]
+
+		[maintxt_print text="”......Huh?”"]
+		[batch]
+
+		[maintxt_print text="I thought she'd sit across from me, but for some"]
+		[maintxt_print text="inexplicable reason she sat herself right next to me."]
+		[batch]
+
+		[maintxt_print text="Though I thought at first that leaning against the"]
+		[maintxt_print text="bed would be more comfortable, our close"]
+		[maintxt_print text="proximity in this large room made me nervous."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn6
+
+		[maintxt_print text="”......”"]
+		[batch]
+
+		[maintxt_print text="Was I the only one weirdly conscious of this?"]
+		[batch]
+
+		[maintxt_print text="From her strange silence, she also seemed to be"]
+		[maintxt_print text="slightly nervous."]
+		[batch]
+
+		[maintxt_print text="I wanted her to talk like she always did, but it"]
+		[maintxt_print text="seemed she didn't feel like it."]
+		[batch]
+
+		[maintxt_print text="......What was she doing?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I'll open this up for us.”"]
+		[batch]
+
+		[maintxt_print text="Pretending I wasn't bothered by anything, I poured"]
+		[maintxt_print text="the pretty red tea from the bottle into our cups."]
+		[batch]
+
+		[maintxt_print text="”You really like tea, huh?"]
+		[maintxt_print text="I've noticed most girls do.”"]
+		[batch]
+
+		[maintxt_print text="”...Yes, I suppose. But I don't mind coffee, either.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Again, a short silence."]
+		[batch]
+
+		[maintxt_print text="Just when I could no longer endure it, and tried to"]
+		[maintxt_print text="find some random topic to bring up, she reached"]
+		[maintxt_print text="over to her glass."]
+		[batch]
+
+		[maintxt_print text="Staring down at the deep red tea, she suddenly"]
+		[maintxt_print text="spoke."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”You had a girlfriend during your second year of"]
+		[maintxt_print text="high school, huh...”"]
+		[batch]
+
+		[maintxt_print text="It was neither phrased as question, nor as a"]
+		[maintxt_print text="statement, so my tongue was tied for a moment."]
+		[batch]
+
+		[maintxt_print text="......Traitor, it said."]
+		[maintxt_print text="Why was it that it sounded like I was being"]
+		[maintxt_print text="condemned...?"]
+		[batch]
+
+		[maintxt_print text="I felt as if a small, yet extremely powerful"]
+		[maintxt_print text="explosive had been thrown at me."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I did, but we broke up.”"]
+		[batch]
+
+		[maintxt_print text="In fact, it wasn't just 11th grade, but even before"]
+		[maintxt_print text="then. I had received quite a few confessions and"]
+		[maintxt_print text="dated a few people."]
+		[batch]
+
+		[maintxt_print text="I had meant to keep it a secret, but she was pretty"]
+		[maintxt_print text="sharp."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Why did you break up?”"]
+		[batch]
+
+		[maintxt_print text="”Well, because... You know, we just naturally"]
+		[maintxt_print text="drifted apart.”"]
+		[batch]
+
+		[maintxt_print text="”Naturally drifted? You couldn't contact her? Even"]
+		[maintxt_print text="when you were in the same class?”"]
+		[batch]
+
+		[maintxt_print text="”You know that my ex is in the same class as me,"]
+		[maintxt_print text="even?”"]
+		[batch]
+
+		[maintxt_print text="”......I just happened to find out.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The one person I didn't want knowing found out,"]
+		[maintxt_print text="huh? I thought regretfully in the corner of my mind."]
+		[batch]
+
+		[maintxt_print text="I wanted to hide this from her if I could."]
+		[maintxt_print text="Why it was necessary for me to hide it though,"]
+		[maintxt_print text="was something I couldn't rationally explain."]
+		[batch]
+
+		[maintxt_print text="”You started disliking her? Even though you liked"]
+		[maintxt_print text="her before?”"]
+		[batch]
+
+		[maintxt_print text="”Er, well......”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn7
+
+		[maintxt_print text="I felt no matter how I responded, her reaction"]
+		[maintxt_print text="would be terrifying."]
+		[batch]
+
+		[maintxt_print text="So I decided to tell her the truth."]
+		[batch]
+
+		[maintxt_print text="”......There was someone else that I liked."]
+		[maintxt_print text="That's why we dated for a time, then we broke up.”"]
+		[batch]
+
+		[maintxt_print text="Hearing this, her expression became even steelier."]
+		[batch]
+
+		[maintxt_print text="I stepped on another landmine, didn't I?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”So you went out with her even though you didn't"]
+		[maintxt_print text="like her?”"]
+		[batch]
+
+		[maintxt_print text="”It's not like that...”"]
+		[batch]
+
+		[maintxt_print text="Crap, I might not be able to dodge this one, after"]
+		[maintxt_print text="all. I decided to confess more of the truth."]
+		[batch]
+
+		[maintxt_print text="It was still kind of despicable, but it was better"]
+		[maintxt_print text="than being misunderstood."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”...I don't stand a chance with the person I love the"]
+		[maintxt_print text="most, but I can't give up on her, even though I"]
+		[maintxt_print text="need to, so in order to forget, I went out with"]
+		[maintxt_print text="another girl."]
+		[batch]
+
+		[maintxt_print text="I told her this at the beginning, though."]
+		[maintxt_print text="I said that there's actually someone else that I like,"]
+		[maintxt_print text="but that I'd work hard so that while we were dating,"]
+		[maintxt_print text="she'd become who I liked the most.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="But it was impossible."]
+		[maintxt_print text="The one I loved the most never changed."]
+		[batch]
+
+		[maintxt_print text="”I broke up with her before things got too serious.”"]
+		[batch]
+
+		[maintxt_print text="”I... see...”"]
+		[batch]
+
+		[maintxt_print text="I couldn't fathom what she was thinking as she"]
+		[maintxt_print text="took a sip of her tea."]
+		[batch]
+
+		[maintxt_print text="She looked as if there was a lot she was thinking"]
+		[maintxt_print text="about. And I was finding each expression cute."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I'm terrible, aren't I... Do you hate me?”"]
+		[batch]
+
+		[maintxt_print text="”No, I don't. I feel kinda relieved.”"]
+		[batch]
+
+		[maintxt_print text="”?”"]
+		[batch]
+
+		[maintxt_print text="”But, I'm a little scared. The hurdles seem high.”"]
+		[batch]
+
+		[maintxt_print text="”What are you talking about?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”...Nothing. I was just thinking that I need to try"]
+		[maintxt_print text="harder.”"]
+		[batch]
+
+		[maintxt_print text="”Do you want a boyfriend, too?”"]
+		[batch]
+
+		[maintxt_print text="Her eyes went wide as she looked up."]
+		[maintxt_print text="Was what I asked that surprising?"]
+		[maintxt_print text="I had asked her under the pretense of normal"]
+		[maintxt_print text="conversation, too."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”......I do. But I also like being with you, Toma.”"]
+		[batch]
+
+		[maintxt_print text="With this, she leaned onto my arm. I felt a"]
+		[maintxt_print text="momentary lightheadedness from her soft weight."]
+		[batch]
+
+		[maintxt_print text="We really should have gone to a cafe instead."]
+		[maintxt_print text="The desire to embrace her was utterly"]
+		[maintxt_print text="overwhelming."]
+		[batch]
+
+		[maintxt_print text="”Geez, still, at this age?”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn8
+
+		[maintxt_print text="I laughed as if disbelieving of her, and reached"]
+		[maintxt_print text="towards the cake I bought."]
+		[maintxt_print text="I couldn't let myself be fazed by this."]
+		[maintxt_print text="Don't deceive yourself."]
+		[maintxt_print text="She doesn't think of you like that."]
+		[batch]
+
+		[maintxt_print text="”Come on, let's eat the cake. We went to the"]
+		[maintxt_print text="trouble of buying it.”"]
+		[batch]
+
+		[maintxt_print text="I placed it gently in front of her, and she gave a"]
+		[maintxt_print text="small nod, sitting back up. I felt infinitely relieved"]
+		[maintxt_print text="once we were separated."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I wondered how much longer we could stay like"]
+		[maintxt_print text="this. I would have to get stronger before she"]
+		[maintxt_print text="drifted away..."]
+		[maintxt_print text="So that when I saw her with another man,"]
+		[maintxt_print text="my heart wouldn't break."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		/*-----------------------------
+		最後の処理
+		------------------------------*/
+		/* ノベル終了 */
+		[novel_end]
+
+		[bgm_stop count="0"]
+
+		/*ブラックアウト終了・レイヤ２*/
+		[blackout_end mode="0" mode2="0" index="1" count="20"]
+		[txtwaitset wait="20"]
+		[batch]
+
+		[calllua function="game_end"]
+
+		/*メニュー制限解除*/
+		[restoff_menu]
+		[restoff_txt]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+

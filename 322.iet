@@ -1,0 +1,1346 @@
+/*
+	トーマ２２日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　トーマルート　２２日目
+第１稿						２０１１年０２月１５日　望月
+第２稿　相互監修				２０１１年０２月２２日　果村
+第３稿　ＣＧナンバリング			２０１１年０２月２３日　望月
+第４稿　チェック＆加筆修正			２０１１年０３年０１日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：toma_22.01.00
+背景：トーマ自室・檻の中
+時間：昼
+人物：オリオン・トーマ
+モブ：
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure1_turn2"]
+	[elseif estimate="$i == 3"] [calllua function="stcm2_goto" label="sure1_turn3"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="22"]
+
+		/*------------------------------
+		テロ：『８月２２日』
+		------------------------------*/
+		[scenechange3 bgname="bg222" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg010" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[day_proc onoff="1"]
+		[batch]
+
+		[bgm_play no="13" count="0"]
+		[batch]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="wara" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41333" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Anyway, I'll be out for a while."]
+		[maintxt_print text="I'll be borrowing your key again."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41334" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I don't think it'll take too long, but behave"]
+		[maintxt_print text="yourself."]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：ドアを開ける音
+		-------------------------------*/
+		[strse_play no="2" delay="0"]
+		[strse_waitcut]
+		[batch]
+		/*-------------------------------
+		ＳＥ：鍵を閉める音
+		-------------------------------*/
+		[strse_play no="75" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="90"]
+		[batch]
+		
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="metoji" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66251" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="He says to behave yourself, but there's not"]
+		[maintxt_print text="much you can do..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66252" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Aaah. Seriously, what could"]
+		[maintxt_print text="we possibly do to improve your"]
+		[maintxt_print text="situation...?!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66253" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="If we wait around too long, there"]
+		[maintxt_print text="could be a limit to the memories"]
+		[maintxt_print text="you can recover..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		/*-------------------------------
+		テロ：『１時間後』
+		-------------------------------*/
+		[scenechange3 bgname="bg238" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"] 
+		[batch]
+
+//斉藤コメント　	[ezbg_change name="bg_cage_a1" wait="2"]	/* ケージUP：通常：昼 */
+		[scenechange3 bgname="bg_cage_a1" color="F_BLACK" speed="F_SP" dir="F_FADE"]//ケージのアップに変更　斉藤D
+		[day_proc onoff="1"]
+		
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="jitome" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66254" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Haaaa... I'm so bored..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66255" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Want to do a jigsaw puzzle?"]
+		[maintxt_print text="It'd probably be even more frustrating."]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：衣擦れの音
+		-------------------------------*/
+		[strse_play no="92" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66256" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...And there's nothing to lean on"]
+		[maintxt_print text="in that cage besides iron bars."]
+		[maintxt_print text="Want to ask for a chair?"]
+		[batch]
+
+		/*-------------------------------
+		画面揺れ
+		-------------------------------*/
+//SE追加　金属が揺れる音　斉藤D
+//斉藤コメント　追加して
+		[strse_play no="16" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[ef_shake]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66257" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Huh? W-Wait!?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66258" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hey! Look over here!"]
+		[maintxt_print text="The bar moved, there! Where you were just"]
+		[maintxt_print text="leaning against it...!!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66259" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="That means... Hey, try pushing it up toward"]
+		[maintxt_print text="the top of the cage!"]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//黒画面に　斉藤D
+		[ezbg_change2 name="bg_black" wait="BG_NOW"]
+		/*-------------------------------
+		ＳＥ：格子のきしむ音・ギシ
+		-------------------------------*/
+		[strse_play no="28" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		/*-------------------------------
+		画面揺れ
+		-------------------------------*/
+		[ef_shake]
+		
+//オリオン立ち絵なしのまま黒画面　斉藤D
+//斉藤コメント　オリオンの立ち絵消して、ふきだしとセリフは表示。
+
+		//[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66260" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It came off!!"]
+		[maintxt_print text="You can do it, just a little more...!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		ＳＥ：ガシャン・ケージの外れる音
+		-------------------------------*/
+		[strse_play no="17" delay="0"]
+		[strse_waitcut]
+		[batch]
+		
+//斉藤コメント　ＳＥ鳴らす演出中のウェイト１２０
+		[txtwaitset wait="120"]
+		[batch]
+		
+		/*-------------------------------
+		背景：トーマの部屋・ケージ壊れ
+		-------------------------------*/
+//斉藤コメント　	[ezbg_change name="bg_cage_a2" wait="2"]	/* ケージUP：壊れ：昼 */
+		[ezbg_change2 name="bg_cage_a2" wait="BG_NORMAL"]
+		[batch]
+
+		[txtwaitset wait="120"]
+		[batch]
+
+//斉藤コメント　壊れたケージをしっかり見せてからオリオン表示
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66261" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...I can't believe it."]
+		[maintxt_print text="You were able to get out..."]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント　この下の表記はタイミングおかしいので消去
+
+/*
+//背景：ケージアップ
+		[ezbg_change2 name="bg319" wait="BG_NORMAL"]
+//背景：ケージアップ　開き
+		[ezbg_change2 name="bg319" wait="BG_NORMAL"]//仮絵、あとで差し替え　斉藤D
+*/
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="66262" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Looks like the cage is defective."]
+		[maintxt_print text="The bottom of the bar must not have been"]
+		[maintxt_print text="welded properly."]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//背景引き　斉藤D
+//斉藤コメント　ケージ壊れ背景にして
+		[ezbg_change2 name="bg012" wait="BG_NORMAL"]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66263" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Uh... W-What should we do?"]
+		[maintxt_print text="Want to escape?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66264" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh, but you can't go back to your place..."]
+		[maintxt_print text="We still don't know the person behind all"]
+		[maintxt_print text="the harassment."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="kangae" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66265" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="But still, it's dangerous to just stay in this"]
+		[maintxt_print text="room...!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66266" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Uh, uhhhh...!"]
+		[maintxt_print text="We don't have time to hesitate!"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：足音（遠くから・廊下の外）
+		-------------------------------*/
+		[strse_play no="100" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+		[effect_play name="ef_l_sign2" x="750" y="385" z="2" delay="0"]/*漫符：CENTER  ：左表示：  ！ */
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66267" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Toma's back?!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66268" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="J-Just grab your cell phone,"]
+		[maintxt_print text="at least! So you can call for"]
+		[maintxt_print text="help anytime...!"]
+		[batch]
+
+		[day_proc onoff="0"]
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//画面BL
+		[ezbg_change2 name="bg_black" wait="BG_FAST"]
+		
+//オリオンセリフのみ　斉藤D
+		//[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="66269" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Your phone's on the shelf! Hurry!"]
+		[maintxt_print text="And hide it in the puzzle box!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		ＳＥ：ジクソーバズルの箱の蓋を閉める音
+		-------------------------------*/
+		[strse_play no="97" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="90"]
+		[batch]
+		
+//斉藤コメント　ウェイト９０
+
+		//[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="3"]
+
+		[voice_play no="66270" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Done? Is everything okay?!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+//ここまでセリフのみ
+
+
+//斉藤コメント　鉄格子閉めるＳＥを鳴らした後に背景を表示。
+		/*-------------------------------
+		ＳＥ：鍵を開ける音
+		-------------------------------*/
+		[strse_play no="75" delay="0"]
+		[strse_waitcut]
+		[batch]
+		
+		/*-------------------------------
+		ＳＥ：鉄格子を持ち上げる音
+		-------------------------------*/
+		[strse_play no="110" delay="0"]
+		[strse_waitcut]
+		[batch]
+		
+		[txtwaitset wait="90"]
+		[batch]
+		
+		/*-------------------------------
+		背景：トーマ自室・檻の中・昼
+		-------------------------------*/
+		[ezbg_change2 name="bg010" wait="BG_NORMAL"]
+		[day_proc onoff="1"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：ドアを開ける音
+		-------------------------------*/
+		[strse_play no="2" delay="0"]
+		[strse_waitcut]
+		[batch]
+		
+		[txtwaitset wait="90"]
+		[batch]
+		
+//オリオン表示　斉藤D
+
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66271" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You made it!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="3"]
+
+		[voice_play no="41335" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm back."]
+		[batch]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41336" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="The mailbox was full of this weird, stringy"]
+		[maintxt_print text="jelly today."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41337" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="It was actually pretty easy to clean up, so"]
+		[maintxt_print text="that's good, but why would they choose"]
+		[maintxt_print text="that, of all things...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41338" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="The lineup has been food for a"]
+		[maintxt_print text="while now. Maybe the culprit's"]
+		[maintxt_print text="running out of ideas?"]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+
+		[ezchara_del ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="41339" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Anyway... The data... Well, I'll do that later."]
+		[maintxt_print text="I'll just take it off the shelf for... Huh?"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+
+		[chara_app_pt2 ch_name="orion_b" pt_name="03" em_name="odoroki" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[batch]
+
+		[effect_play name="ef_r_sign2" x="1170" y="385" z="2" delay="0"]/*漫符：CENTER  ：右表示：  ！ */
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66272" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="3"]
+
+		[voice_play no="41340" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Hm? It's not here..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66273" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Did he notice your cell phone's"]
+		[maintxt_print text="gone...?!"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn2
+
+		[txtwin_info line="3" type="0" pos="3"]
+
+		[voice_play no="41341" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="That's strange, I could have"]
+		[maintxt_print text="sworn I put it here."]
+		[maintxt_print text="Maybe it fell somewhere..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66274" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Aaah!! Turn the phone off!"]
+		[maintxt_print text="Quickly, while Toma's looking"]
+		[maintxt_print text="over there!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="41342" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Maybe I'll try calling it."]
+		[maintxt_print text="I'm sure I'll hear it even if it's on silent..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		ＳＥ：携帯のボタンを押す音
+		-------------------------------*/
+		[strse_play no="46" delay="0"]
+		[strse_waitcut]
+		[batch]
+		
+//斉藤コメント　ここ『ボタン音』の後に『呼び出し音』という順番でＳＥ鳴らす。
+		[txtwaitset wait="210"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：電話の呼び出し音
+		-------------------------------*/
+		[txtwaitset wait="60"]
+		[batch]
+		
+//斉藤コメント　ＳＥ後　ウェイト９０
+		[txtwaitset wait="90"]
+		[batch]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="3"]
+
+		[voice_play no="41343" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Hm?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="41344" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="”This number may be in an area out of"]
+		[maintxt_print text="service, or it may be turned off”...?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="3"]
+
+		[voice_play no="41345" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Oh, right."]
+		[maintxt_print text="I haven't charged it in forever."]
+		[maintxt_print text="The battery probably died..."]
+		[batch]
+
+		/*-------------------------------
+		トーマＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="hohoemi" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41346" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="#Name[0], I'm sorry."]
+		[maintxt_print text="I seem to have misplaced"]
+		[maintxt_print text="your cell phone."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41347" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm pretty sure it's somewhere in"]
+		[maintxt_print text="this room, but... you haven't gotten"]
+		[maintxt_print text="out of there, right?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】toma_22.01.00
+		出してくれるの？＞シーン：toma_22.01.01へ
+		どうやって出るの？＞シーン：toma_22.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Would you let me out?"]
+		[menutxt_set text="How could I have?"]
+		[menu_set flag="select"][stop]
+		*sure1_turn2_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn3
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.01.01
+選択肢：出してくれるの？
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		/*-------------------------------
+		信頼関係＋１
+		-------------------------------*/
+		[flag_change name="信頼関係" num="1"]
+
+		/*-------------------------------
+		トーマ苦笑
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41348" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I can't do that yet."]
+		[maintxt_print text="I want to, but I can't."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41349" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="But that's right, there's no way you could've"]
+		[maintxt_print text="gotten out of that cage. I must have misplaced"]
+		[maintxt_print text="it."]
+		[batch]
+
+		/*-- toma_22.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.01.02
+選択肢：どうやって出るの？
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41350" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...That's right."]
+		[maintxt_print text="There's no way you could've gotten out."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="41351" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="That means I really did misplace it."]
+		[batch]
+
+		/*-- toma_22.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.02.00
+選択肢合流
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure4_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure4_turn2"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure4_turn15"]
+	[/if]
+	
+
+	*sure4_turn15
+	
+		[restoff_scene]
+		[bgm_stop count="0"]						/*回想モード終了処理*/
+
+	[calllua function="game_end"]
+	
+
+	*sure4_turn0
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[restrict_scene]
+			[bgm_play no="13" count="0"]
+			[batch]
+		
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41352" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'll look for it later."]
+		[maintxt_print text="...It could even be behind the shelf."]
+		[maintxt_print text="Sigh..."]
+		[batch]
+
+		/*-------------------------------
+		トーマＯＵＴ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="toma_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66275" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Th-That was close..."]
+		[maintxt_print text="We managed to get through that...!!"]
+		[maintxt_print text="This is the first time we fooled Toma!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="gkantan" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66276" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I was sweating cold bullets!"]
+		[maintxt_print text="And I can't even sweat!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66277" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="But now we know you can escape this cage,"]
+		[maintxt_print text="and you can contact someone since you have"]
+		[maintxt_print text="your phone!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66278" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="The only thing left is finding the right timing"]
+		[maintxt_print text="to get out of here, and recovering your"]
+		[maintxt_print text="memories before it's too late!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		ＳＥ：ガサゴソ・包装紙のこすれる音
+		-------------------------------*/
+		[strse_play no="277" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+//斉藤コメント　ここもＳＥ鳴らして。3秒以上の尺を持たせて次のセリフ。
+		[txtwaitset wait="100"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66279" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Huh? What's that sound...?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="41353" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Whew..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="41354" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Stand back a bit!"]
+		[maintxt_print text="Hurry up!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66280" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Huh? W-Whaaat?!"]
+		[batch]
+
+//SEを入れる　斉藤D
+		/*-------------------------------
+		ＳＥ：ドサッ・おもちゃを床に置く音・複数
+		-------------------------------*/
+		[strse_play no="142" delay="0"]
+		[strse_waitcut]
+		[batch]
+//斉藤コメント　ＳＥ
+
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[ezchara_del ch_name="orion_b" dir="TO_LEFT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure4_turn1
+	
+		/*-------------------------------
+		cg_toma08・玩具だらけの檻
+		-------------------------------*/
+		/*表示演出開始--------------------------------------------------------*/
+		[target_point_set front="1" target_id="0" x="390" y="204" size_z="170"]
+		[target_count_set front="1" target_id="0" count="0"]
+
+		[ezbg_change name="cg_toma08a" wait="1"]	/* cg_toma08・玩具だらけの檻 */
+
+		[batch]
+
+		[target_point_set front="0" target_id="0" x="0" y="0" size_z="100"]
+		[target_change_pt_set front="0" target_id="0" point_c="3" color_c="0" size_c="3" angle_c="0"]
+		[target_count_set front="0" target_id="0" count="60"]
+		/*表示演出終了--------------------------------------------------------*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66281" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="W-What is all this?!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="41355" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Huh, it's a bit full in there now."]
+		[maintxt_print text="Looks like there was quite a bit."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66282" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I said, what is all this?!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="41356" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm sure you're bored in there,"]
+		[maintxt_print text="so I gathered some stuff"]
+		[maintxt_print text="you might like."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="41357" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I don't really know your interests"]
+		[maintxt_print text="lately, so most of it is stuff you"]
+		[maintxt_print text="liked as a kid."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="41358" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="There are stuffed toys, and"]
+		[maintxt_print text="books, and boxes of chocolate,"]
+		[maintxt_print text="and dolls..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="41359" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I thought it might be a little less"]
+		[maintxt_print text="dreary in there."]
+		[maintxt_print text="...Or is this just annoying you?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="41360" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...You didn't even try the jigsaw"]
+		[maintxt_print text="puzzle. It seems you didn't like"]
+		[maintxt_print text="anything I gave you."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="66283" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...I give up."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66284" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Is this Toma showing affection?"]
+		[maintxt_print text="Or is it just guilt?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66285" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...It's probably both."]
+		[maintxt_print text="But now this looks like a toy box."]
+		[maintxt_print text="You're like one of Toma's toys."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="66286" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="That's probably right."]
+		[maintxt_print text="This room is like a toy box"]
+		[maintxt_print text="and a treasure box to Toma."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="66287" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="He's stowing away the things that are"]
+		[maintxt_print text="important to him..."]
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+		
+		/*------------------------------
+		スチル終了
+		------------------------------*/
+		/*------------------------------
+		背景：トーマ私室・昼・檻の中
+		------------------------------*/
+		[scenechange3 bgname="bg010" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[day_proc onoff="1"]
+		/*------------------------------
+		トーマＩＮ
+		------------------------------*/
+//斉藤コメント　	[ezbg_change name="ef_toma_noon07" wait="2"]	/* ケージ昼：困り */
+		[ezbg_change2 name="ef_toma_noon07" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="41361" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Hm? What is it?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】toma_22.02.00
+		私はトーマのお人形？＞シーン：toma_22.02.01へ
+		私を喜ばせたかったの？＞シーン：toma_22.02.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Am I your doll, Toma?"]
+		[menutxt_set text="...You did this to make me happy, right?"]
+		[menu_set flag="select"][stop]
+		*sure4_turn1_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure4_turn2
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure5"]
+		[elseif estimate="$j == 1"][thread_change label="sure6"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.02.01
+選択肢：私はトーマのお人形？
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+
+	*sure5_turn0
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon05" wait="2"]	/* ケージ昼：俺は… */
+		[ezbg_change2 name="ef_toma_noon05" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+		
+		[voice_play no="41362" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I've never thought of you that way, not"]
+		[maintxt_print text="once."]
+		[batch]
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon06" wait="2"]	/* ケージ昼：決して出さない */
+		[ezbg_change2 name="ef_toma_noon06" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41363" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You're you."]
+		[maintxt_print text="You aren't a doll."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="41364" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You don't even belong to me."]
+		[batch]
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon07" wait="2"]	/* ケージ昼：困り */
+		[ezbg_change2 name="ef_toma_noon07" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="41365" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Was there ever a moment in the last"]
+		[maintxt_print text="nineteen years when you belonged to me,"]
+		[maintxt_print text="#Name[0]? No, right?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="41366" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Even while you're captive here,"]
+		[maintxt_print text="you aren't mine, and you won't"]
+		[maintxt_print text="ever be mine."]
+		[batch]
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon01" wait="2"]	/* ケージ昼：はぁ… */
+		[ezbg_change2 name="ef_toma_noon01" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="41367" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I understand that clearly."]
+		[maintxt_print text="So clearly that it's painful."]
+		[batch]
+
+		/*-------------------------------
+		主人公好意＋１
+		-------------------------------*/
+		[flag_change name="主人公好意" num="1"]
+
+		/*-- toma_22.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.03.02
+選択肢：私を喜ばせたかったの？
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+
+	*sure6_turn0
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon05" wait="2"]	/* ケージ昼：俺は… */
+		[ezbg_change2 name="ef_toma_noon05" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="41368" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Pretty much."]
+		[maintxt_print text="...But you aren't happy, are you?"]
+		[batch]
+
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="41369" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm sure you want me to let you out, not"]
+		[maintxt_print text="gather toys for you."]
+		[batch]
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon04" wait="2"]	/* ケージ昼：わかってくれないんだ･･･ */
+		[ezbg_change2 name="ef_toma_noon04" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="41370" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I'm sorry."]
+		[batch]
+
+		/*-- toma_22.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：toma_22.03.00
+選択肢合流
+-------------------------------*/
+*sure7
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+
+	*sure7_turn0
+
+
+//斉藤コメント　	[ezbg_change name="ef_toma_noon04" wait="2"]	/* ケージ昼：わかってくれないんだ･･･ */
+		[ezbg_change2 name="ef_toma_noon04" wait="2"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="41371" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="It really won't be much longer. I'll have the"]
+		[maintxt_print text="evidence I need in just a little while..."]
+		[batch]
+
+		[ef_aicatch bgname="eye056" bgm="57" time="420"]/*アイキャッチ処理：BGMシリアス１*/
+
+		/*------------------------------
+		【トーマルート２２日目終了】
+		toma_23.00.01へ
+		------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="323" label="sure1"]
+
+	[return]
+
+
+

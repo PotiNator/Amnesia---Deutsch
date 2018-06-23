@@ -1,0 +1,235 @@
+/*
+	KENT28日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＫＥＮＴルート　２８日目
+第１稿						２０１１年０２月４日　果村
+第２稿　相互監修				２０１１年０２月０７日　望月
+第３稿	最終調整・修正				２０１１年０２月０９日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_28.01.00
+背景：主人公マンション－主人公自室
+時間：昼
+人物：－
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+		/*-------------------------------
+		テロ『８月２８日』
+		-------------------------------*/
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[scenechange3 bgname="bg228" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		// 日付設定：28日
+		[day_set date="28"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="I'm home."]
+		[batch]
+
+
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="..."]
+		[batch]
+		[maintxt_print text="...It's really quiet."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="I wonder why I feel like I was"]
+		[maintxt_print text="always talking to someone here?"]
+		[batch]
+		[maintxt_print text="Who was it...?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="It wasn't Kent..."]
+		[batch]
+
+
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="Until recently, we were always"]
+		[maintxt_print text="just fighting, after all."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="There weren't many times when"]
+		[maintxt_print text="he came in here."]
+		[batch]
+				
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="Have I forgotten something"]
+		[maintxt_print text="again?"]
+		[batch]
+		[maintxt_print text="It's a little lonely..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+		
+
+		/*-------------------------------
+		【条件分岐】kent_28.01.00
+		ベストエンドフラグがＯＮの場合＞シーン：kent_28.02.00へ
+		ベストエンドフラグがＯＦＦの場合＞シーン：kent_28.03.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="ベストエンド" i="k"]
+		[if estimate="$k == 0"][thread_change label="sure4"]
+		[elseif estimate="$k == 1"][thread_change label="sure2"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_28.02.00
+（ベストエンドルート）
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		/*-------------------------------
+		【条件分岐】kent_28.02.00
+		算数問題正答フラグが３以上の場合＞シーン：kent_28.02.01へ
+		算数問題正答フラグが３未満の場合＞シーン：kent_28.03.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="算数問題正答" i="k"]
+		[if estimate="$k >= 3"][thread_change label="sure3"]
+		[elseif estimate="$k <  3"][thread_change label="sure4"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_28.02.07
+（算数問題正答フラグが３以上の場合）
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		/*-------------------------------
+		【ケントルート２８日目終了】
+		kent_29.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="429" label="sure1"]
+
+	[return]
+
+
+
+/*-------------------------------
+☆算数問題パーフェクトの場合、ボーナスで２９日目が入ります
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_27.03.00
+（ノーマルエンドルートor算数問題パーフェクト以外）
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		/*-------------------------------
+		【ケントルート２８日目終了】
+		kent_31.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="431" label="sure1"]
+
+	[return]
+
+
+

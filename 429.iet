@@ -1,0 +1,832 @@
+/*
+	KENT29日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＫＥＮＴルート　２９日目
+第１稿						２０１１年０２月３日　果村
+第２稿　相互監修				２０１１年０２月０７日　望月
+第３稿	最終調整・修正				２０１１年０２月０９日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_29.01.00
+（算数問題パーフェクトの場合のボーナス日）
+背景：ＫＡＮＤＡＧＡＷＡ公園
+時間：昼
+人物：ケント
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		/*-------------------------------
+		テロ『８月２９日』
+		-------------------------------*/
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[scenechange3 bgname="bg229" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg171" color="F_BLACK" speed="F_SP" dir="F_FADE"]/*ダミー 時間帯なし by山口*/
+
+		// 日付設定：29日
+		[day_set date="29"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　　　 */
+
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		/*ボイス再生*/
+		[voice_play no="031128" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Do you remember this park?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="No..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="It's a very pretty park."]
+		[batch]
+		[maintxt_print text="I didn't know that you'd end up in this park if"]
+		[maintxt_print text="you walked through the cemetary."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031129" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Back when we met every morning, we'd"]
+		[maintxt_print text="often walk here together."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031130" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="I think it would be perfect for a rehabilitation"]
+		[maintxt_print text="walk or something of the sort."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="I see..."]
+		[batch]
+
+		[ezchara_dis ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除＿退避*/
+
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[blackout_start mode="0" mode2="0" color="F_BLACK" index="2" alpha="128" count="F_SP"]	/* ブラックアウト */
+		[txtwaitset wait="F_SP"]
+
+		[novel_st shadow="1"]/*モノローグ開始*/
+		[novel_pos x="375" y="192"]
+
+		[maintxt_print text="I wonder what feelings I had while walking"]
+		[maintxt_print text="with you, Kent."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Did I think about you?"]
+		[batch]
+		[maintxt_print text="Or was I reluctant about it?"]
+		[batch]
+		[maintxt_print text="...I can't remember."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]/*モノローグ終了*/
+		[batch]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]					/* ブラックアウト終了 */
+		[txtwaitset wait="F_SP"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="03" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		/*ボイス再生*/
+		[voice_play no="031131" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="There's a bench over there. We should sit"]
+		[maintxt_print text="and take a break. It would be meaningless to"]
+		[maintxt_print text="push yourself too hard so suddenly."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Okay."]
+		[batch]
+
+		[ezchara_dis ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除＿退避*/
+
+		[txtwin_proc onoff="0"]
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="If the previous me knew I was"]
+		[maintxt_print text="spending time with you like this,"]
+		[maintxt_print text="I wonder if I'd be surprised..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="Or would I be happy?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01b" em_name="metoji" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031132" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="It's strange... Back then, I never would have"]
+		[maintxt_print text="thought that I'd visit this park with you as"]
+		[maintxt_print text="a couple."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Oh..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="I was thinking the same thing."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+
+		/*-------------------------------
+		軽い笑い
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031133" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...By the way, #Name[0]."]
+		[maintxt_print text="Do you have any interest in solving"]
+		[maintxt_print text="something like this?"]
+		[batch]
+
+		/*-------------------------------
+		数学パズル　アイコン表示
+		-------------------------------*/
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Huh?"]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[batch]
+		
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="This is one of those really difficult-looking"]
+		[maintxt_print text="puzzles Ikki was doing."]
+		[batch]
+		
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031134" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="It seems simple arithmetic is too easy for"]
+		[maintxt_print text="you. While this involves arithmetic as well,"]
+		[maintxt_print text="it's more complicated."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031135" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Of course, the level is different from the"]
+		[maintxt_print text="puzzles I create for Ikkyu. Those are meant to"]
+		[maintxt_print text="frustrate him, after all."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031136" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="I made this puzzle fully intending for it to"]
+		[maintxt_print text="be solved. It should be solvable with a little"]
+		[maintxt_print text="effort."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031137" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="I thought that you'd find it enjoyable to solve"]
+		[maintxt_print text="this."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Um..."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】kent_29.01.00
+		じゃあ、やってみます＞シーン：kent_29.01.01へ
+		…………＞シーン：kent_29.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Okay, then I'll try."]
+		[menutxt_set text="..."]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_29.01.01
+選択肢：じゃあ、やってみます
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure2_turn1"]
+	
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure2_turn15"]
+	[/if]
+	
+	
+	*sure2_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure2_turn0
+
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031138" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Thanks, I'd be happy if you enjoyed it."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Okay."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="What's wrong?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031139" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...#Name[0]."]
+		[maintxt_print text="Would you like to marry me?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="WHAT!?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031140" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Oh, I don't mean right now. I simply thought"]
+		[maintxt_print text="that children with superior genes would be"]
+		[maintxt_print text="born between us."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031141" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...No, that's wrong."]
+		[maintxt_print text="That's not what I meant."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031142" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="I just felt that I'd be able to live a happy life"]
+		[maintxt_print text="if it was with you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031143" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="That regardless of what strange things"]
+		[maintxt_print text="captured my fascination, you'd smile and go"]
+		[maintxt_print text="along with it..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031144" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="That's what I imagined just now for a"]
+		[maintxt_print text="moment."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031145" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Are you going to laugh at my silly fantasy?"]
+		[batch]
+
+		[ezchara_dis ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除＿退避*/
+
+		[flag_change name="switch" num="1"]
+
+		[return]
+
+
+
+	*sure2_turn1
+
+		/*-------------------------------
+		ＣＧ：『cg_kent10_a』（左手の薬指にキス）
+		公園のベンチに座っている主人公の手を取って、左手の薬指にキスを落とすケント。
+		ケントは向かい合わせに立っている状態で、目を伏せています。
+		-------------------------------*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+		/* イベントＣＧ　ＥＶ○○○○ */
+		[txtwin_proc onoff="0"]/*テキストウィンドウを閉じる*/
+		[day_proc onoff="0"]/*日付表示消去*/
+
+		[batch]
+
+		[ezbg_change2 name="cg_kent10a" wait="2"]
+
+		/* 演出 -------------------------------------------------*/
+
+		/*-------------------------------------------------------*/
+
+		[batch]
+
+		[txtwin_proc onoff="1"]/*テキストウィンドウを開く*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031146" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...But if you'd be willing to accept me, I'll"]
+		[maintxt_print text="pledge my undying faithfulness to you for"]
+		[maintxt_print text="life."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031147" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="And some day, I'll place a ring upon this"]
+		[maintxt_print text="finger."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031148" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...This is just advance notice."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031149" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="Think about it until the day comes when I"]
+		[maintxt_print text="make a formal proposal."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：ここまで
+		-------------------------------*/
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+
+		/*-------------------------------
+		笑
+		-------------------------------*/
+		[ezbg_change2 name="bg121" wait="3"]/*ダミー　[Yokoo]*/
+
+		[batch]
+
+		[day_proc onoff="1"]/*日付表示*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		/*ボイス再生*/
+		[voice_play no="031150" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Do you think I'm rushing ahead too"]
+		[maintxt_print text="quickly?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031151" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="But I just felt like I needed to secure you"]
+		[maintxt_print text="now, while I still could, or it might not"]
+		[maintxt_print text="happen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[novel_st shadow="1"]
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="Marriage...?"]
+		[batch]
+		[maintxt_print text="Could I do something like that?"]
+		[batch]
+		[maintxt_print text="My heart's beating so fast..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text=""]
+		[maintxt_print text="I should probably keep it a secret"]
+		[maintxt_print text="from Kent for a while that I got"]
+		[maintxt_print text="so excited."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		[novel_end]
+		
+		
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		/*-------------------------------
+		【ケントルート２９日目終了】
+		kent_31.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="431" label="sure1"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_29.01.04
+選択肢：…………
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031152" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Sorry, forget about that."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031153" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="I suppose this really wasn't something for"]
+		[maintxt_print text="me to offer to a woman."]
+		[maintxt_print text="It seems I got ahead of myself."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Um... I'm sorry."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031154" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="There's no need to apologize."]
+		[maintxt_print text="Even Ikkyu pointed out that this wasn't"]
+		[maintxt_print text="appropriate."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+/*
+		（受け取ってあげれば
+		よかったかな……）
+*/
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="031155" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Shall we go?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...Okay."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		/*-------------------------------
+		【ケントルート２９日目終了】
+		kent_31.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="431" label="sure1"]
+
+	[return]
+
+
+

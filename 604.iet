@@ -1,0 +1,843 @@
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*=============================================================================================
+	ノベル開始
+=============================================================================================*/
+*sure1
+
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"][calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"][calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i == 2"][calllua function="stcm2_goto" label="sure1_turn2"]
+	[elseif estimate="$i == 3"][calllua function="stcm2_goto" label="sure1_turn3"]
+	[/if]
+
+	*sure1_turn0
+
+		/*-----------------------------
+		最初の処理
+		12行ｘ27文字
+		------------------------------*/
+		/*メニュー制限*/
+		[restrict_menu]
+		[restrict_txt]
+
+		/* 最初の背景 */
+		[ezbg_change2 name="bg001" wait="BG_NORMAL"]
+		[batch]
+
+		/* ブラックアウト・レイヤ２ */
+		[blackout_start mode="0" mode2="0" color="0" index="1" alpha="128" count="20"]
+		[txtwaitset wait="20"]
+		[batch]
+
+		/* ノベルスタート */
+		[novel_st shadow="1"]
+
+		[bgm_play no="1" count="0"]
+
+		/*-----------------------------
+		ノベルスタート
+		------------------------------*/
+		[maintxt_print text="Whether I should go to return this umbrella today"]
+		[maintxt_print text="or not. That was the question at hand."]
+		[batch]
+
+		[maintxt_print text="The sky was visible from the laboratory windows,"]
+		[maintxt_print text="and was spotted with clouds."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Rain from this morning had ceased, come early"]
+		[maintxt_print text="afternoon, and it was bright outside despite it"]
+		[maintxt_print text="being the middle of the rainy season."]
+		[batch]
+
+		[maintxt_print text="She would probably not need this umbrella."]
+		[maintxt_print text="Even so, should I return it to her?"]
+		[batch]
+
+		[maintxt_print text="For a question that was not worth pondering,"]
+		[maintxt_print text="I had for some reason been contemplating it for"]
+		[maintxt_print text="quite some time."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The first problem of the day was whether I should"]
+		[maintxt_print text="take a walk despite the rain. The me of last year"]
+		[maintxt_print text="would have not. The reason for my daily strolls"]
+		[maintxt_print text="was only for maintaining good health, and if not"]
+		[maintxt_print text="for training, it was certainly not a job."]
+		[batch]
+
+		[maintxt_print text="There was no overwhelming reason in favor of"]
+		[maintxt_print text="walking out in the rain."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="My reason for hesitating was due to the image of"]
+		[maintxt_print text="the girl I would meet in the mornings suddenly"]
+		[maintxt_print text="coming to mind."]
+		[batch]
+
+		[maintxt_print text="She would most likely come."]
+		[batch]
+
+		[maintxt_print text="Her walk in the mornings was for her dog."]
+		[maintxt_print text="It was almost an obligation."]
+		[batch]
+
+		[maintxt_print text="There was a high probability she would go, even in"]
+		[maintxt_print text="the rain. I had seen confirmation of that in similar"]
+		[maintxt_print text="situations before."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Using this as a basis, I considered whether I should"]
+		[maintxt_print text="go."]
+		[maintxt_print text="In other words, did I want to meet her or not?"]
+		[batch]
+
+		[maintxt_print text="I deliberated for some time, then tired of"]
+		[maintxt_print text="contemplating the issue and simply decided to"]
+		[maintxt_print text="leave. I put the question of whether I wanted to"]
+		[maintxt_print text="meet her or not on hold."]
+		[batch]
+
+		[maintxt_print text="That was this morning."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[ezbg_change name="bg002" wait="BG_NORMAL"]
+
+		[maintxt_print text="”Walking even in this rain? Good for you.”"]
+		[batch]
+
+		[maintxt_print text="Sure enough she was there, and she spoke to me"]
+		[maintxt_print text="in a somewhat sarcastic tone."]
+		[batch]
+
+		[maintxt_print text="Managing to keep pace next to her,"]
+		[maintxt_print text="without thinking, I returned her sarcasm."]
+		[batch]
+
+		[maintxt_print text="”You're also determined enough to walk your dog that"]
+		[maintxt_print text="you'd put it in a raincoat. How very diligent of you.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The dog, wrapped up in a yellow raincoat, looked"]
+		[maintxt_print text="up at me with round eyes."]
+		[maintxt_print text="I wondered if it was conscious of being spoken"]
+		[maintxt_print text="about."]
+		[batch]
+
+		[maintxt_print text="”I've thought this for a while, but the recent trend"]
+		[maintxt_print text="of treating dogs like humans is absurd. Is a raincoat"]
+		[maintxt_print text="necessary for a dog?"]
+		[maintxt_print text="It is a species that was originally born to live with"]
+		[maintxt_print text="fur. There is no reason to dress dogs the same"]
+		[maintxt_print text="way as humans, who have evolved with a need for"]
+		[maintxt_print text="clothes."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="People say dogs are their family, but is including"]
+		[maintxt_print text="them simply a means to ease the loneliness of"]
+		[maintxt_print text="lacking a nuclear family in the modern world?"]
+		[maintxt_print text="To me, it is simply a sham.”"]
+		[batch]
+
+		[maintxt_print text="”Thank you for your very important opinion.”"]
+		[batch]
+
+		[maintxt_print text="After once again responding with sarcasm, she"]
+		[maintxt_print text="gave a strained smile."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”As you said, my dog probably doesn't need a"]
+		[maintxt_print text="raincoat. But it's convenient to put him in it."]
+		[maintxt_print text="It's easier to wash him afterwards this way.”"]
+		[batch]
+
+		[maintxt_print text="”Ohh, I see. It's a question of convenience."]
+		[maintxt_print text="I can agree with that.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I truly was agreeing with her logic, but she"]
+		[maintxt_print text="seemed to take this as yet another attempt at"]
+		[maintxt_print text="mockery."]
+		[batch]
+
+		[maintxt_print text="She fell silent, puffing her cheeks out."]
+		[maintxt_print text="I fell silent as well at her childish expression."]
+		[batch]
+
+		[maintxt_print text="Why did I cause her to make such a face?"]
+		[maintxt_print text="Why would she not smile?"]
+		[batch]
+
+		[maintxt_print text="Why was my gaze pulled towards her"]
+		[maintxt_print text="presumably upset expression?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The way she was wearing a white poncho in the"]
+		[maintxt_print text="place of an umbrella, or the way her bag was"]
+		[maintxt_print text="dangling from underneath in a manner where it"]
+		[maintxt_print text="would not be in the way, why did such little"]
+		[maintxt_print text="details remain burned in my vision?"]
+		[batch]
+
+		[maintxt_print text="Every time I met her, I was consumed by these"]
+		[maintxt_print text="sorts of questions."]
+		[batch]
+
+		[maintxt_print text="”Do you not need to use an umbrella?"]
+		[maintxt_print text="Your appearance is rather childish.”"]
+		[batch]
+
+		[maintxt_print text="The topic I chose to change the subject only"]
+		[maintxt_print text="seemed to further upset her."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Sorry I'm so childish."]
+		[maintxt_print text="I use two hands to hold his leash, so I need"]
+		[maintxt_print text="both of them free.”"]
+		[batch]
+
+		[maintxt_print text="”I see. A fair amount of forethought is need."]
+		[maintxt_print text="I doubt I could own a dog.”"]
+		[batch]
+
+		[maintxt_print text="”If you think so, then you probably shouldn't own"]
+		[maintxt_print text="one. I would feel bad for the dog, too.”"]
+		[batch]
+
+		[maintxt_print text="I didn't understand why our conversations became"]
+		[maintxt_print text="so caustic. I was somewhere, somehow pushing on"]
+		[maintxt_print text="the buttons wrong."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I understood this much, but I had no idea how to"]
+		[maintxt_print text="fix things. What would make her smile?"]
+		[batch]
+
+		[maintxt_print text="As I pondered this and looked down at her, she"]
+		[maintxt_print text="glared back for some reason."]
+		[maintxt_print text="She might have thought that I was glaring at her."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I was finding myself at a loss, when I heard a voice"]
+		[maintxt_print text="cry, ”Ah!” from behind us."]
+		[batch]
+
+		[maintxt_print text="Turning around, I saw a young girl with a tearful"]
+		[maintxt_print text="expression, looking down at the river flowing next"]
+		[maintxt_print text="to the walkway."]
+		[batch]
+
+		[maintxt_print text="It was simple to tell what happened by following"]
+		[maintxt_print text="her line of vision."]
+		[maintxt_print text="A red umbrella was sailing away on the river."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Did your umbrella get blown away?”"]
+		[batch]
+
+		[maintxt_print text="She also had become aware of the girl's state."]
+		[batch]
+
+		[maintxt_print text="When called to, the child looked over, scrunching"]
+		[maintxt_print text="her eyebrows."]
+		[batch]
+
+		[maintxt_print text="”What do I do......My umbrella, it washed"]
+		[maintxt_print text="away......”"]
+		[batch]
+
+		[maintxt_print text="”It did, huh? Just a moment.”"]
+		[batch]
+
+		[maintxt_print text="I looked on, puzzled, as she pulled back her"]
+		[maintxt_print text="sleeves."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="She was possibly trying to take off her poncho."]
+		[maintxt_print text="What was she thinking?"]
+		[batch]
+
+		[maintxt_print text="She must be joking. It was much better that I got"]
+		[maintxt_print text="wet than let her return home drenched."]
+		[maintxt_print text="Thankfully, the rain was light."]
+		[batch]
+
+		[maintxt_print text="”Use this.”"]
+		[batch]
+
+		[maintxt_print text="Before she was able to say anything,"]
+		[maintxt_print text="I thrust my umbrella towards the young girl."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn1
+
+		[maintxt_print text="”But Mister, won't you get wet?”"]
+		[batch]
+
+		[maintxt_print text="”I'm not so weak that this amount of rain would"]
+		[maintxt_print text="affect me. My house is close by, as well."]
+		[maintxt_print text="I heard that children catch cold easily if they are"]
+		[maintxt_print text="soaked for too long."]
+		[maintxt_print text="If that is the case, it is better that you use this"]
+		[maintxt_print text="umbrella. However, you'll have to be more"]
+		[maintxt_print text="careful this time so that it won't get blown away.”"]
+		[batch]
+
+		[maintxt_print text="”Um, I can give......”"]
+		[batch]
+
+		[maintxt_print text="I controlled her attempt to get a word in with a"]
+		[maintxt_print text="stare."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I can't imagine that you're as sturdy as I am."]
+		[maintxt_print text="Your house was, if I recall, farther away from here."]
+		[maintxt_print text="Therefore, it is much more efficient for me to give"]
+		[maintxt_print text="her my umbrella here.”"]
+		[batch]
+
+		[maintxt_print text="”What? But......”"]
+		[batch]
+
+		[maintxt_print text="”You don't need to be so insistent about it."]
+		[maintxt_print text="Besides that, now that I've given my umbrella, I'd"]
+		[maintxt_print text="like to return home. But?”"]
+		[batch]
+
+		[maintxt_print text="”Oh, that's not what I......”"]
+		[batch]
+
+		[maintxt_print text="”Enough. You, go along now.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The young child, who had been looking conflicted,"]
+		[maintxt_print text="seemed pressured by my words and grabbed the"]
+		[maintxt_print text="umbrella."]
+		[maintxt_print text="She was probably considering whether or not it"]
+		[maintxt_print text="was alright to accept something from an unknown"]
+		[maintxt_print text="man, as much as a child could consider such a"]
+		[maintxt_print text="thing."]
+		[batch]
+
+		[maintxt_print text="”......Thank you.”"]
+		[batch]
+
+		[maintxt_print text="After having opened the umbrella, a men's size"]
+		[maintxt_print text="wholly unfitting to her, the child gave an unsteady"]
+		[maintxt_print text="bow and ran off."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="It seemed difficult for her to run with such a large"]
+		[maintxt_print text="umbrella. It may have been that the wind's"]
+		[maintxt_print text="resistance was too strong."]
+		[maintxt_print text="Perhaps allowing her to give the child her poncho,"]
+		[maintxt_print text="and then having her borrow my umbrella, would"]
+		[maintxt_print text="have been much more efficient, after all."]
+		[batch]
+
+		[maintxt_print text="While I regretted the error of my decision, the girl"]
+		[maintxt_print text="beside me pulled up her poncho even though"]
+		[maintxt_print text="there was no longer any need."]
+		[batch]
+
+		[maintxt_print text="”What are you doing?”"]
+		[batch]
+
+		[maintxt_print text="”Please listen to me. I have an umbrella.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="She spoke as if angered, and from underneath her"]
+		[maintxt_print text="poncho she produced a folding umbrella."]
+		[batch]
+
+		[maintxt_print text="”Please use this.”"]
+		[batch]
+
+		[maintxt_print text="It was too late for me to realize that this was what"]
+		[maintxt_print text="she was trying to convey earlier."]
+		[batch]
+
+		[maintxt_print text="”You'll catch a cold. Please hurry and open it.”"]
+		[batch]
+
+		[maintxt_print text="I accepted the bluish-grey folding umbrella,"]
+		[maintxt_print text="decorated with a droplet pattern, and opened it."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I had erred, after all."]
+		[batch]
+
+		[maintxt_print text="I should have listened to her properly, and"]
+		[maintxt_print text="allowed her to give this to the child."]
+		[batch]
+
+		[maintxt_print text="Why did I always miscalculate my decisions"]
+		[maintxt_print text="when she was involved?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I'm sure we'll meet again tomorrow, so you can"]
+		[maintxt_print text="just return it then."]
+		[maintxt_print text="And I don't need any thanks."]
+		[maintxt_print text="I was planning to give it to her anyway."]
+		[maintxt_print text="Just return it tomorrow."]
+		[maintxt_print text="Also, you're getting soaked, Kent, so you should"]
+		[maintxt_print text="take a proper shower when you get home."]
+		[maintxt_print text="If you had just listened to me, I would have been"]
+		[maintxt_print text="able to pull it out earlier...”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="As she spoke rapidly, she glanced over with a"]
+		[maintxt_print text="sullen look, and added in a small voice."]
+		[batch]
+
+		[maintxt_print text="”Still, I never expected you to do such a thing,"]
+		[maintxt_print text="Kent...... You're nice.”"]
+		[batch]
+
+		[maintxt_print text="Am I nice?"]
+		[batch]
+
+		[maintxt_print text="Hadn't I made a very large mistake in judgment?"]
+		[maintxt_print text="Shouldn't I have listened to you?"]
+		[batch]
+
+		[maintxt_print text="While I sincerely pondered over these thoughts,"]
+		[maintxt_print text="she turned around swiftly."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Anyway, both of us should head home for today.”"]
+		[batch]
+
+		[maintxt_print text="”Yes... You're right.”"]
+		[batch]
+
+		[maintxt_print text="This amount of rain was of little consequence to"]
+		[maintxt_print text="me, but I was not eccentric enough to walk about"]
+		[maintxt_print text="town with a woman's umbrella."]
+		[batch]
+
+		[maintxt_print text="Watching her bobbing white form walk off, I"]
+		[maintxt_print text="sincerely felt that I had erred in my decision."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I had barely talked to her today."]
+		[batch]
+
+		[maintxt_print text="Why had I even come here?"]
+		[batch]
+
+		[maintxt_print text="...I don't know."]
+		[maintxt_print text="I didn't want to answer that yet."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn2
+
+		[ezbg_change name="bg001" wait="BG_NORMAL"]
+
+		[maintxt_print text="Either way, that was the reason I was in possession"]
+		[batch]
+
+		[maintxt_print text="of her umbrella. I was told to return it tomorrow,"]
+		[maintxt_print text="so it was fine to wait, and whether for better or"]
+		[maintxt_print text="for worse, the rain had stopped, with the"]
+		[maintxt_print text="forecast for tomorrow being sunny."]
+		[maintxt_print text="Until the time that I would meet her tomorrow,"]
+		[maintxt_print text="she would not find herself in need of this"]
+		[maintxt_print text="umbrella."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="And yet, the reason my eyes trailed to my cell"]
+		[maintxt_print text="phone was because if I said I would return it,"]
+		[maintxt_print text="I would be able to meet her again today."]
+		[batch]
+
+		[maintxt_print text="Since I was unable to see her for very long in the"]
+		[maintxt_print text="morning, I would be able to speak with her a"]
+		[maintxt_print text="little more if I did."]
+		[batch]
+
+		[maintxt_print text="Even if it would simply end in another quarrel."]
+		[batch]
+
+		[maintxt_print text="Why did I hesitate, even already knowing the"]
+		[maintxt_print text="outcome? Why was my urge to meet her so great"]
+		[maintxt_print text="that I concocted reasons for it?"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="Each time I asked myself this, I would suppress the"]
+		[maintxt_print text="barely visible answer deep into my heart."]
+		[batch]
+
+		[maintxt_print text="Am I possibly... in love with her?"]
+		[maintxt_print text="Impossible."]
+		[batch]
+
+		[maintxt_print text="As I was on the verge of veering into a train of"]
+		[maintxt_print text="thought I shouldn't follow, there was a light knock"]
+		[maintxt_print text="on the laboratory door, followed by its opening."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Ken, hide me!”"]
+		[batch]
+
+		[maintxt_print text="The man who spoke sharply as he came in was my"]
+		[maintxt_print text="friendly rival, Ikkyu."]
+		[batch]
+
+		[maintxt_print text="Closing the door behind him, he quickly began"]
+		[maintxt_print text="looking behind desks and glancing around the"]
+		[maintxt_print text="laboratory in an attempt to hide."]
+		[batch]
+
+		[maintxt_print text="There was only one reason I could give for"]
+		[maintxt_print text="his desperation."]
+		[batch]
+
+		[maintxt_print text="It was a woman."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Are you being chased?”"]
+		[batch]
+
+		[maintxt_print text="”Yes, by quite a few."]
+		[maintxt_print text="In fact, you'd be surprised at the amount.”"]
+		[batch]
+
+		[maintxt_print text="Ikkyu had barely managed to find a gap to squeeze"]
+		[maintxt_print text="into, when suddenly the door swung open without"]
+		[maintxt_print text="a knock."]
+		[batch]
+
+		[maintxt_print text="”Is Ikki here!?”"]
+		[batch]
+
+		[maintxt_print text="How noisy."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="The uninvited guests were three female college"]
+		[maintxt_print text="students."]
+		[batch]
+
+		[maintxt_print text="As they had rudely barged into the laboratory"]
+		[maintxt_print text="wearing ridiculously flashy clothes, I responded to"]
+		[maintxt_print text="them curtly."]
+		[batch]
+
+		[maintxt_print text="”He's not here. Leave.”"]
+		[batch]
+
+		[maintxt_print text="Perhaps surprised by my forwardness, the three"]
+		[maintxt_print text="stopped in their tracks."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”......Are you sure?”"]
+		[batch]
+
+		[maintxt_print text="”What a ridiculous question."]
+		[maintxt_print text="I'm busy. Leave.”"]
+		[batch]
+
+		[maintxt_print text="The effect was immediate."]
+		[maintxt_print text="Looking defeated, the trio shuffled their way back"]
+		[maintxt_print text="out."]
+		[batch]
+
+		[maintxt_print text="Ikkyu suffers some hardships as well, having to"]
+		[maintxt_print text="deal with fans without even a shred of common"]
+		[maintxt_print text="courtesy."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="After some time had passed since the door closed,"]
+		[maintxt_print text="Ikkyu appeared again, coupled with a sigh."]
+		[batch]
+
+		[maintxt_print text="”Thanks, that was a big help.”"]
+		[batch]
+
+		[maintxt_print text="”Why were you being chased?”"]
+		[batch]
+
+		[maintxt_print text="”Well, I was asked to help with an assignment they"]
+		[maintxt_print text="didn't understand. But when I refused, they"]
+		[maintxt_print text="started to chase me. It was actually pretty"]
+		[maintxt_print text="shocking.”"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I had thought you fond of going along with a"]
+		[maintxt_print text="woman's advances, but I see there are times you"]
+		[maintxt_print text="turn them down as well.”"]
+		[batch]
+
+		[maintxt_print text="”I have my preferences.”"]
+		[batch]
+
+		[maintxt_print text="It was unexpected for him to look so proud as he"]
+		[maintxt_print text="said this."]
+		[batch]
+
+		[maintxt_print text="I'd thought he didn't have preferences when it"]
+		[maintxt_print text="came to women, and the members of the previous"]
+		[maintxt_print text="trio were by normal standards rather beautiful."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn3
+
+		[maintxt_print text="”Ikkyu, let me ask you."]
+		[maintxt_print text="Is it generally annoying for one to use such small"]
+		[maintxt_print text="reasons as excuses to spend time with someone?”"]
+		[batch]
+
+		[maintxt_print text="Of course, the umbrella was on my mind when I"]
+		[maintxt_print text="asked this, though it applied to his situation as well."]
+		[batch]
+
+		[maintxt_print text="Ikkyu lightly tilted his head."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”I don't know about in general, but if it was a girl"]
+		[maintxt_print text="that I liked, I would be happy to see her.”"]
+		[batch]
+
+		[maintxt_print text="”Is that how it is?”"]
+		[batch]
+
+		[maintxt_print text="”That is how it is.”"]
+		[batch]
+
+		[maintxt_print text="I wondered if she thought of me as a desirable"]
+		[maintxt_print text="partner. I had a feeling this was improbable."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”How does one deduce that another sees one as"]
+		[maintxt_print text="desirable? For instance, if a woman who was"]
+		[maintxt_print text="interested in you were to decide whether or not"]
+		[maintxt_print text="to converse with you, on what factors would she"]
+		[maintxt_print text="base her decision?”"]
+		[batch]
+
+		[maintxt_print text="”Huh? Deciding on whether to approach someone?"]
+		[maintxt_print text="Let's see... For me, the kind of girl I like to talk to"]
+		[maintxt_print text="is someone with whom I can have a pleasant"]
+		[maintxt_print text="conversation.”"]
+		[batch]
+
+		[maintxt_print text="That was too broad a category."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I then felt some disgust at the fact that I did not fit"]
+		[maintxt_print text="even in so broad of a category."]
+		[batch]
+
+		[maintxt_print text="”Is it a nuisance to be approached by someone you"]
+		[maintxt_print text="regularly devolve into arguments with?”"]
+		[batch]
+
+		[maintxt_print text="”Of course it's a nuisance. Use your common"]
+		[maintxt_print text="sense. What exactly are you trying to ask?”"]
+		[batch]
+
+		[maintxt_print text="Nothing really, I dodged, and carefully pushed the"]
+		[maintxt_print text="umbrella into a less visible position."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”Then let me rephrase the question. Is the desire"]
+		[maintxt_print text="to create small excuses in order to meet someone"]
+		[maintxt_print text="indicative of romantic feelings?”"]
+		[batch]
+
+		[maintxt_print text="”Hmm...... I don't know. I think the girls just now"]
+		[maintxt_print text="were more curious than anything else... Well, I"]
+		[maintxt_print text="suppose it may be the start of falling in love.”"]
+		[batch]
+
+		[maintxt_print text="While tilting his neck, Ikkyu further bent his waist"]
+		[maintxt_print text="as if trying to peer at my face."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”...I seriously doubt this, but... are you in love with"]
+		[maintxt_print text="someone?”"]
+		[batch]
+
+		[maintxt_print text="”Impossible.”"]
+		[batch]
+
+		[maintxt_print text="With this one-word denial, without the slightest"]
+		[maintxt_print text="hint of suspicion, he murmured, ”Of course not.”"]
+		[batch]
+
+		[maintxt_print text="Were romance and I seen as that disparate from"]
+		[maintxt_print text="one another?"]
+		[maintxt_print text="I figured as much. Even I could see it."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I considered that she was seven years my junior,"]
+		[maintxt_print text="that we weren't on very good terms, and the"]
+		[maintxt_print text="whole idea came to look ridiculous."]
+		[batch]
+
+		[maintxt_print text="Of course it was impossible."]
+		[maintxt_print text="She would probably think it a nuisance."]
+		[batch]
+
+		[maintxt_print text="I put down the cell phone I was about to dial, and"]
+		[maintxt_print text="pushed it toward the umbrella."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="I didn't have to think about it."]
+		[maintxt_print text="If I was told that this was love,"]
+		[maintxt_print text="I would have no idea what to do."]
+		[batch]
+
+		[maintxt_print text="That was why I wouldn't call her."]
+		[maintxt_print text="I would no longer give thought to the umbrella."]
+		[batch]
+
+		[maintxt_print text="No matter how much anxiety I felt waiting for the"]
+		[maintxt_print text="next day, it simply must be a trick of the mind."]
+		[maintxt_print text="That was what it had to be."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="”But, Ken... Just so you know,"]
+		[maintxt_print text="I'm pretty sure love isn't all logic.”"]
+		[batch]
+
+		[maintxt_print text="I pretended not to hear Ikkyu's generously given"]
+		[maintxt_print text="advice, and shoved the umbrella deep into the"]
+		[maintxt_print text="gap between my books, so that I would no longer"]
+		[maintxt_print text="give any more thought to her."]
+		[batch]
+
+		[maintxt_print text="I hadn't yet realized that this was the problem in"]
+		[maintxt_print text="and of itself."]
+		[batch]
+
+		/*-----------------------------
+		最後の処理
+		------------------------------*/
+		/* ノベル終了 */
+		[novel_end]
+
+		[bgm_stop count="0"]
+
+		/*ブラックアウト終了・レイヤ２*/
+		[blackout_end mode="0" mode2="0" index="1" count="20"]
+		[txtwaitset wait="20"]
+		[batch]
+
+		[calllua function="game_end"]
+
+		/*メニュー制限解除*/
+		[restoff_menu]
+		[restoff_txt]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+

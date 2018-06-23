@@ -1,0 +1,1554 @@
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+// 
+// /*-------------------------------
+// アムネシアVITA版　追加シナリオ
+// ケントルート　２６日目
+// 
+// -------------------------------*/
+// /*-------------------------------
+// kent_26.03.03または
+// kent_26.04.03を見ていることが前提になります。
+// 
+// 事故にあった主人公の元にケントが駆けつけ、
+// 二人が和解したあとです。
+// 
+// ベストエンドルートでは、具体的に犬の件について
+// 会話中で触れられています（kent_26.03.03を通る場合）が、
+// ノーマルルート（kent_26.04.03を通る場合）では、
+// 触れられていません。（犬のことを示すようなやりとりはあります）
+// 
+// オリオンの押し出しは完了していて、
+// 主人公のモノローグ、台詞が登場します。
+// -------------------------------*/
+
+*sure1
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+	*sure1_turn0
+		[flag_set name="mem_chara" num="2"]
+		[flag_set name="ret_mem" num="1"]
+		[batch]
+
+		[flag_set name="共通パート" num="1"]
+		[flag_set name="ルート" num="4"]
+
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[ezbg_change2 name="bg226" wait="BG_NOW"]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		[txtwaitset wait="90"]
+		[batch]
+
+		[blackout_start mode="0" mode2="0" color="0" index="2" alpha="255" count="60"]
+		[txtwaitset wait="60"]
+		[batch]
+
+		[ezbg_change2 name="bg048" wait="BG_NOW"]/*背景：自室*/
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[blackout_end mode="2" mode2="3" index="2" count="60"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		// 日付設定：26日
+		[day_set date="26"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[bgm_play no="11" count="0"]/* ＢＧＭ再生 日常２　朝　 */
+
+		[txtwaitset wait="60"]
+		[batch]
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// 
+		// /*-------------------------------
+		// ●シーンkent_vita_26.00
+		// 場所：病室
+		// 時間：昼
+		// 登場人物（服装）：ケント（私服）
+		// -------------------------------*/
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[voice_play no="032000" count="0"]	/* Tool Insert */
+		[txtwin_info line="3" type="0" pos="2"]
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......#Name[0]."]
+		[maintxt_print text="Is there anything I can do to take care"]
+		[maintxt_print text="of you more properly?"]
+
+		[batch]
+
+		[voice_play no="032001" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="If you wish, I could borrow your key"]
+		[maintxt_print text="and gather a change of clothes."]
+		[maintxt_print text="Or I could go buy some."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="A-A change of clothes?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032002" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Right, a change of..."]
+		[maintxt_print text="Ahh, no... I suppose it's better that I"]
+		[maintxt_print text="not touch a woman's clothing."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032003" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...Just so you understand, I had no"]
+		[maintxt_print text="ulterior motive in this."]
+		[maintxt_print text="Don't misunderstand me."]
+
+		[batch]
+
+		// /*-------------------------------
+		// 『…………』部分で軽く咳払い
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032004" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="............"]
+		[maintxt_print text="I can ask a female acquaintance for"]
+		[maintxt_print text="necessary clothing of your size."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032005" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="It would be easy to ask Sawa or Mine,"]
+		[maintxt_print text="would it not?"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032006" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I can at least convey a message to"]
+		[maintxt_print text="them. I could even ask my mother for"]
+		[maintxt_print text="help, as well."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032007" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Besides that, is there anything else I"]
+		[maintxt_print text="can help with?"]
+
+		[batch]
+
+		[voice_play no="032008" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I will fulfill any request within my"]
+		[maintxt_print text="ability."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Um......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032009" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="It has been a month since we started"]
+		[maintxt_print text="dating..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032010" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I feel that today, we've finally become"]
+		[maintxt_print text="a couple that can communicate"]
+		[maintxt_print text="honestly with each other."]
+
+		[batch]
+
+		[voice_play no="032011" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I have been so inadequate until now."]
+		[maintxt_print text="It is not exactly atonement, but..."]
+		[maintxt_print text="I wish to do something."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="There've been a lot of times"]
+		[maintxt_print text="where I was inadequate as well."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="So there's no need for you"]
+		[maintxt_print text="to do so much for me here,"]
+		[maintxt_print text="Kent..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032012" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="But then, this feeling will remain"]
+		[maintxt_print text="unresolved."]
+
+		[batch]
+
+		[voice_play no="032013" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Anything at all would be fine..."]
+		[maintxt_print text="Please tell me."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I..."]
+
+		[batch]
+
+		// /*選択肢
+		// 【２人でお喋りしたい】＞シーンkent_vita_26.01へ
+		// 【思いつかない】＞シーンkent_vita_26.02へ
+		// */
+
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I'd like us to talk together."]
+		[menutxt_set text="I can't think of anything"]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure1_turn1
+
+		// /*
+		// ＞シーンkent_vita_26.01へ
+		// ＞シーンkent_vita_26.02へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure2"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure3"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure2
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+	*sure2_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.01
+		// 選択肢：【２人でお喋りしたい】
+		// -------------------------------*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I'd like to talk about."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032014" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...Would that really be enough?"]
+		[maintxt_print text="Furthermore, with that request..."]
+
+		[batch]
+
+		[voice_play no="032015" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Um... I believe it would only result in"]
+		[maintxt_print text="my happiness...?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032016" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I'm trying to take care of you. Why are"]
+		[maintxt_print text="you concerned about me?"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Well......"]
+		[maintxt_print text="I really do want to talk with"]
+		[maintxt_print text="you, Kent."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Lately, we haven't had a chance"]
+		[maintxt_print text="to sit down together like this..."]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I guess maybe... You were"]
+		[maintxt_print text="thinking the same thing?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032017" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...I see."]
+		[maintxt_print text="I suppose couples do tend to think the"]
+		[maintxt_print text="same way."]
+
+		[batch]
+
+		[voice_play no="032018" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Then... Anything would be fine. Let's"]
+		[maintxt_print text="talk. Coming up with a topic like this"]
+		[maintxt_print text="is difficult, but......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032019" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I know, how about the subject of my"]
+		[maintxt_print text="potted plants at home?"]
+
+		[batch]
+
+		[voice_play no="032020" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Lately the state of my houseplants"]
+		[maintxt_print text="have not changed much..."]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.03へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+		[return]
+
+
+
+*sure3
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+	*sure3_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.02
+		// 選択肢：【思いつかない】
+		// -------------------------------*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I can't... think of anything to say."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032021" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Then, when you do, don't hesitate to"]
+		[maintxt_print text="tell me."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032022" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Or perhaps it may be possible for me"]
+		[maintxt_print text="to thoroughly carry out each idea that"]
+		[maintxt_print text="comes to mind."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032023" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Hmm......"]
+		[maintxt_print text="Something... I could do..."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032024" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Helping you with homework wouldn't"]
+		[maintxt_print text="be very different from before, would it?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032025" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I know. Tell me of a place you'd like to"]
+		[maintxt_print text="visit once you're discharged."]
+
+		[batch]
+
+		[voice_play no="032026" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I'll research the area and prepare so"]
+		[maintxt_print text="that I can bring you there."]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.03へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+		[return]
+
+
+
+*sure4
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure4_turn1"]
+	[/if]
+
+	*sure4_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.03
+		// 選択肢合流
+		// -------------------------------*/
+		[scenechange4 color="F_BLACK" speed="F_SP_SLOW" dir="F_LEFT"]/*一瞬暗転*/
+
+		// /*-------------------------------
+		// 時間経過
+		// -------------------------------*/
+
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032027" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...This has been bothering me for some"]
+		[maintxt_print text="time now, but..."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032028" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Why have all the nurses who've come"]
+		[maintxt_print text="to check on you looked like they"]
+		[maintxt_print text="wanted to say something?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032029" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="When I ask, they avoid the question."]
+		[maintxt_print text="It can't be my imagination..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032030" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Your condition cannot take a sudden"]
+		[maintxt_print text="turn at this point. The test results have"]
+		[maintxt_print text="already been confirmed."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032031" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="It must be something else..."]
+		[maintxt_print text="Does it not bother you?"]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="That's..."]
+
+		[batch]
+
+		// /*選択肢
+		// 【たぶん、手が……】＞シーンkent_vita_26.04へ
+		// 【面会時間を気にしてるのかも】＞シーンkent_vita_26.05へ
+		// */
+
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="It's probably... our hands..."]
+		[menutxt_set text="Maybe it's the visiting hours?"]
+		[menu_set flag="select"][stop]
+		*sure4_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure4_turn1
+
+		// /*
+		// ＞シーンkent_vita_26.04へ
+		// ＞シーンkent_vita_26.05へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure5"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure6"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure5
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+	*sure5_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.04
+		// 選択肢：【たぶん、手が……】
+		// -------------------------------*/
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I think... they might be wondering"]
+		[maintxt_print text="about our hands."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Once they look down at them..."]
+		[maintxt_print text="Everyone seems to smile at us"]
+		[maintxt_print text="once they see it."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032032" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Our hands......?"]
+		[maintxt_print text="Oh... You've been holding mine."]
+
+		[batch]
+
+		[voice_play no="032033" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Is there some sort of problem with"]
+		[maintxt_print text="your holding my hand?"]
+
+		[batch]
+
+		[voice_play no="032034" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="For me, I would like to stay like this"]
+		[maintxt_print text="as long as it doesn't upset you."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="It doesn't upset me."]
+		[maintxt_print text="...I'd like to stay like this."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032035" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...I see. That's reassuring."]
+		[maintxt_print text="Then, let us continue holding hands"]
+		[maintxt_print text="without concern."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="......Okay."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="But visiting hours will be"]
+		[maintxt_print text="over soon."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="032036" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Visiting hours..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="shock" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032037" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="That's right, visiting hours!"]
+		[maintxt_print text="I'd forgotten. There's a limit to my"]
+		[maintxt_print text="being next to you like this."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032038" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...I'm sorry. I'll have to ask you to let go,"]
+		[maintxt_print text="after all."]
+
+		[batch]
+
+		[voice_play no="032039" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="If visiting hours are close to ending,"]
+		[maintxt_print text="we cannot stay like this."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Ah... I understand..."]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.06へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+		[return]
+
+
+
+*sure6
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+	*sure6_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.05
+		// 選択肢：【面会時間を気にしているのかも】
+		// -------------------------------*/
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="It might be that they're worried"]
+		[maintxt_print text="about visiting hours..."]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="They're..."]
+		[maintxt_print text="Almost over, so..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032040" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="If that were the case, they would have"]
+		[maintxt_print text="told me sooner..."]
+		[maintxt_print text="It has to be something else......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032041" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="No. That aside, there are visiting hours."]
+		[maintxt_print text="I had completely forgotten."]
+
+		[batch]
+
+		[voice_play no="032039" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="If visiting hours are close to ending,"]
+		[maintxt_print text="we cannot stay like this."]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.06へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+		[return]
+
+
+
+*sure7
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure7_turn1"]
+	[/if]
+
+	*sure7_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.06
+		// 選択肢合流
+		// -------------------------------*/
+
+		// /*-------------------------------
+		// 立ち上がるケント
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032042" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="It's become late."]
+		[maintxt_print text="I'd better go back to the front"]
+		[maintxt_print text="desk."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="A-Alright..."]
+
+		[batch]
+
+		// /*-------------------------------
+		// ケントＯＵＴ
+		// -------------------------------*/
+
+		[ezchara_del ch_name="kent_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="(Kent...... He left. So quickly...)"]
+		[maintxt_print text="(I suddenly feel really lonely...)"]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="(But... I guess it'd be selfish of me to"]
+
+		[batch]
+
+		[maintxt_print text="ask him to stay.)"]
+
+		[batch]
+
+		// /*-------------------------------
+		// 時間経過
+		// -------------------------------*/
+		[scenechange4 color="F_BLACK" speed="F_SP_SLOW" dir="F_LEFT"]/*一瞬暗転*/
+
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　 */
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032043" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......I'm back."]
+		[maintxt_print text="Sorry that took a while."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Huh...? Kent?"]
+		[maintxt_print text="W-Welcome back..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032044" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......"]
+		[maintxt_print text="At times, it still feels strange to"]
+		[maintxt_print text="converse with you like this..."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Um... did you forget something?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032045" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="No? Not really..."]
+		[maintxt_print text="...Why do you look so"]
+		[maintxt_print text="surprised?"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Because I thought you'd gone"]
+		[maintxt_print text="home already..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032046" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="What are you saying?"]
+		[maintxt_print text="I just went to get permission"]
+		[maintxt_print text="to stay the night."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Wha-?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032047" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Even if your condition isn't serious,"]
+		[maintxt_print text="I'm still worried."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032048" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I couldn't leave you alone here. Well..."]
+		[maintxt_print text="I admit that I myself didn't wish to"]
+		[maintxt_print text="leave your side."]
+
+		[batch]
+
+		[voice_play no="032049" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Yesterday, I was only given permission"]
+		[maintxt_print text="to just stay the one night."]
+		[maintxt_print text="So the hospital wasn't very happy..."]
+
+		[batch]
+
+		[voice_play no="032050" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="But I was able to convince them."]
+		[maintxt_print text="I mentioned that it would be best to"]
+		[maintxt_print text="consider your mental health, too."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032051" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Your family is far away, and since you"]
+		[maintxt_print text="came here, your memory has been"]
+		[maintxt_print text="unstable and indeterminate."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032052" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I told them you needed someone your"]
+		[maintxt_print text="could trust by your side at a time like"]
+		[maintxt_print text="this."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032053" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I'm not surprised that they allowed me"]
+		[maintxt_print text="to stay on that basis. The information I"]
+		[maintxt_print text="presented is hardly refutable."]
+
+		[batch]
+
+		[voice_play no="032054" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Though they initially appeared grim,"]
+		[maintxt_print text="they couldn't help but agree once I was"]
+		[maintxt_print text="finished."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		// /*選択肢
+		// 【嬉しいです】＞シーンkent_vita_26.07へ
+		// 【申し訳ないです……】＞シーンkent_vita_26.08へ
+		// */
+
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I'm glad."]
+		[menutxt_set text="I'm sorry for the trouble......"]
+		[menu_set flag="select"][stop]
+		*sure7_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure7_turn1
+
+		// /*
+		// ＞シーンkent_vita_26.07へ
+		// ＞シーンkent_vita_26.08へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure8"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure9"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure8
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+	*sure8_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.07
+		// 選択肢：【嬉しいです】
+		// -------------------------------*/
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="...I'm glad."]
+		[maintxt_print text="I feel better when"]
+		[maintxt_print text="you're near me, Kent."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Thank you...!"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032055" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="The way...... you smile so bashfully..."]
+		[maintxt_print text="is very cute."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="......!!"]
+		[maintxt_print text="K-Kent......"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032056" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="From now on, I'll work even harder so"]
+		[maintxt_print text="that I'll be able to see that expression"]
+		[maintxt_print text="on your face more often."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="...B-But, is it really alright for you to"]
+		[maintxt_print text="spend the night tonight?"]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Of course I feel happy about it, but it"]
+		[maintxt_print text="must be a burden on you..."]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.09へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+		[return]
+
+
+
+*sure9
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+	*sure9_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.08
+		// 選択肢：【申し訳ないです……】
+		// -------------------------------*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I'm sorry for the trouble..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032057" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="You don't need to worry about it."]
+		[maintxt_print text="I came to the decision on my own."]
+		[maintxt_print text="Do you mind?"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Of course not."]
+		[maintxt_print text="If I can be with you, Kent..."]
+		[maintxt_print text="I'd be more than happy..."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Thank you."]
+		[maintxt_print text="But...... is it really alright?"]
+
+		[batch]
+
+		// /*
+		// ＞シーンkent_vita_26.09へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+		[return]
+
+
+
+*sure10
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure10_turn0"]
+	[/if]
+
+	*sure10_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●シーンkent_vita_26.09
+		// 選択肢合流
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032058" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I told you it is what I want. It"]
+		[maintxt_print text="was a considerable shock to me"]
+		[maintxt_print text="that you were in an accident."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032059" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Since your arrival here until now,"]
+		[maintxt_print text="I've stumbled over steps 5 times..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032060" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I've missed turning a corner and"]
+		[maintxt_print text="ran into a wall, twice. I almost went"]
+		[maintxt_print text="into the wrong room 3 times..."]
+
+		[batch]
+
+		[voice_play no="032061" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Once I thought I had run into"]
+		[maintxt_print text="someone, and apologized,"]
+		[maintxt_print text="only to find it was a pole."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032062" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="These are mistakes I usually"]
+		[maintxt_print text="never commit."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032063" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Therefore, it can be deduced"]
+		[maintxt_print text="that I am more disturbed than I"]
+		[maintxt_print text="have ever been before."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032064" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Just now as I returned, I almost"]
+		[maintxt_print text="tripped over nothing."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032065" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Even though your condition is"]
+		[maintxt_print text="not life-threatening, my mindset"]
+		[maintxt_print text="won't change so easily, it seems."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032066" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Even if I did return home, I"]
+		[maintxt_print text="probably wouldn't be able to"]
+		[maintxt_print text="manage any sort of work."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032067" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Not only that, I might see the"]
+		[maintxt_print text="next day without the slightest"]
+		[maintxt_print text="bit of sleep."]
+
+		[batch]
+
+		[voice_play no="032068" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...Thinking that something may"]
+		[maintxt_print text="happen to you while I'm gone"]
+		[maintxt_print text="makes me uneasy."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="Kent......"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032069" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I'm restless when I can't feel your"]
+		[maintxt_print text="presence as closely as possible."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032070" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="When I realized visiting hours"]
+		[maintxt_print text="were almost over, an unspeakable"]
+		[maintxt_print text="despair assaulted me."]
+
+		[batch]
+
+		[voice_play no="032071" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Then, the next moment my mind"]
+		[maintxt_print text="became full of trying to figure"]
+		[maintxt_print text="out how I could stay here."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="032072" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="...Are you going to laugh at me?"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="No."]
+		[maintxt_print text="I wouldn't ever laugh at you."]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="I was... thinking something"]
+		[maintxt_print text="similar myself."]
+
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="That if I couldn't be with you,"]
+		[maintxt_print text="I would be unbearably lonely..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="#Name[0]......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="032073" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I'm glad I rushed to your side"]
+		[maintxt_print text="yesterday without thought."]
+
+		[batch]
+
+		[voice_play no="032074" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="No matter what others say,"]
+		[maintxt_print text="I can clearly affirm it now."]
+
+		[batch]
+
+		[voice_play no="032075" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="That is how much of a special"]
+		[maintxt_print text="existence you are to me."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[voice_play no="032076" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="It might be strange of me to"]
+		[maintxt_print text="say something like this, but......"]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="032077" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......Thank you for being safe."]
+
+		[batch]
+
+		[voice_play no="032078" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="Also......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="032079" count="0"]	/* Tool Insert */
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="I love you."]
+		[maintxt_print text="#Name[0], you are more important"]
+		[maintxt_print text="to me than anything else."]
+
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[bgm_stop count="0"]		/* BGM停止 */
+		[day_proc onoff="0"] 
+		[set_clear_flag end_type="ED_MEMORIES" num="3"]
+		[batch]
+
+ 		/*[file_change no="xxx" label="sureXXX"]*/
+ 		[calllua function="game_end"]
+
+
+
