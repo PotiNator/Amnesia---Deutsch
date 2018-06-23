@@ -1,0 +1,769 @@
+/*
+	SHIN16日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＳＨＩＮルート　１６日目
+第１稿						２０１１年０２月１３日　果村
+第２稿　相互監修				２０１１年０２月１８日　望月
+第３稿　チェック　　　　　　　　　　　　　　　　２０１１年０２月２２日　斉藤
+第４稿　改行調整				２０１１年０２月２７日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：shin_16.01.00
+背景：冥土の羊－フロア
+時間：昼
+人物：トーマ、オリオン
+モブ：サワ
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="16"]
+
+		/*-------------------------------
+		テロ『８月１６日』
+		-------------------------------*/
+		[scenechange3 bgname="bg216" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg018" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+
+		/*-------------------------------
+		以下※印、shin_05.01.01から流用
+		-------------------------------*/
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="nikori" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[day_proc onoff="1"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="60463" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="Welcome back, Master."]
+		[maintxt_print text="May I take your order?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60759" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Ugghh, we just can't calm down!"]
+		[maintxt_print text="We really need to go ask that guy Kent for"]
+		[maintxt_print text="some answers!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60760" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I wonder what Shin's doing?"]
+		[maintxt_print text="Why hasn't he contacted you once?"]
+		[maintxt_print text="I wonder if he's okay!?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="gikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60761" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="This isn't the time to be lavishing attention"]
+		[maintxt_print text="on strangers! Argh!"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+		[ef_aicatch bgname="eye018" bgm="55" time="300"]/*アイキャッチ処理：BGMノーマル２*/
+
+		/*-------------------------------
+		背景：Ｒｏｕｔｅ６６
+		時間変化：昼→夕
+		背景：冥土の羊－事務所
+		-------------------------------*/
+		[scenechange3 bgname="bg019" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[day_proc onoff="1"]
+
+		[trchara_up_pt ch_name="toma_s_work" pt_name="a"]
+		[ezchara_stateset ch_name="toma_s_work" pt_name="a" em_name="suma" r="255" g="255" b="255" z_pos="ZPOS_FORE"]
+		[ezchara_app ch_name="toma_s_work" div_num="9" pos="6" dir="FROM_CENTER" app_speed="APP_SPD" delay="NO_DELAY"]
+
+		[trchara_up_pt ch_name="sawa_s" pt_name="a"]
+		[ezchara_stateset ch_name="sawa_s" pt_name="a" em_name="kanasimi" r="255" g="255" b="255" z_pos="ZPOS_FORE"]
+		[ezchara_app ch_name="sawa_s" div_num="9" pos="2" dir="FROM_CENTER" app_speed="APP_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70099" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...Hey, nice work."]
+		[maintxt_print text="But you seem really low-energy today."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60762" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh, it's Sawa."]
+		[maintxt_print text="Hm, I guess she noticed."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70100" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="Do you want to go have tea somewhere?"]
+		[maintxt_print text="I think it's better than being alone."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60763" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="That would be nice."]
+		[maintxt_print text="#Name[0], I think you should relax"]
+		[maintxt_print text="once in a while."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_s_work" pt_name="b" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40151" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Darn, looks like you got here first."]
+		[maintxt_print text="I was thinking about walking her home."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70101" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="Huh? You too, Toma?"]
+		[maintxt_print text="Hmm, maybe I'm just getting in the way."]
+		[batch]
+
+		[flag_set name="サワと会話" num="0"]
+		[flag_set name="トーマと会話" num="0"]
+
+		/*-------------------------------
+		【選択肢】shin_16.01.00
+		サワと一緒にいたい＞シーン：shin_16.01.01へ
+		トーマと一緒にいたい＞シーン：shin_16.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="No, you're not, Sawa. I'm happy to go."]
+		[menutxt_set text="If it's alright, I would like to walk with Toma."]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.01.01
+選択肢：サワと一緒にいたい
+フラグ：サワと会話ＯＮ
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		[day_proc onoff="1"]
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="0"]
+		[ezchara_nextstate2 ch_name="toma_s_work" pt_name="a" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70102" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="Okay! Then let's go relax somewhere"]
+		[maintxt_print text="together."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60764" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It would be kind of rude to Shin to go alone"]
+		[maintxt_print text="somewhere with Toma."]
+		[maintxt_print text="Alright! Let's hang out with Sawa today!"]
+		[batch]
+
+		// フラグON
+		[flag_set name="サワと会話" num="1"]
+
+		/*-------------------------------
+		☆１８日のフリーイベントと共有するため、別ファイルに飛びます
+		-------------------------------*/
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="toma_s_work" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント0612　Amnesia_eyecatch_normal02[済み by山下]
+
+		[ef_aicatch bgname="eye051" bgm="55" time="300"]/*アイキャッチ処理：*/
+
+		/*-- shin_16_18_sawa.01.00へ --*/
+		[flag_set name="switch" num="0"]
+		[file_change no="131" label="sure1"]	/// *** 飛び先確認
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.01.02
+選択肢：トーマと一緒にいたい
+フラグ：トーマと会話ＯＮ
+フラグ：トーマ好意＋１
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+		[day_proc onoff="1"]
+		[ezchara_nextstate2 ch_name="toma_s_work" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="40152" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Alright then, let's go."]
+		[maintxt_print text="Wait there after you get dressed."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60765" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It's really comforting to be around Toma."]
+		[maintxt_print text="He's like your older brother, so I'm sure"]
+		[maintxt_print text="Shin wouldn't mind."]
+		[batch]
+
+		// フラグON
+		[flag_set name="トーマと会話" num="1"]
+		[flag_change name="トーマ好意" num="2"]	// +2に修正 0531
+
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="toma_s_work" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント0612　Amnesia_eyecatch_normal02[済み by山下]
+
+		[ef_aicatch bgname="eye055" bgm="55" time="300"]/*アイキャッチ処理：BGMシリアス１*/
+
+		/*-- shin_16_18_toma.01.00へ --*/
+		[flag_set name="switch" num="0"]
+		[file_change no="131" label="sure9"]	/// *** 飛び先確認
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.01.03
+（別ファイルからの戻り先）
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		/*-------------------------------
+		【条件分岐】shin_16.01.03
+		交際承諾フラグＯＮ＞シーン：shin_16.02.00へ
+		交際承諾フラグＯＦＦ＞シーン：shin_16.01.04へ
+		-------------------------------*/
+		[flag_number name="交際承諾" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure5"]
+		[else]		[thread_change label="sure6"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+/*-------------------------------
+●シーン：shin_16.01.04
+（交際承諾フラグＯＦＦ）
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[ef_aicatch bgname="eye056" bgm="57" time="420"]/*アイキャッチ処理：BGMシリアス１*/
+
+		/*-------------------------------
+		【シンルート１６日目終了】
+		shin_17.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="117" label="sure1"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.02.00
+（交際承諾フラグＯＮ）
+背景：主人公マンション－主人公自室
+時間：夜
+人物：シン、オリオン
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure6_turn1"]
+	[/if]
+
+
+
+//斉藤コメント0612　サワとトーマのイベントから戻る際の時間経過演出追加
+//斉藤コメント0612　テロ：1時間後
+
+
+
+	*sure6_turn0
+
+		[scenechange3 bgname="bg238" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg093" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[day_proc onoff="1"]
+
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60766" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Haah... Today ended without any sort of"]
+		[maintxt_print text="progress."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60767" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Shin has prep today, right?"]
+		[maintxt_print text="He said they let him go to school, but does"]
+		[maintxt_print text="he even have time to study?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="4" type="0" pos="8"]
+
+		[voice_play no="60768" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...I know you're feeling down,"]
+		[maintxt_print text="but try not to get too depressed,"]
+		[maintxt_print text="#Name[0]."]
+		[batch]
+
+		/*-------------------------------
+		演出：電話着信「シン」
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+
+		[subbgm_play no="109" count="0"]
+
+		[phone_call no="RCV_SHIN" pos="MD_RIGHT" speed="PHONE_APP_SPD"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：着信音（連続）
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="...!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60769" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="A call from Shin!"]
+		[maintxt_print text="This is a first, isn't it!?"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：着信音（ここまで）
+		ＳＥ：電話に出るピッという音
+		-------------------------------*/
+		[subbgm_stop count="0"]
+		[batch]
+
+		[strse_play no="45" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="60"]
+
+		[batch]
+
+		/*-------------------------------
+		ボイス加工：携帯電話
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="7"]
+
+		[bgm_play no="18" count="0"]
+
+		[voice_play no="10432" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...It's me. You doing alright?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10433" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Sorry I couldn't contact you."]
+		[maintxt_print text="I messaged you about what's been going on."]
+		[maintxt_print text="...I'm kind of tired."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10434" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I really want to see you."]
+		[maintxt_print text="But..."]
+		[maintxt_print text="I shouldn't be saying that now."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+
+		[voice_play no="10435" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Well, you see..."]
+		[maintxt_print text="The reason I called you is..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+
+		[voice_play no="10436" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The thing I said before about us going out."]
+		[maintxt_print text="I think I should take that back."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+
+		[voice_play no="10437" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I'll stop."]
+		[maintxt_print text="It'll just cause you trouble."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10438" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Just like how my dad killed someone and I"]
+		[maintxt_print text="got persecuted too, if I'm treated like a killer,"]
+		[maintxt_print text="it'll make things harder on you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10439" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You don't even remember liking me, right?"]
+		[maintxt_print text="It's fine. You don't need to force yourself"]
+		[maintxt_print text="to remember."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10440" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="This might be more convenient."]
+		[maintxt_print text="It's okay if you go and fall in love with"]
+		[maintxt_print text="someone else..."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】shin_16.02.00
+		らしくないよ……＞シーン：shin_16.02.01へ
+		私は迷惑じゃないよ＞シーン：shin_16.02.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="This isn't like you..."]
+		[menutxt_set text="But it's not troubling me."]
+		[menu_set flag="select"][stop]
+		*sure6_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure6_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure7"]
+		[elseif estimate="$j == 1"][thread_change label="sure8"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.02.01
+選択肢：らしくないよ……
+-------------------------------*/
+*sure7
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+
+	*sure7_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="60770" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="That's right. It's not like him."]
+		[maintxt_print text="If he's suspected of this, he just"]
+		[maintxt_print text="has to show he's innocent."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="7"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// ※シン／シン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+
+		[voice_play no="10441" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...I see, it's not like me."]
+		[maintxt_print text="Yeah, you're right."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10442" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Sorry for saying something so pathetic."]
+		[maintxt_print text="...I always want to look cool in front of"]
+		[maintxt_print text="you."]
+		[batch]
+
+		/*-------------------------------
+		フラグ：主人公好意＋１
+		-------------------------------*/
+		[flag_change name="主人公好意" num="1"]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10443" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="But I'm serious when I say it's okay for us"]
+		[maintxt_print text="to break up. If it gets to be too painful for"]
+		[maintxt_print text="you, just go ahead."]
+		[batch]
+
+		/*-- shin_16.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure9"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.02.02
+選択肢：私は迷惑じゃないよ
+-------------------------------*/
+*sure8
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+
+	*sure8_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10444" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Idiot."]
+		[maintxt_print text="Look at the reality of the situation you're in."]
+		[maintxt_print text="You can't say that."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+
+		[voice_play no="10445" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...It's okay."]
+		[maintxt_print text="Just let me protect you."]
+		[batch]
+
+		/*-- shin_16.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure9"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_16.02.03
+選択肢後、合流
+-------------------------------*/
+*sure9
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+
+	*sure9_turn0
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10446" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Things have been pretty rough, but"]
+		[maintxt_print text="I've been looking into things, and"]
+		[maintxt_print text="asking questions."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="10447" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Don't worry too much over me."]
+		[maintxt_print text="It'll just stress out Toma and Sawa."]
+		[maintxt_print text="...See you later."]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：電話を切るピッという音
+		演出：電話終了
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[strse_play no="45" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="60"]
+		[batch]
+
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60771" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...He hung up..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60772" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="He seemed really tired, didn't"]
+		[maintxt_print text="he? I wonder what he's been"]
+		[maintxt_print text="looking into..."]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+		[ef_aicatch bgname="eye052" bgm="57" time="420"]/*アイキャッチ処理：BGMシリアス１*/
+
+		/*-------------------------------
+		【シンルート１６日目終了】
+		shin_17.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="117" label="sure1"]
+
+	[return]
+
+
+

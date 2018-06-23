@@ -1,0 +1,1712 @@
+/*
+	SHIN27日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＳＨＩＮルート　２７日目
+第１稿						２０１１年０２月１９日　果村
+第２稿　相互監修				２０１１年０２月２２日　望月
+第３稿　チェック　　　　　　　　　　　　　　　　２０１１年０２月２２日　斉藤
+第４稿　☆情報調整				２０１１年０２月２８日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：shin_27.01.00
+背景：ＢＬ
+時間：昼
+人物：シン、オリオン
+モブ：－
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="27"]
+
+		/*-------------------------------
+		テロ『８月２７日』
+		-------------------------------*/
+		[scenechange3 bgname="bg227" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		[blackout_start mode="0" mode2="0" color="0" index="2" alpha="255" count="120"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		/*-------------------------------
+		立ち絵ナシ
+		-------------------------------*/
+		[subbgm_stop count="0"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="4"]
+
+		[voice_play no="11019" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...Alright, then. Yeah, after work."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="4"]
+
+		[voice_play no="11020" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You know the crossing after you leave the"]
+		[maintxt_print text="cafe and turn the corner?"]
+		[maintxt_print text="Under the highway... Yeah, there."]
+		[batch]
+
+		/*-------------------------------
+		まぶたを開くように背景ＩＮ
+		-------------------------------*/
+		/*-------------------------------
+		背景：シンマンション－シン自室
+		-------------------------------*/
+		[ezbg_change2 name="bg007" wait="BG_NOW"]
+
+		[blackout_end mode="2" mode2="3" index="2" count="60"]
+		[txtwaitset wait="60"]
+		[batch]
+
+		[day_proc onoff="1"] 
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="4"]
+
+		[voice_play no="11021" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Let's meet there."]
+		[maintxt_print text="...Oh, hold on a sec."]
+		[batch]
+
+		/*-------------------------------
+		シンＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="11022" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Are you up?"]
+		[maintxt_print text="I'm gonna leave the room, so just wait a sec"]
+		[maintxt_print text="before you start changing."]
+		[batch]
+		[ezchara_del ch_name="shin_b" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		シンＯＵＴ
+		-------------------------------*/
+		[txtwin_info line="2" type="0" pos="4"]
+
+		[voice_play no="11023" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Sorry, it's nothing."]
+		[maintxt_print text="...Anyway, is that okay with you?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+
+		[voice_play no="11024" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...Alright. See you after work."]
+		[batch]
+
+		[chara_app_pt_alp2 ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61123" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Good morning."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61124" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It seems like Shin was setting up some sort"]
+		[maintxt_print text="of meeting."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61125" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I guess we're going to settle this..."]
+		[maintxt_print text="After work..."]
+		[batch]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		シンＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="11025" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Were you listening?"]
+		[maintxt_print text="Today after work, head over with Toma to"]
+		[maintxt_print text="the crossing by the cafe."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="11026" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="He knows the place I'm talking about."]
+		[maintxt_print text="I doubt anything'll happen, but be careful"]
+		[maintxt_print text="just in case."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="11027" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...Anyway,"]
+		[maintxt_print text="I'll go outside, so get dressed."]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		シンＯＵＴ
+		-------------------------------*/
+//斉藤コメント　ドア閉めＳＥ
+		[strse_play no="155" delay="0"]
+		[strse_waitcut]
+		[batch]	
+
+//斉藤コメント　ウェイト９０
+		[txtwaitset wait="90"]
+		[batch]
+		
+		[chara_app_pt_alp2 ch_name="orion_b" pt_name="02" em_name="mesorasi" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61126" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Yeah..."]
+		[maintxt_print text="I guess I can't blame him..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61127" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="But it seems really harsh to have to say"]
+		[maintxt_print text="something like ”be careful” about"]
+		[maintxt_print text="Toma..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61128" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I'm sure Shin is the one suffering most"]
+		[maintxt_print text="right now, out of everyone..."]
+		[batch]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		背景：冥土の羊－事務所
+		-------------------------------*/
+		[ezbg_change2 name="bg019" wait="BG_NORMAL"]
+
+
+//斉藤コメント　ＢＧＭ　Amnesia_BGM_normal04
+		[bgm_play no="13" count="0"]/* BGM_normal04 */
+
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="40287" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Hey, good morning."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40288" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Did you happen to stay over at Shin's"]
+		[maintxt_print text="last night?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40289" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I thought I heard your voice over the phone"]
+		[maintxt_print text="this morning."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40290" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I dropped by your place on the way here,"]
+		[maintxt_print text="but nobody was home... So, was I right?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40291" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Even without your memories, you still"]
+		[maintxt_print text="choose Shin."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】shin_27.01.00
+		昨日のはそんなんじゃないよ＞シーン：shin_27.01.01へ
+		…………＞シーン：shin_27.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="That wasn't the case yesterday."]
+		[menutxt_set text="..."]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_27.01.01
+選択肢：昨日のはそんなんじゃないよ
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40292" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I see."]
+		[maintxt_print text="But it's true that you trust him enough to"]
+		[maintxt_print text="spend the night alone with him."]
+		[batch]
+
+		/*-- shin_27.01.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_27.01.02
+選択肢：…………
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-- shin_27.01.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：shin_27.01.03
+選択肢後、合流
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+//斉藤コメント　ウェイト９０の後セリフ
+		[txtwin_proc onoff="0"]
+		[txtwaitset wait="90"]
+		[batch]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="40293" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Let's get to work."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="toma_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[day_proc onoff="0"]
+		/*-------------------------------
+		背景：Ｒｏｕｔｅ６６
+		時間変化：昼→夕
+		背景：冥土の羊－事務所
+		-------------------------------*/
+
+//斉藤コメント　以下の背景演出カット
+		//[ezbg_change2 name="bg049" wait="BG_NORMAL"]
+		//[batch]
+		//[ezbg_change2 name="bg153" wait="BG_SLOW"]
+
+//斉藤コメント　代わりにテロ『数時間後』表示。
+		[scenechange3 bgname="bg239" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+		
+		[scenechange3 bgname="bg019" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[chara_app_pt_alp2 ch_name="orion_b" pt_name="02" em_name="sinken" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[day_proc onoff="1"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61129" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Aah... Work's all done."]
+		[maintxt_print text="You have to go to the meeting place."]
+		[batch]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		【条件分岐】shin_27.01.03
+		バッドエンドＯＮ＞シーン：shin_27_bad.01.00へ
+		バッドエンドＯＦＦ＞シーン：shin_27.02.00へ
+		-------------------------------*/
+		/*-------------------------------
+		☆バッドエンドは別ファイルに飛びます
+		-------------------------------*/
+		[flag_number name="バッドエンド" i="j"]
+		[if estimate="$j == 1"][file_change no="128" label="sure1"]
+		[else]		[thread_change label="sure5"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+		
+	[return]
+
+
+
+
+/*-------------------------------
+●シーン：shin_27.02.00
+（ノーマル・ベストエンドルート）
+背景：冥土の羊－事務所
+時間：夕
+人物：シン、トーマ、オリオン
+モブ：－
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure5_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure5_turn2"]
+	[elseif estimate="$i == 3"] [calllua function="stcm2_goto" label="sure5_turn3"]
+	[elseif estimate="$i == 4"] [calllua function="stcm2_goto" label="sure5_turn4"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40294" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="We should go, #Name[0]."]
+		[maintxt_print text="Shin asked me to walk over"]
+		[maintxt_print text="with you."]
+		[batch]
+		[ezchara_del ch_name="toma_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+
+//斉藤コメント　テロ『３０分後』表示。
+		[scenechange3 bgname="bg237" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+
+//斉藤コメント0612　夕方やめます！！！！長いから。[済み by山下]
+
+		/*-------------------------------
+		背景：高架下
+		-------------------------------*/
+		[scenechange3 bgname="bg026" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		/*-------------------------------
+		シンＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="toma_s" pt_name="01" em_name="akire" color="NOON" place="RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40295" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You know..."]
+		[maintxt_print text="You were waiting for me the other day, too."]
+		[maintxt_print text="What happened with prep school?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="40296" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="You're lying about class being canceled, right?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11028" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I can make up for all that exam studying later."]
+		[maintxt_print text="Right now, I can't concentrate because I"]
+		[maintxt_print text="want to settle this."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40297" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="It'll be really funny if you fail your exams"]
+		[maintxt_print text="because of this."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11029" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I'm not going to give you anything to laugh"]
+		[maintxt_print text="about."]
+		[batch]
+
+
+
+	//斉藤コメント　ＢＧＭストップ
+		[bgm_stop count="0"]
+
+		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11030" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...So let's settle this."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-------------------------------
+		☆0228
+		↓修正
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="40298" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Alright. Where should we begin?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11031" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="#Name[0], come over here."]
+		[batch]
+
+		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="toma_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント　背景『高架下ＵＰ・夕方』
+
+//斉藤コメント0612　夕方やめるので今のままでＯＫ[済み by山下]
+
+//斉藤コメント　立ち絵変更。二人ともビッグに。
+
+		[chara_app_pt ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" place="HI_LEFT" dir="FROM_LEFT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		//[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11032" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="On that day, you were the one who hurt her"]
+		[maintxt_print text="when she was collapsed at the bottom of the"]
+		[maintxt_print text="cliff, right?"]
+		[batch]
+
+		/*-------------------------------
+		☆0228
+		↑修正
+		-------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01c" em_name="metoji" color="NOON" place="HI_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		//[ezchara_nextstate2 ch_name="toma_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+
+//斉藤コメント　Amnesia_BGM_mystery01
+		[bgm_play no="6" count="0"]
+
+		[voice_play no="40299" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Let me ask you one thing."]
+		[maintxt_print text="Why do you think that?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="4" type="0" pos="5"]
+
+		[voice_play no="11033" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Process of elimination, among other things."]
+		[maintxt_print text="The first thing that bothered me was what"]
+		[maintxt_print text="you said when she was discharged from the"]
+		[maintxt_print text="hospital."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_dis ch_name="toma_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[day_proc onoff="0"]
+		
+		
+		
+//斉藤コメント　回想フラッシュ。
+//斉藤コメント　二日目のトーマのセリフを回想で再生。
+		/*-------------------------------
+		以下※印、shin_02.05.00から流用
+		-------------------------------*/
+		[ef_flash_start bgname="bg018"]/*フラッシュバック開始*/
+		
+		[chara_app_pt ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="0"]
+		[chara_app_pt ch_name="toma_s_work" pt_name="a" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="40002" count="0"]
+		[speaker_set name="Employee" chrid="CHRID_TOMA"]	// ※トーマ／店員
+		[maintxt_print text="Wait, Shin."]
+		[maintxt_print text="She just got out of the hospital yesterday."]
+		[maintxt_print text="Why'd you bring her all the way over here?"]
+		[batch]
+		
+		[ezchara_nextstate2 ch_name="toma_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="40003" count="0"]
+		[speaker_set name="Employee" chrid="CHRID_TOMA"]	// ※トーマ／店員
+		[maintxt_print text="#Name[0], you look kind of pale."]
+		[maintxt_print text="Is your head hurting?"]
+		[batch]
+		
+		[txtwin_proc onoff="0"]
+		[ezchara_dis ch_name="toma_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_dis ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[ef_flash_end bgname="bg327"]/*フラッシュバック終了*/
+
+
+
+		[chara_app_pt ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" place="HI_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="0"]
+		[chara_app_pt ch_name="toma_b" pt_name="01c" em_name="metoji" color="NOON" place="HI_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		//[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11034" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You asked, ”Is your head hurting?”"]
+		[maintxt_print text="Remember that?"]
+		[batch]
+
+		//[ezchara_nextstate2 ch_name="toma_s" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40300" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I don't remember."]
+		[maintxt_print text="Did I? What would be so strange about"]
+		[maintxt_print text="that?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11035" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="It's true she hit her head."]
+		[maintxt_print text="But at first glance, the wounds on her neck"]
+		[maintxt_print text="were the worst."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11036" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="She was bleeding pretty bad, and they even"]
+		[maintxt_print text="said at the hospital that those wounds"]
+		[maintxt_print text="could've been fatal."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11037" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The people at the scene saw that, too."]
+		[maintxt_print text="After she was discharged, everyone"]
+		[maintxt_print text="noticed the bandages around her neck first."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11038" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="So why would you suddenly be so concerned"]
+		[maintxt_print text="about her head, Toma?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40301" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...Because I heard her neck wasn't feeling"]
+		[maintxt_print text="as painful. I figured a blunt hit would cause"]
+		[maintxt_print text="more lasting pain."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11039" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Okay, I see."]
+		[maintxt_print text="Then let's leave it at that."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11040" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Also, about her memories."]
+		[batch]
+		
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure5_turn1
+	
+		/*-------------------------------
+		★若狭　「後は、」→「あとは、」
+		-------------------------------*/ 
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11041" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="She never said a word about regaining"]
+		[maintxt_print text="consciousness at the bottom of the cliff"]
+		[maintxt_print text="before losing her memories."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11042" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="She probably realized I couldn't have gone"]
+		[maintxt_print text="to find her, knowing what happened, so she"]
+		[maintxt_print text="dismissed the memory as nothing."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11043" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Yet it was among the first things she"]
+		[maintxt_print text="remembered after she lost her memories,"]
+		[maintxt_print text="and lost all the preconceptions she had."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11044" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="And she spoke about it directly and openly."]
+		[maintxt_print text="That I had gone and found her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11045" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="But I didn't go."]
+		[maintxt_print text="That means someone she could have"]
+		[maintxt_print text="mistaken as me went and found her."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11046" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="She just mistook that person as"]
+		[maintxt_print text="me."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40302" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Well, let me ask you this."]
+		[maintxt_print text="Is there really no possibility at all that you"]
+		[maintxt_print text="went and found her yourself?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11047" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="None. It's impossible."]
+		[maintxt_print text="If I had gone and done something to her, I'd"]
+		[maintxt_print text="have had blood on my clothes."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11048" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="That blood pattern. There was blood all over"]
+		[maintxt_print text="the place. It's not like she had merely been"]
+		[maintxt_print text="pushed."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11049" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="That person probably tried to pick her up"]
+		[maintxt_print text="while she was covered in blood, and tried"]
+		[maintxt_print text="to carry her on their back."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11050" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="They probably put their hands on the wounds"]
+		[maintxt_print text="on her neck to stop the bleeding."]
+		[maintxt_print text="That's the most likely reaction."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11051" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="But if they did all that, it wouldn't have just"]
+		[maintxt_print text="been their hands that got bloody. They could"]
+		[maintxt_print text="wash their hands, but not their clothes."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="5"]
+
+		[voice_play no="11052" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="And what would happen if they showed up"]
+		[maintxt_print text="back at the lodge looking like that? It would"]
+		[maintxt_print text="have been painfully obvious that they had"]
+		[maintxt_print text="touched her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40303" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="But I don't fit that bill, either."]
+		[maintxt_print text="Everyone knows I didn't find her, and I came"]
+		[maintxt_print text="back to the lodge."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11053" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="But by the time you returned, she had been"]
+		[maintxt_print text="brought back already, and everyone was in"]
+		[maintxt_print text="a complete panic."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="4" type="0" pos="5"]
+
+		[voice_play no="11054" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="If you immediately rushed over to her and"]
+		[maintxt_print text="held her right away, your clothes would be"]
+		[maintxt_print text="bloodied instantly. Nobody would notice or"]
+		[maintxt_print text="care what you looked like a second before."]
+		[batch]
+		
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure5_turn2
+	
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40304" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I see."]
+		[maintxt_print text="At the very least, we know it wasn't you,"]
+		[maintxt_print text="then."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="40305" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="But it still doesn't mean it was me."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11055" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The shoe prints."]
+		[maintxt_print text="If they're taken to the police, they can do"]
+		[maintxt_print text="a comparison."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40306" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I doubt it. The person in question probably"]
+		[maintxt_print text="already disposed of those shoes."]
+		[batch]
+
+//斉藤コメント　ＢＧＭストップ
+		[bgm_stop count="0"]
+
+//斉藤コメント　ウェイト９０
+		[txtwin_proc onoff="0"]
+		[txtwaitset wait="90"]
+		[batch]
+		
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11056" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="That's very suspicious of you to say."]
+		[maintxt_print text="You do know that I took pictures of them"]
+		[maintxt_print text="before they were thrown away, right?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40307" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I guess."]
+		[maintxt_print text="But there's no guarantee that it would serve"]
+		[maintxt_print text="as sufficient proof."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+//斉藤コメント　Amnesia_BGM_mystery02
+		[bgm_play no="7" count="0"]/* BGM?mystery02 */
+
+		[voice_play no="11057" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Then one more thing."]
+		[maintxt_print text="There were two reasons we went back to"]
+		[maintxt_print text="the lodge."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11058" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The first was to help bring back her"]
+		[maintxt_print text="memories."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11059" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The second was to see the culprit go and"]
+		[maintxt_print text="search for evidence."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11060" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="If brought back to the scene of the crime,"]
+		[maintxt_print text="I figured they would go around and check"]
+		[maintxt_print text="if any evidence remained."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40308" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="But the people who found evidence were"]
+		[maintxt_print text="me and Sawa. You don't know who was in"]
+		[maintxt_print text="charge of that search."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11061" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I do know."]
+		[maintxt_print text="I had Sawa record your conversation the"]
+		[maintxt_print text="whole time."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="...!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40309" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Wow."]
+		[maintxt_print text="So you'd actually go that far?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11062" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Sawa helped us out a lot."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11063" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="The reason Sawa argued with you when you"]
+		[maintxt_print text="tried to go dispose of evidence that night"]
+		[maintxt_print text="was because I had her keeping watch."]
+		[batch]
+
+		/*-------------------------------
+		☆0228
+		↓修正
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11064" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="If I was awake in the room with you, you"]
+		[maintxt_print text="would've been too cautious to try and leave."]
+		[maintxt_print text="That's why I asked her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11065" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I asked her to wait for a while, and if"]
+		[maintxt_print text="anyone tried to leave their rooms, to call"]
+		[maintxt_print text="out to them."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61130" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I see!"]
+		[maintxt_print text="So that's why Sawa was up so late, in the"]
+		[maintxt_print text="same clothes she had worn earlier that day!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11066" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...I never thought something like that would"]
+		[maintxt_print text="happen, though. I feel terrible for asking"]
+		[maintxt_print text="her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+//斉藤コメント　ＢＧＭストップ
+		[bgm_stop count="0"]
+		
+		[voice_play no="11067" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Hey, and was that really an accident?"]
+		[maintxt_print text="Are you sure you didn't shove Sawa down"]
+		[maintxt_print text="those stairs?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11068" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Toma."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure5_turn3
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// ※トーマ／トーマ
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-------------------------------
+		ため息
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+//斉藤コメント　Amnesia_BGM_mystery02.wav
+		[bgm_play no="7" count="0"]/* BGM_mystery02 */
+
+		[voice_play no="40310" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...It was an accident."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61131" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Was it really, Toma?"]
+		[maintxt_print text="So he was found trying to dispose of the"]
+		[maintxt_print text="evidence by Sawa...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40311" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I was just worried about you, and I"]
+		[maintxt_print text="didn't pay any attention to Sawa's"]
+		[maintxt_print text="room."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40312" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I saw that you'd finally fallen asleep, but the"]
+		[maintxt_print text="moment I left the room, she called out to me."]
+		[maintxt_print text="I panicked and ended up elbowing her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40313" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I don't think I even hit her that hard,"]
+		[maintxt_print text="though."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40314" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Sawa was probably startled."]
+		[maintxt_print text="She lost her footing, and fell"]
+		[maintxt_print text="down the stairs."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40315" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I was honestly shocked when it happened."]
+		[maintxt_print text="I didn't intend for that to happen at all."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11069" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I think so, too."]
+		[maintxt_print text="Even though you hurt her, you panicked and"]
+		[maintxt_print text="left evidence everywhere."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11070" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Now that I think about it, I doubt you'd ever"]
+		[maintxt_print text="be so cold-blooded to try and cover that up."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40316" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="...I wanted to come forward and apologize."]
+		[maintxt_print text="But I didn't want her to know what I was"]
+		[maintxt_print text="trying to do."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40317" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Now I can finally apologize to Sawa."]
+		[maintxt_print text="Thanks for figuring out it was me, Shin."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11071" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...And?"]
+		[maintxt_print text="What about when you hurt #Name[0]?"]
+		[maintxt_print text="Why'd you do it?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40318" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="That was an accident, too."]
+		[maintxt_print text="I tried to pick her up, but my"]
+		[maintxt_print text="hand slipped."]
+		[batch]
+
+//斉藤コメント0612　ＢＧＭ　ストップ[済み by山下]
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+//斉藤コメント　ウェイト１２０
+		[txtwin_proc onoff="0"]
+		[txtwaitset wait="120"]
+		[batch]
+		
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11072" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="That's a lie."]
+		[batch]
+
+//斉藤コメント　Amnesia_BGM_mystery03　クロスフェード
+//斉藤コメント0612　ＢＧＭ止めるのでクロスしません。[済み by山下]
+		[bgm_play no="8" count="0"]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40319" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm serious."]
+		[maintxt_print text="The reason I didn't admit it was because I"]
+		[maintxt_print text="lost my chance."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40320" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="By the time I made up my mind to admit"]
+		[maintxt_print text="everything and returned to the lodge, it was"]
+		[maintxt_print text="already declared an accident."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40321" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="When she regained consciousness in the"]
+		[maintxt_print text="ambulance, she looked at me and smiled."]
+		[maintxt_print text="And said, ”Thank you.”"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40322" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I couldn't say anything."]
+		[maintxt_print text="If I brought it up again and came forward, it"]
+		[maintxt_print text="would just hurt her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40323" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I made up my mind to carry the burden of"]
+		[maintxt_print text="this crime to my grave."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40324" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Of course, when the suspicion was cast on"]
+		[maintxt_print text="you, Shin, I thought about coming forward"]
+		[maintxt_print text="many times."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40325" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="But I firmly believed that the suspicion"]
+		[maintxt_print text="would be cleared. You were completely"]
+		[maintxt_print text="innocent, after all."]
+		[batch]
+
+		/*-------------------------------
+		☆0227
+		↑修正ここまで
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40326" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="Just so you know, if you did happen to be"]
+		[maintxt_print text="arrested and charged for it, I would have"]
+		[maintxt_print text="talked right away."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11073" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I don't doubt that."]
+		[maintxt_print text="While I was held for questioning, you came"]
+		[maintxt_print text="to protest to the police many times."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11074" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You even helped my mom in writing up a"]
+		[maintxt_print text="petition."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11075" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="I know better than anyone that you"]
+		[maintxt_print text="never intended to have me pay for"]
+		[maintxt_print text="your crimes."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11076" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="All you wanted was for this to be"]
+		[maintxt_print text="passed off as an accident."]
+		[maintxt_print text="You didn't want anyone to be blamed."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11077" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="But that's wrong."]
+		[maintxt_print text="Even if it was for just a moment, you"]
+		[maintxt_print text="had malicious intent."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure5_turn4
+	
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11078" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You can't just pretend that"]
+		[maintxt_print text="didn't happen."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40327" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I can."]
+		[maintxt_print text="Shin, you might have evidence of the crime,"]
+		[maintxt_print text="but not of the motive."]
+		[batch]
+
+
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="40328" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="I'm always going to say it was an accident."]
+		[maintxt_print text="I'm sorry for trying to hide it, but I didn't hurt"]
+		[maintxt_print text="her out of malice."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="40329" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="There's no reason at all why I would want to"]
+		[maintxt_print text="hurt her."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="11079" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="There is."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="11080" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="#Name[0], remember."]
+		[maintxt_print text="What happened back then?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11081" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="What did you say?"]
+		[maintxt_print text="And what happened because of it?"]
+		[maintxt_print text="Think back."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="11082" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Do you really intend to just turn a blind eye"]
+		[maintxt_print text="to something you don't want to see?"]
+		[maintxt_print text="Is that really okay!?"]
+		[batch]
+
+		[txtwin_info line="3" type="2" pos="5"]
+
+		[voice_play no="11083" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="You won't be able to move on!"]
+		[maintxt_print text="Is your relationship right now so important?"]
+		[maintxt_print text="You can't destroy that!?"]
+		[batch]
+
+		[txtwin_info line="1" type="2" pos="5"]
+
+		[voice_play no="11084" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="Remember!!"]
+		[batch]
+
+//		（……シン……）
+//		（……あの時……）
+//		（あの時私が見たものは……）
+
+		[txtwin_proc onoff="0"]
+
+		[blackout_start mode="0" mode2="0" color="F_BLACK" index="2" alpha="120" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		/* ノベルスタート */
+		[novel_st shadow="1"]
+		[novel_pos x="375" y="433"]
+		
+		[maintxt_print text="...Shin..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+		
+		[maintxt_print text="...Back then..."]
+		[batch]
+		
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="What I saw was..."]
+		[batch]
+
+		/* ノベル終了 */
+		[novel_end]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+
+//斉藤コメント　ＢＧＭストップ
+		[bgm_stop count="0"]
+
+		[day_proc onoff="0"] 
+		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="toma_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+	
+		/*-------------------------------
+		演出：ＦＬ＆ＯＬ（過去の記憶フラッシュバック）
+		背景：ＢＬ
+		-------------------------------*/
+		[ef_flash_start bgname="bg_black"]/*フラッシュバック開始*/
+		/*-------------------------------
+		ボイス加工：過去の声
+		-------------------------------*/
+		/*-------------------------------
+		以下※印、shin_02.07.02から流用
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="6"]
+
+		[voice_play no="10292" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// ※シン／シン
+		[maintxt_print text="#Name[0]...!"]
+		[maintxt_print text="There you are!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="6"]
+
+		[voice_play no="10293" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// ※シン／シン
+		[maintxt_print text="Are you okay?"]
+		[maintxt_print text="Can you stand up...?"]
+		[batch]
+
+		/*-------------------------------
+		ゆっくりと目を開くように背景ＩＮ
+		-------------------------------*/
+		/*-------------------------------
+		背景：森（夜・過去・画面にじみ）
+		-------------------------------*/
+		[ezbg_change2 name="bg163" wait="BG_NOW"]
+
+		/*-------------------------------
+		シンＩＮ
+		-------------------------------*/
+
+
+//斉藤コメント　ここのシンですが、1枚絵に差し替えます。
+		//[ezbg_change2 name="bg" wait="BG_NORMAL"]//仮素材
+
+//斉藤コメント0612　変えません[済み by山下]
+
+		[chara_app_pt ch_name="shin_b" pt_name="01" em_name="suma" color="NIGHT" place="MD_RIGHT" dir="FROM_RIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="Shin..."]
+		[maintxt_print text="You came for me..."]
+		[batch]
+		
+		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント　ゆっくり画面ＢＬに。
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		/*-------------------------------
+		【条件分岐】shin_27.02.00
+		ベストエンドＯＮ＞シーン：shin_27_best.01.00へ
+		バッドエンドＯＦＦ＞シーン：shin_27_normal.01.00へ
+		-------------------------------*/
+		/*-------------------------------
+		☆ベスト／ノーマルエンド分岐。別ファイルに飛びます
+		-------------------------------*/
+		[flag_number name="ベストエンド" i="j"]
+		[if estimate="$j == 1"][file_change no="130" label="sure1"]
+		[else]		[file_change no="129" label="sure1"]
+		[/if]
+		
+		[flag_set name="switch" num="0"]
+
+	[return]
+

@@ -1,0 +1,1703 @@
+/*
+	01AMNESIA_共通OP＠ＤＦ修正最新.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　全ルート共通オープニング
+第１稿						２０１０年１１月０８日　果村
+第２稿	修正指示				２０１０年１１月１０日　斉藤
+第３稿	修正					２０１０年１１月１０日　果村
+第４稿	加筆修正				２０１０年１１月１０日　斉藤
+第５稿	微修正					２０１０年１１月１８日　果村
+第６稿	全体的に加筆修正			２０１０年１２月０３日　果村
+第７稿	アドベンチャーモードの選択肢追加	２０１０年１２月０７日　果村
+第８稿		★1214チェック＆加筆修正	２０１０年１２月１４日　斉藤
+第９稿		最終ボイス調整・修正		２０１１年０２月０５日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：am_01.01.00
+背景：ＢＬ
+時間：昼
+人物：オリオン
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		// 間
+		[txtwaitset wait="120"]
+		[batch]
+
+		/*-------------------------------
+		演出：ゆっくり目を開けるような感じ
+		-------------------------------*/
+		/*-------------------------------
+		背景：主人公の部屋
+		ゆっくりまぶたを開くようにＩＮ
+		-------------------------------*/
+		[ezbg_change2 name="bg036" wait="BG_NOW"]
+		[batch]
+
+		[blackout_end mode="2" mode2="3" index="2" count="120"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		/*-------------------------------
+		画面演出で『上下左右スクロール』
+		部屋を見渡している体。
+		-------------------------------*/
+		// 鳥の鳴き声
+		[subbgm_play no="106" count="0"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60135" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="Ah, #Name[0]."]
+		[maintxt_print text="Are you awake?"]
+		[batch]
+
+		[subbgm_stop count="0"]
+
+		/*-------------------------------
+		オリオンＩＮ
+		-------------------------------*/
+		[bgm_play no="11" count="0"]
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="nikori" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60136" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="How do you feel? Does it hurt anywhere?"]
+		[maintxt_print text="Can you see me?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】am_01.01.00
+		オリオン……＞シーン：am_01.01.01へ
+		虫……＞シーン：am_01.01.02へ
+		どなたですか……？＞シーン：am_01.01.03へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Orion..."]
+		[menutxt_set text="A... bug......"]
+		[menutxt_set text="Who are you?"]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[elseif estimate="$j == 2"][thread_change label="sure4"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.01.01
+選択肢：オリオン……
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60137" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh, good."]
+		[maintxt_print text="You still remembered what we talked about"]
+		[maintxt_print text="in between worlds."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60138" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="And you look like you're fine."]
+		[maintxt_print text="I'm relieved! For now, at least."]
+		[batch]
+
+		/*-- am_01.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.01.02
+選択肢：虫……
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="megaten" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60139" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="Um."]
+		[maintxt_print text="You're joking, right?"]
+		[batch]
+
+		/*-------------------------------
+		引きつった笑い
+		-------------------------------*/
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60140" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="You really are something."]
+		[maintxt_print text="To be so calm about it..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60141" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="I'm surprised you can joke around after just"]
+		[maintxt_print text="waking up here like this."]
+		[batch]
+
+		/*-- am_01.01.04へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.01.01
+選択肢：どなたですか……？
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="megaten" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60142" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="Give me a break..."]
+		[batch]
+
+		/*-------------------------------
+		怒り笑い
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="gikari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60143" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="If you're serious, then you'd better hit the"]
+		[maintxt_print text="reset button and choose ”NEW GAME,”"]
+		[maintxt_print text="okay?"]
+		[batch]
+
+		/*-- am_01.01.04へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.01.04
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60144" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// オリオン／？？？
+		[maintxt_print text="......Alright, enough fooling around."]
+		[maintxt_print text="I'll just tell you again."]
+		[maintxt_print text="My name is Orion..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60145" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You remember, right?"]
+		[maintxt_print text="I'm going to be your spirit partner from now"]
+		[maintxt_print text="on, so let's get going!"]
+		[batch]
+
+		/*-- am_01.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure6"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.02.00
+背景：主人公の部屋
+時間：昼
+人物：オリオン
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure6_turn1"]
+	[/if]
+
+
+	*sure6_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60146" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Now then..."]
+		[maintxt_print text="We were going to talk to your family first,"]
+		[maintxt_print text="right?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60147" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hearing information from your family would"]
+		[maintxt_print text="fill in the blanks in your memories."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60148" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="But the only problem is..."]
+		[batch]
+
+		/*-------------------------------
+		明るく
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[txtwaitset wait="60"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60149" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It looks like you live here in this place all by"]
+		[maintxt_print text="yourself!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60150" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You see, while you were sleeping, I took a"]
+		[maintxt_print text="look around."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60151" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It looks to me like your place is a studio"]
+		[maintxt_print text="apartment."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60152" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Nice lighting, large storage space, separate"]
+		[maintxt_print text="bathroom, indoor laundry, and the building's"]
+		[maintxt_print text="not too old."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60154" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="There's an intercom with a monitor, and from"]
+		[maintxt_print text="this button here, I'd say your apartment unit"]
+		[maintxt_print text="has its own auto-lock and code."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60155" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Looks like the security's pretty good."]
+		[batch]
+
+		/*-------------------------------
+		☆果村1203
+		イッキでモニター越しに会話する場面があったのでオートロックと説明したのですが
+		トーマルートで問題あればここ修正します
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60156" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Just judging from your appearance..."]
+		[maintxt_print text="You seem to be of either high school or"]
+		[maintxt_print text="college age......"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60159" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="The problem is that you have no relatives"]
+		[maintxt_print text="nearby to talk to."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60160" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I don't know if you're just living alone"]
+		[maintxt_print text="for now, or if you're all alone in this"]
+		[maintxt_print text="world..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60161" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hey, how does it feel when you look"]
+		[maintxt_print text="around your room?"]
+		[maintxt_print text="Can you remember anything?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】am_01.02.00
+		何も思い出せない……＞シーン：am_01.02.01へ
+		全然見覚えがない……＞シーン：am_01.02.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I can't remember anything."]
+		[menutxt_set text="Nothing looks familiar."]
+		[menu_set flag="select"][stop]
+		*sure6_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure6_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure7"]
+		[elseif estimate="$j == 1"][thread_change label="sure8"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.02.01
+選択肢：何も思い出せない……
+-------------------------------*/
+*sure7
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+
+	*sure7_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60162" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I see..."]
+		[maintxt_print text="I guess it couldn't really be that easy."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60163" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You were sleeping alone with pajamas on, so"]
+		[maintxt_print text="it's pretty clear that you're in your own"]
+		[maintxt_print text="apartment, and that this is your room."]
+		[batch]
+
+		/*-- am_01.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure9"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.02.02
+選択肢：全然見覚えがない……
+-------------------------------*/
+*sure8
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+
+	*sure8_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60164" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Wait."]
+		[maintxt_print text="Is there a possibility that this isn't your room?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60165" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Ugh, if we start going in that direction, we'll"]
+		[maintxt_print text="be going for a while."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60166" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It'd be strange, though, to wear pajamas and"]
+		[maintxt_print text="be sleeping in someone's room."]
+		[batch]
+
+		/*-- am_01.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure9"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.02.03
+選択肢後、合流
+-------------------------------*/
+*sure9
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+
+	*sure9_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60168" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="For now..."]
+		[maintxt_print text="Why don't you look around the room?"]
+		[maintxt_print text="Like in your drawers and stuff!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60169" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I can't touch the human world, so I haven't"]
+		[maintxt_print text="been able to check in there."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60170" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="What I was able to figure out by looking"]
+		[maintxt_print text="around was that you live alone, and that it's"]
+		[maintxt_print text="sometime in August."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60171" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="See?"]
+		[maintxt_print text="Your calendar's at August right now."]
+		[maintxt_print text="For August, the weather's actually pretty nice."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60175" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Anyway..."]
+		[maintxt_print text="See if you can search your room for any clues!"]
+		[batch]
+
+		[flag_set name="選択肢０" num="0"]
+		[flag_set name="選択肢１" num="0"]
+		[flag_set name="選択肢２" num="0"]
+		[flag_set name="選択肢３" num="0"]
+		[flag_set name="選択肢４" num="0"]
+		[flag_set name="選択肢５" num="0"]
+		[flag_set name="選択肢６" num="0"]
+		[flag_set name="選択肢７" num="0"]
+		[flag_set name="選択肢８" num="0"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.00
+背景：主人公の部屋
+時間：昼
+人物：オリオン
+-------------------------------*/
+*sure10
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure10_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure10_turn1"]
+	[/if]
+
+
+	*sure10_turn0
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[ezchara_dis ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch] 
+
+		/*-------------------------------
+		アドベンチャーっぽく、画面をポイントするモード。
+		-------------------------------*/
+		/*-------------------------------
+		【画面ポイント】am_01.03.00
+		引き出しの中＞シーン：am_01.03.01へ
+		両開きの扉の中＞シーン：am_01.03.02へ
+		本棚＞シーン：am_01.03.03へ
+		ベッド＞シーン：am_01.03.04へ
+		エアコン＞シーン：am_01.03.05へ
+		机の上＞シーン：am_01.03.06へ
+		ゴミ箱＞シーン：am_01.03.07へ
+		帽子かけ＞シーン：am_01.03.08へ
+		鞄＞シーン：am_01.03.09へ
+		-------------------------------*/
+		[flag_number name="選択肢０" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Inside the drawers" value="0"]
+		[/if]
+
+		[flag_number name="選択肢１" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Along the double doors" value="1"]
+		[/if]
+		
+		[flag_number name="選択肢２" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Bookshelf" value="2"]
+		[/if]
+
+		[flag_number name="選択肢３" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Bed" value="3"]
+		[/if]
+
+		[flag_number name="選択肢４" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Air conditioner" value="4"]
+		[/if]
+
+		[flag_number name="選択肢５" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="On top of the desk" value="5"]
+		[/if]
+
+		[flag_number name="選択肢６" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Trash can" value="6"]
+		[/if]
+
+		[flag_number name="選択肢７" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Hat stand" value="7"]
+		[/if]
+
+		[flag_number name="選択肢８" i="j"]
+		[if estimate="$j == 0"][menutxt_set_ex text="Bag" value="8"]
+		[/if]
+
+		[menu_set flag="select"][stop]
+		*sure10_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure10_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure11"]
+		[elseif estimate="$j == 1"][thread_change label="sure12"]
+		[elseif estimate="$j == 2"][thread_change label="sure13"]
+		[elseif estimate="$j == 3"][thread_change label="sure14"]
+		[elseif estimate="$j == 4"][thread_change label="sure15"]
+		[elseif estimate="$j == 5"][thread_change label="sure16"]
+		[elseif estimate="$j == 6"][thread_change label="sure17"]
+		[elseif estimate="$j == 7"][thread_change label="sure18"]
+		[elseif estimate="$j == 8"][thread_change label="sure19"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]		
+
+
+
+/*-------------------------------
+●シーン：am_01.03.01
+選択肢：引き出しの中
+-------------------------------*/
+*sure11
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure11_turn0"]
+	[/if]
+
+
+	*sure11_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="sinken" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60176" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Pens, stationery, envelopes..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60177" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="*sigh* ...Nothing here to tell us what kind of"]
+		[maintxt_print text="person you were."]
+		[batch]
+
+		[flag_set name="選択肢０" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.02
+選択肢：両開きの扉の中
+-------------------------------*/
+*sure12
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure12_turn0"]
+	[/if]
+
+
+	*sure12_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60179" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hmm, just random stuff here."]
+		[maintxt_print text="Nothing much to see..."]
+		[maintxt_print text="Hmm?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60180" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="What's this in the back?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60181" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...This is just a girly comic book!"]
+		[maintxt_print text="You don't have to hide this!"]
+		[batch]
+
+		[flag_set name="選択肢１" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.03
+選択肢：本棚
+-------------------------------*/
+*sure13
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure13_turn0"]
+	[/if]
+
+
+	*sure13_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="mesorasi" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60182" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hmmmmm..."]
+		[maintxt_print text="Nothing that looks like an album."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60183" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="If there were pictures, they could trigger"]
+		[maintxt_print text="some strong memories..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60184" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hmm, the rest just looks like a lot of difficult"]
+		[maintxt_print text="books."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60185" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="”Basic Psychology”......"]
+		[maintxt_print text="”Current Clinical Psychology”......"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60186" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Huh."]
+		[maintxt_print text="Were you studying psychology for school?"]
+		[batch]
+
+		[flag_set name="選択肢２" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.04
+選択肢：ベッド
+-------------------------------*/
+*sure14
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure14_turn0"]
+	[/if]
+
+
+	*sure14_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="01" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60187" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It's the bed you were just sleeping"]
+		[maintxt_print text="in."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60188" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Even though you were just sleeping,"]
+		[maintxt_print text="it's so neat!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60189" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Now that I think of it, you instinctively"]
+		[maintxt_print text="made your bed as soon as you woke"]
+		[maintxt_print text="up, huh?"]
+		[batch]
+
+		[flag_set name="選択肢３" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.05
+選択肢：エアコン
+-------------------------------*/
+*sure15
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure15_turn0"]
+	[/if]
+
+
+	*sure15_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="01" em_name="nikori" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60190" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You were sleeping with the air"]
+		[maintxt_print text="conditioner on."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60191" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="That's why it feels so nice in here."]
+		[maintxt_print text="Makes sense."]
+		[batch]
+
+		[flag_set name="選択肢４" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.06
+選択肢：机の上
+-------------------------------*/
+*sure16
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure16_turn0"]
+	[/if]
+
+
+	*sure16_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60192" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Were you working on an essay"]
+		[maintxt_print text="for school?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60193" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh, a notebook! Let's check it out"]
+		[maintxt_print text="later!"]
+		[batch]
+
+		[flag_set name="選択肢５" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.07
+選択肢：ゴミ箱
+-------------------------------*/
+*sure17
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure17_turn0"]
+	[/if]
+
+
+	*sure17_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60194" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hmmm, it's just full of empty snack"]
+		[maintxt_print text="boxes."]
+		[batch]
+
+		[flag_set name="選択肢６" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.08
+選択肢：帽子かけ
+-------------------------------*/
+*sure18
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure18_turn0"]
+	[/if]
+
+
+	*sure18_turn0
+
+		[chara_app_pt ch_name="orion_b" pt_name="01" em_name="ghiki" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60196" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You know..."]
+		[maintxt_print text="No offense, but these hats look kind"]
+		[maintxt_print text="of out of season."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60197" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It's August, so I think you should have"]
+		[maintxt_print text="more summer hats out."]
+		[maintxt_print text="Is it just me?"]
+		[batch]
+
+		[flag_set name="選択肢７" num="1"]
+
+		/*-- am_01.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.03.09
+選択肢：鞄
+-------------------------------*/
+*sure19
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure19_turn0"]
+	[/if]
+
+
+	*sure19_turn0
+
+		[flag_set name="選択肢０" num="0"]
+		[flag_set name="選択肢１" num="0"]
+		[flag_set name="選択肢２" num="0"]
+		[flag_set name="選択肢３" num="0"]
+		[flag_set name="選択肢４" num="0"]
+		[flag_set name="選択肢５" num="0"]
+		[flag_set name="選択肢６" num="0"]
+		[flag_set name="選択肢７" num="0"]
+		[flag_set name="選択肢８" num="0"]
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="odoroki" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60198" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hey!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="gkantan" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60199" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="There's your school ID!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60200" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Alright, this should tell us a lot"]
+		[maintxt_print text="of information."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="............"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		[txtwaitset wait="120"]
+		[batch]
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60201" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It looks like your name was"]
+		[maintxt_print text="exactly as you remembered"]
+		[maintxt_print text="it, after all."]
+		[batch]
+
+		/*-- am_01.04.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure20"]
+
+	[return]
+
+
+
+/*-------------------------------
+★『鞄』を選択しないと次のシーン
+am_01.04.00へは行けません。
+逆に、鞄を選択すれば
+すぐにam_01.04.00へ行きます。
+-------------------------------*/
+/*-------------------------------
+●シーン：am_01.04.00
+背景：主人公の部屋
+時間：昼
+人物：オリオン
+-------------------------------*/
+*sure20
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure20_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure20_turn1"]
+	[/if]
+
+
+	*sure20_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+//		[voice_play no="60202" count="0"]
+		[voice_play no="69202" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Also..."]
+		[maintxt_print text="You're a college student."]
+		[maintxt_print text="First year Psychology major."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60203" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Your school's address is here, too."]
+		[maintxt_print text="Looks like you'll be able to"]
+		[maintxt_print text="keep going to school for now."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60204" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hm? Wait."]
+		[maintxt_print text="It's August right now."]
+		[maintxt_print text="Isn't it summer break, then?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60205" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Huh...? Even though I'm a spirit,"]
+		[maintxt_print text="I seem to know a lot about"]
+		[maintxt_print text="when schools are on break."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60206" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Hee-hee. I'm pretty knowledgeable"]
+		[maintxt_print text="about human life, aren't I?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60208" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Wait! That means..."]
+		[batch]
+
+		/*-------------------------------
+		ニヤっと笑って
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60209" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="We're so lucky!"]
+		[maintxt_print text="You're free during this month!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60210" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="We might get your memories back before"]
+		[maintxt_print text="you're exposed to other people's cruelty"]
+		[maintxt_print text="and greed!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60211" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Meeting more people might help you"]
+		[maintxt_print text="remember, but it'd also be easier to get"]
+		[maintxt_print text="tricked, so..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60212" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="It's really lucky that you can move around"]
+		[maintxt_print text="during summer break like this. Let's shoot"]
+		[maintxt_print text="for the end of the month!"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】am_01.04.00
+		そんなに警戒しなくても……＞シーン：am_01.04.01へ
+		うん、急ごう＞シーン：am_01.04.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I don't mind meeting other people."]
+		[menutxt_set text="Yes, let's hurry."]
+		[menu_set flag="select"][stop]
+		*sure20_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure20_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure21"]
+		[elseif estimate="$j == 1"][thread_change label="sure22"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.04.01
+選択肢：そんなに警戒しなくても……
+-------------------------------*/
+*sure21
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure21_turn0"]
+	[/if]
+
+
+	*sure21_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60213" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You're still saying that?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60214" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Listen, if you keep being so naive, you'll"]
+		[maintxt_print text="be tricked by some terrible human"]
+		[maintxt_print text="sooner than you think."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="kangae" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+//		[voice_play no="60215" count="0"]
+		[voice_play no="69215" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="99% of the human race thinks"]
+		[maintxt_print text="of nothing but satisfying their"]
+		[maintxt_print text="own greed."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+//		[voice_play no="60216" count="0"]
+		[voice_play no="69216" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I've heard lots of scary stories from"]
+		[maintxt_print text="someone who's visited the human"]
+		[maintxt_print text="world before, too."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+//		[voice_play no="60219" count="0"]
+		[voice_play no="69219" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="So don't let your guard down."]
+		[maintxt_print text="Don't let yourself get tricked!"]
+		[batch]
+
+		/*-- am_01.05.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure23"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.04.02
+選択肢：うん、急ごう
+-------------------------------*/
+*sure22
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure22_turn0"]
+	[/if]
+
+
+	*sure22_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60220" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I'll do my best to help."]
+		[maintxt_print text="Let's go for it!"]
+		[batch]
+
+		/*-- am_01.05.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure23"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.05.00
+背景：主人公の部屋
+時間：昼
+人物：オリオン
+-------------------------------*/
+*sure23
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure23_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure23_turn1"]
+	[/if]
+
+
+	*sure23_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60221" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Alright then, let's see..."]
+		[batch]
+
+		/*-------------------------------
+		★斉藤
+		↑ここ、ＴＯＭＡルートのとき気をつけて。
+		-------------------------------*/
+		/*-------------------------------
+		☆果村
+		内容については言及しないことにしました
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60222" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh! I spy a cell phone!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="69223" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="This is it, the ultimate source of info!"]
+		[maintxt_print text="Let's check out what's in it!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="69224" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="You might remember something from your"]
+		[maintxt_print text="phone history!"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】am_01.05.00
+		そうだね、早く見てみよう＞シーン：am_01.05.01へ
+		見るの、少し怖い……＞シーン：am_01.05.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Right, let's hurry and look."]
+		[menutxt_set text="I'm a little scared..."]
+		[menu_set flag="select"][stop]
+		*sure23_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure23_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure24"]
+		[elseif estimate="$j == 1"][thread_change label="sure25"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.05.01
+選択肢：そうだね、早く見てみよう
+-------------------------------*/
+*sure24
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure24_turn0"]
+	[/if]
+
+
+	*sure24_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60226" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="I hope there are clear names in"]
+		[maintxt_print text="there, like ”Mom” or ”Dad”"]
+		[maintxt_print text="or ”My Friend”......"]
+		[batch]
+
+		/*-- am_01.05.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure26"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.05.02
+選択肢：見るの、少し怖い……
+-------------------------------*/
+*sure25
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure25_turn0"]
+	[/if]
+
+
+	*sure25_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60228" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Right... Of course you're scared."]
+		[maintxt_print text="You have no idea what could"]
+		[maintxt_print text="be on here."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="69229" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="But be brave!"]
+		[maintxt_print text="It's necessary in order to get"]
+		[maintxt_print text="your memories back."]
+		[batch]
+
+		/*-- am_01.05.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure26"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：am_01.05.03
+選択肢後、合流
+-------------------------------*/
+*sure26
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure26_turn0"]
+	[/if]
+
+
+	*sure26_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="69231" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Oh, new info already!"]
+		[maintxt_print text="Looks like today's August 1st."]
+		[maintxt_print text="See? It's displayed on the screen."]
+		[batch]
+		
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="69232" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="Alright! We have an entire month"]
+		[maintxt_print text="of summer break!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		/*-------------------------------
+		【条件判断】
+		シンルート＞シーン：shin_01.01.00
+		トーマルート＞シーン：toma_01.01.00
+		イッキルート＞シーン：ikki_01.01.00
+		ケントルート＞シーン：kent_01.01.00
+		ウキョウルート＞シーン：ukyo_01.01.00
+		
+		☆ファイルナンバー確定後に再チェック
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="ルート" i="j"]
+		[if estimate="$j == 1"][file_change no="101" label="sure1"]
+		[elseif estimate="$j == 2"][file_change no="301" label="sure1"]
+		[elseif estimate="$j == 3"][file_change no="201" label="sure1"]
+		[elseif estimate="$j == 4"][file_change no="401" label="sure1"]
+		[elseif estimate="$j == 5"][file_change no="501" label="sure1"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+		[bgm_stop count="0"]
+
+		[blackout_start mode="0" mode2="0" color="0" index="2" alpha="255" count="120"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch] 
+
+	[return]
+
+
+
+/*-------------------------------
+【全ルート共通オープニング終了】
+
+ボイスカウント
+
+オリオン	98
+
+-------------------------------*/
+
