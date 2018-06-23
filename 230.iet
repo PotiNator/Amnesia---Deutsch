@@ -1,0 +1,631 @@
+/*
+	IKKI30日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＩＫＫＩルート　３０日目
+第１稿						２０１１年０１月０１日　果村
+第２稿　　					２０１１年０１月０２日　望月
+第３稿　チェック				２０１１年０１月０５日　斉藤
+第４稿　背景変更			２０１１年０１月０６日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：ikki_30.01.00
+背景：ＢＬ
+時間：－
+人物：－
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="30"]
+
+		/*-------------------------------
+		テロ『８月３０日』
+		-------------------------------*/
+		[scenechange3 bgname="bg230" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+		
+		/*-------------------------------
+		【条件判断】ikki_30.01.00
+		バッドエンドフラグＯＮ＞シーン：ikki_31.01.00へ
+		ベストエンドフラグＯＮ＞シーン：ikki_30.02.00へ
+		どちらもＯＦＦ＞シーン：ikki_31.01.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="バッドエンド" i="j"]
+		[flag_number name="ベストエンド" i="k"]
+		[if estimate="$j == 1"]
+			[day_proc onoff="0"]
+			[file_change no="231" label="sure1"]
+
+		[elseif estimate="$k == 1"][thread_change label="sure2"]
+		[else]			  [file_change no="231" label="sure1"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+☆バッド、ノーマル、ベストでルート分岐します。ベスト以外は日付だけ出して終了です。
+-------------------------------*/
+/*-------------------------------
+●シーン：ikki_30.02.00
+（ベストエンドルート）
+背景：Ｒｏｕｔｅ６６
+時間：夕
+人物：イッキ
+モブ：ＦＣ会員１、ＦＣ会員２、ＦＣ会員３
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure2_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure2_turn2"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure2_turn15"]
+	[/if]
+	
+
+	*sure2_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure2_turn0
+
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[bgm_play no="6" count="0"]/* ＢＧＭ再生 ミステリー１　 */
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+		
+
+//斉藤コメント0616　背景、店の前にしてください。夕方です。【済み：山下】
+
+		[scenechange3 bgname="bg153" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="6" count="0"]/* ＢＧＭ再生 ミステリー１　 */
+		[day_proc onoff="1"]
+		[batch]
+		
+		/*-------------------------------
+		みんな、図星を突かれてひきつった感じで
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+
+		[chara_app_pt ch_name="fun1_s" pt_name="01" em_name="komari" color="EVEN" place="HI_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="101450" count="0"]
+		[speaker_set name="Fan Club Member ＃1" chrid="CHRID_MOB"]	// ＦＣ会員１／ＦＣ会員１
+		[maintxt_print text="What...? No way..."]
+		[maintxt_print text="We wouldn't do something like that..."]
+		[batch]
+
+		[chara_app_pt ch_name="fun2_s" pt_name="01" em_name="komari" color="EVEN" place="HI_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="101534" count="0"]
+		[speaker_set name="Fan Club Member ＃2" chrid="CHRID_MOB"]	// ＦＣ会員２／ＦＣ会員２
+		[maintxt_print text="That's right..."]
+		[maintxt_print text="What are you saying, Ikki...?"]
+		[batch]
+
+		[chara_app_pt ch_name="fun3_s" pt_name="01" em_name="komari" color="EVEN" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="101624" count="0"]
+		[speaker_set name="Fan Club Member ＃3" chrid="CHRID_MOB"]	// ＦＣ会員３／ＦＣ会員３
+		[maintxt_print text="We all just like you, Ikki..."]
+		[batch]
+
+		[ezchara_del ch_name="fun1_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="fun2_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="fun3_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[chara_app_pt ch_name="rika_b" pt_name="01" em_name="komari" color="EVEN" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_del ch_name="rika_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		ＳＥ：壁を殴る音
+		-------------------------------*/
+		[strse_play no="61" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[day_proc onoff="0"]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure2_turn1
+	
+		/*-------------------------------
+		ＣＧ：『cg_ikki13_a』（ＦＣの前で独占宣言）
+		ＦＣの面々とリカを前にして、片手で主人公を抱き締め、
+		片手で壁を思いっきり殴りつけるイッキ。サングラスなし。
+		-------------------------------*/
+		[ezbg_change2 name="cg_ikki13a" wait="BG_NORMAL"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21248" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="It doesn't matter whether it's true or"]
+		[maintxt_print text="not."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="21249" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="I'm going to keep going out with her."]
+		[maintxt_print text="It'll be three months tomorrow, but that"]
+		[maintxt_print text="doesn't matter anymore."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21250" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="And if anybody does anything to hurt her,"]
+		[maintxt_print text="I don't care who it is, I will never forgive"]
+		[maintxt_print text="them."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21251" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="I mean it."]
+		[batch]
+
+		[voice_play no="21252" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...That's all I wanted to say."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="101451" count="0"]
+		[speaker_set name="Fan Club Member ＃1" chrid="CHRID_MOB"]	// ＦＣ会員１／ＦＣ会員１
+		[maintxt_print text="No way... We're all just here"]
+		[maintxt_print text="because we like you..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="101535" count="0"]
+		[speaker_set name="Fan Club Member ＃2" chrid="CHRID_MOB"]	// ＦＣ会員２／ＦＣ会員２
+		[maintxt_print text="We'd never do something"]
+		[maintxt_print text="like trying to hurt"]
+		[maintxt_print text="her..."]
+		[batch]
+
+		[voice_play no="101625" count="0"]
+		[speaker_set name="Fan Club Member ＃3" chrid="CHRID_MOB"]	// ＦＣ会員３／ＦＣ会員３
+		[maintxt_print text="...Also, Ikki..."]
+		[maintxt_print text="Does that mean you won't"]
+		[maintxt_print text="come see us anymore...?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="101452" count="0"]
+		[speaker_set name="Fan Club Member ＃1" chrid="CHRID_MOB"]	// ＦＣ会員１／ＦＣ会員１
+		[maintxt_print text="Ikki..."]
+		[maintxt_print text="We can't see you anymore...?"]
+		[batch]
+
+		/*-------------------------------
+		震えるのを抑えるように
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="110142" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="...Ikki."]
+		[maintxt_print text="We're very sorry for our"]
+		[maintxt_print text="selfish behavior."]
+		[batch]
+
+		[voice_play no="110143" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="We'll be dissolving the fan club."]
+		[maintxt_print text="We won't do anything to interfere"]
+		[maintxt_print text="with you two anymore."]
+		[batch]
+
+		[voice_play no="110144" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="But please understand just one"]
+		[maintxt_print text="thing. We all truly do adore"]
+		[maintxt_print text="you, and..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21253" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="Rika, that's enough."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
+		[maintxt_print text="..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-------------------------------
+		ため息
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21254" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...You'll get permission from her as to"]
+		[maintxt_print text="whether or not I'm going to meet with you in"]
+		[maintxt_print text="the future. If she says no, that means no."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21255" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="My plans with my girlfriend take top priority."]
+		[maintxt_print text="I won't forgive anyone who interferes with"]
+		[maintxt_print text="that."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21256" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Under those conditions, I'll meet with"]
+		[maintxt_print text="you again. I'm grateful that you all have"]
+		[maintxt_print text="such strong feelings for me."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="101453" count="0"]
+		[speaker_set name="Fan Club Member ＃1" chrid="CHRID_MOB"]	// ＦＣ会員１／ＦＣ会員１
+		[maintxt_print text="Really?!"]
+		[batch]
+
+		[voice_play no="101536" count="0"]
+		[speaker_set name="Fan Club Member ＃2" chrid="CHRID_MOB"]	// ＦＣ会員２／ＦＣ会員２
+		[maintxt_print text="Ikki...!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21257" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="However, I won't see you if she doesn't like"]
+		[maintxt_print text="it. If you do anything to her, I'll cut you all"]
+		[maintxt_print text="off completely."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="101626" count="0"]
+		[speaker_set name="Fan Club Member ＃3" chrid="CHRID_MOB"]	// ＦＣ会員３／ＦＣ会員３
+		[maintxt_print text="That's more than enough...!"]
+		[batch]
+
+		[voice_play no="110145" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="...Thank you very much."]
+		[batch]
+
+		[voice_play no="21258" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I still haven't forgiven you."]
+		[batch]
+
+		[voice_play no="110146" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="I know."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure2_turn2
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="110147" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="But you're still showing us such"]
+		[maintxt_print text="consideration... Perhaps we were spoiled a"]
+		[maintxt_print text="little too much by your kindness."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="110148" count="0"]
+		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
+		[maintxt_print text="...Let's go home, everyone."]
+		[batch]
+
+		[voice_play no="101537" count="0"]
+		[speaker_set name="Fan Club Member ＃2" chrid="CHRID_MOB"]	// ＦＣ会員２／ＦＣ会員２
+		[maintxt_print text="...Okay, Rika."]
+		[batch]
+
+		/*-------------------------------
+		リカＯＵＴ
+		-------------------------------*/
+		[bgm_stop count="0"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+//斉藤コメント0616　新しい差分入れてください。【済み：山下】
+
+		/*-------------------------------
+		ＣＧ：『cg_ikki13_b』（微笑んで、目線を主人公に）
+		-------------------------------*/
+		[ezbg_change2 name="cg_ikki13b" wait="BG_NORMAL"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21259" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I'm sorry."]
+		[maintxt_print text="You wanted me to say I'd never see them"]
+		[maintxt_print text="again, right?"]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="21260" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="But the manager said to not make them"]
+		[maintxt_print text="think everything they did was meaningless,"]
+		[maintxt_print text="only that I would dislike them if they"]
+		[maintxt_print text="misbehaved."]
+		[batch]
+
+		/*-------------------------------
+		少し笑って
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="21261" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="Haha, it's like a carrot-and-stick policy."]
+		[maintxt_print text="I wanted to see how it would go."]
+		[maintxt_print text="What did you think?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21262" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I'll protect you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21263" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="I'll make threats, I'll fight, or I'll just use the"]
+		[maintxt_print text="power of love. I'll do everything I can to"]
+		[maintxt_print text="protect you."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21264" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="I also feel kind of sorry for them."]
+		[maintxt_print text="They're all just victims of these eyes,"]
+		[maintxt_print text="too..."]
+		[batch]
+		
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+		/*-------------------------------
+		ＣＧ：ここまで
+		-------------------------------*/
+
+//斉藤コメント0616　背景、店の前です。【済み：山下】
+
+		[ezbg_change2 name="bg153" wait="BG_NORMAL"]
+
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　　　 */
+
+		[day_proc onoff="1"]
+
+		[chara_app_pt ch_name="ikki_s" pt_name="01" em_name="suma" color="EVEN" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21265" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="Anyway, let's go home."]
+		[maintxt_print text="From the front door, with pride."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_s" pt_name="01" em_name="mesorasi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="21266" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="The wall's a little broken..."]
+		[maintxt_print text="I'm sure Waka would get mad if he found"]
+		[maintxt_print text="out..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="90199" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="I was watching."]
+		[batch]
+
+		/*-------------------------------
+		ワカさんＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="suma" color="EVEN" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[ezchara_nextstate2 ch_name="ikki_s" pt_name="01" em_name="odoroki" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_s" pt_name="01" em_name="komari" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21267" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="Oh... Uh... Please take the cost of repairs out"]
+		[maintxt_print text="of my wages."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="metoji" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="90200" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="That's what I intended to do."]
+		[batch]
+
+		/*-------------------------------
+		笑顔
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="hohoemi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90201" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="However, that was an impressive strategy."]
+		[maintxt_print text="A very worthy match."]
+		[batch]
+
+		/*-------------------------------
+		驚き顔
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="ikki_s" pt_name="01" em_name="odoroki" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_s" pt_name="01" em_name="wara" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21268" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Haha."]
+		[maintxt_print text="Thank you."]
+		[batch]
+
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="ikki_s" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント0616　アイキャッチ『店長01』ＢＧＭ無しで。【済み：山下】
+
+		[ef_aicatch bgname="bg384" bgm="999" time="300"]/*アイキャッチ処*/
+
+		/*-- ikki_31.01.00へ --*/
+		[flag_set name="switch" num="0"]
+		[file_change no="231" label="sure1"]
+
+	[return]
+
+
+

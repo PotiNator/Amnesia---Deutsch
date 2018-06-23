@@ -1,0 +1,92 @@
+/*
+	IKKI31日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＩＫＫＩルート　３１日目
+第１稿						２０１１年０１月０１日　果村
+第２稿　チェック				２０１１年０１月０５日　斉藤
+第３稿　背景変更			２０１１年０１月０６日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：ikki_31.01.00
+背景：ＢＬ
+時間：夕
+人物：イッキ
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="31"]
+
+		/*-------------------------------
+		テロ『８月３１日』
+		-------------------------------*/
+		[scenechange3 bgname="bg231" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		/*-------------------------------
+		背景：高架下
+		-------------------------------*/
+		[scenechange3 bgname="bg132" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+		[day_proc onoff="1"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[chara_app_pt ch_name="ikki_b" pt_name="03b" em_name="hohoemi" color="EVEN" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[voice_play no="21269" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Today's the end of August."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[batch]
+
+		/*-------------------------------
+		【条件判断】ikki_31.01.00
+		バッドエンドフラグＯＮ＞ikki_31_bad.01.00へ
+		ベストエンドフラグＯＮ＞シーン：ikki_31_best.02.00へ
+		どちらもＯＦＦ＞シーン：ikki_31_normal.02.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="バッドエンド" i="j"]
+		[flag_number name="ベストエンド" i="k"]
+		[if estimate="$j == 1"][file_change no="233" label="sure1"]
+		[elseif estimate="$k == 1"][file_change no="234" label="sure1"]
+		[else]		  [file_change no="232" label="sure1"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+☆バッド、ノーマル、ベストで別ファイルにルート分岐します。
+-------------------------------*/
