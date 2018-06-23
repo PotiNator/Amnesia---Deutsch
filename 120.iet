@@ -1,0 +1,451 @@
+/*
+	SHIN20日目＠ＤＦ修正.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＳＨＩＮルート　２０日目
+第１稿						２０１１年０２月１４日　果村
+第２稿　相互監修				２０１１年０２月１８日　望月
+第３稿　チェック　　　　　　　　　　　　　　　　２０１１年０２月２２日　斉藤
+第４稿　☆情報調整				２０１１年０２月２７日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：shin_20.01.00
+背景：冥土の羊－事務所
+時間：昼
+人物：トーマ、オリオン
+モブ：ワカさん、サワ、ミネ、オーナー
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure1_turn2"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="20"]
+
+		/*-------------------------------
+		テロ『８月２０日』
+		-------------------------------*/
+		[scenechange3 bgname="bg220" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+		
+		[scenechange3 bgname="bg019" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+
+		[day_proc onoff="1"]
+		[chara_app_pt ch_name="owner_s" pt_name="01" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103330" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     Everyone, would you like to stay at my"]
+		[maintxt_print text="     mountain lodge again?"]
+		[batch]
+
+		[chara_app_pt2 ch_name="sawa_s" pt_name="01" em_name="odoroki" color="NOON" place="HI_RIGHT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[chara_app_pt2 ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" place="HI_LEFT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="70105" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     What?!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90083" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="...My good friend."]
+		[maintxt_print text="     You gathered everyone here to ask"]
+		[maintxt_print text="     something like that?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90084" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="     Shin is still suspected, you should show a"]
+		[maintxt_print text="     little discretion."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103331" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     I asked exactly because Shin is still a"]
+		[maintxt_print text="     suspect."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103332" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     You must all feel bad that your friend has"]
+		[maintxt_print text="     been suspected of this crime."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103333" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     I know it's unpleasant for me. Shin isn't a"]
+		[maintxt_print text="     young man who would do something like"]
+		[maintxt_print text="     that. That's what I firmly believe."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103334" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     However, it seems that the police are"]
+		[maintxt_print text="     suspecting him because of something at the"]
+		[maintxt_print text="     scene of the incident."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103335" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     In that case, wouldn't it be best if we"]
+		[maintxt_print text="     examined the scene ourselves, and proved"]
+		[maintxt_print text="     Shin didn't do it?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103336" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     None of you actually believe that"]
+		[maintxt_print text="     Shin would purposely try to harm"]
+		[maintxt_print text="#Name[0], do you?"]
+		[batch]
+
+		/*-------------------------------
+		☆0227
+		↓修正
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="70106" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     That's true, but still..."]
+		[maintxt_print text="     Even the police haven't solved this."]
+		[maintxt_print text="     what could we possibly do?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103337" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     You can do anything with love, courage, and"]
+		[maintxt_print text="     friendship...!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Everyone" chrid="CHRID_MOB"]	// ※全員／全員
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn1
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="choushou" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103338" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     That was just a joke."]
+		[maintxt_print text="     To be honest, the police haven't devoted"]
+		[maintxt_print text="     much effort to this case."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103339" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     It's highly likely that it was just an accident,"]
+		[maintxt_print text="     and even if it wasn't, it wasn't a very big"]
+		[maintxt_print text="     incident."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103340" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     But regardless of how minor the offense, it's"]
+		[maintxt_print text="     still a big deal to the person suspected."]
+		[maintxt_print text="     Am I right?"]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		[voice_play no="103341" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     In other words, there's still a good chance"]
+		[maintxt_print text="     that we could discover something in our"]
+		[maintxt_print text="     investigation, rather than the police who"]
+		[maintxt_print text="     have shown little effort."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103342" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     If everyone goes to the scene of the"]
+		[maintxt_print text="     incident, you might remember further"]
+		[maintxt_print text="     details about that night."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103343" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     And it's possible that you could begin to"]
+		[maintxt_print text="     grasp the truth behind everything."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="70107" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Well... That's true, I guess."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="103344" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     I'm not going to say we should go tomorrow,"]
+		[maintxt_print text="     but what about the day after?"]
+		[maintxt_print text="     Do you all have time?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103345" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     I'll let you stay at my lodge for free."]
+		[maintxt_print text="     Doesn't sound bad, right?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="owner_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="103346" count="0"]
+		[speaker_set name="Owner" chrid="CHRID_MOB"]	// オーナー／オーナー
+		[maintxt_print text="     We should all go on this mystery vacation"]
+		[maintxt_print text="     together."]
+		[batch]
+
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="toboke" color="NOON" place="HI_LEFT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="80020" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Well, it's not a bad idea... It's not like we're"]
+		[maintxt_print text="     going to search for a criminal, it's just a search"]
+		[maintxt_print text="     for evidence to prove someone's innocence."]
+		[batch]
+
+		/*-------------------------------
+		ニヤリ
+		-------------------------------*/
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="shin_s" pt_name="01" em_name="niyari" color="NOON" place="HI_RIGHT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// ※シン／シン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60859" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Was this part of Shin's plan?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60860" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But it seems like Shin really thinks there's a"]
+		[maintxt_print text="     culprit behind this."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60861" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Does he actually want to search for evidence"]
+		[maintxt_print text="     to find the culprit?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60862" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But the owner said it's a search for evidence"]
+		[maintxt_print text="     to prove Shin's innocence... Was he lying?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60863" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...That actually sounds possible."]
+		[batch]
+
+		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="toma_s" pt_name="01d" em_name="suma" color="NOON" place="HI_LEFT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="40155" count="0"]
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
+		[maintxt_print text="     I guess we'll have to all look"]
+		[maintxt_print text="     out for her, just in case something"]
+		[maintxt_print text="     does happen."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn2
+
+		[ezchara_del ch_name="toma_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" place="HI_LEFT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="0"]
+		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90085" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="     Sheesh, Mr. Owner..."]
+		[maintxt_print text="     If everyone leaves, am I going to have to run"]
+		[maintxt_print text="     the cafe by myself?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="10505" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Sorry about that."]
+		[maintxt_print text="     We'll leave it to you."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="90086" count="0"]
+		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
+		[maintxt_print text="     Well, I suppose it's for you, Shin."]
+		[batch]
+
+		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="sawa_s" pt_name="01" em_name="nikori" color="NOON" place="HI_RIGHT2" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="70108" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I guess I can't help it, I'll go."]
+		[batch]
+		
+		[bgm_stop count="0"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="60864" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Huh, it looks like everyone's pretty eager..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60865" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But what Shin wants to do isn't to look for"]
+		[maintxt_print text="     evidence proving his innocence. He wants"]
+		[maintxt_print text="     evidence proving someone else's guilt."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="60866" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If everyone from the Shinano incident"]
+		[maintxt_print text="     gathers in one place... I wonder if we can"]
+		[maintxt_print text="     really be safe from another accident..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="60867" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="#Name[0]..."]
+		[maintxt_print text="     You're uncertain about this too, right...?"]
+		[batch]
+
+		/*-------------------------------
+		☆0227
+		↑修正ここまで
+		-------------------------------*/
+		[ezchara_del ch_name="owner_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+
+		[ef_aicatch bgname="eye050" bgm="56" time="180"]/*アイキャッチ処理：BGMノーマル３*/
+
+		/*-------------------------------
+		【シンルート２０日目終了】
+		shin_22.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="122" label="sure1"]
+
+	[return]
+
+
+

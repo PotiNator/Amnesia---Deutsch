@@ -1,0 +1,1949 @@
+/*
+	IKKI06日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＩＫＫＩルート　６日目
+第１稿						２０１０年１１月２７日　果村
+第２稿	★1130加筆修正				２０１０年１１月３０日　斉藤
+第３稿	全体に加筆修正				２０１０年１２月１１日　果村
+第４稿	★1220チェック＆加筆修正		２０１０年１２月２０日　斉藤
+第５稿　全体修正				２０１０年１２月２３日　果村
+第６稿　オリオン・選択肢修正　　　　　　　　　　２０１０年１２月２９日　望月
+第７稿　チェック				２０１１年０１月０４日　斉藤
+第８稿　背景変更				２０１１年０１月０６日　果村
+第９稿	オリオンボイス調整・最終修正		２０１１年０２月２１日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：ikki_06.01.00
+背景：ＢＬ
+時間：－
+人物：－
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="6"]
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		【条件判断】ikki_06.01.00
+		モーニングコールＯＮ＞シーン：ikki_06.02.00へ
+		モーニングコールＯＦＦ＞シーン：ikki_06.03.00へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="モーニングcall" i="k"]
+		[if estimate="$k == 0"][thread_change label="sure6"]
+		[elseif estimate="$k == 1"][thread_change label="sure2"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.02.00
+背景：主人公マンション－主人公自室
+時間：昼
+人物：イッキ、オリオン
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+ 	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure2_turn1"]
+	[/if]
+
+
+	*sure2_turn0
+
+		/*-------------------------------
+		ＳＥ：着信音（連続）
+		-------------------------------*/
+		[subbgm_play no="109" count="0"]
+
+		/*-------------------------------
+		テロ『８月６日』
+		-------------------------------*/
+		[scenechange3 bgname="bg206" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="11" count="0"]
+		[day_proc onoff="1"]
+		[batch]
+
+		/*-------------------------------
+		演出：電話着信「イッキュウさん」
+		-------------------------------*/
+		[phone_call no="RCV_IKKYU" pos="CENTER" speed="PHONE_APP_SPD"]
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="kangae" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_target_point_set2 ch_name="orion_b" front="0" target_id="0" x="0" y="-100" size_x="100" size_y="100" size_z="100"]
+		[chara_target_count_set ch_name="orion_b" front="0" target_id="0" count="0"]
+		[chara_target_point_set2 ch_name="orion_b" front="0" target_id="1" x="0" y="-0" size_x="100" size_y="100" size_z="100"]
+		[chara_target_change_pt_set ch_name="orion_b" front="0" target_id="1" point_c="3" color_c="0" size_c="3" angle_c="0"]
+		[chara_target_count_set ch_name="orion_b" front="0" target_id="1" count="60"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61639" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Yawn... It's so noisy."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61640" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Huh? You have a call."]
+		[maintxt_print text="     Why so early in the morning..."]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：着信音（ここまで）
+		ＳＥ：電話に出るピッという音
+		-------------------------------*/
+		[subbgm_stop count="0"]
+
+		[strse_play no="45" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		/*-------------------------------
+		ボイス加工：携帯電話
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="20274" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Good morning. Do you remember?"]
+		[maintxt_print text="     I said before I'd call you one morning"]
+		[maintxt_print text="     when you least expected it."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】ikki_06.02.00
+		覚えてました＞シーン：ikki_06.02.01へ
+		忘れてたので驚きました＞シーン：ikki_06.02.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="No, I remembered..."]
+		[menutxt_set text="Oh right, I did forget. What a surprise..."]
+		[menu_set flag="select"][stop]
+		*sure2_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure2_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure3"]
+		[elseif estimate="$j == 1"][thread_change label="sure4"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.02.01
+選択肢：覚えてました
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="20275" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     What... That's boring."]
+		[maintxt_print text="     Maybe I should have waited"]
+		[maintxt_print text="     a while longer before calling."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61641" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Whaaat?"]
+		[maintxt_print text="     Was I the only one who forgot?"]
+		[batch]
+
+		/*-- ikki_06.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.02.02
+選択肢：忘れてたので驚きました
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="20276" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Heh, then I guess my strategy was a success."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="20277" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     I thought there would be an even better"]
+		[maintxt_print text="     chance of success if I waited longer to"]
+		[maintxt_print text="     call."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="20278" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     But, how should I put it..."]
+		[maintxt_print text="     I actually couldn't wait any longer."]
+		[batch]
+
+		[voice_play no="20279" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     I woke up this morning, and for some"]
+		[maintxt_print text="     reason I wanted to hear your voice."]
+		[batch]
+
+		/*-------------------------------
+		フラグ：主人公好意＋１
+		-------------------------------*/
+		[flag_change name="主人公好意" num="1"]
+		/*-------------------------------
+		からかうように笑って
+		-------------------------------*/
+		[voice_play no="20280" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Just saying."]
+		[maintxt_print text="     Was it exciting for you?"]
+		[batch]
+
+		/*-- ikki_06.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.02.03
+選択肢後、合流
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+  		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="20281" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Anyway, that's all."]
+		[maintxt_print text="     I'll see you at work."]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：電話を切るピッという音
+		演出：電話終了
+		-------------------------------*/
+		[strse_play no="45" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="30"]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61642" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Well then."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61643" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I've got to say he's a diligent boyfriend."]
+		[maintxt_print text="     I wonder if girls like this?"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		/*-- ikki_06.04.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.03.00
+背景：冥土の羊－フロア
+時間：昼
+人物：－
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+
+	*sure6_turn0
+
+		/*-------------------------------
+		テロ『８月６日』
+		-------------------------------*/
+		[scenechange3 bgname="bg206" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		/*-- ikki_06.04.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.04.00
+背景：冥土の羊－フロア
+時間：昼
+人物：イッキ、オリオン
+モブ：サワ
+-------------------------------*/
+*sure7
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure7_turn0"]
+  	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure7_turn1"]
+	[/if]
+
+	*sure7_turn0
+
+		[scenechange3 bgname="bg018" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+		
+		[bgm_play no="10" count="0"]
+
+		[day_proc onoff="1"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="70166" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Excuse me."]
+		[maintxt_print text="     Yes you, the maid over there."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61644" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Uh, looks like she's calling to you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61645" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     That's unusual."]
+		[maintxt_print text="     She's a girl... Why isn't she calling for"]
+		[maintxt_print text="     Ikki?"]
+		[batch]
+
+		/*-------------------------------
+		サワＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="sawa_b" pt_name="01" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70167" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     You're super cute, Miss Maid."]
+		[maintxt_print text="     Would you mind taking a"]
+		[maintxt_print text="     picture with me?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61646" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What!?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70168" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Also, could I shake your hand??"]
+		[maintxt_print text="     And can I get your autograph?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70169" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Oh, and if possible, I'd like to"]
+		[maintxt_print text="     take you home with me! I'd like"]
+		[maintxt_print text="     you to serve me tea at home!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70170" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     You should totally wear that"]
+		[maintxt_print text="     at the next school festival."]
+		[maintxt_print text="     I'm sure you'd be super popular!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70171" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="...Huh?"]
+		[maintxt_print text="     Why are you getting so tense?"]
+		[maintxt_print text="     Are you that surprised?"]
+		[batch]
+
+		[voice_play no="70172" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Hello?"]
+		[maintxt_print text="     Are you alright?"]
+		[maintxt_print text="     You act like you don't know me!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61647" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     We don't. At all."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61648" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But from the way she's acting, it seems like"]
+		[maintxt_print text="     she's a friend of yours."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61649" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Maybe she came here to"]
+		[maintxt_print text="     try and surprise you..."]
+		[maintxt_print text="     Yeah, I'm sure she did."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61650" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Hm, I wonder how close you were?"]
+		[maintxt_print text="     How should you respond?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】ikki_06.04.00
+		今日はどうしたの？＞シーン：ikki_06.04.01へ
+		びっくりしたよー＞シーン：ikki_06.04.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="May I get you anything, Madam?"]
+		[menutxt_set text="What a surprise...!"]
+		[menu_set flag="select"][stop]
+		*sure7_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure7_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure8"]
+		[elseif estimate="$j == 1"][thread_change label="sure9"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.04.01
+選択肢：今日はどうしたの？
+-------------------------------*/
+*sure8
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+
+	*sure8_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70173" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Huh?"]
+		[maintxt_print text="     How cold... I just came to see"]
+		[maintxt_print text="     you in that maid uniform."]
+		[batch]
+
+		/*-------------------------------
+		フラグ：記憶喪失疑惑＋１
+		-------------------------------*/
+		[flag_change name="記憶喪失疑惑" num="1"]
+
+		/*-- ikki_06.04.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.04.02
+選択肢：びっくりしたよー
+-------------------------------*/
+*sure9
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+
+	*sure9_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70174" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Right? I wanted to see you wearing"]
+		[maintxt_print text="     your maid uniform at least once,"]
+		[maintxt_print text="     so I dropped by."]
+		[batch]
+
+		/*-- ikki_06.04.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure10"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.04.03
+選択肢後、合流
+-------------------------------*/
+*sure10
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure10_turn0"]
+	[/if]
+
+
+	*sure10_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70175" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     It's a lot different from the maid uniform I"]
+		[maintxt_print text="     was imagining, but this is good too. It looks"]
+		[maintxt_print text="     really nice."]
+		[batch]
+
+		[voice_play no="70176" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Do you have any regular customers?"]
+		[maintxt_print text="     You know, like people who say"]
+		[maintxt_print text="     they're your fans?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70177" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Or is this place just full of"]
+		[maintxt_print text="     girls trying to get close to"]
+		[maintxt_print text="     Ikki?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70178" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Doesn't that make you jealous?"]
+		[maintxt_print text="     Or are you used to that already?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70179" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     But I'm sure there are customers"]
+		[maintxt_print text="     who come here just for you!"]
+		[maintxt_print text="     You really look good like that!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61651" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Hey, wait up."]
+		[maintxt_print text="     Slow down...!"]
+		[batch]
+
+		[voice_play no="61652" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Stop talking and talking non-stop."]
+		[maintxt_print text="     We can't even process what you're saying."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="70180" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="...?"]
+		[maintxt_print text="     You aren't going along with this very well."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70181" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Oh, sorry."]
+		[maintxt_print text="     Would you get in trouble if you talk to"]
+		[maintxt_print text="     friends during work?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61653" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Yes, that's true, too."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61654" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If you keep talking, the manager would"]
+		[maintxt_print text="     definitely come out here yelling like a"]
+		[maintxt_print text="     drill sergeant...!"]
+		[batch]
+
+		[ezchara_del ch_name="sawa_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-- ikki_06.05.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure11"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.05.00
+背景：冥土の羊－フロア
+時間：昼
+人物：イッキ、オリオン
+モブ：サワ
+-------------------------------*/
+*sure11
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure11_turn0"]
+ 	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure11_turn1"]
+	[/if]
+
+	*sure11_turn0
+
+		[txtwin_info line="2" type="0" pos="3"]
+
+		[voice_play no="20282" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Madam, have you taken a liking to one of"]
+		[maintxt_print text="     our cafe's maids?"]
+		[batch]
+
+		/*-------------------------------
+		イッキＩＮ（バイト制服・サングラスオフ）
+		-------------------------------*/
+		[chara_app_pt ch_name="ikki_s_work" pt_name="a" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61655" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wha...!?"]
+		[maintxt_print text="     It's not the drill sergeant,"]
+		[maintxt_print text="     it's Officer Handsome!"]
+		[batch]
+
+		/*-------------------------------
+		イッキの瞳に魅了されて
+		ほにゃふにゃになるサワ
+		-------------------------------*/
+		[bgm_play no="13" count="0"]/* ＢＧＭ再生 日常４　不穏　 */
+
+		[chara_app_pt ch_name="sawa_s" pt_name="01" em_name="tjito" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="70182" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Huh...? Oh..."]
+		[batch]
+
+		[voice_play no="70183" count="0"]
+		[speaker_set name="???" chrid="CHRID_MOB"]	// サワ／？？？
+		[maintxt_print text="     Um... I... Um..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61656" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wow..."]
+		[maintxt_print text="     He's affecting her, too..."]
+		[batch]
+
+		[voice_play no="61657" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Every time Ikki comes out, this always"]
+		[maintxt_print text="     happens to the girls..."]
+		[batch]
+
+		[voice_play no="61658" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I didn't really expect it to happen to your"]
+		[maintxt_print text="     friend too, though..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="20283" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="#Name[0]..."]
+		[maintxt_print text="     Is she a friend of yours?"]
+		[batch]
+
+		/*-------------------------------
+		↓のリーダ「うーん……」って感じで
+		考えてる演技ください。
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="20284" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Ah, I got it."]
+		[maintxt_print text="     You must be Sawa from her university, right?"]
+		[maintxt_print text="     I've heard a lot about you."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="tmeso" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="70184" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...Oh, yes..."]
+		[maintxt_print text="     That's right, um..."]
+		[maintxt_print text="     You're Ikki, right..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="20285" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     That's right."]
+		[maintxt_print text="     It's nice to meet you."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70185" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     It..."]
+		[maintxt_print text="     It's nice to meet you, too!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70186" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     By the way! I know this is sudden, but do you"]
+		[maintxt_print text="     believe in love at first sight?!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61659" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What!?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61660" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Is your friend hitting on your boyfriend??"]
+		[batch]
+
+		/*-------------------------------
+		軽く笑い
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="20286" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I do."]
+		[batch]
+
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[ezchara_del ch_name="ikki_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[ezeffect_scenechange2 color="F_WHITE" count="4" mode="1" mode2="1"]/*シーンチェンジ用背景変更*/
+
+		[chara_app_pt ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[chara_app_pt ch_name="ikki_s_work" pt_name="a" em_name="wara" color="NOON" place="LEFT" dir="FROM_RIGHT" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="20287" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     But I don't know if this is it."]
+		[maintxt_print text="     For example, if I walk behind you..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="20288" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     So?"]
+		[maintxt_print text="     How do you feel now?"]
+		[batch]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="70187" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...Huh?"]
+		[maintxt_print text="     What was I doing?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61661" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What?! She's back to normal!?"]
+		[batch]
+
+		[ezchara_del ch_name="sawa_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[ezchara_del ch_name="ikki_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[batch]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+
+		[chara_app_pt ch_name="sawa_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[chara_app_pt ch_name="ikki_s_work" pt_name="a" em_name="suma" color="NOON" place="RIGHT" dir="FROM_LEFT" z_pos="ZPOS_FORE" app_speed="APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="20289" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Sorry, I've got a strange condition."]
+		[maintxt_print text="     Everyone who looks at my eyes starts acting"]
+		[maintxt_print text="     all weird."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="gpin" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70188" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     What...?"]
+		[maintxt_print text="     So the rumor was true..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="20290" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     You experienced it firsthand just now."]
+		[maintxt_print text="     But you'll be fine, as long as you don't look at"]
+		[maintxt_print text="     my eyes."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="70189" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I see..."]
+		[maintxt_print text="     This is kind of shocking..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="20291" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     The manager doesn't let me wear sunglasses"]
+		[maintxt_print text="     here because he says I attract customers."]
+		[maintxt_print text="     Sorry, just try to relax."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="20292" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="#Name[0],  I'll talk to the"]
+		[maintxt_print text="     manager, so you can go"]
+		[maintxt_print text="     ahead and chat for a while."]
+		[batch]
+
+		[ezchara_del ch_name="ikki_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61662" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I feel like I was watching some sort of magic"]
+		[maintxt_print text="     show..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61663" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     You know, like where they use hypnosis to"]
+		[maintxt_print text="     make someone who hates mushrooms love"]
+		[maintxt_print text="     them all of a sudden."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61664" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Is this Ikki's"]
+		[maintxt_print text="     ”condition”...?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61665" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     That's way beyond human!"]
+		[maintxt_print text="     How is he able to do that!?"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure11_turn1
+
+
+		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-- ikki_06.06.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure12"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.00
+背景：冥土の羊－フロア
+時間：昼
+人物：オリオン
+モブ：サワ
+-------------------------------*/
+*sure12
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure12_turn0"]
+ 	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure12_turn1"]
+	[/if]
+
+	*sure12_turn0
+
+		[chara_app_pt ch_name="sawa_b" pt_name="01" em_name="tjito" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70190" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Haah, that was surprising."]
+		[maintxt_print text="     I'm sorry, I know he's your boyfriend, but I"]
+		[maintxt_print text="     said something stupid just now."]
+		[batch]
+
+		/*-------------------------------
+		真面目に
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70191" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     But it really felt like I was under a spell or"]
+		[maintxt_print text="     something. No wonder it makes people turn"]
+		[maintxt_print text="     all weird."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70192" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I'm really sorry."]
+		[maintxt_print text="     I really was out of my mind."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="70193" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Are you mad...?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61666" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I don't think you could really get"]
+		[maintxt_print text="     mad after witnessing something"]
+		[maintxt_print text="     like that..."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】ikki_06.06.01
+		大丈夫、気にしてないよ＞シーン：ikki_06.06.02へ
+		好きにならないでね＞シーン：ikki_06.06.03へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="It's okay, don't worry about it."]
+		[menutxt_set text="Just don't fall in love with him."]
+		[menu_set flag="select"][stop]
+		*sure12_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure12_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure13"]
+		[elseif estimate="$j == 1"][thread_change label="sure14"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.02
+選択肢：大丈夫、気にしてないよ
+-------------------------------*/
+*sure13
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure13_turn0"]
+	[/if]
+
+
+	*sure13_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="70194" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...Haah, that's good."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70195" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     But I'm sure you're"]
+		[maintxt_print text="     already used to this."]
+		[batch]
+
+		[voice_play no="61667" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Who knows?"]
+		[maintxt_print text="     The you before might have been used to it."]
+		[batch]
+
+		/*-- ikki_06.06.04へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure15"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.03
+選択肢：好きにならないでね
+-------------------------------*/
+*sure14
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure14_turn0"]
+	[/if]
+
+
+	*sure14_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="gpin" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="70196" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I won't! I won't!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70197" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     And are you really that"]
+		[maintxt_print text="     serious about him?"]
+		[maintxt_print text="     That's unexpected."]
+		[batch]
+
+		[voice_play no="61668" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If the you before really was"]
+		[maintxt_print text="     serious about him, I'd think it"]
+		[maintxt_print text="     was strange, too."]
+		[batch]
+
+		/*-- ikki_06.06.04へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure15"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.04
+選択肢後、合流
+-------------------------------*/
+*sure15
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure15_turn0"]
+  	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure15_turn1"]
+	[/if]
+
+	*sure15_turn0
+
+		/*-------------------------------
+		真面目に
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70198" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...To tell you the truth, saying I wanted to"]
+		[maintxt_print text="     see you in your maid uniform was just an"]
+		[maintxt_print text="     excuse."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61669" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What...?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70199" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I came to see him."]
+		[maintxt_print text="     I just wondered what kind of guy he was,"]
+		[maintxt_print text="     after hearing the rumors."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70200" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     And I was, um..."]
+		[maintxt_print text="     Worried that you might be having trouble."]
+		[batch]
+
+		/*-------------------------------
+		苦笑い
+		-------------------------------*/
+
+//斉藤コメント0616　表情変えました。【済み：山下】
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70201" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I mean, I think that's a good"]
+		[maintxt_print text="     enough excuse to drop by,"]
+		[maintxt_print text="     right?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="gpin" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70202" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Anyway..."]
+		[maintxt_print text="     Are you sure you're really okay?"]
+		[batch]
+
+		[voice_play no="70203" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...That guy's definitely had more than his"]
+		[maintxt_print text="     share of women."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70204" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I thought if I actually met him,"]
+		[maintxt_print text="     I'd be able to tell if that rumor"]
+		[maintxt_print text="     was a lie or not."]
+		[batch]
+
+		[voice_play no="70205" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     So what's the truth?"]
+		[maintxt_print text="     Is that rumor real"]
+		[maintxt_print text="     or not...?"]
+		[batch]
+
+		[voice_play no="61670" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wait a minute."]
+		[maintxt_print text="     What rumor are you talking about?"]
+		[maintxt_print text="     About his ”condition”?"]
+		[batch]
+
+		[voice_play no="61671" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I know that ”condition” is causing some"]
+		[maintxt_print text="     trouble, but I don't think you're having too"]
+		[maintxt_print text="     hard of a time..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61672" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Or could she be talking about a different"]
+		[maintxt_print text="     rumor?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61673" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If she is, then we"]
+		[maintxt_print text="     need to ask her for"]
+		[maintxt_print text="     more details about it!"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】ikki_06.06.04
+		あんな噂って？＞シーン：ikki_06.06.05へ
+		噂のこと、どんな風に聞いてるの？＞シーン：ikki_06.06.06へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Which rumor?"]
+		[menutxt_set text="What rumors have you heard?"]
+		[menu_set flag="select"][stop]
+		*sure15_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure15_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure16"]
+		[elseif estimate="$j == 1"][thread_change label="sure17"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.05
+選択肢：あんな噂って？
+-------------------------------*/
+*sure16
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure16_turn0"]
+	[/if]
+
+
+	*sure16_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70206" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Huh...?"]
+		[maintxt_print text="     Don't you already know? Or are you just"]
+		[maintxt_print text="     dating without thinking too much about it?"]
+		[batch]
+
+		/*-------------------------------
+		フラグ：記憶喪失疑惑＋１
+		-------------------------------*/
+		[flag_change name="記憶喪失疑惑" num="1"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70207" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...I'm starting to seriously get worried about"]
+		[maintxt_print text="     you..."]
+		[batch]
+
+		[voice_play no="61674" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Hmm."]
+		[maintxt_print text="     I think you asked too directly."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70208" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Anyway, the one I hear about the most is"]
+		[maintxt_print text="     THAT one..."]
+		[batch]
+
+		/*-- ikki_06.06.07へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure18"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.06
+選択肢：噂のこと、どんな風に聞いてるの？
+-------------------------------*/
+*sure17
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure17_turn0"]
+	[/if]
+
+
+	*sure17_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70209" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Hmm."]
+		[maintxt_print text="     I've heard a lot of rumors, but the one I hear"]
+		[maintxt_print text="     the most is THAT one..."]
+		[batch]
+
+		/*-- ikki_06.06.07へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure18"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.06.07
+選択肢後、合流
+-------------------------------*/
+*sure18
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure18_turn0"]
+	[/if]
+
+
+	*sure18_turn0
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70210" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I heard that he just goes from one girl he"]
+		[maintxt_print text="     likes to another, breaking up with them"]
+		[maintxt_print text="     after sleeping with them."]
+		[batch]
+
+		[voice_play no="70211" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     He's really nice while you're dating, but he"]
+		[maintxt_print text="     just thinks of it as a fun game to win girls"]
+		[maintxt_print text="     over."]
+		[batch]
+
+//斉藤コメント0616　ＳＥ消去【済み：山下】
+
+		[voice_play no="70212" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I thought the rumor that anyone who looked"]
+		[maintxt_print text="     him in the eye would fall in love with him"]
+		[maintxt_print text="     was definitely fake..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70213" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     But now after meeting him, I know that it's"]
+		[maintxt_print text="     real."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// ※サワ／サワ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70214" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Um, this might be prying a"]
+		[maintxt_print text="     little, but... How far have"]
+		[maintxt_print text="     you two gone?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70215" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Oh, um, sorry. I know you don't like talking"]
+		[maintxt_print text="     about these things."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70216" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     It's just after meeting him today, I started"]
+		[maintxt_print text="     thinking that other rumors might be true,"]
+		[maintxt_print text="     too."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70217" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     He's so smooth with girls, it doesn't even"]
+		[maintxt_print text="     matter that these kinds of rumors are going"]
+		[maintxt_print text="     around."]
+		[batch]
+
+		[voice_play no="70218" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     And if that rumor is true, once he's had his"]
+		[maintxt_print text="     way with you, he might just throw you"]
+		[maintxt_print text="     away."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="70219" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     If you really do like him,"]
+		[maintxt_print text="     you might not want to let him"]
+		[maintxt_print text="     catch you with your guard down..."]
+		[batch]
+
+		[voice_play no="70220" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     It might be ”game over”"]
+		[maintxt_print text="     after he's won YOU over,"]
+		[maintxt_print text="     after all..."]
+		[batch]
+
+		/*-------------------------------
+		明るく装って
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70221" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...I'm sorry."]
+		[maintxt_print text="     I know I just sound nosy."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="70222" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="...And I'm sure you know about this better"]
+		[maintxt_print text="     than anyone. I was just worried."]
+		[maintxt_print text="     Sorry about that."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="70223" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     Oh, it looks like I kept you for a long time."]
+		[maintxt_print text="     I know you're working."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="sawa_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="70224" count="0"]
+		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// サワ／サワ
+		[maintxt_print text="     I'll call you. So you can go back to work."]
+		[batch]
+
+		/*-------------------------------
+		★1130
+		演出：サワＯＵＴ　画面フロアの背景のみ。
+		-------------------------------*/
+		[ezchara_del ch_name="sawa_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61675" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I wonder if that was all true..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61676" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If it is..."]
+		[maintxt_print text="     And if you believed the rumor"]
+		[maintxt_print text="     before losing your memories..."]
+		[batch]
+
+		[voice_play no="61677" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     It's possible that you didn't let him kiss you"]
+		[maintxt_print text="     because you really liked him, and didn't"]
+		[maintxt_print text="     want to be thrown away..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61678" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Hmm..."]
+		[maintxt_print text="     Maybe I'm overthinking it."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61679" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But it's also suspicious that he changed his"]
+		[maintxt_print text="     work shifts to match yours, and how he's"]
+		[maintxt_print text="     holding back on going around with other girls..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61680" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Argh, what a bother!"]
+		[maintxt_print text="     I want to just ask him about it!"]
+		[maintxt_print text="     A full Ikki interrogation!"]
+		[batch]
+
+		/*-------------------------------
+		店長ＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="tencho_b" pt_name="01" em_name="mesorasi" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61681" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...I think you should get back to work."]
+		[maintxt_print text="     The manager's eyes are scary."]
+		[batch]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[ezchara_del ch_name="tencho_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		ＣＧ：バイト中のＳＤ
+		-------------------------------*/
+		/*-------------------------------
+		背景：Ｒｏｕｔｅ６６
+		時間変化：昼→夕
+		-------------------------------*/
+		[scenechange3 bgname="bg046" color="F_BLACK" speed="F_SP_FAST" dir="F_LEFT"]
+		[batch]
+
+		[ezbg_change2 name="bg144" wait="BG_FAST"]
+		[batch]
+
+		/*-- ikki_06.07.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure19"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ikki_06.07.00
+背景：主人公マンション－主人公自室
+時間：夜
+人物：オリオン
+-------------------------------*/
+*sure19
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure19_turn0"]
+	[/if]
+
+
+	*sure19_turn0
+
+		[scenechange3 bgname="bg093" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+
+		[bgm_play no="12" count="0"]/* ＢＧＭ再生 日常３　夕暮れ */
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61682" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Haaaaah...!"]
+		[maintxt_print text="     Good job getting through the day!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="61683" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Still."]
+		[maintxt_print text="     Today sure was full of surprises."]
+		[batch]
+
+		[voice_play no="61684" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     The rumors about Ikki, and the change that"]
+		[maintxt_print text="     happened in Sawa."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61685" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Sawa's reaction was pretty obvious, no"]
+		[maintxt_print text="     matter how you look at it."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="kangae" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61686" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If you look Ikki in the eye, you feel like you're"]
+		[maintxt_print text="     falling in love. That's what Ikki calls his"]
+		[maintxt_print text="     ”condition”..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="61687" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I can totally understand why"]
+		[maintxt_print text="     Ikki would always be wearing"]
+		[maintxt_print text="     sunglasses, in that case..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="61688" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But still."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="61689" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     This might be strange coming from a spirit,"]
+		[maintxt_print text="     but I don't think that condition is possible"]
+		[maintxt_print text="     for a human."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="61690" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     If that power is real, this might be the first"]
+		[maintxt_print text="     time I've ever seen a human with true"]
+		[maintxt_print text="     supernatural powers."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61691" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Could he be using that supernatural power"]
+		[maintxt_print text="     to play around with girls...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61692" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...I think we're finally starting to understand"]
+		[maintxt_print text="     more about Ikki."]
+		[batch]
+
+		[voice_play no="61693" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     There's a rumor that he just throws girls"]
+		[maintxt_print text="     away after sleeping with them, huh..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="61694" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Anyway, I think we should rest for"]
+		[maintxt_print text="     today!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="61695" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     It's probably best to think about tomorrow,"]
+		[maintxt_print text="     tomorrow. Right?"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+//斉藤コメント0616　アイキャッチ主人公のやつに変更して、ＢＧＭもシリアス２に変更してください。【済み：山下】
+
+		[ef_aicatch bgname="eye056" bgm="58" time="480"]/*アイキャッチ処理：BGMシリアス２*/
+
+		/*-- ikki_07.01.00へ --*/
+		[flag_set name="switch" num="0"]
+		[file_change no="207" label="sure1"]
+
+	[return]
+
+
+

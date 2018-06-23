@@ -1,0 +1,731 @@
+/*
+	IKKI31日目_ノーマル.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＩＫＫＩルート　３１日目ノーマルエンド
+第１稿						２０１１年０１月０１日　果村
+第２稿　　			　　　　	２０１１年０１月０２日　望月
+第３稿　チェック＆演出追加			２０１１年０１月０５日　斉藤
+第４稿　背景変更			２０１１年０１月０６日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：ikki_31_normal.01.00
+背景：高架下
+時間：夕
+人物：イッキ
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure1_turn2"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure1_turn15"]
+	[/if]
+	
+
+	*sure1_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure1_turn0
+
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+
+		[day_proc onoff="0"]
+		[bgm_play no="14" count="0"]/* ＢＧＭ再生 感傷１　　　　 */
+		[batch]
+
+		[ezchara_del ch_name="ikki_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[batch]
+
+		[chara_app_pt ch_name="ikki_b" pt_name="01" em_name="komari" color="EVEN" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="21270" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Are you going back to your dad's place?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="21271" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     It's not like you can live with me."]
+		[maintxt_print text="     Even if I said I wouldn't do anything, you"]
+		[maintxt_print text="     can't believe me completely, can you?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="metoji" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="21272" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     But still..."]
+		[maintxt_print text="     I guess three months is too short of a time"]
+		[maintxt_print text="     to decide your future."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="suma" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21273" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Maybe things would have been different if"]
+		[maintxt_print text="     we had more time. Don't you agree?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="mesorasi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="4" type="0" pos="2"]
+
+		[voice_play no="21274" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     You know... I waited around for two months"]
+		[maintxt_print text="     after figuring out that I liked you, before"]
+		[maintxt_print text="     even bringing up the idea that we should go"]
+		[maintxt_print text="     out."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="wara" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21275" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...And I really was thinking about the"]
+		[maintxt_print text="     future."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="21276" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     I wanted to be with you forever."]
+		[maintxt_print text="     I wanted to be by your side, even if I couldn't"]
+		[maintxt_print text="     touch you."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="tere2" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="21277" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...Haah. It's kind of embarrassing saying this"]
+		[maintxt_print text="     now, seeing how I couldn't get you to"]
+		[maintxt_print text="     figure it out after three whole months."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="metoji" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="kanasimi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]	// karakuri-ism 海外版追加
+
+		[voice_play no="21278" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I guess now we'll be two hours apart by"]
+		[maintxt_print text="     train."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I'm sorry..."]
+		[batch]
+
+		/*-------------------------------
+		微笑み
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="hohoemi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="21279" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...All I really wanted was for you to say it's"]
+		[maintxt_print text="     okay."]
+		[batch]
+
+		[ezchara_del ch_name="ikki_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		背景：高層ビルの見える路地（夕・回想）
+		-------------------------------*/
+		[ef_flash_start bgname="bg027"]/*フラッシュバック開始*/
+		[txtwin_proc onoff="0"]
+
+		/*-------------------------------
+		以下※印、ikki_02.07.02から流用
+		-------------------------------*/
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="31503" count="0"]
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="     To sum it up..."]
+		[maintxt_print text="     He's living in despair."]
+		[maintxt_print text="     Now then, what do you think?"]
+		[batch]
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		背景：高架下
+		-------------------------------*/
+		[ef_flash_end bgname="bg132"]/*フラッシュバック終了*/
+
+		[chara_app_pt ch_name="ikki_b" pt_name="01" em_name="komari" color="EVEN" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+/*
+		（私は、イッキさんを絶望から
+		救ってあげられなかった……）
+		（そこまでの存在に
+		なれなかった……）
+*/
+
+		[txtwin_proc onoff="0"]
+
+		[blackout_start mode="0" mode2="0" color="F_BLACK" index="2" alpha="120" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		[novel_st shadow="1"]
+		[novel_pos x="375" y="192"]
+
+		[batch]
+
+		[maintxt_print text="     I couldn't help save Ikki from"]
+		[maintxt_print text="     his despair..."]
+
+		[batch]
+
+		[maintxt_print text="     I couldn't be the one to be there"]
+		[maintxt_print text="     for him like that..."]
+
+		[batch]
+
+		/* ノベル終了 */
+		[novel_end]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...I'm sorry..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="kanasimi" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+		[ezchara_del ch_name="ikki_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="0"]
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[day_proc onoff="0"]
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		/*-------------------------------
+		背景：ＢＬ
+		間の後、
+		テロ『２週間後』
+		-------------------------------*/
+		[scenechange3 bgname="bg241" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[txtwaitset wait="30"] 
+		[batch]
+		
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		[ezbg_change name="bg_black" wait="BG_NORMAL"]
+
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_ikki14_a』（ノーマルＥＤ）
+		特急列車に乗って父親の家へ向かう主人公と、見送るイッキ。
+		主人公が乗り口の上に立っていて、イッキがホームにいる状態で話しています。
+		手を握っていて、かなり近い距離。サングラスなし。
+		-------------------------------*/
+		[bg_target_point_set front="1" target_id="0" x="150" y="24" size_z="140"]
+		[bg_target_count_set front="1" target_id="0" count="0"]
+		[bg_target_point_set front="1" target_id="1" x="0" y="0" size_z="100"]
+		[bg_target_count_set front="1" target_id="1" count="60"]
+		[ezbg_change name="cg_ikki14a" wait="BG_NORMAL"]
+
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　　　 */
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21280" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Don't look like you're about to cry."]
+		[maintxt_print text="     It's not like we'll never meet again."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21281" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     If you want to meet, just let me know."]
+		[maintxt_print text="     If you want to hear my voice, give me a"]
+		[maintxt_print text="     call."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21282" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     I'll be happy to accept you, whether it's"]
+		[maintxt_print text="     day or night."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...Okay..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21283" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...But I won't be the one to call or contact"]
+		[maintxt_print text="     you."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...!"]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Why... not...?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21284" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Because you didn't choose me."]
+		[maintxt_print text="     I get that. I would be pathetic if I just kept"]
+		[maintxt_print text="     trying to win you over."]
+		[batch]
+
+		[voice_play no="21285" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     We won't be able to work together, we'll be"]
+		[maintxt_print text="     attending different schools... It wouldn't be"]
+		[maintxt_print text="     strange for our feelings to drift apart, too."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21286" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     If you want to distance yourself, that's totally"]
+		[maintxt_print text="     up to you."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21287" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...It's okay to forget about me."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     But I won't forget you..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn2
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21288" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     You should go inside."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I won't forget..."]
+		[batch]
+
+		[voice_play no="21289" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Yeah, I guess."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21290" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Oh..."]
+		[maintxt_print text="     I'll probably end up forgetting eventually..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21291" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Eventually..."]
+		[maintxt_print text="     Maybe after about ten years or so."]
+		[maintxt_print text="     Probably..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="..."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...I'm sorry..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="21292" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Don't apologize anymore."]
+		[maintxt_print text="     I'm not doing this to try and make you feel"]
+		[maintxt_print text="     bad."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21293" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Just give me a call."]
+		[maintxt_print text="     When you feel like it."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_ikki14_b』（おでこにキス）
+		-------------------------------*/
+		[ezbg_change2 name="cg_ikki14b" wait="BG_NORMAL"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21294" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="     Anyway, take care."]
+		[maintxt_print text="     Maybe we'll meet again."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="21295" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
+		[maintxt_print text="...I really loved you."]
+		[batch]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...!"]
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+//斉藤コメント0616　ＢＬでウェイト９０【済み：山下】
+
+		/*-------------------------------
+		ＦＯ
+		画面ＢＬ
+		ＡＺＵＳＡのドアが閉まる音。
+		電車の汽笛？の音が響く。
+		そしてイッキのセリフ。
+		画面ＢＬでボイスのみ。
+		-------------------------------*/
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[batch]
+
+		[txtwaitset wait="90"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="21293" count="0"]
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// ※イッキ／イッキ
+		[maintxt_print text="     Just give me a call."]
+		[maintxt_print text="     When you feel like it."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-------------------------------
+		ＦＯ
+		少し間の後
+		テロ：１ヶ月後
+		-------------------------------*/
+		[bgm_stop count="0"]		/* BGM停止 */
+
+		[scenechange3 bgname="bg243" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		/*-------------------------------
+		演出：メール着信「主＃＃＃＃」
+		-------------------------------*/
+		[strse_play no="124" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+/*
+		【件名】お元気ですか？
+		【Ｔｏ】イッキさん
+		こっちはとても空気が澄んでます。
+		ＳＹＵＴＯより少し寒いみたい。
+		でも、すっごく星が綺麗なんですよ。
+		ＳＨＩＮＡＮＯの星ほどではない
+		ですけど……。
+		今度お時間のある時に来て下さい。
+		一緒に見たいです。
+		待ってます。
+*/
+
+		[ezbg_change2 name="bg_white" wait="BG_SLOW"]
+
+		[batch]
+
+		[blackout_start mode="0" mode2="0" color="F_BLACK" index="2" alpha="120" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		[novel_st shadow="1"]
+		[novel_pos x="375" y="192"]
+
+		[maintxt_print text="[Subject] How are you?"]
+		[maintxt_print text="[To] Ikki"]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="     The air here is really clear."]
+		[maintxt_print text="     It's a little colder than Tokyo."]
+		[batch]
+		[maintxt_print text="     But the stars are very beautiful."]
+		[maintxt_print text="     Although it's not as nice as"]
+		[maintxt_print text="     in Shinano... Please come visit"]
+
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[batch]
+
+		[maintxt_print text="     when you have some time."]
+		[maintxt_print text="     I'd like to see them with you."]
+		[maintxt_print text="     I'll be waiting."]
+		[batch]
+
+		/* ノベル終了 */
+		[novel_end]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]
+		[txtwaitset wait="90"]
+		[batch]
+
+		/*-------------------------------
+		エンディングクレジット
+		-------------------------------*/
+		//[movie_play name="ed_ikki"]
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP_SLOW" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		//[ezbg_change name="bg036" wait="3"]
+
+		[batch]
+
+		/*-------------------------------
+		演出：メール着信「イッキュウ」
+		-------------------------------*/
+		[strse_play no="124" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		//[ezbg_change name="ef_mail" wait="1"]
+
+		[txtwaitset wait="30"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：携帯の操作音
+		-------------------------------*/
+		[strse_play no="45" delay="0"] /* ＳＥ再生 */
+		[strse_waitcut]
+		[batch]
+
+/*
+		【件名】Ｒｅ：お元気ですか？
+		【Ｔｏ】主＃＃＃＃
+		うん、見に行きたい。
+		今度の土日はヒマ？
+*/
+
+		[ezbg_change name="ef_ikki_mail" wait="2"]/*引越し先背景ないのでダミーです by山口*/
+		[batch]
+
+		[txtwaitset wait="120"]
+		[batch]
+
+		[ezbg_change name="bg_black" wait="4"]
+		[batch]
+
+		[restrict_input]
+
+		[ezbg_change2 name="bgend" wait="BG_NORMAL"]	//仮素材、あとで差し替え
+		[txtwaitset wait="600"]
+		[batch]
+
+		[ezbg_change2 name="bg_black" wait="BG_NORMAL"]
+		[txtwaitset wait="240"]
+		[batch]
+
+		[restoff_input]
+
+		/*-------------------------------
+		ノーマルＥＤ
+		タイトルへ
+		-------------------------------*/
+		// NORMAL「今度の土日はヒマ？」
+		[Trophy_Unlock id="TOROPHY_IDX_NORMAL_END"]
+		[set_clear_flag end_type="ED_NORMAL" num="1"]
+		[spflag_set name="イッキクリア" num="1"]
+
+	[calllua function="game_end"]
+
+		/*-------------------------------
+		☆0101
+		可能なら、ＥＤクレジットの後に少し希望を持たせる感じでメール画面だけ出したいです。
+		他ルートでも同じ演出を期待されてしまうでしょうか……？
+		-------------------------------*/
+		/*-------------------------------
+		★0105
+		ＯＫだけど流れ変えて演出付けました。
+		-------------------------------*/
+		/*-------------------------------
+		☆0106
+		かっこいい……！
+		-------------------------------*/
+
