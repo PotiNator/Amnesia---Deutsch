@@ -1,0 +1,1419 @@
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+// AMNESIAカウントダウンボイス
+
+*sure1
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+	[if estimate="$i==2"][calllua function="stcm2_goto" label="sure1_turn2"]
+	[/if]
+	[if estimate="$i==3"][calllua function="stcm2_goto" label="sure1_turn3"]
+	[/if]
+	[if estimate="$i==4"][calllua function="stcm2_goto" label="sure1_turn4"]
+	[/if]
+	[if estimate="$i==5"][calllua function="stcm2_goto" label="sure1_turn5"]
+	[/if]
+
+	*sure1_turn0
+
+		/*ウインドウ通常でひらいておく*/
+//		[txtwin_proc onoff="1"]
+//		[txtwin_type type="0"]
+		[txtwin_proc onoff="0"]
+		[ezbg_change name="bg_black" wait="0"]/* 背景チェンジ */
+		[batch]
+
+		// 
+		// /*
+		// ●選択メニュー
+		// */
+
+		[menutxt_set text="Pre-Release"]
+		[menutxt_set text="Post-Release"]
+
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure1_turn1
+
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[flag_set name="switch" num="2"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[flag_set name="switch" num="4"]
+
+		[/if]
+
+		[return]
+
+	*sure1_turn2
+
+		[menutxt_set text="Ukyo"]
+		[menutxt_set text="Kent"]
+		[menutxt_set text="Ikki"]
+		[menutxt_set text="Toma"]
+		[menutxt_set text="Shin"]
+		[menu_set flag="select"][stop]
+		*sure1_turn2_menu
+
+		[flag_set name="switch" num="3"]
+		[return]
+
+	*sure1_turn3
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure2"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure4"]
+
+		[/if]
+
+		[if estimate="$i==2"]
+
+			[thread_change label="sure6"]
+
+		[/if]
+
+		[if estimate="$i==3"]
+
+			[thread_change label="sure8"]
+
+		[/if]
+
+		[if estimate="$i==4"]
+
+			[thread_change label="sure10"]
+
+		[/if]
+
+		[return]
+
+	*sure1_turn4
+
+		[menutxt_set text="Ukyo"]
+		[menutxt_set text="Kent"]
+		[menutxt_set text="Ikki"]
+		[menutxt_set text="Toma"]
+		[menutxt_set text="Shin"]
+		[menu_set flag="select"][stop]
+		*sure1_turn4_menu
+
+		[flag_set name="switch" num="5"]
+		[return]
+
+	*sure1_turn5
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure3"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure5"]
+
+		[/if]
+
+		[if estimate="$i==2"]
+
+			[thread_change label="sure7"]
+
+		[/if]
+
+		[if estimate="$i==3"]
+
+			[thread_change label="sure9"]
+
+		[/if]
+
+		[if estimate="$i==4"]
+
+			[thread_change label="sure11"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure2
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+	*sure2_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●発売前（１０週）
+		// 人物：ウキョウ（私服）
+		// 場所：冥土の羊店内？
+		// （他の場所でも構いません。
+		// 他キャラ４人が全員店内なので一応指定しています）
+		// -------------------------------*/
+		// /*-------------------------------
+		// 表ウキョウ
+		// -------------------------------*/
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="nikori" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="     Ah, wait! Please wait!"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I thought I might see you if I waited"]
+		[maintxt_print text="     here."]
+
+		[batch]
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     It's a bit early, but I'll be able to spend some"]
+		[maintxt_print text="     time with you again."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     I couldn't wait... I've been really restless for a"]
+		[maintxt_print text="     long time."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     I'm not sure if I can be happy, though, it's a"]
+		[maintxt_print text="     bit strange."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01a" em_name="sian" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Because I'm your..."]
+		[maintxt_print text="     Sorry... This isn't the place to talk about"]
+		[maintxt_print text="     that."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Oh, but it should be alright to tell you this"]
+		[maintxt_print text="     much..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     No matter what happens to me, you'll always"]
+		[maintxt_print text="     be most important thing."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     That won't ever change, no matter what"]
+		[maintxt_print text="     happens."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="...No matter how long it takes for me to"]
+		[maintxt_print text="     reunite with you."]
+
+		[batch]
+		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure3
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+	*sure3_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●発売後
+		// 人物：ウキョウ（私服）
+		// 場所：駅前か公園？（昼）
+		// -------------------------------*/
+		// /*-------------------------------
+		// 全部表ウキョウ
+		// -------------------------------*/
+		[ezbg_change2 name="bg000" wait="BG_NORMAL"]
+		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="nikori" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     Ah, I mean...!"]
+		[maintxt_print text="     Being able to meet you here makes me"]
+		[maintxt_print text="     happy! It really does, but...!"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     But it's better that you don't get close to me..."]
+		[maintxt_print text="     I know we just met again, but I have to get"]
+		[maintxt_print text="     going."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="......P-Please don't look at me like that. Like"]
+		[maintxt_print text="     you feel sad... If I was allowed to, I'd stay"]
+		[maintxt_print text="     with you forever."]
+
+		[batch]
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Then... Just a little."]
+		[maintxt_print text="     I'll stay with you just a bit."]
+		[maintxt_print text="     I think I have that much time..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     No, I'll try my hardest to make that much"]
+		[maintxt_print text="     time for you."]
+
+		[batch]
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     What should we do? Let's walk around here"]
+		[maintxt_print text="     for a bit."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Oh, just to make sure, you do have your cell"]
+		[maintxt_print text="     phone, right? If I try anything strange, call"]
+		[maintxt_print text="     the authorities."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     Don't hesitate, okay?"]
+		[maintxt_print text="     Just imagine that you're walking next to a"]
+		[maintxt_print text="     super dangerous criminal."]
+
+		[batch]
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		// /*-------------------------------
+		// 冒頭、ため息混じりでお願いします
+		// -------------------------------*/
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="...If I searched really hard, would I be able to"]
+		[maintxt_print text="     find it? A future where I could be with you,"]
+		[maintxt_print text="     without being scared."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I wonder."]
+		[maintxt_print text="     What do you think...?"]
+
+		[batch]
+		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure4
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+	*sure4_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+
+		// /*-------------------------------
+		// ●発売前（８週）
+		// 人物：ケント（制服）
+		// 背景：冥土の羊店内
+		// -------------------------------*/
+		[chara_app_pt ch_name="kent_b_work" pt_name="a" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Welco-...... It's you."]
+		[maintxt_print text="     Let me take you to your seat."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="d" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="...Since you've come as a customer, do you"]
+		[maintxt_print text="     wish for me to treat you as such?"]
+		[maintxt_print text="     Then... This way, Madam."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     I'm usually in the kitchen, so I'm not used to"]
+		[maintxt_print text="     serving... If I could, I would only want to"]
+		[maintxt_print text="     serve you."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="d" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     There is no structure for such an exception at"]
+		[maintxt_print text="     this establishment, however... I find that very"]
+		[maintxt_print text="     disappointing at the moment."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     That's right. This week, there's a ”Math Puzzle"]
+		[maintxt_print text="     Ice Cream” special."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     If you can't solve the puzzle before it melts,"]
+		[maintxt_print text="     you can't eat it."]
+		[maintxt_print text="     It's a race against time."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="d" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="......Lately, it feels as if time passes by more"]
+		[maintxt_print text="     slowly. I understand that that perception is"]
+		[maintxt_print text="     caused by a change in mood..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="d" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     So then I thought up this menu item."]
+		[maintxt_print text="     It's based around the concept of being able"]
+		[maintxt_print text="     to distinctly feel time going by."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="b" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     Only..."]
+		[maintxt_print text="     There hasn't been a single customer who has"]
+		[maintxt_print text="     ordered it yet."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b_work" pt_name="b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I thought it was a good idea, but..."]
+		[maintxt_print text="..."]
+
+		[batch]
+		[ezchara_del ch_name="kent_b_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure5
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+	*sure5_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		// /*-------------------------------
+		// ●発売後
+		// 人物：ケント（私服）
+		// 場所：ケント自室（昼）
+		// （室内なら他の場所でも問題なし）
+		// -------------------------------*/
+		[ezbg_change2 name="bg005" wait="BG_NORMAL"]
+		[chara_app_pt ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     If there's something you wish to say, then"]
+		[maintxt_print text="     say it without worry."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     I'm anxious when you look at me."]
+		[maintxt_print text="     No, even more than that, I end up wanting to"]
+		[maintxt_print text="     speak to you."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     What should I do to understand being moved"]
+		[maintxt_print text="     to this emotion...?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     Our relationship has been changing from the"]
+		[maintxt_print text="     way I first saw it."]
+
+		[batch]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     I'm painfully curious as to your opinion on"]
+		[maintxt_print text="     this change, but..."]
+		[maintxt_print text="     I won't ask for now."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I haven't gathered my own opinions yet,"]
+		[maintxt_print text="     either."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Spending time with you like this,"]
+		[maintxt_print text="     it feels like that event never"]
+		[maintxt_print text="     happened."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I can't pretend it didn't happen, and I can't"]
+		[maintxt_print text="     forget, but..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[maintxt_print text="     Why don't we go for a short walk?"]
+		[maintxt_print text="     Let's breathe some outside air."]
+
+		[batch]
+
+		// /*-------------------------------
+		// 苦笑気味ケント
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Kent" chrid="CHRID_KENT"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="......If you smile like that,"]
+		[maintxt_print text="     a short time will simply"]
+		[maintxt_print text="     not be enough."]
+
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure6
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+	*sure6_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+
+		// /*-------------------------------
+		// ●発売前（６週）
+		// 人物：イッキ（制服）
+		// 背景：冥土の羊店内
+		// -------------------------------*/
+		[chara_app_pt ch_name="ikki_b_work" pt_name="a" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Welcome home, Madam."]
+		[maintxt_print text="......Oh, it's you."]
+		[maintxt_print text="     Are you a customer today?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="     Then, this way, My Lady."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="d" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     To be honest, I'd actually like to call you"]
+		[maintxt_print text="     Princess."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     This week's recommendation is the Butler-"]
+		[maintxt_print text="     Catered Seafood Bowl with French Onion"]
+		[maintxt_print text="     Soup."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     It is a pretty odd menu item..."]
+		[maintxt_print text="     But it's surprisingly popular."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     There aren't any other customers here right"]
+		[maintxt_print text="     now, so I think I can talk to you for a while"]
+		[maintxt_print text="     without getting yelled at."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     How have you been spending your time"]
+		[maintxt_print text="     lately? It's a first for me to feel this slow"]
+		[maintxt_print text="     every day..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="d" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     Has your heart settled on what answer you'll"]
+		[maintxt_print text="     give me?"]
+		[maintxt_print text="     Or are you still unsure...?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     The answer has always been the same for me."]
+		[maintxt_print text="     I hope it's the same as yours."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b_work" pt_name="c" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     Ha ha, from your reaction, I may be able to"]
+		[maintxt_print text="     hold onto some hope."]
+
+		[batch]
+		[ezchara_del ch_name="ikki_b_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure7
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+	*sure7_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+		[ezbg_change2 name="bg022" wait="BG_NORMAL"]
+
+		[chara_app_pt ch_name="ikki_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		// /*-------------------------------
+		// ●発売後
+		// 人物：イッキ（私服）
+		// 場所：鬼神母心（人がいなさそうな場所ならどこでも）
+		// -------------------------------*/
+
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I think we can spend some time here at our"]
+		[maintxt_print text="     leisure."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="jityou" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     I'm sorry I don't often get time to spend with"]
+		[maintxt_print text="     you."]
+		[maintxt_print text="     I'm trying my hardest, but......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01d" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text=".....Hmm? Are you pouting?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     What, really?"]
+		[maintxt_print text="     Heh... That makes me really happy."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     No, I'm not making fun of you,"]
+		[maintxt_print text="     I really..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     I want to hear more details from you about"]
+		[maintxt_print text="     this matter..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     But looks like we're almost out of time."]
+		[maintxt_print text="     What a short date."]
+
+		[batch]
+
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="     I'll try to get some more time for our next"]
+		[maintxt_print text="     meeting."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[maintxt_print text="...Let us enjoy the rest of this conversation,"]
+		[maintxt_print text="     then."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Ikki" chrid="CHRID_IKKI"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="     There's no avoiding it, okay?"]
+
+		[batch]
+		[ezchara_del ch_name="ikki_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure8
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+	*sure8_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+
+		// /*-------------------------------
+		// ●発売前（４週）
+		// 人物：トーマ（制服）
+		// 背景：冥土の羊店内
+		// -------------------------------*/
+		[chara_app_pt ch_name="toma_b_work" pt_name="a" em_name="odoroki" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="......!"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Welcome home, Madam."]
+		[maintxt_print text="...This way, please."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     This week, we have a special dessert"]
+		[maintxt_print text="     recommendation. First, if you would pick a"]
+		[maintxt_print text="     card, Madam..."]
+
+		[batch]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     Depending on the card suit, a specific butler"]
+		[maintxt_print text="     will cater to only you for the duration of your"]
+		[maintxt_print text="     meal, which would be..."]
+
+		[batch]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     It feels weird to do this with you."]
+		[maintxt_print text="     Did you just come here to hang out today?"]
+		[maintxt_print text="     Or is there something else?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     Is it possible you couldn't wait, and you've"]
+		[maintxt_print text="     been feeling uneasy?"]
+		[maintxt_print text="     I'm... also pretty restless."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I've been wanting to see you as soon as"]
+		[maintxt_print text="     possible, but I was also a bit scared..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="a" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     Ah, Waka is watching, I'd better get back to"]
+		[maintxt_print text="     work... Have you decided, Madam?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="c" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="...Special dessert order it is, then."]
+		[maintxt_print text="     Huh? You'd like me to serve you?"]
+		[maintxt_print text="     Choosing isn't allowed here......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     Hmmm... Then, Madam, please pick the card"]
+		[maintxt_print text="     that you desire... By the way, my card's the"]
+		[maintxt_print text="     furthest left."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b_work" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     I want to serve you too, so I'm going to cheat"]
+		[maintxt_print text="     just a bit..."]
+		[maintxt_print text="     It's a secret, alright?"]
+
+		[batch]
+		[ezchara_del ch_name="toma_b_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure9
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+	*sure9_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+
+		[ezbg_change2 name="bg043" wait="BG_NORMAL"]
+		// /*-------------------------------
+		// ●発売後
+		// 人物：トーマ（私服）
+		// 場所：踏切？（あまり人気がなさそうな場所ならどこでも）
+		// -------------------------------*/
+		[chara_app_pt ch_name="toma_b" pt_name="01" em_name="odoroki" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Hey, you...! Wandering around in a deserted"]
+		[maintxt_print text="     place like this..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[maintxt_print text="     Your body's still not fully recovered, so sit"]
+		[maintxt_print text="     still, alright?"]
+
+		[batch]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     C'mon, let's go home... What? Where to?"]
+		[maintxt_print text="...My house. There's a lot I'm still worried"]
+		[maintxt_print text="     about."]
+
+		[batch]
+
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     If you're with me..."]
+		[maintxt_print text="     I won't let anyone hurt you."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     No one. So just trust me."]
+		[maintxt_print text="     I want to protect you."]
+		[maintxt_print text="     Then, I'll......"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="......Er."]
+		[maintxt_print text="     Did I say I needed to stop by the store on the"]
+		[maintxt_print text="     way home?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Not yet, huh? Then... let's head there first,"]
+		[maintxt_print text="     and then go home."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="toma_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+		[speaker_set name="Toma" chrid="CHRID_TOMA"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     I'll buy you any"]
+		[maintxt_print text="     dessert you want."]
+		[maintxt_print text="     Think about what you'd like."]
+
+		[batch]
+		[ezchara_del ch_name="toma_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		// /*
+		// →選択メニューへ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure10
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure10_turn0"]
+	[/if]
+
+	*sure10_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+
+		// /*-------------------------------
+		// ●発売前（２週）
+		// 人物：シン（制服）
+		// 背景：冥土の羊店内
+		// -------------------------------*/
+		[chara_app_pt ch_name="shin_b_work" pt_name="a" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Welcome home, Mada..."]
+		[maintxt_print text="......Oh, you."]
+		[maintxt_print text="     This way please, Madam."]
+
+		[batch]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     Today's recommendation is Kent's ”Time"]
+		[maintxt_print text="     Machine Parfait.”"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     I don't get it, but he said eating something"]
+		[maintxt_print text="     good might make time pass by faster or"]
+		[maintxt_print text="     something."]
+
+		[batch]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     You're off work today, right?"]
+		[maintxt_print text="     Were you not able to relax at home?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     You could have come into work, or made"]
+		[maintxt_print text="     plans with someone."]
+
+		[batch]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     If you have something to do, it feels like time"]
+		[maintxt_print text="     passes more quickly."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Well, in a little while"]
+		[maintxt_print text="     I'll go pick you up, so"]
+		[maintxt_print text="     just rest at home for a bit."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......What? You can't wait?"]
+		[maintxt_print text="     You sound just like when we"]
+		[maintxt_print text="     were kids..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     I'm waiting too, so try and"]
+		[maintxt_print text="     wait just a little longer."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="d" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Go home and think"]
+		[maintxt_print text="     about me while you wait."]
+		[maintxt_print text="     I'll hurry to come see you."]
+
+		[batch]
+
+		// /*
+		// →選択メニューへ
+		// */
+		
+		[ezchara_del ch_name="shin_b_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+*sure11
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure11_turn0"]
+	[/if]
+
+	*sure11_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+		[txtwin_type type="0"]
+		[ezbg_change2 name="bg036" wait="BG_NORMAL"]
+
+		// /*-------------------------------
+		// ●発売後
+		// 人物：シン（私服）
+		// 場所：主人公の部屋（昼）
+		// -------------------------------*/
+		[chara_app_pt ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     How are your injuries? Have your memories"]
+		[maintxt_print text="     returned?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......From the looks of things, I guess they"]
+		[maintxt_print text="     haven't yet."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     So... You think there's a possibility that"]
+		[maintxt_print text="     your memories will return by spacing out"]
+		[maintxt_print text="     here?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[maintxt_print text="     They won't."]
+		[maintxt_print text="     So hurry up and get ready."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Let's go. Hm? Where to?"]
+		[maintxt_print text="     Somewhere you used to"]
+		[maintxt_print text="     go before."]
+
+		[batch]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="     You might remember something."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[maintxt_print text="     Oh, also... I have no intention of letting the"]
+		[maintxt_print text="     distance I've closed between us to open up"]
+		[maintxt_print text="     again."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[maintxt_print text="     Just... be prepared for that."]
+
+		[batch]
+		
+		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure1"]
+		[return]
+
+
+
+
+*sure99
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure99_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure99_turn1"]
+	[/if]
+	[if estimate="$i==2"][calllua function="stcm2_goto" label="sure99_turn2"]
+	[/if]
+//	[if estimate="$i==3"][calllua function="stcm2_goto" label="sure99_turn3"]
+//	[if estimate="$i==4"][calllua function="stcm2_goto" label="sure99_turn4"]
+//	[if estimate="$i==5"][calllua function="stcm2_goto" label="sure99_turn5"]
+//	[if estimate="$i==6"][calllua function="stcm2_goto" label="sure99_turn6"]
+//	[if estimate="$i==7"][calllua function="stcm2_goto" label="sure99_turn7"]
+
+	*sure99_turn0
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="0-9"]
+		[menutxt_set text="10-19"]
+		[menutxt_set text="20-29"]
+		[menutxt_set text="30-39"]
+		[menutxt_set text="40-49"]
+		[menutxt_set text="50-58"]
+		[menu_set flag="select"][stop]
+		*sure99_turn0_menu
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure99_turn1
+
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[flag_set name="選択肢１" num="0"]
+			[flag_set name="選択肢２" num="9"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[if estimate="$i==1"]
+
+			[flag_set name="選択肢１" num="10"]
+			[flag_set name="選択肢２" num="19"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[if estimate="$i==2"]
+
+			[flag_set name="選択肢１" num="20"]
+			[flag_set name="選択肢２" num="29"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[if estimate="$i==3"]
+
+			[flag_set name="選択肢１" num="30"]
+			[flag_set name="選択肢２" num="39"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[if estimate="$i==4"]
+
+			[flag_set name="選択肢１" num="40"]
+			[flag_set name="選択肢２" num="49"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[if estimate="$i==5"]
+
+			[flag_set name="選択肢１" num="50"]
+			[flag_set name="選択肢２" num="58"]
+			[flag_set name="switch" num="2"]
+
+		[/if]
+		[return]
+
+	*sure99_turn2
+		[flag_number name="選択肢１" i="i"]
+		[phone_mail no="i" pos="CENTER" speed="30" recv="RCV_ON"]/*携帯：メール表示*/
+		[batch]
+		i=i+1;
+		[flag_number name="選択肢２" i="j"]
+		[if estimate="$i > j"]
+
+			[flag_set name="switch" num="0"]
+
+		[else]
+
+			[flag_set name="選択肢１" num="i"]
+
+		[/if]
+		[return]
+

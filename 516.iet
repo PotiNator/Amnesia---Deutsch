@@ -1,0 +1,1011 @@
+/*
+	ウキョウ16日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　ウキョウルート　１６日目
+第１稿						２０１１年０２月２０日　望月
+第２稿	相互監修				２０１１年０２月２１日　果村
+第３稿　パラメーター調整・スチルナンバリング	２０１１年０２月２２日　望月
+第４稿	　チェック＆加筆修正			２０１１年０３月０４日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：ukyo_16.01.00
+背景：主人公自室
+時間：朝
+人物：オリオン
+フラグ：ウキョウとの出会いの記憶ＯＦＦ
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure1_turn15"]
+	[/if]
+	
+
+	*sure1_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure1_turn0
+
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[bgm_play no="17" count="0"]
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+		
+		[day_set date="16"]
+
+		[flag_set name="出会いの記憶" num="0"]
+
+		[bgm_play no="17" count="0"]
+
+		/*-------------------------------
+		画面ＢＬ
+		-------------------------------*/
+		[ezbg_change2 name="bg_black" wait="BG_NOW"]
+		[blackout_end mode="0" mode2="0" index="3" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		/*-------------------------------
+		演出：ＦＬ＆ＯＬ（過去の記憶フラッシュバック）
+		背景：白背景
+		-------------------------------*/
+		[ef_flash_start bgname="bg_white"]/*フラッシュバック開始*/
+
+		/*-------------------------------
+		白背景でセリフだけ表示してください
+		以下ウキョウのボイスukyo_15.06.00より流用
+		-------------------------------*/
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50634" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     This house belonged to my grandfather who"]
+		[maintxt_print text="     adored me..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50635" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     When I was in elementary school, my"]
+		[maintxt_print text="     grandfather passed away and left this house."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50636" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     I loved it here."]
+		[maintxt_print text="     I had made so many happy memories."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="50637" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="...But the city decided that this house"]
+		[maintxt_print text="     would be torn down in order to widen"]
+		[maintxt_print text="     the streets."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50638" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     I tried my hardest to fight it, but I couldn't do"]
+		[maintxt_print text="     much since I was only in elementary school."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="50639" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     I was taken out of the country with my"]
+		[maintxt_print text="     parents' transfer, and I left Japan without"]
+		[maintxt_print text="     being able to see what happened to this home."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="50640" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="...It's been fifteen years since then."]
+		[maintxt_print text="     I thought this house had long been"]
+		[maintxt_print text="     destroyed. But..."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+	
+		/*-------------------------------
+		cg_ukyo05：祖父母の家の前に立つウキョウ
+		-------------------------------*/
+		[ezbg_change2 name="cg_ukyo05a" wait="BG_NORMAL"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="50641" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="...It's still here."]
+		[batch]
+
+		/*-------------------------------
+		★0125
+		演出で間。
+		-------------------------------*/
+		[novel_st shadow="1"]/*モノローグ開始*/
+		[novel_pos x="375" y="192"]
+
+		[txtwin_proc onoff="1"]
+		[batch]
+
+		[maintxt_print text="     Ah, that's right."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="     The building itself is very unique."]
+		[maintxt_print text="     It was deemed an important cultural site,"]
+		[maintxt_print text="     not to be torn down. I read it in a book."]
+		[batch]
+
+		[maintxt_print text="     I wanted to see the house, so I that's why"]
+		[maintxt_print text="     I've come back..."]
+		[batch]
+
+		[novel_next_page]/*ページクリア*/
+
+		[maintxt_print text="     And..."]
+		[maintxt_print text="...He is here."]
+		[batch]
+
+		[novel_end]/*モノローグ終了*/
+		[batch]
+
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50642" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="...It feels like I was able to reunite with my"]
+		[maintxt_print text="     grandfather again."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="50643" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     I'm... so happy right now."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="50644" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     So..."]
+		[batch]
+
+		/*-------------------------------
+		cg_ukyo05a：祖父母の家の前に立つウキョウ・差分１苦笑
+		-------------------------------*/
+		[ezbg_change2 name="cg_ukyo05b" wait="1"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50645" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     You probably realized that I was crying from"]
+		[maintxt_print text="     the beginning..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50646" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     But I think you pretended that you didn't"]
+		[maintxt_print text="     notice..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[novel_st shadow="1"]/*モノローグ開始*/
+		[novel_pos x="375" y="192"]
+
+		[maintxt_print text="     I mean..."]
+		[maintxt_print text="     Who likes being seen crying, you"]
+		[maintxt_print text="     know?"]
+		[batch]
+
+		[novel_end]/*モノローグ終了*/
+
+		[batch]
+
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="50710" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...You must have felt bad for me."]
+		[maintxt_print text="     Thank you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="50711" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...Man. Who would've thought a girl would"]
+		[maintxt_print text="     see me crying, right after my return here."]
+		[maintxt_print text="     I did not anticipate that."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="50712" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     My name is Ukyo... And you are?"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[novel_st shadow="1"]/*モノローグ開始*/
+		[novel_pos x="375" y="192"]
+
+		[maintxt_print text="     Me...?"]
+		[batch]
+
+		[maintxt_print text="     I... I'm..."]
+		[batch]
+
+		[novel_end]/*モノローグ終了*/
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		演出：ＱＵ　（激しく目眩を起こすような感じ）
+		-------------------------------*/
+		[ef_flash_end bgname="bg_white"]/*フラッシュバック終了*/
+		[txtwin_proc onoff="0"]
+		
+		/*-------------------------------
+		背景：主人公自室・朝
+		-------------------------------*/
+		/*------------------------------
+		テロ：『８月１６日』
+		------------------------------*/
+		[scenechange3 bgname="bg216" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+		
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="17" count="0"]
+		[day_proc onoff="1"]
+		[batch]
+
+
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63698" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Good morning!"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63699" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Hey, what you just saw..."]
+		[maintxt_print text="     Or rather, the dream you just had... It was a"]
+		[maintxt_print text="     memory, wasn't it?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="63700" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Oh, good!"]
+		[maintxt_print text="     You finally got back a memory!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wink" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="63701" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     This step may be small in relation to your"]
+		[maintxt_print text="     memories overall, but it's still a big step for"]
+		[maintxt_print text="     us!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="63702" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     We now know that memories can return in"]
+		[maintxt_print text="     fragments!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="63703" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...So that must have been a memory between"]
+		[maintxt_print text="     you and Ukyo, right?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63704" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Just as Ukyo said,"]
+		[maintxt_print text="     you and he met"]
+		[maintxt_print text="     in Kobe..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63705" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     I hope you can keep getting back your"]
+		[maintxt_print text="     memories like this..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-- toma_16.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure3"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_16.02.00
+背景：主人公自室
+時間：朝
+人物：オリオン
+フラグ：ウキョウとの出会いの記憶ＯＮ
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		[day_set date="16"]
+
+		[flag_set name="出会いの記憶" num="1"]
+
+		/*------------------------------
+		テロ：『８月１６日』
+		------------------------------*/
+		[scenechange3 bgname="bg216" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="11" count="0"]/* ＢＧＭ再生 日常２　朝　　 */
+		[day_proc onoff="1"]
+		[batch]
+		
+		[chara_app_pt ch_name="orion_b" pt_name="03" em_name="nikori" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63706" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Good morning!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="63707" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Can you still see me?"]
+		[maintxt_print text="...You can, huh? Well, I guess we wouldn't"]
+		[maintxt_print text="     split up so suddenly."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="63708" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     You got back your memory"]
+		[maintxt_print text="     a little bit yesterday, so I"]
+		[maintxt_print text="     had high hopes."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63709" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But, yeah."]
+		[maintxt_print text="     It would suck if we can't talk to each other"]
+		[maintxt_print text="     all of a sudden."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63710" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Even if it's a little at a time, let's go and look"]
+		[maintxt_print text="     for your memories!"]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+
+		/*-- toma_16.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure3"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_16.03.00
+背景：冥土の羊・店前→冥土の羊・厨房→冥土の羊・フロア
+時間：朝
+人物：オリオン・ウキョウ・店長・シン
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure3_turn1"]
+	[/if]
+
+
+	*sure3_turn0
+
+		/*-------------------------------
+		背景：冥土の羊・昼
+		-------------------------------*/
+		[scenechange3 bgname="bg049" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+
+		/*-------------------------------
+		背景：冥土の羊：厨房・昼
+		-------------------------------*/
+		[ezbg_change2 name="bg017" wait="BG_NORMAL"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="11482" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Here you go. Oolong tea."]
+		[maintxt_print text="     Mine, take it to Table 8..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="11483" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Huh?"]
+		[batch]
+
+		/*-------------------------------
+		シン・シェフエプロンＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_b_work" pt_name="a" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="11484" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Oh hey, #Name[0]."]
+		[maintxt_print text="     Did you have the late shift today?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="11485" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...I wonder if that means Mine left already."]
+		[maintxt_print text="     I was so focused in the kitchen that I didn't"]
+		[maintxt_print text="     notice."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b_work" pt_name="a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="11486" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Whatever."]
+		[maintxt_print text="     Can you take this oolong tea to Table 8?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63711" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Table 8. That means..."]
+		[maintxt_print text="     It's probably Ukyo...?"]
+		[maintxt_print text="     He sits there a lot."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="shin_b_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-------------------------------
+		背景：冥土の羊：フロア
+		-------------------------------*/
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+		[batch]
+
+		/*-------------------------------
+		店長ＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90421" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="...So you're from Kobe."]
+		[maintxt_print text="     Have you lived there this whole time?"]
+		[batch]
+
+		/*-------------------------------
+		ウキョウＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="ukyo_s" pt_name="01c" em_name="wara" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="50713" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Actually no."]
+		[maintxt_print text="     When I was in elementary school, we moved"]
+		[maintxt_print text="     out of the country. I just recently returned."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63712" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Oh, it is Ukyo."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50714" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I came back to Japan in the spring, but the"]
+		[maintxt_print text="     house I was living in is gone now. I just went"]
+		[maintxt_print text="     to visit Kobe in July."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+		[voice_play no="90422" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     So you've lived outside of the country for a"]
+		[maintxt_print text="     long time."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63713" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="...Maybe that's why his actions seem kind"]
+		[maintxt_print text="     of unusual for here."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63714" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Well, beyond here too, huh?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+		[voice_play no="90423" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Oh, my apologies."]
+		[maintxt_print text="     It seems like your tea is here."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50715" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Thank you. Could you put it here?"]
+		[maintxt_print text="...Hm? What is it?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】ukyo_16.03.00
+		外国語話せるんですか？＞シーン：ukyo_16.03.01へ
+		日本の一般常識とか大丈夫ですか？＞シーン：ukyo_16.03.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Do you speak another language?"]
+		[menutxt_set text="Are you accustomed to Japanese culture?"]
+		[menu_set flag="select"][stop]
+		*sure3_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure3_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure4"]
+		[elseif estimate="$j == 1"][thread_change label="sure5"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_16.03.01
+選択肢：外国語話せるんですか？
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="50716" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Well, there were a few places I went to..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50717" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     6 months in Thailand, a year in Singapore, 3"]
+		[maintxt_print text="     years in the U.S., 2 months in France, 2 years"]
+		[maintxt_print text="     and 7 months in Italy, 30 days in Chile..."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="2"]
+
+		[voice_play no="50718" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     5 months in Tunisia, a year and a half in Peru,"]
+		[maintxt_print text="     then I went back to Singapore for 4 days, 9"]
+		[maintxt_print text="     months in Germany, 2 years in Alaska, 1 year"]
+		[maintxt_print text="     in Canada."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="2"]
+
+		[voice_play no="50719" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I lived in Guam for 8 months, a year and a"]
+		[maintxt_print text="     half in China, 11 months in Cambodia,"]
+		[maintxt_print text="     returned to Thailand for a month, 2 weeks in"]
+		[maintxt_print text="     Japan for a bit, and then 60 days in Paris."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01b" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50720" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     And then a lot of things happened while I"]
+		[maintxt_print text="     in those places, so I can't speak any of the"]
+		[maintxt_print text="     languages!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50721" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     To be honest, I don't even know if my"]
+		[maintxt_print text="     Japanese is okay."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63715" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     It's strange to know he was abroad for so"]
+		[maintxt_print text="     long and can't speak any of those languages."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63716" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Maybe he's pretending not to know?"]
+		[batch]
+
+		/*-- ukyo_16.04.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure6"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_16.03.02
+選択肢：日本の一般常識とか大丈夫ですか？
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50722" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     All the important cultural ceremonies, I have"]
+		[maintxt_print text="     no idea about."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="50723" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Before that, I barely had a normal school"]
+		[maintxt_print text="     education..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="90424" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Meaning?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50724" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Due to my parents' job, I was transfered"]
+		[maintxt_print text="     a LOT..."]
+		[maintxt_print text="     I didn't really go to school much."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="50725" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I mean I did study here and there, and my"]
+		[maintxt_print text="     parents watched over my studying, but it's"]
+		[maintxt_print text="     still pretty bad."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50726" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     The other day, I was trying to do double-digit"]
+		[maintxt_print text="     addition and noticed myself looking for a"]
+		[maintxt_print text="     calculator, which was depressing."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63717" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Can you really blame that on your education,"]
+		[maintxt_print text="     though?"]
+		[batch]
+
+		/*-- ukyo_16.04.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure6"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_16.04.00
+選択肢合流
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+
+	*sure6_turn0
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50727" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     So when I had just returned here, I bumped"]
+		[maintxt_print text="     into her."]
+		[batch]
+
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+		[voice_play no="90425" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Oh yes, that's right. #Name[0],"]
+		[maintxt_print text="     you went on a trip to Kobe, didn't you?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90426" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     So when you guys reunited here,"]
+		[maintxt_print text="     did you contact each other or"]
+		[maintxt_print text="     something?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50728" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Not at all."]
+		[maintxt_print text="     It was purely coincidence."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="50729" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I came here in July and ran into"]
+		[maintxt_print text="     her in front of the university on"]
+		[maintxt_print text="     July 4th."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63718" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     July 4th?"]
+		[maintxt_print text="     Wait, I thought we met him on August 1st?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50730" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Oh, wait!"]
+		[maintxt_print text="     No, we reunited in August."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="90427" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50731" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Sorry, my internal calendar has been so off"]
+		[maintxt_print text="     lately. Yeah, I just got confused, sorry."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="5"]
+		[voice_play no="90428" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     It's not something to apologize for."]
+		[maintxt_print text="     I understand getting the days mixed up."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="90429" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     When I was on the battlefield,"]
+		[maintxt_print text="     I never knew what date or day"]
+		[maintxt_print text="     it was, or who I was."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63719" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="........."]
+		[maintxt_print text="     Um, I think the biggest mystery here is your"]
+		[maintxt_print text="     manager's past... But I don't want to know."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[batch]
+
+		[bgm_stop count="0"]
+
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+
+		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+
+		[ef_aicatch bgname="eye024_2" bgm="50" time="240"]/*ダミーアイキャッチ*/
+
+		/*------------------------------
+		【ウキョウルート１６日目終了】
+		ukyo_17.01.00へ
+		------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="517" label="sure1"]
+
+	[return]
+
+
+

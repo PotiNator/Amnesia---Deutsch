@@ -1,0 +1,660 @@
+/*
+	ウキョウ17日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　ウキョウルート　１７日目
+第１稿						２０１１年０２月２０日　望月
+第２稿	相互監修				２０１１年０２月２１日　果村
+第３稿　パラメーター調整・スチルナンバリング	２０１１年０２月２２日　望月
+第４稿	　チェック＆加筆修正			２０１１年０３月０４日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：ukyo_17.01.00
+背景：主人公自室→冥土の羊前→冥土の羊事務所
+時間：昼
+人物：オリオン・ミネ・シン・店長
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+	[if estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_set date="17"]
+
+
+		/*------------------------------
+		テロ：『８月１７日』
+		------------------------------*/
+		[scenechange3 bgname="bg217" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[batch]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+		[day_proc onoff="1"]
+		[batch]
+
+		/*-------------------------------
+		背景：主人公自室・朝
+		-------------------------------*/
+		[scenechange3 bgname="bg034" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+
+		/*-------------------------------
+		背景：冥土の羊前・朝
+		-------------------------------*/
+		[scenechange3 bgname="bg049" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+
+		/*-------------------------------
+		背景：冥土の羊：事務所
+		-------------------------------*/
+		[ezbg_change2 name="bg019" wait="BG_NORMAL"]
+		[batch]
+
+		/*-------------------------------
+		ミネＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="80451" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Would you like to go to the beach?"]
+		[maintxt_print text="     Actually, let's just go."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63720" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What is this person talking about? And right"]
+		[maintxt_print text="     before the morning meeting!"]
+		[batch]
+
+		/*-------------------------------
+		シン・シェフエプロンＩＮ
+		-------------------------------*/
+		/*-------------------------------
+		☆0218望月
+		ミネとシンって同じくらいの年齢ですよね…？
+		とりあえずタメ口にしときました。
+		なずなさん、どうでしょう…
+		-------------------------------*/
+		/*-------------------------------
+		☆0221果村
+		同い年でタメ口だと思ってます！
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_s_work" pt_name="a" em_name="jitome" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="11487" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Whether you were swimming or walking,"]
+		[maintxt_print text="     wouldn't the beach be cold now regardless?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="80452" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     But...!"]
+		[maintxt_print text="     Rika is going to"]
+		[maintxt_print text="     go with Ikki!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="80453" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     It's so not fair!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="11488" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     That does not interest me in the slightest."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="80454" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     What, are you jealous?!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="11489" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Uh... That's not it."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="c" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="11490" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Why would Ikki going to the beach with a"]
+		[maintxt_print text="     time traveler from the French Revolution"]
+		[maintxt_print text="     strike any kind of jealous emotion in me?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="80455" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Well fine, it doesn't have to be the beach."]
+		[maintxt_print text="     I just want to go hang out with all the"]
+		[maintxt_print text="     hotties!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="11491" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Hotties...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="80456" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Oh, I know!"]
+		[maintxt_print text="     Why don't we have a company trip with all"]
+		[maintxt_print text="     of the cafe employees??"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="11492" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     I don't think it would be a company trip, nor"]
+		[maintxt_print text="     would it only be cafe staff... Hey, wait!"]
+		[batch]
+
+		/*-------------------------------
+		ミネＯＵＴ
+		-------------------------------*/
+		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="0"]
+
+		[voice_play no="80457" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Manager!"]
+		[maintxt_print text="     Let's go to the beach!"]
+		[batch]
+
+		[ezchara_del ch_name="shin_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		画面切り替え
+		-------------------------------*/
+		[scenechange3 bgname="bg019" color="F_BLACK" speed="F_SP" dir="F_RIGHT"]
+
+		/*-------------------------------
+		店長ＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90430" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Sure. Why don't I gather the others as well."]
+		[maintxt_print text="     These types of events are important to"]
+		[maintxt_print text="     maintain a sense of camaraderie."]
+		[batch]
+
+		[txtwin_info line="1" type="2" pos="8"]
+
+		[voice_play no="80458" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Yaaay!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="11493" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...Are you serious?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90431" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Shin, do you not like big"]
+		[maintxt_print text="     group events?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="11494" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Well, I actually do like them, but wouldn't"]
+		[maintxt_print text="     the beach be too cold?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="90432" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     You have a point."]
+		[maintxt_print text="     Let's not go to the beach."]
+		[maintxt_print text="     It's cold and probably filled with jellyfish."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="80459" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     Aww..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="11495" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Is it true that there's an increase of jellyfish"]
+		[maintxt_print text="     during this time of year?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90433" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Supposedly there have been a lot of"]
+		[maintxt_print text="     jellyfish cropping up even earlier."]
+		[maintxt_print text="     But that's besides the point."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="90434" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Tomorrow there will be a summer evening"]
+		[maintxt_print text="     festival. Why don't we close shop early and"]
+		[maintxt_print text="     all go together?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="80460" count="0"]
+		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
+		[maintxt_print text="     A summer evening festival?!"]
+		[maintxt_print text="     I want to go! I sooo want to go!"]
+		[maintxt_print text="     I want to wear a yukata!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="11496" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     Don't do it. It's seriously cold."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="90435" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     We'll get to details later."]
+		[maintxt_print text="     I shall contact the others"]
+		[maintxt_print text="     to confirm."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90436" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Alright, let's open up the cafe."]
+		[maintxt_print text="     Have a great day, everyone."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[ezchara_del ch_name="shin_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-- ukyo_17.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure2"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_17.02.00
+背景：冥土の羊厨房→冥土の羊フロア
+時間：昼
+人物：オリオン・ミネ・シン・店長
+ウキョウ
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		/*-------------------------------
+		背景：冥土の羊厨房・昼
+		-------------------------------*/
+		[ezbg_change2 name="bg017" wait="BG_NORMAL"]
+		[batch]
+
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="wara" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="63721" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     A summer festival, huh?"]
+		[maintxt_print text="     So basically it's a festival with a bunch of"]
+		[maintxt_print text="     shops and stalls, right?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63722" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Summer evening..."]
+		[maintxt_print text="     Actually, it's way too cold for that."]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-------------------------------
+		シンＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="shin_s_work" pt_name="c" em_name="metoji" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="11497" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     It's so cold, it's not even appropriate to call"]
+		[maintxt_print text="     it summer at all."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63723" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Shin was saying the same thing."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="11498" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     I have to tell Mine to reconsider wearing her"]
+		[maintxt_print text="     yukata, or she'll definitely catch a cold."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="11499" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="...Ah, wait. I don't even have to do that."]
+		[maintxt_print text="     If it's after work, then she won't have time"]
+		[maintxt_print text="     to change."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="11500" count="0"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
+		[maintxt_print text="     I guess I'll leave her be, then."]
+		[maintxt_print text="...Alright. Here's the kale green tea."]
+		[maintxt_print text="     Go take it."]
+		[batch]
+
+		/*-------------------------------
+		シンＯＵＴ
+		-------------------------------*/
+		[ezchara_del ch_name="shin_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="orion_b" pt_name="02" em_name="jitome" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="63724" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     ”Kale Green Tea,” huh?"]
+		[maintxt_print text="     That sounds like a punishment drink."]
+		[maintxt_print text="     I wonder who ordered it."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-------------------------------
+		背景：冥土の羊・フロア
+		-------------------------------*/
+		[ezbg_change2 name="bg018" wait="BG_NORMAL"]
+		[batch]
+
+		/*-------------------------------
+		ウキョウＩＮ
+		店長ＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="ukyo_s" pt_name="01b" em_name="odoroki" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="50732" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     What did you say...?!"]
+		[maintxt_print text="     The summer evening festival...?!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63725" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ah..."]
+		[maintxt_print text="     Ukyo ordered it."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50733" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Your manager just told me! Is it true that"]
+		[maintxt_print text="     you're going to the summer evening festival?!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63726" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Why is this guy acting"]
+		[maintxt_print text="     so panicked?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="90437" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     We're thinking of going with all the staff"]
+		[maintxt_print text="     members, so we'll be closing the cafe at"]
+		[maintxt_print text="     16:00 tomorrow."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50734" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     The summer evening festival..."]
+		[maintxt_print text="     Ah... This is really bad."]
+		[batch]
+
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-------------------------------
+		店長ＯＵＴ
+		ウキョウアップ
+		-------------------------------*/
+		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[bgm_play no="6" count="0"]/* ＢＧＭ再生 和み　コミカル */
+
+		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="ikari" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="50735" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Hey, #Name[0]."]
+		[maintxt_print text="     This evening festival isn't a good idea."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50736" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     The gas pump at the kiosk could explode, the"]
+		[maintxt_print text="     truck with all the drums could drive onto the"]
+		[maintxt_print text="     pavement, a billboard could fall down..."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		[voice_play no="50737" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     The oil from a cooking spatula could splash in"]
+		[maintxt_print text="     your face, the toothpick from the shape-"]
+		[maintxt_print text="     cutting game might pierce your chest, you"]
+		[maintxt_print text="     could drown in the goldfish-scooping game..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="50738" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     A candy apple might get stuck in your throat,"]
+		[maintxt_print text="     or you'll be buried under piles of bananas, or"]
+		[maintxt_print text="     hit your head on the karaoke machine..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="50739" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     And finally, you could fall in a trap hole and"]
+		[maintxt_print text="     die!?"]
+		[maintxt_print text="     All this could happen...!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="63727" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     What is this man talking about..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="90438" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     The festival isn't that dangerous."]
+		[maintxt_print text="     Maybe you don't know because you've been"]
+		[maintxt_print text="     away from Japan for so long."]
+		[batch]
+
+		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		/*-------------------------------
+		ウキョウ通常位置へ
+		店長ＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="ukyo_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63728" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     But I also think the Manager being so"]
+		[maintxt_print text="     nonchalant about that outburst is weird, too."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="90439" count="0"]
+		[speaker_set name="Manager" chrid="CHRID_TENCHO"]	// 店長／店長
+		[maintxt_print text="     Why don't you come along with us,"]
+		[maintxt_print text="     Ukyo?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="50740" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I'll go... Man, I have to go."]
+		[maintxt_print text="     I can't leave her alone. Even if it means I"]
+		[maintxt_print text="     have to put my life on the line."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="63729" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     So why does he need such dramatic"]
+		[maintxt_print text="     determination just to go to the festival?"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[day_proc onoff="0"]
+		[batch]
+
+		[bgm_stop count="0"]
+
+		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]
+
+//斉藤コメント0613　アイキャッチ変更しました。：済み by山口
+
+		[ef_aicatch bgname="eye027" bgm="54" time="360"]/*アイキャッチ処理：BG371 BGMノーマル１*/
+
+		/*------------------------------
+		【ウキョウルート１７日目終了】
+		ukyo_18.01.00へ
+		------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="518" label="sure1"]
+
+	[return]
+
+
+

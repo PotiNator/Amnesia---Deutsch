@@ -1,0 +1,1007 @@
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+// 
+// /*-------------------------------
+// アムネシアVITA版　追加シナリオ
+// シンルート　２１日目
+// 
+// -------------------------------*/
+// /*-------------------------------
+// 本編shin_20.01.00を見ていることが前提と
+// なります。
+// 
+// もう一度信濃旅行に行くことになってから（２０日目）、
+// 旅行に行く（２２日目）
+// までの間の話です。
+// 
+// ２１日は月曜（本編シン１５日目に「明後日は水曜」発言）
+// なので、主人公バイトなし、シン予備校なし、で展開しています。
+// （シンは火木土日が予備校だと本編シン４日目にあります）
+// -------------------------------*/
+
+*sure1
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure1_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+	*sure1_turn0
+		[flag_set name="mem_chara" num="0"]
+		[flag_set name="ret_mem" num="1"]
+		[batch]
+
+		[flag_set name="共通パート" num="1"]
+		[flag_set name="ルート" num="1"]
+
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[ezbg_change2 name="bg221" wait="BG_NOW"]
+
+		[blackout_end mode="0" mode2="0" index="2" count="F_SP"]
+		[txtwaitset wait="F_SP"]
+		[batch]
+
+		[txtwaitset wait="90"]
+		[batch]
+
+		[blackout_start mode="0" mode2="0" color="0" index="2" alpha="255" count="60"]
+		[txtwaitset wait="60"]
+		[batch]
+
+		[ezbg_change2 name="bg034" wait="BG_NOW"]/*背景：自室*/
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[blackout_end mode="2" mode2="3" index="2" count="60"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		// 日付設定：21日
+		[day_set date="21"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常４　不穏　 */
+//		[bgm_stop count="0"]		/* BGM停止 */
+
+		[txtwaitset wait="60"]
+		[batch]
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// 
+		// /*-------------------------------
+		// ●シーンshin_vita_21.00
+		// 場所：主人公の家外観＞主人公の部屋
+		// 時間：昼
+		// 登場人物（服装）：シン（私服）、オリオン
+		// -------------------------------*/
+
+		[chara_app_pt ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013000" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...Good timing. It looked"]
+		[maintxt_print text="     like you weren't home, so"]
+		[maintxt_print text="     I was going to call you."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013001" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Did you go to buy breakfast"]
+		[maintxt_print text="     from the convenience store?"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013002" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...”Skin Care Travel Pack”?"]
+		[maintxt_print text="     Oh, the kind that comes with"]
+		[maintxt_print text="     the mini-lotions."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013003" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Must be hard to be a woman."]
+		[maintxt_print text="     There's so much you have to"]
+		[maintxt_print text="     pack for just a one-night trip."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013004" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Whatever."]
+		[maintxt_print text="     Can we go to your room?"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013005" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     You can pack without worrying"]
+		[maintxt_print text="     about me."]
+
+		[batch]
+
+		// /*選択肢
+		// 【何かあったの？】＞シーンshin_vita_21.01へ
+		// 【準備手伝ってくれるの？】＞シーンshin_vita_21.02へ
+		// */
+
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Did something happen?"]
+		[menutxt_set text="Will you help me get ready?"]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure1_turn1
+
+		// /*選択肢
+		// ＞シーンshin_vita_21.01へ
+		// ＞シーンshin_vita_21.02へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure2"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure3"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure2
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+	*sure2_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.01
+		// 選択肢：【何かあったの？】
+		// -------------------------------*/
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013006" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Nothing really..."]
+		[maintxt_print text="     I just wanted to see you."]
+
+		[batch]
+
+		// /*
+		// ＞シーンshin_vita_21.03へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+		[return]
+
+
+
+*sure3
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+	*sure3_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.02
+		// 選択肢：【準備手伝ってくれるの？】
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+
+		[voice_play no="013007" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     What? You need help preparing"]
+		[maintxt_print text="     for a one-night trip?"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013008" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     How much are you planning"]
+		[maintxt_print text="     to pack?"]
+
+		[batch]
+
+		// /*
+		// ＞シーンshin_vita_21.03へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+		[return]
+
+
+
+*sure4
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+	[if estimate="$i==1"][calllua function="stcm2_goto" label="sure4_turn1"]
+	[/if]
+
+	*sure4_turn0
+
+		[ezchara_dis ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="0"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.03
+		// 選択肢合流
+		// -------------------------------*/
+		// /*-------------------------------
+		// 背景：主人公の部屋
+		// -------------------------------*/
+		// /*-------------------------------
+		// 時間経過あり
+		// -------------------------------*/
+
+		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"]
+		[batch]
+		[txtwin_proc onoff="1"]
+
+		[chara_app_pt ch_name="shin_b" pt_name="01b" em_name="wara" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013009" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...This reminds me of our last"]
+		[maintxt_print text="     trip."]
+
+		[batch]
+
+		[voice_play no="013010" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I watched you get ready that"]
+		[maintxt_print text="     time, too."]
+
+		[batch]
+
+		[voice_play no="013011" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     You looked at me and asked"]
+		[maintxt_print text="     what was so interesting."]
+
+		[batch]
+
+		[voice_play no="013012" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I was just excited about the"]
+		[maintxt_print text="     trip..."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013013" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     But I felt like I was the only"]
+		[maintxt_print text="     one, so I didn't say. I think"]
+		[maintxt_print text="     you had a hunch, though."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013014" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Right now..."]
+		[maintxt_print text="     I just want to be near you."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013015" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Maybe it's because I haven't"]
+		[maintxt_print text="     seen you in a while. If I don't"]
+		[maintxt_print text="     see your face, I get restless."]
+
+		[batch]
+
+		[voice_play no="013016" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...I have to tell you these"]
+		[maintxt_print text="     things, or else the you of"]
+		[maintxt_print text="     right now might not know."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013017" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Hey. Are you worried about"]
+		[maintxt_print text="     the trip? I know it was sudden."]
+		[maintxt_print text="...Do you feel confused?"]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013018" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...I guess you would be."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="taeru" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013019" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     But this might be the only"]
+		[maintxt_print text="     chance to gather evidence"]
+		[maintxt_print text="     from the incident."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013020" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I need your help for it to work."]
+		[maintxt_print text="     I know you're worried because you"]
+		[maintxt_print text="     don't remember anything, but..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013021" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I told you. I'll protect you,"]
+		[maintxt_print text="     no matter what."]
+		[maintxt_print text="     So don't worry."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[txtwaitset wait="60"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013022" count="0"]	/* Tool Insert */
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　 */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...You almost finished?"]
+		[maintxt_print text="     Then come over here."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013023" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Sit here."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="tere2" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013024" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I can't let my guard down"]
+		[maintxt_print text="     tomorrow, so I need to charge up."]
+
+		[batch]
+
+		// /*-------------------------------
+		// ＳＥ：抱きしめる音（衣擦れの音とか）
+		// -------------------------------*/
+		[strse_play no="303" delay="0"]
+		[strse_waitcut]
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		// /*-------------------------------
+		// ＳＥ：衣擦れの音
+		// -------------------------------*/
+
+		[txtwin_info line="2" type="0" pos="2"]
+		//SEカット（2013/9/18）
+//		[strse_play no="301" delay="0"]
+//		[strse_waitcut]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013025" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......What? You don't like me"]
+		[maintxt_print text="     hugging you from behind?"]
+
+		[batch]
+
+		[voice_play no="013026" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I could hug you from the front,"]
+		[maintxt_print text="     but I might end up kissing you."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013027" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Or is it you don't like being"]
+		[maintxt_print text="     hugged at all? If that's the"]
+		[maintxt_print text="     case, I'll stop."]
+
+		[batch]
+
+		// /*選択肢
+		// 【大人しくする】＞シーンshin_vita_21.04へ
+		// 【嫌じゃない、驚いただけ】＞シーンshin_vita_21.05へ
+		// */
+
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="(Stay quiet.)"]
+		[menutxt_set text="I don't mind. I was just surprised."]
+		[menu_set flag="select"][stop]
+		*sure4_turn0_menu
+
+		[flag_set name="switch" num="1"]
+		[return]
+
+	*sure4_turn1
+
+		// /*選択肢
+		// ＞シーンshin_vita_21.04へ
+		// ＞シーンshin_vita_21.05へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[flag_number name="select" i="i"]
+
+		[if estimate="$i==0"]
+
+			[thread_change label="sure5"]
+
+		[/if]
+
+		[if estimate="$i==1"]
+
+			[thread_change label="sure6"]
+
+		[/if]
+
+		[return]
+
+
+
+*sure5
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure5_turn0"]
+	[/if]
+
+	*sure5_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.04
+		// 選択肢：【大人しくする】
+		// -------------------------------*/
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013028" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     So... you don't mind, right?"]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013029" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     But you don't want to be"]
+		[maintxt_print text="     kissed, then."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013030" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I don't know how to feel about"]
+		[maintxt_print text="     that... Well, it's fine, but..."]
+
+		[batch]
+
+		// /*
+		// ＞シーンshin_vita_21.06へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+		[return]
+
+
+
+*sure6
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+	*sure6_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.05
+		// 選択肢：【嫌じゃない、驚いただけ】
+		// -------------------------------*/
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013031" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...I see."]
+		[maintxt_print text="     Then I won't stop."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013032" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Can I hold you tighter?"]
+		[maintxt_print text="     I guess I already am, though."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="tere2" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013033" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I'm really happy to hear you"]
+		[maintxt_print text="     say that you don't mind."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013034" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     It's hard to tell how you feel"]
+		[maintxt_print text="     about me touching you, the you"]
+		[maintxt_print text="     with amnesia."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013035" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Your memories, they really"]
+		[maintxt_print text="     haven't returned, right?"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="013036" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     You're probably not aware, but"]
+		[maintxt_print text="     you're doing the same things"]
+		[maintxt_print text="     as before the last trip."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013037" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     You were trying to decide whether"]
+		[maintxt_print text="     to bring one or two hand towels."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[voice_play no="013038" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Also, you took the time to put"]
+		[maintxt_print text="     your favorite shampoo into a"]
+		[maintxt_print text="     smaller bottle."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+
+		[voice_play no="013039" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Even though that hasn't changed..."]
+		[maintxt_print text="     The new you is still different."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013040" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......Sorry."]
+		[maintxt_print text="     I'm not trying to accuse you."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013041" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Your movements, your gestures..."]
+		[maintxt_print text="     They're so much like before your"]
+		[maintxt_print text="     memory loss, so I felt nostalgic."]
+
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013042" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     It... might have made me a bit"]
+		[maintxt_print text="     emotional."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013043" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     Even though I know there's no"]
+		[maintxt_print text="     point in rushing things."]
+
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01c" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013044" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......I'm sorry."]
+		[maintxt_print text="     I shouldn't say things that could"]
+		[maintxt_print text="     upset you."]
+
+		[batch]
+		
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013045" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     If you've forgotten everything,"]
+		[maintxt_print text="     then I'll just remind you."]
+
+		[batch]
+
+		[voice_play no="013046" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     No matter how long it takes,"]
+		[maintxt_print text="     I'll get you to like me."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="013047" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     That's... all..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013048" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="......#Name[0]. If I were to"]
+		[maintxt_print text="     lose my memories, I'd definitely"]
+		[maintxt_print text="     fall in love with you again."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="tere2" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013049" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     It's impossible for me to see"]
+		[maintxt_print text="     anyone else but you."]
+
+		[batch]
+
+		// /*
+		// ＞シーンshin_vita_21.06へ
+		// */
+
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure7"]
+		[return]
+
+
+
+*sure7
+
+
+	[flag_number name="switch" i="i"]
+
+	[if estimate="$i==0"][calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+	*sure7_turn0
+
+		/*ウインドウ通常でひらいておく*/
+		[txtwin_proc onoff="1"]
+
+		// /*-------------------------------
+		// ●シーンshin_vita_21.06
+		// 選択肢合流
+		// -------------------------------*/
+
+		// /*-------------------------------
+		// ＳＥ：衣擦れの音
+		// -------------------------------*/
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="Shin." chrid="CHRID_SHIN"]
+		[maintxt_print text="............"]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013050" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     The reason I wanted to see you"]
+		[maintxt_print text="     is a little more than just being"]
+		[maintxt_print text="     restless without you."]
+
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013051" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     If I... hesitate at all in regards"]
+		[maintxt_print text="     to the accident, I think it'll"]
+		[maintxt_print text="     end forever unsolved."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013052" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     And... Neither you nor I would"]
+		[maintxt_print text="     be able to move ahead."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013053" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     That's why I won't hesitate. I'll"]
+		[maintxt_print text="     do what I need to do at Shinano."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013054" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I just... can't imagine how I'll"]
+		[maintxt_print text="     react, what action I'll take once"]
+		[maintxt_print text="     I uncover the truth."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="013055" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     I've decided in general what I want"]
+		[maintxt_print text="     to do. Just not the specifics..."]
+
+		[batch]
+
+		[voice_play no="013056" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     What you'll think..."]
+		[maintxt_print text="     Or what I should say..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="013057" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     But if I'm with you, I feel like"]
+		[maintxt_print text="     I'll find the answers to those"]
+		[maintxt_print text="     questions."]
+
+		[batch]
+
+		[voice_play no="013058" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="     When I think of you, I'm"]
+		[maintxt_print text="     prepared to take action."]
+		[maintxt_print text="     That's why..."]
+
+		[batch]
+
+		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+		[voice_play no="013059" count="0"]	/* Tool Insert */
+
+		[speaker_set name="Shin" chrid="CHRID_SHIN"]
+		[maintxt_print text="...Stay with me for now."]
+		[maintxt_print text="     Let me hold you like this,"]
+		[maintxt_print text="     for now......"]
+
+		[batch]
+		[txtwin_proc onoff="0"]
+		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[bgm_stop count="0"]		/* BGM停止 */
+		[day_proc onoff="0"] 
+		[set_clear_flag end_type="ED_MEMORIES" num="0"]
+		[batch]
+
+ 		/*[file_change no="xxx" label="sureXXX"]*/
+ 		[calllua function="game_end"]
+
+
+

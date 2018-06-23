@@ -1,0 +1,361 @@
+/*
+	KENTベストafter.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＫＥＮＴルート　ベストエンドａｆｔｅｒエピソード
+第１稿						２０１１年０３月０４日　果村
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_31_best.02.00
+背景：青空
+時間：昼
+人物：ケント
+モブ：－
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure1_turn15"]
+	[/if]
+	
+	*sure1_turn15
+
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+
+	*sure1_turn0
+	
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+
+		[flag_change name="switch" num="1"]
+
+		[return]
+
+	*sure1_turn1
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="1"]
+
+		/*ボイス再生*/
+		[voice_play no="031271" count="0"]
+
+		[speaker_set name="???" chrid="CHRID_MOB"]	// ケント／？？？
+		[maintxt_print text="     Hello?"]
+		[maintxt_print text="     I'm sorry for"]
+		[maintxt_print text="     keeping you waiting."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Huh, oh... I'm sorry!"]
+		[maintxt_print text="     Pardon me!"]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_kent15_a』（テムズ川のほとりでキス）
+		テムズ川のほとりで待ち合わせをしていた２人、額を寄せ合うようにして話をしているところ。
+		-------------------------------*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+		/* イベントＣＧ　ＥＶ○○○○ */
+		[txtwin_proc onoff="0"]/*テキストウィンドウを閉じる*/
+		[day_proc onoff="0"]/*日付表示消去*/
+
+		[batch]
+
+		/* 演出 -------------------------------------------------*/
+
+		[bgm_play no="18" count="0"]/* ＢＧＭ再生 温もり２　　　 */
+
+		/*ブラックアウト・レイヤ２*/
+		[blackout_start mode="0" mode2="0" color="1" index="2" alpha="255" count="30"]
+		[txtwaitset wait="30"]
+		[batch]
+
+		[ezbg_change2 name="_cg_kent15a" wait="0"]
+
+		[target_point_set front="0" target_id="0" x="720" y="0" size_z="100"]
+		[target_count_set front="0" target_id="0" count="0"]
+
+		[batch]
+
+		[target_point_set front="0" target_id="0" x="-480" y="0" size_z="100"]
+		[target_count_set front="0" target_id="0" count="200"]
+
+		/*ブラックアウト終了・レイヤ２*/
+		[blackout_end mode="0" mode2="0" index="2" count="100"]
+		[txtwaitset wait="100"]
+
+		[batch]
+
+		/*ブラックアウト・レイヤ２*/
+		[blackout_start mode="0" mode2="0" color="1" index="2" alpha="255" count="30"]
+		[txtwaitset wait="30"]
+		[batch]
+
+		[ezbg_change2 name="cg_kent15a" wait="2"]
+
+		[batch]
+
+		/*ブラックアウト終了・レイヤ２*/
+		[blackout_end mode="0" mode2="0" index="2" count="100"]
+
+		/*-------------------------------------------------------*/
+
+		[batch]
+
+		[txtwin_proc onoff="1"]/*テキストウィンドウを開く*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+
+		/*-------------------------------
+		笑
+		-------------------------------*/
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031272" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...It's just me."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Oh! It's you, Kent..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I thought one of the people here was saying"]
+		[maintxt_print text="     something to me, but I couldn't understand."]
+		[maintxt_print text="     The accent threw me off."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031273" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     How are you able to survive in London"]
+		[maintxt_print text="     if you can't even understand that?"]
+		[maintxt_print text="     I just said I'm sorry about being late."]
+		
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I was surprised because it was sudden."]
+		[maintxt_print text="     I'm usually fine when I'm prepared for it."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031274" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Oh? I hope so."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Sheesh."]
+		[maintxt_print text="     Kent, are you remembering the streets right?"]
+		[maintxt_print text="     It's unusual for you to be late."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031275" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Oh... That's not it."]
+		[maintxt_print text="     I was actually here on time."]
+		[maintxt_print text="     But I was watching you for a while."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     What...?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031276" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     The sight of you waiting for me"]
+		[maintxt_print text="     at this riverbank just didn't feel"]
+		[maintxt_print text="     like it was real."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031277" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I thought you could vanish at any moment,"]
+		[maintxt_print text="     and I ended up watching you for a while."]
+		[maintxt_print text="     I realize it was strange of me to do so."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031278" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It's possible that I still can't believe"]
+		[maintxt_print text="     that you'd come all the way here for"]
+		[maintxt_print text="     me."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031279" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     When I can't see you, I begin to feel"]
+		[maintxt_print text="     so unsure and weak..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...Um,"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I'm sorry for"]
+		[maintxt_print text="     keeping you waiting."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     I don't ever want to make you wait."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031280" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     No, it's okay."]
+		[maintxt_print text="     Thank you for coming."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_kent？？_b』（キス、あるいはキス直前）
+		-------------------------------*/
+		[ezbg_change2 name="cg_kent15b" wait="2"]
+
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="031281" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I won't let you go again."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="...Yes..."]
+		[maintxt_print text="     Please, don't ever let me go."]
+		[batch]
+
+		[scenechange3 bgname="bg_black" color="F_BLACK" speed="F_SP_SLOW" dir="F_FADE"]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+		[batch]
+		[spflag_number name="memopen_4" i="i"]
+		
+		[if estimate="$i == 0"]
+
+
+			[txtwin_proc onoff="1"]
+			[restrict_menu]
+			[restrict_txt]
+			
+			[txtwin_info line="2" type="1" pos="7"]
+			[maintxt_print text="[MEMORIES OF KENT]"]
+			[maintxt_print text="     has been unlocked."]
+			[batch]
+			
+			[txtwin_proc onoff="0"]
+			[spflag_set name="memopen_4" num="1"]
+			[batch]
+
+		[/if]
+		
+
+		// GOOD「I'm sorry for waiting」
+		[Trophy_Unlock id="TOROPHY_IDX_GOOD_END_CLOVER"]
+		[set_clear_flag end_type="ED_GOOD" num="2"]
+		[spflag_set name="ケントクリア" num="1"]
+
+	[calllua function="game_end"]
+
+	[return]
+
+
