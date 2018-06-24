@@ -54,20 +54,18 @@
 
 		[chara_app_pt ch_name="rika_b" pt_name="01" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="110091" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Good morning, everyone."]
-		[maintxt_print text="     My name is Rika, and I'll be coordinating our"]
-		[maintxt_print text="     stay at the lodge, beginning today."]
+		[maintxt_print text="     Guten Morgen zusammen. Mein Name ist Rika und ich werde ab heute"]
+		[maintxt_print text="     unseren Aufenthalt hier im Haus koordinieren."]
 		[batch]
 
 		[voice_play no="110092" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Three from Myouga University,"]
-		[maintxt_print text="     Fifteen from Seichi University."]
-		[maintxt_print text="     It seems everyone is here."]
+		[maintxt_print text="     Drei von der Myouga Universität, fünfzehn von der Seichi Universität."]
+		[maintxt_print text="     Dann scheinen alle da zu sein."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -75,9 +73,8 @@
 
 		[voice_play no="110093" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Let's all be sure to get along over the next"]
-		[maintxt_print text="     three days, and have a wonderful stay at"]
-		[maintxt_print text="     the lodge."]
+		[maintxt_print text="     Lasst uns die nächsten drei Tage alle gut miteinander auskommen"]
+		[maintxt_print text="     und habt einen wundervollen Aufenthalt in der Lodge."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -87,13 +84,11 @@
 		[maintxt_print text="     Rika, I'll hold your bags for you!"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="110094" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Oh, why thank you."]
-		[maintxt_print text="     But I can hold something"]
-		[maintxt_print text="     like this myself."]
+		[maintxt_print text="     Oh, danke, lieb von dir ... Aber so was kann ich selber tragen."]
 		[batch]
 
 		/*-------------------------------
@@ -397,13 +392,12 @@
 		[maintxt_print text="     That's how you end that conversation!?"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="110095" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Okay, everyone!"]
-		[maintxt_print text="     Let's begin moving."]
-		[maintxt_print text="     Please be careful not to be separated."]
+		[maintxt_print text="     Okay, Leute! Dann gehen wir mal los. Achtet bitte darauf,"]
+		[maintxt_print text="     nicht getrennt zu werden."]
 		[batch]
 
 		/*-------------------------------
@@ -674,13 +668,12 @@
 		[chara_app_pt ch_name="rika_b" pt_name="01" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="110096" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Very well then, everyone."]
-		[maintxt_print text="     Please go to your assigned rooms and leave"]
-		[maintxt_print text="     your belongings."]
+		[maintxt_print text="     Sehr schön. Begebt euch bitte zu den euch zugewiesenen Zimmern und"]
+		[maintxt_print text="     legt euere Sachen ab."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -688,9 +681,8 @@
 
 		[voice_play no="110097" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     We will have some time to practice first."]
-		[maintxt_print text="     Members of both universities are here to"]
-		[maintxt_print text="     play billiards, after all."]
+		[maintxt_print text="     Wir haben vorher noch Zeit zum Üben. Mitglieder beider Universitäten"]
+		[maintxt_print text="     sind schließlich hier, um Billard zu spielen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -698,9 +690,8 @@
 
 		[voice_play no="110098" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Please refer to this room assignment"]
-		[maintxt_print text="     diagram to see where each of your rooms"]
-		[maintxt_print text="     will be."]
+		[maintxt_print text="     Werft bitte einen Blick auf diese Zimmeraufteilung, um zu sehen,"]
+		[maintxt_print text="     wo sich eure jeweiligen Zimmer befinden."]
 		[batch]
 
 		[ezchara_del ch_name="rika_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
