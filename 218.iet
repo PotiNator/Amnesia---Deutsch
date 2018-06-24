@@ -677,13 +677,12 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="rika_b" pt_name="01" em_name="suma" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="32type="0" pos="8"]
 
 		[voice_play no="110088" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
-		[maintxt_print text="     But just because you're going"]
-		[maintxt_print text="     out with him, don't think he"]
-		[maintxt_print text="     belongs to you."]
+		[maintxt_print text="     Aber nur, weil du mit ihm ausgehst, brauchst du nicht zu"]
+		[maintxt_print text="     denken, dass er dir gehört."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_b" pt_name="01" em_name="msuma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -692,7 +691,7 @@
 
 		[voice_play no="110089" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// ※リカ／リカ
-		[maintxt_print text="     If you ever forget that..."]
+		[maintxt_print text="     Solltest du das jemals vergessen ..."]
 		[batch]
 
 		/*-------------------------------
@@ -700,12 +699,11 @@
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="rika_b" pt_name="01" em_name="mwara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="110090" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="...You might just need"]
-		[maintxt_print text="     to die."]
+		[maintxt_print text="     ... musst du vielleicht einfach sterben."]
 		[batch]
 
 		[ezchara_del ch_name="rika_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
