@@ -586,8 +586,8 @@
 
 		[voice_play no="110048" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Also, ich will mich auf dem Grundstück mal etwas umsehen und"]
-		[maintxt_print text="     wenn du magst, könnten wir ..."]
+		[maintxt_print text="     Also, ich will mich auf dem Grundstück mal etwas umsehen"]
+		[maintxt_print text="     und wenn du magst, könnten wir ..."]
 		[batch]
 
 		[ezchara_del ch_name="rika_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2535,7 +2535,7 @@
 
 		[voice_play no="110052" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     So klingt es, als gäbe es tatsächlich einen Täter."]
+		[maintxt_print text="     Klingt so, als gäbe es tatsächlich einen Täter."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -2550,8 +2550,8 @@
 
 		[voice_play no="110053" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Haben wir nicht alle nach Beweisen gesucht, um deine Unschuld"]
-		[maintxt_print text="     nachzuweisen, Shin?"]
+		[maintxt_print text="     Haben wir nicht alle nach Beweisen gesucht,"]
+		[maintxt_print text="     um deine Unschuld nachzuweisen, Shin?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -2567,8 +2567,8 @@
 		[voice_play no="110055" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="     Es ist fast so, als wäre die Person, die"]
-		[maintxt_print text="#Name[0] gestoßen hat, aufgewühlt gewesen und ist dann irritiert"]
-		[maintxt_print text="     durch Gegend gelaufen."]
+		[maintxt_print text="     #Name[0] gestoßen hat, aufgewühlt gewesen und ist dann irritiert"]
+		[maintxt_print text="     durch die Gegend gelaufen."]
 		[batch]
 
 		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2583,12 +2583,11 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="110056" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="     Sind das nicht genug Beweise, um jedermanns Unschuld zu beweisen!?"]
-		[maintxt_print text="     "]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
