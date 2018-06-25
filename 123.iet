@@ -247,12 +247,11 @@
 		
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="80028" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But what should we actually do"]
-		[maintxt_print text="     here?"]
+		[maintxt_print text="     Aber was genau sollen wir hier eigentlich machen?"]
 		[batch]
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 
@@ -612,13 +611,12 @@
 		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="ukyo_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="80029" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Ukyo and I are going with you to the cliff,"]
-		[maintxt_print text="     right? It's going to be great working with all"]
-		[maintxt_print text="     of you!"]
+		[maintxt_print text="     Ukyo und ich gehen mit dir zur Klippe, ja? Es wird toll,"]
+		[maintxt_print text="     mit euch allen zusammen zu arbeiten!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -834,7 +832,7 @@
 
 		[voice_play no="60918" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="...Shin sure is confident."]
+		[maintxt_print text="     ...Shin sure is confident."]
 		[maintxt_print text="     He's perfectly fine with you remembering"]
 		[maintxt_print text="     what happened."]
 		[batch]
@@ -843,7 +841,7 @@
 
 		[voice_play no="60919" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="...Do you feel the same way?"]
+		[maintxt_print text="     ...Do you feel the same way?"]
 		[maintxt_print text="     Can you believe that Shin had no intention"]
 		[maintxt_print text="     of pushing you?"]
 		[batch]
@@ -852,26 +850,24 @@
 
 		[voice_play no="10613" count="0"]
 		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
-		[maintxt_print text="...We're here. This is the place."]
+		[maintxt_print text="     ...We're here. This is the place."]
 		[batch]
 
 		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[chara_app_pt2 ch_name="ukyo_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80030" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Where did you fall off?"]
-		[maintxt_print text="     The edge is nearby, right?"]
+		[maintxt_print text="     Wo bist du gefallen? Die Kante ist hier in der Nähe, oder?"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80031" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     It's light out..."]
-		[maintxt_print text="     But it's still hard to spot."]
+		[maintxt_print text="     Es ist zwar hell draußen ... trotzdem ist sie schwer auszumachen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -889,7 +885,7 @@
 
 		[voice_play no="80032" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I'll take a look around."]
+		[maintxt_print text="     Ich sehe mich mal um."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01c" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1816,13 +1812,12 @@
 		/*-------------------------------
 		ミネとウキョウ、声だけ
 		-------------------------------*/
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80033" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="#Name[0]! Shin!"]
-		[maintxt_print text="     We found something that looks like sliding"]
-		[maintxt_print text="     marks!"]
+		[maintxt_print text="     #Name[0]! Shin!"]
+		[maintxt_print text="     Wir haben was gefunden, schaut nach Rutschspuren aus!
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
@@ -1999,7 +1994,7 @@
 
 		[voice_play no="80035" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Eww. That's gross..."]
+		[maintxt_print text="     Igitt. Ekelhaft ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2025,9 +2020,9 @@
 
 		[voice_play no="80036" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     If they're in two places, does that mean she"]
-		[maintxt_print text="     woke up and moved to a different spot"]
-		[maintxt_print text="     without knowing?"]
+		[maintxt_print text="     Wenn sie sich an zwei Orten befinden,"]
+		[maintxt_print text="     heißt das dann, sie ist aufgewacht und an eine andere Stelle gegangen,"]
+		[maintxt_print text="     ohne es zu wissen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2040,12 +2035,11 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80037" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     How does this explain any sort of malicious"]
-		[maintxt_print text="     intent, though?"]
+		[maintxt_print text="     Wie bitte soll das irgendeine böse Absicht erklären?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2062,7 +2056,7 @@
 		//[voice_play no="" count="0"]
 //		[speaker_set name="ミネ・リカ・サワ" chrid="CHRID_MOB"]	// ※ミネ・リカ・サワ／ミネ・リカ・サワ
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネに修正
-		[maintxt_print text="...!"]
+		[maintxt_print text="     ...!"]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="2"]
@@ -2109,9 +2103,8 @@
 
 		[voice_play no="80038" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     So you're saying that she woke up and moved"]
-		[maintxt_print text="     to the other spot, and then fell and hit her"]
-		[maintxt_print text="     head?"]
+		[maintxt_print text="     Du meinst, sie ist aufgewacht und ist zu der anderen Stelle gegangen,"]
+		[maintxt_print text="     dann ist sie gefallen und hat sich den Kopf gestoßen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2225,7 +2218,7 @@
 
 		[voice_play no="80039" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     That's... Terrible..."]
+		[maintxt_print text="     Das ist ... furchtbar ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2333,16 +2326,16 @@
 
 		[voice_play no="80040" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Um, we didn't really find much..."]
+		[maintxt_print text="     Ähm, wir haben nicht wirklich viel gefunden ..."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
 
 		[voice_play no="80041" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Let's see, we found the traces of her sliding"]
-		[maintxt_print text="     off, then asked her if it matched her"]
-		[maintxt_print text="     memories. That's all."]
+		[maintxt_print text="     Mal sehen, wir haben die Spuren gefunden, wo sie ausgerutscht ist"]
+		[maintxt_print text="     und sie dann gefragt, ob das mit ihren Erinnerungen überinstimmt."]
+		[maintxt_print text="     Das ist alles."]
 		[batch]
 
 		[ezchara_del ch_name="ikki_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2390,7 +2383,7 @@
 
 		[voice_play no="80042" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Huh?! Did you find something??"]
+		[maintxt_print text="     Hä?! Hast du was gefunden?"]
 		[batch]
 
 		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2705,7 +2698,7 @@
 
 		[voice_play no="80043" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     What!? Really!?"]
+		[maintxt_print text="     Was!? Wirklich!?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -3036,13 +3029,12 @@
 
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80044" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But still..."]
-		[maintxt_print text="     Everything we've talked about makes"]
-		[maintxt_print text="     you, Shin, seem really suspicious."]
+		[maintxt_print text="     Aber es ist so ... Alles, über das wir gesprochen hatten,"]
+		[maintxt_print text="     macht dich ziemlich verdächtig, Shin."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -3055,22 +3047,20 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80045" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     It's not just a little!"]
-		[maintxt_print text="     Nobody else had the time to do anything like"]
-		[maintxt_print text="     that to her."]
+		[maintxt_print text="     Das ist keine Kleinigkeit!"]
+		[maintxt_print text="     Niemand sonst hatte die Zeit, ihr so etwas anzutun."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80046" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     You had as much time as you needed before"]
-		[maintxt_print text="     calling us, but everyone else went off to"]
-		[maintxt_print text="     search for her at the same time."]
+		[maintxt_print text="     Du hattest genug Zeit, bevor du uns angerufen hast,"]
+		[maintxt_print text="     aber alle anderen sind zur selben Zeit los, um nach ihr zu suchen."]
 		[batch]
 
 		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -3090,17 +3080,16 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="Sawa" chrid="CHRID_SAWA"]	// ※サワ／サワ
-		[maintxt_print text="...!"]
+		[maintxt_print text="     ...!"]
 		[batch]
 
 		[ezchara_del ch_name="sawa_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="ikari" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="80047" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     That's terrible!"]
-		[maintxt_print text="     Are you suspecting Sawa now?!"]
+		[maintxt_print text="     Das ist ja grauenhaft! Verdächtigst du jetzt etwa Sawa?! "]
 		[batch]
 
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -3175,7 +3164,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ※ミネ／ミネ
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -3261,13 +3250,12 @@
 		-------------------------------*/
 		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="kanasimi" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="80048" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...I don't like this."]
-		[maintxt_print text="     I didn't intend to come here for something"]
-		[maintxt_print text="     like this."]
+		[maintxt_print text="     ... Das gefällt mir nicht."]
+		[maintxt_print text="     Ich hatte nicht vor, wegen so was herzukommen!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -4822,8 +4810,8 @@
 
 		[voice_play no="80049" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wait, me?"]
-		[maintxt_print text="     I don't really mind, but..."]
+		[maintxt_print text="     Moment, ich?"]
+		[maintxt_print text="     Ist mir eigentlich egal, aber ..."]
 		[batch]
 
 		[ezchara_del ch_name="shin_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -4885,7 +4873,7 @@
 		[voice_play no="110059" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="     Hä? Ich?"]
-		[maintxt_print text="     Ich bin es nicht gewöhnt, mit Leuten zu schlafen, die ich nicht kenne."]
+		[maintxt_print text="     Ich bin es nicht gewohnt, mit Leuten zu schlafen, die ich nicht kenne."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
