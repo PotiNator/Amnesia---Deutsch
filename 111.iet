@@ -632,13 +632,12 @@
 		[batch]
 
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="odoroki" color="NIGHT" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80018" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wait, Sawa! Why do you keep choosing the"]
-		[maintxt_print text="     rocket fireworks?! Normal people just light"]
-		[maintxt_print text="     sparklers."]
+		[maintxt_print text="     Warte, Sawa! Warum nimmst du nur die Raketen?!"]
+		[maintxt_print text="     Normale Leute zünden einfach ein paar Wunderkerzen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="suma" color="NIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -663,7 +662,7 @@
 
 		[voice_play no="80019" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     That's dangerous!!"]
+		[maintxt_print text="     Das ist gefährlich!!"]
 		[batch]
 
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
