@@ -302,7 +302,7 @@
 		[maintxt_print text="     event."]
 		[batch]
 
-		[txtwin_info line="32 type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110045" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
@@ -324,7 +324,7 @@
 
 		[voice_play no="110046" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="...!"]
+		[maintxt_print text="     ...!"]
 		[maintxt_print text="     Das ist gefährlich!"]
 		[batch]
 
@@ -2081,8 +2081,8 @@
 
 		[voice_play no="110049" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     ... Könnte sie nicht ihren Kopf dort angeschlagen haben, als sie fiel?"]
-		[maintxt_print text="     Das wäre gar nicht so abwegig."]
+		[maintxt_print text="     ... Könnte sie nicht ihren Kopf dort angeschlagen haben,"]
+		[maintxt_print text="     als sie fiel? Das wäre gar nicht so abwegig."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2354,7 +2354,7 @@
 		[voice_play no="110050" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="     Der Hauseigentümer und ich haben auch nicht wirklich was gefunden,"]
-		[maintxt_print text="     Also sind wir direkt zurückgekommen."]
+		[maintxt_print text="     also sind wir direkt zurückgekommen."]
 		[batch]
 
 		[ezchara_del ch_name="rika_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2541,7 +2541,7 @@
 		[voice_play no="110053" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
 		[maintxt_print text="     Haben wir nicht alle nach Beweisen gesucht,"]
-		[maintxt_print text="     um deine Unschuld nachzuweisen, Shin?"]
+		[maintxt_print text="     um deine Unschuld zu beweisen, Shin?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -2552,13 +2552,12 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110055" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Es ist fast so, als wäre die Person, die"]
-		[maintxt_print text="     #Name[0] gestoßen hat, aufgewühlt gewesen und ist dann irritiert"]
-		[maintxt_print text="     durch die Gegend gelaufen."]
+		[maintxt_print text="     Es ist fast so, als wäre die Person, die #Name[0] gestoßen hat,"]
+		[maintxt_print text="     aufgewühlt gewesen und dann irritiert durch die Gegend gelaufen."]
 		[batch]
 
 		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2573,18 +2572,20 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="1" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110056" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Sind das nicht genug Beweise, um jedermanns Unschuld zu beweisen!?"]
+		[maintxt_print text="     Sind das nicht genug Beweise,"]
+		[maintxt_print text="     um die Unschuld von uns allen zu beweisen!?"]
 		[batch]
 
-		[txtwin_info line="1" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110057" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Diese Beweise deuten darauf hin, dass Shin ein Verbrechen begangen hat!"]
+		[maintxt_print text="     Diese Beweise deuten darauf hin,"]
+		[maintxt_print text="     dass Shin ein Verbrechen begangen hat!"]
 		[batch]
 
 		[ezchara_del ch_name="toma_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2611,7 +2612,7 @@
 
 		[voice_play no="110058" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Keine Ausreden! Wenn du es nicht warst, wer war es denn dann?"]
+		[maintxt_print text="     Keine Ausreden! Wenn du es nicht warst, wer war es dann?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -4868,8 +4869,8 @@
 
 		[voice_play no="110059" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Hä? Ich?"]
-		[maintxt_print text="     Ich bin es nicht gewohnt, mit Leuten zu schlafen, die ich nicht kenne."]
+		[maintxt_print text="     Hä? Ich? Ich bin es nicht gewohnt,"]
+		[maintxt_print text="     mit Leuten zu schlafen, die ich nicht kenne."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
