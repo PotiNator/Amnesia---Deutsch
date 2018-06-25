@@ -1,4 +1,4 @@
-﻿/*
+/*
 	SHIN02日目＠ＤＦ修正.txt
 */
 
@@ -60,7 +60,7 @@
 
 		[voice_play no="60343" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     ... Gähn ... Good morning, #Name[0]. Hm? Ist jemand hier?"]
+		[maintxt_print text="     ... Gähn ... Guten Morgen, #Name[0]. Hm? Ist jemand hier?"]
 		[batch]
 
 		/*-------------------------------
@@ -68,11 +68,12 @@
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 
-		[txtwin_info line="1" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="60344" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     Oh! Das ist der Typ von gestern! ... Aber er ist viel zu früh hier! Es ist noch nicht mal neun Uhr!"]
+		[maintxt_print text="     Oh! Das ist der Typ von gestern! ... Aber er ist viel zu früh hier!"]
+		[maintxt_print text="     Es ist noch nicht mal neun Uhr!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
