@@ -366,9 +366,9 @@
 
 		[voice_play no="50023" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Yeah. If we're repeating our actions from"]
-		[maintxt_print text="     that night, Mine and I went to search the top"]
-		[maintxt_print text="     of the cliff after the accident."]
+		[maintxt_print text="     Ja. Wenn wir unser Vorgehen von jener Nacht wiederholen,"]
+		[maintxt_print text="     würden Mine und ich nach dem Unfall die Spitze der Klippe"]
+		[maintxt_print text="     untersuchen gehen."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
@@ -384,8 +384,8 @@
 
 		[voice_play no="50024" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Alright, and if I seem like I'm doing anything"]
-		[maintxt_print text="     weird, do the same."]
+		[maintxt_print text="     In Ordnung. Tut das Gleiche, falls ich so wirke,"]
+		[maintxt_print text="     als würde ich etwas Seltsames machen."]
 		[batch]
 
 		/*-------------------------------
@@ -408,7 +408,7 @@
 
 		[voice_play no="50025" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     You know, just in case."]
+		[maintxt_print text="     Du weißt schon, nur zur Sicherheit."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01c" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -624,7 +624,7 @@
 
 		[voice_play no="50026" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'll try not to get in the way."]
+		[maintxt_print text="     Ich werde versuchen, nicht im Weg zu stehen."]
 		[batch]
 
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -893,7 +893,7 @@
 
 		[voice_play no="50028" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Be careful. I'll go with you."]
+		[maintxt_print text="     Sei vorsichtig. Ich werde mitkommen."]
 		[batch]
 		[ezchara_del ch_name="ukyo_s" dir="TO_RIGHT" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[ezchara_del ch_name="mine_s" dir="TO_LEFT" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -1820,12 +1820,11 @@
 		[maintxt_print text="     Wir haben was gefunden, schaut nach Rutschspuren aus!
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50029" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Could you come over here and check this"]
-		[maintxt_print text="     area out?"]
+		[maintxt_print text="     Könntest du hier her kommen und das Gebiet untersuchen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2339,13 +2338,12 @@
 
 		[ezchara_del ch_name="ikki_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="ukyo_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="50030" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     What we did see for sure"]
-		[maintxt_print text="     was how well she and Shin"]
-		[maintxt_print text="     were getting along."]
+		[maintxt_print text="     Was wir klar erkennen konnten, war wie gut sie und Shin"]
+		[maintxt_print text="     sich verstehen."]
 		[batch]
 
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -5095,18 +5093,17 @@
 
 		[voice_play no="50031" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Me?!"]
-		[maintxt_print text="     I really think you should reconsider!"]
-		[maintxt_print text="     I'm dangerous, in a lot of ways!"]
+		[maintxt_print text="     Ich?!"]
+		[maintxt_print text="     Ich glaube wirklich, dass du das überdenken solltest!"]
+		[maintxt_print text="     Ich bin in vielerlei Hinsicht gefährlich!"]
 		[batch]
-
-		[txtwin_info line="3" type="0" pos="5"]
+		
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50032" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     There are plenty of other people who are"]
-		[maintxt_print text="     a safer choice, right? I don't think you should"]
-		[maintxt_print text="     choose me above them."]
+		[maintxt_print text="     Es gibt viele Leute, die eine sicherere Alternative sind, oder?"]
+		[maintxt_print text="     Ich glaube nicht, dass du mich ihnen vorziehen solltest."]
 		[batch]
 
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -6401,7 +6398,7 @@
 
 		[voice_play no="50034" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Too slow, fool."]
+		[maintxt_print text="     Zu langsam, du Trottel."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -6499,7 +6496,7 @@
 
 		[voice_play no="50035" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Huh? What's that?"]
+		[maintxt_print text="     Hmm? Was war das?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="kyosyo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -6507,7 +6504,7 @@
 
 		[voice_play no="50036" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I can't hear you."]
+		[maintxt_print text="...Ich kann dich nicht hören."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -6549,12 +6546,11 @@
 	*sure37_turn0
 
 		[chara_app_pt ch_name="ukyo_b" pt_name="01_2" em_name="metoji" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50037" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Nope. The ”culprit” you're talking about"]
-		[maintxt_print text="     wasn't me."]
+		[maintxt_print text="     Nee. Ich war nicht der 'Täter', von dem du sprichst."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="kyosyo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -6562,27 +6558,26 @@
 
 		[voice_play no="50038" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     If you had just died back then while you were"]
-		[maintxt_print text="     unconscious, you wouldn't have had to go"]
-		[maintxt_print text="     through a scary and painful thing like this."]
+		[maintxt_print text="     Wärst du doch nur damals gestorben, als du bewusstlos warst."]
+		[maintxt_print text="     Dann hättest du nicht so etwas Schreckliches und Schmerzhaftes"]
+		[maintxt_print text="     durchmachen müssen."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50039" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Heh heh heh... ”Culprit,” huh..."]
-		[maintxt_print text="     It looked like Shin was pretty wary about"]
-		[maintxt_print text="     him."]
+		[maintxt_print text="     Hehehe... 'Täter', was..."]
+		[maintxt_print text="     Anscheinend war Shin ziemlich auf der Hut vor ihm."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
 
 		[voice_play no="50040" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     He was so concerned with the person from"]
-		[maintxt_print text="     that night, I bet he never even imagined that"]
-		[maintxt_print text="     he called a REAL murderer here!"]
+		[maintxt_print text="     Er war wegen der Person von jener Nacht so beunruhigt."]
+		[maintxt_print text="     Ich wette, er hätte sich niemals vorstellen können,"]
+		[maintxt_print text="     dass er einen ECHTEN Mörder eingeladen hat!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -6590,9 +6585,9 @@
 
 		[voice_play no="50041" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     This is all just so sad."]
-		[maintxt_print text="     For him..."]
-		[maintxt_print text="     And for me."]
+		[maintxt_print text="     All das ist einfach so traurig."]
+		[maintxt_print text="     Für ihn..."]
+		[maintxt_print text="     Und für mich."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -6607,7 +6602,7 @@
 
 		[voice_play no="50042" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Anyway, it's time to say farewell."]
+		[maintxt_print text="     Wie auch immer. Es ist an der Zeit, Lebe wohl zu sagen."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -6728,40 +6723,38 @@
 
 		[chara_app_pt ch_name="ukyo_b" pt_name="01a" em_name="komari" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50043" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Uh, I really think it would be better if you"]
-		[maintxt_print text="     rethought the idea of sleeping here with"]
-		[maintxt_print text="     me."]
+		[maintxt_print text="     Äh, ich glaube wirklich, es wäre besser, wenn du es"]
+		[maintxt_print text="     überdenken würdest, hier bei mir zu schlafen."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
 
 		[voice_play no="50044" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     This is a problem, it's dangerous both"]
-		[maintxt_print text="     morally and physically. You should be more"]
-		[maintxt_print text="     aware of the danger."]
+		[maintxt_print text="     Das problematisch. Es ist sowohl moralisch als auch"]
+		[maintxt_print text="     körperlich gefährlich. Du solltest dir der Gefahr"]
+		[maintxt_print text="     bewusster sein."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50045" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I might look like I'm rather"]
-		[maintxt_print text="     quiet and reserved, but I"]
-		[maintxt_print text="     really am dangerous."]
+		[maintxt_print text="     Vielleicht wirke ich so, als wäre ich eher ruhig"]
+		[maintxt_print text="     und zurückhaltend. Ich bin aber wirklich gefährlich."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50046" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'm less of just a hungry beast, and more like"]
-		[maintxt_print text="     a brutal, man-eating shark."]
+		[maintxt_print text="     Ich bin weniger ein hungriges Tier, sondern mehr"]
+		[maintxt_print text="     ein brutaler, menschenfressender Hai."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -6777,8 +6770,8 @@
 
 		[voice_play no="50047" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Besides, I, uh..."]
-		[maintxt_print text="     I like you..."]
+		[maintxt_print text="     Außerdem, äh..."]
+		[maintxt_print text="     Mag ich dich..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -6793,13 +6786,10 @@
 
 		[voice_play no="50048" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Aah, what am I saying?"]
-		[maintxt_print text="     Saying something like this now would just"]
-		[maintxt_print text="     give you more trouble! I'm so stupid!"]
+		[maintxt_print text="     Oh, was sage ich denn gerade?"]
+		[maintxt_print text="     Wenn ich so etwas sage, wird dir das nur mehr"]
+		[maintxt_print text="     Schwierigkeiten bereiten. Ich bin so dumm!"]
 		[batch]
-
-		[txtwin_info line="3" type="0" pos="8"]
-
 		[voice_play no="60985" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
 		[maintxt_print text="     Wait,"]
@@ -6812,17 +6802,17 @@
 
 		[voice_play no="50049" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Anyway, that's just how it is!"]
-		[maintxt_print text="     I think it would be best if you went to"]
-		[maintxt_print text="     another room!"]
+		[maintxt_print text="     Wie auch immer. Das ist einfach so!"]
+		[maintxt_print text="     Ich glaube, es wäre das Beste, wenn du in ein anderes"]
+		[maintxt_print text="     Zimmer gehen würdest!"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50050" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     This room is dangerous for you in a"]
-		[maintxt_print text="     number of ways! Okay?"]
+		[maintxt_print text="     Dieses Zimmer ist in vielerlei Hinsicht gefährlich für dich!"]
+		[maintxt_print text="     Verstanden?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -6853,7 +6843,7 @@
 
 		[voice_play no="50051" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...Just kidding."]
+		[maintxt_print text="...Ich scherze nur."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -6867,8 +6857,8 @@
 
 		[voice_play no="50052" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Did you really think I'd let my prey get away"]
-		[maintxt_print text="     so easily?"]
+		[maintxt_print text="     Hast du wirklich geglaubt, ich würde meine Beute"]
+		[maintxt_print text="     so leicht entkommen lassen?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -6906,7 +6896,7 @@
 
 		[voice_play no="50034" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     Too slow, fool."]
+		[maintxt_print text="     Zu langsam, du Trottel."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -7001,7 +6991,7 @@
 
 		[voice_play no="50035" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     Huh? What's that?"]
+		[maintxt_print text="     Hmm? Was war das?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="kyosyo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -7009,7 +6999,7 @@
 
 		[voice_play no="50036" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="...I can't hear you."]
+		[maintxt_print text="...Ich kann dich nicht hören."]
 		[batch]
 
 		[bgm_stop count="0"]
@@ -7056,12 +7046,11 @@
 
 		[chara_app_pt ch_name="ukyo_b" pt_name="01_2" em_name="metoji" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50037" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     Nope. The ”culprit” you're talking about"]
-		[maintxt_print text="     wasn't me."]
+		[maintxt_print text="     Nee. Ich war nicht der 'Täter', von dem du sprichst."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="kyosyo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -7069,27 +7058,26 @@
 
 		[voice_play no="50038" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     If you had just died back then while you were"]
-		[maintxt_print text="     unconscious, you wouldn't have had to go"]
-		[maintxt_print text="     through a scary and painful thing like this."]
+		[maintxt_print text="     Wärst du doch nur damals gestorben, als du bewusstlos warst."]
+		[maintxt_print text="     Dann hättest du nicht so etwas Schreckliches und Schmerzhaftes"]
+		[maintxt_print text="     durchmachen müssen."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50039" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     Heh heh heh... ”Culprit,” huh..."]
-		[maintxt_print text="     It looked like Shin was pretty wary about"]
-		[maintxt_print text="     him."]
+		[maintxt_print text="     Hehehe... 'Täter', was..."]
+		[maintxt_print text="     Anscheinend war Shin ziemlich auf der Hut vor ihm."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
 
 		[voice_play no="50040" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     He was so concerned with the person from"]
-		[maintxt_print text="     that night, I bet he never even imagined that"]
-		[maintxt_print text="     he called a REAL murderer here!"]
+		[maintxt_print text="     Er war wegen der Person von jener Nacht so beunruhigt."]
+		[maintxt_print text="     Ich wette, er hätte sich niemals vorstellen können,"]
+		[maintxt_print text="     dass er einen ECHTEN Mörder eingeladen hat!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -7097,9 +7085,9 @@
 
 		[voice_play no="50041" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     This is all just so sad."]
-		[maintxt_print text="     For him..."]
-		[maintxt_print text="     And for me."]
+		[maintxt_print text="     All das ist einfach so traurig."]
+		[maintxt_print text="     Für ihn..."]
+		[maintxt_print text="     Und für mich."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -7114,7 +7102,7 @@
 
 		[voice_play no="50042" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="     Anyway, it's time to say farewell."]
+		[maintxt_print text="     Wie auch immer. Es ist an der Zeit, Lebe wohl zu sagen."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
