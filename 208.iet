@@ -123,13 +123,12 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="mine_b" pt_name="a" em_name="nikori" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80061" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     It's been a while, everyone."]
-		[maintxt_print text="     It'll be nice working with you again starting"]
-		[maintxt_print text="     today."]
+		[maintxt_print text="     Lange nicht gesehen, Leute."]
+		[maintxt_print text="     Finde ich super, ab heute wieder mit euch zu arbeiten."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
@@ -268,23 +267,21 @@
 		[maintxt_print text="     How was your vacation?"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80062" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Hi, Ikki."]
-		[maintxt_print text="     Long time no see."]
+		[maintxt_print text="     Hi, Ikki. Schön, dich wiederzusehen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="80063" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Ryukyu was really nice."]
-		[maintxt_print text="     The ocean was so pretty."]
-		[maintxt_print text="     Want to see the pictures I took after work?"]
+		[maintxt_print text="     Ryukyu war echt toll. Das Meer war so schön."]
+		[maintxt_print text="     Willst du nach der Arbeit die Bilder sehen, die ich gemacht habe?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -299,12 +296,11 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80064" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     What? You're always so busy aren't you,"]
-		[maintxt_print text="     Ikki?"]
+		[maintxt_print text="     Was? Du bist immer total beschäftigt, oder, Ikki?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="2"]
@@ -321,7 +317,7 @@
 
 		[voice_play no="80065" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Okay! It's a promise, right?"]
+		[maintxt_print text="     Okay! Das ist ein Versprechen, ja?"]
 		[batch]
 
 		/*-------------------------------
@@ -333,12 +329,12 @@
 
 		[chara_app_pt ch_name="mine_b" pt_name="a" em_name="mesorasi" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="80066" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
 		[maintxt_print text="     Oh, #Name[0]."]
-		[maintxt_print text="     You're here, too. Good morning."]
+		[maintxt_print text="     Du bist ja auch hier. Guten Morgen."]
 		[batch]
 
 		[voice_play no="61757" count="0"]
@@ -424,14 +420,14 @@
 
 		[voice_play no="80067" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Good work today."]
+		[maintxt_print text="     Gute Arbeit heute."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
 		[voice_play no="80068" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Ah! Are you done, too?"]
+		[maintxt_print text="     Ah! Bist du auch fertig?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -474,16 +470,16 @@
 
 		[voice_play no="80069" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...Um, hello?"]
+		[maintxt_print text="     ... Ähm, hallo?"]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
 
 		[voice_play no="80070" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I know I haven't seen you in a while, but you"]
-		[maintxt_print text="     seem like you've changed a little. You seem"]
-		[maintxt_print text="     more spacey..."]
+		[maintxt_print text="     Ich weiß ja, dass ich dich länger nicht gesehen habe,"]
+		[maintxt_print text="     aber du scheinst dich etwas verändert zu haben."]
+		[maintxt_print text="     Du siehst irgendwie benebelt aus ..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -501,12 +497,11 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="mine_b" pt_name="a" em_name="niyari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="80071" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...By the way."]
-		[maintxt_print text="     Have you broken up with Ikki yet?"]
+		[maintxt_print text="     ... Ach, übrigens. Hast du schon mit Ikki Schluss gemacht?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -524,18 +519,17 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="mine_s" pt_name="a" em_name="jitome" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="80072" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Well, from the look on your face, I can see"]
-		[maintxt_print text="     the answer is no."]
+		[maintxt_print text="     Hm, deinem Gesicht nach zu urteilen ist die Antwort wohl Nein."]
 		[batch]
 
 		[voice_play no="80073" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     You have less than a month left."]
-		[maintxt_print text="     I was just thinking it was about time."]
+		[maintxt_print text="     Einen Monat hast du noch. Ich dachte mir nur,"]
+		[maintxt_print text="     dass es langsam mal an der Zeit wäre."]
 		[batch]
 
 		[voice_play no="61767" count="0"]
@@ -593,7 +587,7 @@
 
 		[voice_play no="80074" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Don't try to play dumb."]
+		[maintxt_print text="     Stell dich nicht dumm."]
 		[batch]
 
 		/*-- ikki_08.02.03へ --*/
@@ -619,21 +613,19 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="80075" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Huh?"]
-		[maintxt_print text="     Which rumor are you talking about?"]
+		[maintxt_print text="     Hä? Von welchen Gerücht redest du?"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80076" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     And you're the one going out with Ikki."]
-		[maintxt_print text="     Shouldn't you know best whether a rumor"]
-		[maintxt_print text="     is true or not?"]
+		[maintxt_print text="     Und du gehst mit Ikki aus. Solltest du es nicht besser wissen,"]
+		[maintxt_print text="     ob ein Gerücht wahr ist, oder nicht?"]
 		[batch]
 
 		/*-------------------------------
@@ -664,13 +656,12 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80077" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Anyway, it's about the time for Ikki to break"]
-		[maintxt_print text="     up with you, so I guess the question now is..."]
-		[maintxt_print text="     who will be next?"]
+		[maintxt_print text="     Jedenfalls ist es für Ikki langsam soweit, mit dir schluszumachen,"]
+		[maintxt_print text="     dann ist jetzt nur die Frage ... wer wird die Nächste sein?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -683,20 +674,18 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80078" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But the fact that he still hasn't broken up"]
-		[maintxt_print text="     with you means you're still refusing to sleep"]
-		[maintxt_print text="     with him, right?"]
+		[maintxt_print text="     Aber da er immer noch nicht Schluss gemacht hat, bedeutet das wohl,"]
+		[maintxt_print text="     du lehnst es weiterhin ab, mit ihm zu schlafen, richtig?"]
 		[batch]
 
 		[voice_play no="80079" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     You're such a late bloomer."]
-		[maintxt_print text="     I'm sure Ikki is starting to just get annoyed by"]
-		[maintxt_print text="     it."]
+		[maintxt_print text="     Bist ein richtiger Spätzünder. Ich bin mir sicher,"]
+		[maintxt_print text="     dass es Ikki zu verärgern beginnt."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -705,16 +694,15 @@
 
 		[voice_play no="80080" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Maybe I shouldn't even wait for you to break"]
-		[maintxt_print text="     up before giving it a shot."]
+		[maintxt_print text="     Vielleicht sollte ich gar nicht warten, bis er Schluss macht"]
+		[maintxt_print text="     und einen versuch wagen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
 		[voice_play no="80081" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Heehee, I look forward to seeing what will"]
-		[maintxt_print text="     happen."]
+		[maintxt_print text="     Heehee, ich freue mich darauf, was passieren wird."]
 		[batch]
 
 		/*-------------------------------
@@ -825,13 +813,12 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="80083" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I was waiting for you."]
-		[maintxt_print text="     There's something I want to talk to you about."]
-		[maintxt_print text="     Do you have some time?"]
+		[maintxt_print text="     Ich habe schon auf dich gewartet. Es gibt etwas,"]
+		[maintxt_print text="     über das ich mit dir reden möchte. Hast du Zeit?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -843,12 +830,11 @@
 		[maintxt_print text="     Huh, right now?"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80084" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Yes, right now."]
-		[maintxt_print text="     I think ten minutes will be enough."]
+		[maintxt_print text="     Ja, jetzt gleich. Zehn Minuten sollten reichen, denke ich."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -870,12 +856,11 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80085" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     This is unusual."]
-		[maintxt_print text="     Do you plan to walk home together?"]
+		[maintxt_print text="     Wie ungewöhnlich. Willst zu gemeinsam heimlaufen?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="2"]
@@ -1010,13 +995,11 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80086" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Uh-oh?"]
-		[maintxt_print text="     I'm sorry, it sounds"]
-		[maintxt_print text="     like I'm intruding."]
+		[maintxt_print text="     O-oh? Tut mir leid, klingt so, als würde ich stören."]
 		[batch]
 
 		/*-------------------------------
