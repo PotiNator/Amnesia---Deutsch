@@ -286,7 +286,7 @@
 
 		[voice_play no="80001" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Good morning."]
+		[maintxt_print text="     Guten Morgen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -301,23 +301,21 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="80002" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, stop that."]
-		[maintxt_print text="     You too, manager."]
+		[maintxt_print text="     Ach, hör auf. Du auch, Chef."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80003" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, hi!"]
-		[maintxt_print text="     That's right, today's your first day back."]
-		[maintxt_print text="     I'm glad to see you're feeling better."]
+		[maintxt_print text="     Oh, hi! Stimmmt, heute fängst du ja wieder an bei uns."]
+		[maintxt_print text="     Freut mich, dass es dir wieder besser geht."]
 		[batch]
 
 		/*-------------------------------
@@ -325,13 +323,12 @@
 		ミネのセリフ、情報を抑えました
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="80004" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I was really shocked when the accident"]
-		[maintxt_print text="     happened. I even thought you were dead"]
-		[maintxt_print text="     when I saw you."]
+		[maintxt_print text="     Als der Unfall passiert ist, war ich total geschockt."]
+		[maintxt_print text="     Ich dachte erst, du wärst tot, als ich dich gesehen habe."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
@@ -367,7 +364,7 @@
 
 		[voice_play no="80005" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh right, okay."]
+		[maintxt_print text="     Oh, klar, in Ordnung."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
