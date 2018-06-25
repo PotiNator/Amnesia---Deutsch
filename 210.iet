@@ -995,17 +995,18 @@
 
 		[ezchara_nextstate2 ch_name="rika_s" pt_name="01" em_name="wara" color="NIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="1" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110073" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Es wird spät. Sollten wir nicht langsam schlussmachen für heute?"]
+		[maintxt_print text="     Es wird spät. Sollten wir nicht langsam schlussmachen"]
+		[maintxt_print text="     für heute?"]
 		[batch]
 
 		[voice_play no="110074" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     #Name[0] scheint nicht weiter warten zu wollen und ist"]
-		[maintxt_print text="     selbst rausgekommen."]
+		[maintxt_print text="     #Name[0] scheint nicht weiter warten zu wollen"]
+		[maintxt_print text="     und ist selbst rausgekommen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_s" pt_name="03a" em_name="odoroki" color="NIGHT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1056,7 +1057,7 @@
 
 		[voice_play no="110075" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Wie ärgerlich. Ikki muss auch andere bedienen,"]
+		[maintxt_print text="     Wie ärgerlich. Ikki muss genauso andere bedienen,"]
 		[maintxt_print text="     doch sie kann immer nur an sich selbst denken."]
 		[batch]
 
@@ -2467,7 +2468,7 @@
 	*sure19_turn0
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="1" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="110083" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
@@ -2556,7 +2557,7 @@
 
 		[voice_play no="110085" count="0"]
 		[speaker_set name="Rika" chrid="CHRID_RIKA"]	// リカ／リカ
-		[maintxt_print text="     Gute Nacht dir."]
+		[maintxt_print text="     Gute Nacht, dir."]
 		[batch]
 
 		[ezchara_del ch_name="rika_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
