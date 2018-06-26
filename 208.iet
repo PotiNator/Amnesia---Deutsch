@@ -329,7 +329,7 @@
 
 		[chara_app_pt ch_name="mine_b" pt_name="a" em_name="mesorasi" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="1" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80066" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
@@ -519,12 +519,12 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="mine_s" pt_name="a" em_name="jitome" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="1" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80072" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
 		[maintxt_print text="     Hm, deinem Gesicht nach zu urteilen"]
-		[maintxt_print text="     ist die Antwort wohl Nein.
+		[maintxt_print text="     ist die Antwort wohl Nein."]
 		[batch]
 
 		[voice_play no="80073" count="0"]
@@ -852,7 +852,7 @@
 
 		[voice_play no="20324" count="0"]
 		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
-		[maintxt_print text="#Name[0], do you mind waiting for"]
+		[maintxt_print text="     #Name[0], do you mind waiting for"]
 		[maintxt_print text="     ten minutes or so?"]
 		[batch]
 
@@ -862,7 +862,7 @@
 
 		[voice_play no="80085" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wie ungewöhnlich. Willst zu gemeinsam heimlaufen?"]
+		[maintxt_print text="     Wie ungewöhnlich. Ihr wollt zusammen heimlaufen?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="2"]
@@ -1001,7 +1001,7 @@
 
 		[voice_play no="80086" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     O-oh? Tut mir leid, klingt so, als würde ich stören."]
+		[maintxt_print text="     O-oh? Tut mir leid. Scheint, als würde ich stören."]
 		[batch]
 
 		/*-------------------------------
