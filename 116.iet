@@ -55,21 +55,19 @@
 		[txtwin_proc onoff="1"]
 		[day_proc onoff="1"]
 
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 		[voice_play no="60463" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
-		[maintxt_print text="     Welcome back, Master."]
-		[maintxt_print text="     May I take your order?"]
+		[maintxt_print text="     Willkommen zurück, Meister. Darf ich Ihre Bestellung aufnehmen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="60759" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     Ugghh, we just can't calm down!"]
-		[maintxt_print text="     We really need to go ask that guy Kent for"]
-		[maintxt_print text="     some answers!"]
+		[maintxt_print text="     Ugghh, wir kommen irgendwie nicht runter! Wir müssen sofort"]
+		[maintxt_print text="     diesen Kent befragen und ein paar Antworten bekommen!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -77,9 +75,9 @@
 
 		[voice_play no="60760" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     I wonder what Shin's doing?"]
-		[maintxt_print text="     Why hasn't he contacted you once?"]
-		[maintxt_print text="     I wonder if he's okay!?"]
+		[maintxt_print text="     Ich frage mich, was Shin wohl gerade macht?"]
+		[maintxt_print text="     Warum hat er dich kein einziges Mal angerufen?"]
+		[maintxt_print text="     Ihm ist doch hoffentlich nichts passiert!?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="03" em_name="gikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -87,8 +85,8 @@
 
 		[voice_play no="60761" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     This isn't the time to be lavishing attention"]
-		[maintxt_print text="     on strangers! Argh!"]
+		[maintxt_print text="     Das ist nicht der richtige Zeitpunkt, um unsere"]
+		[maintxt_print text="     Aufmerksamkeit auf Fremde zu richten! Argh!"]
 		[batch]
 
 		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
@@ -122,12 +120,11 @@
 		[maintxt_print text="     But you seem really low-energy today."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="60762" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     Oh, it's Sawa."]
-		[maintxt_print text="     Hm, I guess she noticed."]
+		[maintxt_print text="     Oh, das ist Sawa. Ich schätze, sie hat es wohl bemerkt."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="sawa_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -139,13 +136,12 @@
 		[maintxt_print text="     I think it's better than being alone."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="60763" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     That would be nice."]
-		[maintxt_print text="#Name[0], I think you should relax"]
-		[maintxt_print text="     once in a while."]
+		[maintxt_print text="     Das wär echt nett. #Name[0], ein wenig Entspannung"]
+		[maintxt_print text="     würde dir sicher gut tun."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="toma_s_work" pt_name="b" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -229,9 +225,9 @@
 
 		[voice_play no="60764" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     It would be kind of rude to Shin to go alone"]
-		[maintxt_print text="     somewhere with Toma."]
-		[maintxt_print text="     Alright! Let's hang out with Sawa today!"]
+		[maintxt_print text="     Es wäre Shin gegenüber irgendwie gemein, mit Toma alleine"]
+		[maintxt_print text="     irgendwohin zu gehen. Alles klar, verbringen wir den"]
+		[maintxt_print text="     heutigen Tag mit Sawa!"]
 		[batch]
 
 		// フラグON
@@ -284,9 +280,9 @@
 
 		[voice_play no="60765" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     It's really comforting to be around Toma."]
-		[maintxt_print text="     He's like your older brother, so I'm sure"]
-		[maintxt_print text="     Shin wouldn't mind."]
+		[maintxt_print text="     Es ist irgendwie beruhigend, in Tomas Nähe zu sein."]
+		[maintxt_print text="     Er ist wie dein großer Bruder, von daher schätze ich,"]
+		[maintxt_print text="     dass Shin nichts dagegen hätte."]
 		[batch]
 
 		// フラグON
@@ -395,12 +391,11 @@
 		[day_proc onoff="1"]
 
 		[chara_app_pt ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="60766" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     Haah... Today ended without any sort of"]
-		[maintxt_print text="     progress."]
+		[maintxt_print text="     Haah ... Heute haben wir überhaupt keinen Fortschritt gemacht."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -408,19 +403,18 @@
 
 		[voice_play no="60767" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     Shin has prep today, right?"]
-		[maintxt_print text="     He said they let him go to school, but does"]
-		[maintxt_print text="     he even have time to study?"]
+		[maintxt_print text="     Shin hat heute Vorbereitungsschule, oder? Er hat gesagt,"]
+		[maintxt_print text="     dass man ihn zur Schule gehen lässt, aber hat er dann"]
+		[maintxt_print text="     überhaupt Zeit zum Lernen?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="4" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="60768" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="...I know you're feeling down,"]
-		[maintxt_print text="     but try not to get too depressed,"]
-		[maintxt_print text="#Name[0]."]
+		[maintxt_print text="     ...Ich weiß, dass du dich deprimiert fühlst, aber versuch,"]
+		[maintxt_print text="     nicht zu depressiv zu werden, #Name[0]."]
 		[batch]
 
 		/*-------------------------------
@@ -441,15 +435,14 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
-		[maintxt_print text="...!"]
+		[maintxt_print text="     ...!"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="60769" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     A call from Shin!"]
-		[maintxt_print text="     This is a first, isn't it!?"]
+		[maintxt_print text="     Ein Anruf von Shin! Der erste, oder!?"]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -601,9 +594,9 @@
 
 		[voice_play no="60770" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     That's right. It's not like him."]
-		[maintxt_print text="     If he's suspected of this, he just"]
-		[maintxt_print text="     has to show he's innocent."]
+		[maintxt_print text="     Stimmt. Das sieht ihm überhaupt nicht üblich. Wenn er"]
+		[maintxt_print text="     verdächtigt wird, muss er ihnen doch nur zeigen,"]
+		[maintxt_print text="     dass er unschuldig ist."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="7"]
@@ -739,17 +732,16 @@
 
 		[voice_play no="60771" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="...He hung up..."]
+		[maintxt_print text="     ...Er hat aufgelegt ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="01b" em_name="sinken" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="60772" count="0"]
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="     He seemed really tired, didn't"]
-		[maintxt_print text="     he? I wonder what he's been"]
-		[maintxt_print text="     looking into..."]
+		[maintxt_print text="     Er hat sich echt erschöpft angehört, oder? Ich frage mich,"]
+		[maintxt_print text="     welcher Sache er nachgegangen ist ..."]
 		[batch]
 
 		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="FAST_DEL_SPD" delay="NO_DELAY"]
