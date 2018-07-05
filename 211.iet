@@ -515,7 +515,7 @@
 
 		[voice_play no="50076" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Wait, me?!"]
+		[maintxt_print text="     Moment mal, ich?!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -525,15 +525,15 @@
 		[voice_play no="50077" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
 		[maintxt_print text="     Ahahahaha."]
-		[maintxt_print text="     You say some interesting things."]
+		[maintxt_print text="     Du sagst ja interessante Sachen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
 		[voice_play no="50078" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'm not one of them."]
-		[maintxt_print text="     I can say that with confidence."]
+		[maintxt_print text="     Ich bin keiner von ihnen."]
+		[maintxt_print text="     Das kann ich mit Sicherheit sagen."]
 		[batch]
 
 		/*-- ikki_11.02.03へ --*/
@@ -556,20 +556,19 @@
 
 
 	*sure7_turn0
-
-		[txtwin_info line="2" type="0" pos="5"]
+	
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50079" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Anyway, that's about all I"]
-		[maintxt_print text="     can say for now."]
+		[maintxt_print text="     Wie auch immer. Mehr kann ich jetzt nicht sagen."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50080" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     See you, and be careful. Really."]
+		[maintxt_print text="     Bis später und sei vorsichtig. Wirklich."]
 		[batch]
 
 		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
