@@ -192,9 +192,9 @@
 
 		[voice_play no="50064" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'll come by once in a while."]
-		[maintxt_print text="     I'd be happy if you talked to"]
-		[maintxt_print text="     me a little when I do."]
+		[maintxt_print text="     Ich werde hin und wieder vorbeischauen."]
+		[maintxt_print text="     Ich wäre glücklich, wenn du dich dann ein bisschen"]
+		[maintxt_print text="     mit mir unterhalten würdest."]
 		[batch]
 
 		/*-------------------------------
@@ -208,23 +208,22 @@
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
 		[maintxt_print text="..."]
 		[batch]
-
+		
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50065" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     By the way, are you going out with anyone"]
-		[maintxt_print text="     right now?"]
+		[maintxt_print text="     Übrigens... Gehst du momentan mit jemandem?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50066" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Shin? Ikki? Toma?"]
-		[maintxt_print text="     Or maybe even Kent?"]
+		[maintxt_print text="     Mit Shin? Ikki? Toma?"]
+		[maintxt_print text="     Oder vielleicht sogar mit Kent?"]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
