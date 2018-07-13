@@ -305,12 +305,13 @@
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="3" type="0" pos="2"]
 
 		[voice_play no="50149" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="...Sorry about the other day."]
-		[maintxt_print text="     I said some weird things. I apologize."]
+		[maintxt_print text="...Tut mir leid wegen neulich."]
+		[maintxt_print text="     Ich habe ein paar ziemlich seltsame Dinge gesagt."]
+		[maintxt_print text="     Entschuldigung."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
@@ -319,8 +320,8 @@
 
 		[voice_play no="50150" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     Also... Um..."]
-		[maintxt_print text="     Could you talk for a little while?"]
+		[maintxt_print text="     Also... Äh..."]
+		[maintxt_print text="     Hast du etwas Zeit zum Reden?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -372,8 +373,8 @@
 
 		[voice_play no="50151" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     I think you'd be better off hearing this."]
-		[maintxt_print text="...For your own good."]
+		[maintxt_print text="     Ich glaube, es wäre besser für dich, das zu erfahren."]
+		[maintxt_print text="...Nur zu deinem Besten."]
 		[batch]
 
 		/*-------------------------------
@@ -409,8 +410,8 @@
 
 		[voice_play no="50152" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     I really think you should hear this."]
-		[maintxt_print text="...It's about your boyfriend."]
+		[maintxt_print text="     Ich glaube wirklich, dass du das erfahren solltest."]
+		[maintxt_print text="...Es geht um deinen Freund."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -422,13 +423,13 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01a_2" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
-
+		
 		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="50153" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     The man who's with you..."]
-		[maintxt_print text="     He's not your boyfriend."]
+		[maintxt_print text="     Der Mann, der mit dir zusammen ist..."]
+		[maintxt_print text="     Er ist nicht dein Freund."]
 		[batch]
 
 		/*-------------------------------
@@ -440,8 +441,8 @@
 
 		[voice_play no="50154" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     The man who's with you now isn't your"]
-		[maintxt_print text="     boyfriend."]
+		[maintxt_print text="     Der Mann, der momentan mit dir zusammen ist, ist nicht dein"]
+		[maintxt_print text="     Freund."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
@@ -450,29 +451,27 @@
 
 		[voice_play no="50155" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     I'm not lying."]
-		[maintxt_print text="     The liar is the other guy, not me."]
+		[maintxt_print text="     Ich lüge nicht."]
+		[maintxt_print text="     Der andere Kerl ist der Lügner, nicht ich."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="50156" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     So? Do you believe me?"]
-		[maintxt_print text="     Well, that doesn't matter, it won't change"]
-		[maintxt_print text="     anything."]
+		[maintxt_print text="     Und? Glaubst du mir?"]
+		[maintxt_print text="     Ach, das ist nicht wichtig. Das wird gar nichts ändern."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="50157" count="0"]
 		[speaker_set name="???" chrid="CHRID_MOB"]	// ウキョウ／？？？
-		[maintxt_print text="     Regardless of what you do, they're going to"]
-		[maintxt_print text="     kill you."]
+		[maintxt_print text="     Sie werde dich töten, egal was du machst."]
 		[batch]
 
 //		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01_2" em_name="kyosyo" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]
