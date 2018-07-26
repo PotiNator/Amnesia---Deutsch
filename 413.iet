@@ -57,7 +57,7 @@
 
 		[txtwin_proc onoff="1"]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
 
@@ -65,21 +65,19 @@
 		[voice_play no="080236" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, #Name[0]."]
-		[maintxt_print text="     Good morning."]
+		[maintxt_print text="     Oh, #Name[0]. Guten Morgen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080237" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Did you have fun yesterday?"]
-		[maintxt_print text="     Although the weather sure was"]
-		[maintxt_print text="     unfortunate for wearing yukatas."]
+		[maintxt_print text="     Hat es dir gestern Spaß gemacht? "]
+		[maintxt_print text="     Obwohl das Wetter fürs Tragen von Yukatas etwas ungünstig war."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -90,35 +88,32 @@
 		[voice_play no="080238" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Well, I guess it wasn't a big problem,"]
-		[maintxt_print text="     even if it did rain. You two were totally"]
-		[maintxt_print text="     into each other, weren't you?"]
+		[maintxt_print text="     Aber ich schätze, das war kein Problem."]
+		[maintxt_print text="     Selbst, wenn es geregnet hätte. Ihr beiden wart richtige"]
+		[maintxt_print text="     Turteltauben, was?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080239" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Or did you end up having a"]
-		[maintxt_print text="     fight because the date didn't"]
-		[maintxt_print text="     go well?"]
+		[maintxt_print text="     Oder habt ihr euch letztendlich sogar gestritten,"]
+		[maintxt_print text="     weil euer Date nicht so gut lief?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080240" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I kept him in the cafe until"]
-		[maintxt_print text="     the very last minute yesterday,"]
-		[maintxt_print text="     after all."]
+		[maintxt_print text="     Schließlich ist er gestern bis zum Schluss im Cafe gewesen."]
 		[batch]
 
 		[ezchara_move2 ch_name="mine_s" place="RIGHT" speed="FAST_MOVE" delay="NO_DELAY"]/*キャラ移動*/
@@ -149,15 +144,14 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080241" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Haah, I guess that interference from"]
-		[maintxt_print text="     yesterday isn't enough to break you up. But"]
-		[maintxt_print text="     you've only been going out half a month."]
+		[maintxt_print text="     Haha, glaube, der gestrige Vorfall reicht dir nicht, um Schluss"]
+		[maintxt_print text="     zu machen. Aber ihr seid erst seit einem halben Monat zusammen."]
 		[batch]
 
 		/*-------------------------------
@@ -165,14 +159,14 @@
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="niyari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080242" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...Hmm."]
-		[maintxt_print text="     What should I try next?"]
+		[maintxt_print text="     ... Hmm. Was soll ich als nächstes versuchen?"]
+
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
@@ -200,7 +194,7 @@
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ※ワカさん／ワカさん
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -211,7 +205,7 @@
 		[voice_play no="080243" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...Oh, manager..."]
+		[maintxt_print text="     ... Oh, Chef ..."]
 		[batch]
 
 		/*-------------------------------
@@ -219,15 +213,14 @@
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080244" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I'm sorry, manager."]
-		[maintxt_print text="     I was just apologizing for keeping you"]
-		[maintxt_print text="     here so long yesterday."]
+		[maintxt_print text="     Tut mir leid, Chef. Ich wollte mich nur entschuldigen,"]
+		[maintxt_print text="     dass ich dich gestern solange aufgehalten habe."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -236,20 +229,19 @@
 		[voice_play no="064968" count="0"]
 
 		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
-		[maintxt_print text="...What?"]
+		[maintxt_print text="     ...What?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080245" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I ended up talking too much"]
-		[maintxt_print text="     yesterday... But I didn't mean to"]
-		[maintxt_print text="     intrude, you know?"]
+		[maintxt_print text="     Ich habe gestern viel zu viel geredet ..."]
+		[maintxt_print text="     Aber eigentlich wollte ich nicht stören, verstehst du?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -260,24 +252,23 @@
 		[voice_play no="090232" count="0"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ワカさん／ワカさん
-		[maintxt_print text="...?"]
+		[maintxt_print text="     ...?"]
 		[maintxt_print text="     Why would you apologize to"]
-		[maintxt_print text="#Name[0] about yesterday?"]
+		[maintxt_print text="     #Name[0] about yesterday?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
 		[trchara_up_pt ch_name="orion_b" pt_name="01"]/*キャラ準備 1パターン*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080246" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Huh? You know..."]
-		[maintxt_print text="     Didn't I get in the way? Was it really"]
-		[maintxt_print text="     okay for you to talk to me that long?"]
+		[maintxt_print text="     Hm? Na ja ... Habe ich nicht gestört, oder so?"]
+		[maintxt_print text="     War es wirklich in Ordung, mich so lange mit dir zu unterhelten?"]
 		[batch]
 
 		[ezchara_dis ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除＿退避*/
@@ -359,14 +350,13 @@
 		[chara_app_pt ch_name="tencho_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_BACK" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080247" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Hey!"]
-		[maintxt_print text="     What are you blurting out like that!?"]
+		[maintxt_print text="     Hey! Was faselst du da?!"]
 		[batch]
 
 		/*-------------------------------
@@ -375,15 +365,14 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="nikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080248" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     No way...!"]
-		[maintxt_print text="     There's no way that's true!"]
-		[maintxt_print text="     H-How shocking!"]
+		[maintxt_print text="     Niemals ...! Das ist überhaupt nicht wahr!"]
+		[maintxt_print text="     Ich bin schockiert!"]
 		[batch]
 
 		/*-------------------------------
@@ -400,7 +389,7 @@
 		[voice_play no="080249" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...I'm going to knock you out."]
+		[maintxt_print text="     ... Dir zeig ich’s."]
 		[batch]
 
 		/*-------------------------------
@@ -421,15 +410,14 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080250" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, manager! Don't worry about this!"]
-		[maintxt_print text="     It sounds like she's just caught up in a"]
-		[maintxt_print text="     huge misunderstanding!"]
+		[maintxt_print text="     Oh, Chef! Nur keine Bange."]
+		[maintxt_print text="     Das scheint alles ein großes Missverständnis zu sein!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -440,8 +428,8 @@
 		[voice_play no="080251" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     You're her boyfriend, I won't"]
-		[maintxt_print text="     start liking you, don't worry."]
+		[maintxt_print text="     Du bist ihr Freund. Ich werd mich schon nicht in dich verlieben,"]
+		[maintxt_print text="     keine Sorge."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -452,31 +440,29 @@
 		[voice_play no="090234" count="0"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ワカさん／ワカさん
-		[maintxt_print text="...Her boyfriend?"]
+		[maintxt_print text="     ...Her boyfriend?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080252" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Yeah, aren't you going out with"]
-		[maintxt_print text="     her, manager?"]
+		[maintxt_print text="     Ja, bist du nicht mit ihr zusammen, Chef?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="090235" count="0"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ワカさん／ワカさん
-		[maintxt_print text="#Name[0]'s boyfriend is the tall man"]
-		[maintxt_print text="     who comes to the cafe sometimes."]
+		[maintxt_print text="     #Name[0]s ist der große Kerl, der manchmal ins Cafe kommt."]
 		[batch]
 
 		/*-- kent_13.01.03へ --*/
@@ -512,7 +498,7 @@
 		[voice_play no="080253" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...What?"]
+		[maintxt_print text="     ... Was?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -558,18 +544,16 @@
 		[voice_play no="080254" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wait? WHAAT...?!"]
+		[maintxt_print text="     Moment? Waaas ...?!"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080255" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     W-Wait a minute."]
-		[maintxt_print text="     Your boyfriend..."]
-		[maintxt_print text="     Wasn't the manager??"]
+		[maintxt_print text="     Warte mal. Dein Freund ... war gar nicht der Chef??"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -584,15 +568,14 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080256" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But Sawa was always saying that she's"]
-		[maintxt_print text="     surprised you'e going out with such an"]
-		[maintxt_print text="     overbearing and stubborn man..."]
+		[maintxt_print text="     Aber Sawa meinte immer, sie sei überrascht, dass du mit"]
+		[maintxt_print text="     einem so überheblichen und sturen Kerl zusammen bist ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -603,19 +586,18 @@
 		[voice_play no="090237" count="0"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ワカさん／ワカさん
-		[maintxt_print text="...Overbearing and stubborn man...?"]
+		[maintxt_print text="     ...Overbearing and stubborn man...?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080257" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Whaaaat..."]
-		[maintxt_print text="     I thought I was right..."]
+		[maintxt_print text="     Waaaas ... Und ich dachte, ich liege richtig ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -628,26 +610,24 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080258" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, manager, I don't think that's a bad thing!"]
-		[maintxt_print text="     Having an overbearing and stubborn"]
-		[maintxt_print text="     boyfriend, I mean!"]
+		[maintxt_print text="     Oh, Chef, ich glaube, so schlecht ist das gar nicht!"]
+		[maintxt_print text="     Einen überheblichen und sturen Freund zu haben, meine ich!"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080259" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="#Name[0] seems to like men like"]
-		[maintxt_print text="     that, so I think maybe this is some"]
-		[maintxt_print text="     sort of popular fad."]
+		[maintxt_print text="     #Name[0] scheint solche Männer zu mögen,"]
+		[maintxt_print text="     ist wohl irgendein neuer Trend, denke ich."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -678,17 +658,16 @@
 		[voice_play no="080260" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...No, I really mean it..."]
+		[maintxt_print text="     ... Nein, ich meine es ernst ..."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080261" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     S-So, manager."]
-		[maintxt_print text="     Do you have a girlfriend right now?"]
+		[maintxt_print text="     A-Also, Chef. Hast du denn gerade eine Freundin?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -696,19 +675,18 @@
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[speaker_set name="Waka" chrid="CHRID_MOB"]	// ※ワカさん／ワカさん
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080262" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wait, already?!"]
-		[maintxt_print text="     I thought you were single now!"]
+		[maintxt_print text="     Moment, schon?! Ich dachte, du wärst jetzt Single!"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -723,14 +701,13 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080263" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Aaaah..."]
-		[maintxt_print text="     What am I doing...?"]
+		[maintxt_print text="     Aaaah ... Was mache ich da ...?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -749,7 +726,7 @@
 		[txtwin_info line="1" type="0" pos="2"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ※ミネ／ミネ
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -760,8 +737,8 @@
 		[voice_play no="080264" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="...I'm very sorry, #Name[0]."]
-		[maintxt_print text="     It looks like I totally misunderstood..."]
+		[maintxt_print text="     ... Tut mir wirklich leid, #Name[0]."]
+		[maintxt_print text="     Ich habe das offenbar völlig missverstanden ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -772,7 +749,7 @@
 		[voice_play no="080265" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I'll go change my clothes!"]
+		[maintxt_print text="     Ich gehe mich umziehen!"]
 		[batch]
 
 		/*-------------------------------
