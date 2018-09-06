@@ -62,15 +62,15 @@
 
 		[voice_play no="90140" count="0"]
 		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
-		[maintxt_print text="     Everyone, let's begin the morning assembly!"]
+		[maintxt_print text="     Wir beginnen nun mit der Morgenversammlung!"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="90141" count="0"]
 		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
-		[maintxt_print text="     After taking a long break, Mine has now"]
-		[maintxt_print text="     returned."]
+		[maintxt_print text="     Nach einer langen Pause ist Mine"]
+		[maintxt_print text="     nun wieder zurück."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -91,9 +91,9 @@
 
 		[voice_play no="90142" count="0"]
 		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
-		[maintxt_print text="     I'm sure you may be somewhat unsteady"]
-		[maintxt_print text="     after such a long break. Be sure to always"]
-		[maintxt_print text="     anticipate the customers' needs."]
+		[maintxt_print text="     Nach so einer langen Pause wird man sicher"]
+		[maintxt_print text="     etwas unsicher. Vergewissert euch, den"]
+		[maintxt_print text="     Wünschen der Kunden entgegen zu kommen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -101,9 +101,9 @@
 
 		[voice_play no="90143" count="0"]
 		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
-		[maintxt_print text="     Everyone else must also be mindful of their"]
-		[maintxt_print text="     actions, be watchful over the customers, and"]
-		[maintxt_print text="     make sure Mine doesn't cause problems."]
+		[maintxt_print text="     Jeder hier muss eine eigenen Taten"]
+		[maintxt_print text="     sowie die der Kunden im Blick behalten"]
+		[maintxt_print text="     und aufpassen, dass Mine keine Probleme macht."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -112,7 +112,7 @@
 
 		[voice_play no="90144" count="0"]
 		[speaker_set name="Waka" chrid="CHRID_TENCHO"]	// ワカさん／ワカさん
-		[maintxt_print text="     That is all. Dismissed!"]
+		[maintxt_print text="     Das war's. Wegtreten!"]
 		[batch]
 
 		[ezchara_del ch_name="tencho_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
