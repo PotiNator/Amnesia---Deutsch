@@ -167,7 +167,7 @@
 		-------------------------------*/
 		[scenechange3 bgname="bg036" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
 
-		[chara_app_pt2 ch_name="sawa_s" pt_name="01" em_name="komari" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+		[chara_app_pt2 ch_name="sawa_s" pt_name="01" em_n[speaker_set name="Toma"ame="komari" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
 		[chara_app_pt2 ch_name="toma_s" pt_name="01" em_name="suma" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
@@ -452,9 +452,9 @@
 
 		[voice_play no="40049" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     Ja, genau. I think it would be best if we"]
-		[maintxt_print text="     assume she doesn't remember anything"]
-		[maintxt_print text="     about what happened that day."]
+		[maintxt_print text="     Ja, genau. Ich denke es ist besser,"]
+		[maintxt_print text="     dass wir annehmen, dass sie sich an nichts erinnert "]
+		[maintxt_print text="     was an diesem Tag passiert ist."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
@@ -488,9 +488,9 @@
 
 		[voice_play no="40050" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     Well, she's only recently started forgetting"]
-		[maintxt_print text="     her memories. She remembered it all"]
-		[maintxt_print text="     before..."]
+		[maintxt_print text="     Nun, sie hat erst letztens angefangen, ihre"]
+		[maintxt_print text="     Erinnerungen zu verlieren. Sie erinnert sich an alles"]
+		[maintxt_print text="     bevor..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -498,9 +498,9 @@
 
 		[voice_play no="40051" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     And I'm pretty sure Shin doesn't want to"]
-		[maintxt_print text="     talk about the accident. It's a pretty rough"]
-		[maintxt_print text="     memory for him, too..."]
+		[maintxt_print text="     Und ich bin mir sicher das Shin nicht"]
+		[maintxt_print text="     über den Unfall sprechen will. Es is auch eine harte"]
+		[maintxt_print text="     Erinnerung für ihn..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -739,7 +739,7 @@
 
 		[voice_play no="40052" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="#Name[0]!? What's wrong!?"]
+		[maintxt_print text="#Name[0]!? Was ist los!?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -936,9 +936,9 @@
 
 		[voice_play no="40053" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     What's wrong?"]
-		[maintxt_print text="     Was that too much information at once?"]
-		[maintxt_print text="     Are you feeling confused?"]
+		[maintxt_print text="     Was ist los?"]
+		[maintxt_print text="     Waren dass zu viele Informationen für dich?"]
+		[maintxt_print text="     Bist du verwirrt?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="gpin" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1032,9 +1032,9 @@
 
 		[voice_play no="40054" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     I wouldn't really say he was their number"]
-		[maintxt_print text="     one suspect, though. It was more like they"]
-		[maintxt_print text="     were questioning him for a while."]
+		[maintxt_print text="     Ich würde nicht sagen, dass er ihr"]
+		[maintxt_print text="     Hauptverdächtiger war. Sie haben im"]
+		[maintxt_print text="     nur viele Fragen gestellt."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1042,8 +1042,8 @@
 
 		[voice_play no="40055" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     Shin was saying that it was his fault you fell,"]
-		[maintxt_print text="     after all."]
+		[maintxt_print text="     Shin hat gesagt, dass es seine Schuld war,"]
+		[maintxt_print text="     dass du gefallen bist."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -1058,9 +1058,9 @@
 
 		[voice_play no="40056" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     But since even the victim was insisting it"]
-		[maintxt_print text="     was just an accident, they released him"]
-		[maintxt_print text="     fairly quickly."]
+		[maintxt_print text="     Aber als sogar das Opfer drauf bestand,"]
+		[maintxt_print text="     dass es nur ein Unfall war, haben sie ihn relativ"]
+		[maintxt_print text="     schnell entlassen."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
@@ -1077,9 +1077,9 @@
 
 		[voice_play no="40057" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     Right, that struck me as strange... From"]
-		[maintxt_print text="     what I heard there was a difference in"]
-		[maintxt_print text="     your testimonies that made them suspicious."]
+		[maintxt_print text="     Richtig, dass kamm mir auch seltsam vor... Von was"]
+		[maintxt_print text="     ich gehört habe, gab es einen Unterschied in deinen"]
+		[maintxt_print text="     Aussagen, was sie verdächtig gemacht hat."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="toma_s" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1087,10 +1087,10 @@
 
 		[voice_play no="40058" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     But that's pretty common. People get"]
-		[maintxt_print text="     confused immediately following an accident."]
-		[maintxt_print text="     Honestly, though, you seem more confused"]
-		[maintxt_print text="     now."]
+		[maintxt_print text="     Aber das ist ziemlich normal. Leute sind"]
+		[maintxt_print text="     meistens verwirrt nach einem Unfall."]
+		[maintxt_print text="     Aber ehrlich gesagt, sieht du mehr verwirrt"]
+		[maintxt_print text="     aus."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="sawa_s" pt_name="01" em_name="gpin" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1108,8 +1108,8 @@
 
 		[voice_play no="40059" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     Sawa, that's pretty bad. You'd better do"]
-		[maintxt_print text="     something to exercise that brain of yours."]
+		[maintxt_print text="     Sawa, dass ist ziemlich schlecht. Du solltest besser"]
+		[maintxt_print text="     etwas tun, womit du dein Gehirn trainierst."]
 		[batch]
 
 		/*-------------------------------
@@ -1166,9 +1166,9 @@
 
 		[voice_play no="40060" count="0"]
 		[speaker_set name="Toma" chrid="CHRID_TOMA"]	// トーマ／トーマ
-		[maintxt_print text="     He's fine. Well, as long as you don't tell the"]
-		[maintxt_print text="     police something like, ”Shin really did push"]
-		[maintxt_print text="     me off that cliff!”"]
+		[maintxt_print text="     Er ist okay. Also, solange du nicht der Polizei"]
+		[maintxt_print text="     so etwas wie 'Shin hat mich von der"]
+		[maintxt_print text="     Klippe gestoßen!” sagst."]
 		[batch]
 
 		/*-- shin_06.03.03へ --*/
