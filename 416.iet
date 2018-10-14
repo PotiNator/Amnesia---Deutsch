@@ -162,15 +162,14 @@
 
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="suma" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="080319" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But the manager definitely had to come."]
-		[maintxt_print text="     This is a gathering for the manager and his"]
-		[maintxt_print text="     employees."]
+		[maintxt_print text="     Aber der Chef musste kommen. Es ist eine Versammlung"]
+		[maintxt_print text="     für ihn und seine Angestellten."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s" pt_name="01" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
@@ -217,7 +216,7 @@
 		[voice_play no="080320" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     That was a yes."]
+		[maintxt_print text="     Das war ein Ja."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -239,11 +238,11 @@
 		[voice_play no="080321" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     How do you not understand?"]
-		[maintxt_print text="     You really need to get to know him better."]
+		[maintxt_print text="     Warum verstehst du es nicht?"]
+		[maintxt_print text="     Du solltest ihn wirklich besser kennenlernen."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
@@ -251,8 +250,7 @@
 		[voice_play no="080322" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Toma already understands the manager"]
-		[maintxt_print text="     perfectly, so he's fine."]
+		[maintxt_print text="     Toma versteht den Chef bereits perfekt, also bei ihm läuft’s"]
 		[batch]
 
 		/*-------------------------------
@@ -879,14 +877,13 @@
 		[maintxt_print text="     a pool."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		/*ボイス再生*/
 		[voice_play no="080323" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Wow!"]
-		[maintxt_print text="     It's an indoor pool, but you can see the sky!"]
+		[maintxt_print text="     Wow! Obwohl es ein Indoorpool ist, kann man den Himmel sehen!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -1733,15 +1730,14 @@
 
 		[chara_app_pt ch_name="mine_s" pt_name="01" em_name="wara" color="EVEN" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="080324" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Now, now."]
-		[maintxt_print text="     It's rude to question her over such"]
-		[maintxt_print text="     tiny details."]
+		[maintxt_print text="     Aber, aber. Es ist unhöflich,"]
+		[maintxt_print text="     sie nach derartigen Details zu fragen."]
 		[batch]
 
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
@@ -1797,8 +1793,8 @@
 		[voice_play no="080325" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Yay, it looks like the manager had fun, too."]
-		[maintxt_print text="     I'm happy."]
+		[maintxt_print text="     Juhu, der Chef scheint auch Spaß gehabt zu haben."]
+		[maintxt_print text="     Jetzt bin ich glücklich."]
 		[batch]
 
 		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
@@ -1823,7 +1819,7 @@
 		[voice_play no="080326" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Don't worry, you can just tell by looking."]
+		[maintxt_print text="     Keine Sorge, man erkennt es schon beim Hinsehen."]
 		[batch]
 
 		[ezchara_del ch_name="shin_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
@@ -1849,7 +1845,7 @@
 		[voice_play no="080327" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     I look forward to that!"]
+		[maintxt_print text="     Darauf freue ich mich schon!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
