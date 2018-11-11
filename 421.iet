@@ -1,0 +1,2135 @@
+/*
+	KENT21日目.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*-------------------------------
+アムネシア　ＫＥＮＴルート　２１日目
+第１稿						２０１１年０１月３０日　果村
+第２稿　相互監修				２０１１年０２月０７日　望月
+第３稿	最終調整・修正				２０１１年０２月０９日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：kent_21.01.00
+背景：ケント自宅－外観
+時間：昼
+人物：ケント、オリオン
+モブ：ケントの母
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[/if]
+
+
+	*sure1_turn0
+
+		/*-------------------------------
+		☆0130
+		モブのケント両親ですが、スピーカー名『ケント』で検索にかからないように
+		仮のスピーカー名を使います。
+		表示名は『ケントの父』『ケントの
+		母』とします。
+		-------------------------------*/
+		/*-------------------------------
+		テロ『８月２１日』
+		-------------------------------*/
+		//日付非表示
+		[day_proc onoff="0"]
+
+		[scenechange3 bgname="bg221" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		
+		[txtwaitset wait="30"]
+		[batch]
+		
+		[scenechange3 bgname="bg006" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		// 日付設定：21日
+		[day_set date="21"]
+
+		//日付表示
+		[day_proc onoff="1"]
+
+		[bgm_play no="10" count="0"]/* ＢＧＭ再生 日常１　昼　　 */
+
+		[txtwin_proc onoff="1"]
+
+		[chara_app_pt_alp ch_name="orion_b" pt_name="01" em_name="nikori" color="NOON" place="MD_LEFT" dir="FROM_LEFT" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]/*キャラ登場*/
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		/*ボイス再生*/
+		[voice_play no="065229" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wir sind da. Mittlerweile ist es schon fast Alltag für uns, zu"]
+		[maintxt_print text="     Kent zu kommen."]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：チャイムの音
+		-------------------------------*/
+		[strse_play no="89" delay="0"] /* ＳＥ再生 */
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="90"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		/*ボイス再生*/
+		[voice_play no="065230" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Hallo?"]
+		[batch]
+
+		/*-------------------------------
+		ボイス加工：インターホン越し
+		-------------------------------*/
+		[txtwin_info line="1" type="0" pos="3"]
+
+		/*ボイス再生*/
+		[voice_play no="101801" count="0"]
+
+		[speaker_set name="???" chrid="CHRID_MOB"]	// ケントの母／？？？
+		[maintxt_print text="     Yes, coming."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="065231" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Warte, wer ist das!?"]
+		[batch]
+
+		/*-------------------------------
+		間
+		-------------------------------*/
+		/*-------------------------------
+		ＳＥ：扉を開ける音
+		-------------------------------*/
+		[strse_play no="2" delay="0"] /* ＳＥ再生 */
+		[strse_waitcut]
+		[batch]
+
+		[txtwaitset wait="100"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101802" count="0"]
+
+		[speaker_set name="???" chrid="CHRID_MOB"]	// ケントの母／？？？
+		[maintxt_print text="...My, and who are you?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		/*ボイス再生*/
+		[voice_play no="065232" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Oh, ist das etwa Kents Mutter?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		/*ボイス再生*/
+		[voice_play no="065233" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Äh, da sonst nie jemand zuhause ist, ist das das erste Mal, dass"]
+		[maintxt_print text="     wir abgesehen von Kent hier jemanden antreffen."]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		/*-------------------------------
+		ケントＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="kent_s" pt_name="01c" em_name="metoji" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		/*ボイス再生*/
+		[voice_play no="030829" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Mother, she's someone I know."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101803" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Oh, Kent. I didn't know you were coming to"]
+		[maintxt_print text="     answer the door."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+
+		[ezchara_nextstate2 ch_name="kent_s" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030830" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     She's my guest. More importantly, don't you"]
+		[maintxt_print text="     have a cold?"]
+		[maintxt_print text="     Why did you get up?"]
+		[batch]
+
+		[ezchara_del ch_name="kent_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		[chara_app_pt ch_name="kent_b" pt_name="01" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030831" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="#Name[0], you too."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030832" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Are you feeling okay already?"]
+		[maintxt_print text="     You don't have to force yourself to"]
+		[maintxt_print text="     visit."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101804" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     My, how kind."]
+		[maintxt_print text="     Is she your girlfriend?"]
+		[batch]
+
+		/*-------------------------------
+		ため息
+		-------------------------------*/
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030833" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Mother."]
+		[maintxt_print text="     Just return to bed."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101805" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Am I right?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="tere1" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030834" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Well, yes."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101806" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Oh, dear."]
+		[maintxt_print text="     You never told me you had a girlfriend"]
+		[maintxt_print text="     before."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101807" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Why didn't you say anything?"]
+		[maintxt_print text="     You should introduce us."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030835" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     We aren't at the stage where I need to"]
+		[maintxt_print text="     introduce her to my parents yet."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101808" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     You should stay over for dinner tonight."]
+		[maintxt_print text="     I'll tell my husband to come home early,"]
+		[maintxt_print text="     too."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030836" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Mother. She's only just recovered."]
+		[maintxt_print text="     And you took time off work, too."]
+		[maintxt_print text="     You should just go back to bed."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101809" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     I'm fine now."]
+		[maintxt_print text="     So is that okay with you?"]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】kent_21.01.00
+		それじゃあ、ご馳走になります＞シーン：kent_21.01.01へ
+		あの、寝ていて下さい……＞シーン：kent_21.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Thank you, I'll stay over."]
+		[menutxt_set text="Um, please get some rest..."]
+		[menu_set flag="select"][stop]
+		*sure1_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.01.01
+選択肢：それじゃあ、ご馳走になります
+フラグ：家族と会食ＯＮ
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+                [flag_set name="家族と会食" num="1"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030837" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Sorry about this, #Name[0]."]
+		[maintxt_print text="     If you don't feel well at any point, feel free"]
+		[maintxt_print text="     to go back home."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101810" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Yes, just don't push yourself."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="akire" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030838" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Mother, you're the one who's pushing"]
+		[maintxt_print text="     herself."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101811" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     But it's rare for me to have time off of work"]
+		[maintxt_print text="     like this."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101812" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     You'll be going abroad soon, so you"]
+		[maintxt_print text="     might not have many more chances to"]
+		[maintxt_print text="     see her?"]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101813" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     You should make good use of an opportunity."]
+		[maintxt_print text="     And it would be efficient to introduce"]
+		[maintxt_print text="     ourselves properly today since we've just"]
+		[maintxt_print text="     met. Your father would agree, too."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030839" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Well, that's true, but..."]
+		[batch]
+
+		/*-------------------------------
+		乾笑
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065234" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ahaha."]
+		[maintxt_print text="     This entire family is full of rational"]
+		[maintxt_print text="     thinkers..."]
+		[batch]
+
+		/*-- kent_21.01.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.01.02
+選択肢：あの、寝ていて下さい……
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[/if]
+
+
+	*sure3_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101814" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Hm? ...But I'm okay."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="jitome" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030840" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It's as she said."]
+		[maintxt_print text="     You should rest now."]
+		[batch]
+
+		/*-- kent_21.01.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.01.03
+選択肢後、合流
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[/if]
+
+
+	*sure4_turn0
+
+		/*-------------------------------
+		ため息
+		-------------------------------*/
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030841" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Regardless, standing around here isn't"]
+		[maintxt_print text="     good for someone in your condition."]
+		[maintxt_print text="     Come in."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101815" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Ah yes, of course, please come right in."]
+		[maintxt_print text="     I'll go make some tea."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="gekido" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030842" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     You should go to BED!"]
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		/*-- kent_21.02.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure5"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.02.00
+背景：ケント自宅－ケント自室
+時間：昼
+人物：ケント、オリオン
+-------------------------------*/
+*sure5
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure5_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure5_turn1"]
+	[/if]
+
+
+	*sure5_turn0
+
+		[scenechange3 bgname="bg005" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[bgm_play no="9" count="0"]/* ＢＧＭ再生 和み　コミカル */
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		/*ボイス再生*/
+		[voice_play no="030843" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Sorry for the surprise."]
+		[maintxt_print text="     My mother's rarely at home,"]
+		[maintxt_print text="     but she wasn't feeling well today."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030844" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     She may appear well, but she had a fever"]
+		[maintxt_print text="     of 38°C."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065235" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ernsthaft!?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030845" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Oh, you likely don't know this. My mother is"]
+		[maintxt_print text="     a lawyer, and my father researches"]
+		[maintxt_print text="     mathematics at a university."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030846" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     They're both busy and are rarely at home."]
+		[maintxt_print text="     In fact, before I started dating you, I spent"]
+		[maintxt_print text="     most of my time at the university as well."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030847" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Now, I'm staying at home as often as I can."]
+		[maintxt_print text="     I just... thought it would be easier for you to"]
+		[maintxt_print text="     visit here."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030848" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     However, it's also true that some work can't"]
+		[maintxt_print text="     be done outside the university."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030849" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I don't have many days left."]
+		[maintxt_print text="     I was actually planning to go to there this"]
+		[maintxt_print text="     afternoon."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030850" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I'm sorry, but it might be difficult to meet"]
+		[maintxt_print text="     with you until the conference is over."]
+		[batch]
+
+		/*-------------------------------
+		皮肉な笑い
+		-------------------------------*/
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030851" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Although you probably don't mind."]
+		[maintxt_print text="     I'm the one who wants to see you."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】kent_21.02.00
+		私も寂しいです＞シーン：kent_21.02.01へ
+		頑張って下さいね＞シーン：kent_21.02.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I'm lonely, too."]
+		[menutxt_set text="Please do your best."]
+		[menu_set flag="select"][stop]
+		*sure5_turn0_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure5_turn1
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure6"]
+		[elseif estimate="$j == 1"][thread_change label="sure7"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.02.01
+選択肢：私も寂しいです
+-------------------------------*/
+*sure6
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure6_turn0"]
+	[/if]
+
+
+	*sure6_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="tere2" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030852" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I-I see."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="tere1" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030853" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Then I'll call you."]
+		[maintxt_print text="     How does that sound?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065236" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Das ist gar keine schlechte Idee ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065237" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Da fällt mir ein, dass ihr beiden eigentlich noch nie ein"]
+		[maintxt_print text="     typisches Liebespaar-Telefonat geführt habt."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030854" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I see. So this is the purpose of"]
+		[maintxt_print text="     calling and messaging a woman"]
+		[maintxt_print text="     you're dating."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030855" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It's a supplement for the time that you"]
+		[maintxt_print text="     can't meet in person."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030856" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Interesting. I'm finally beginning to"]
+		[maintxt_print text="     understand why you didn't like the messages"]
+		[maintxt_print text="     I sent before."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065238" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Was!? Er versteht es?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030857" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Next time I send you a message, I'll do my"]
+		[maintxt_print text="     best to include content that encourage"]
+		[maintxt_print text="     conversation."]
+		[batch]
+
+		/*-------------------------------
+		フラグ：信頼関係＋１
+		-------------------------------*/
+                [flag_change name="信頼関係" num="1"]
+
+		/*-- kent_21.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure8"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.02.02
+選択肢：頑張って下さいね
+-------------------------------*/
+*sure7
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure7_turn0"]
+	[/if]
+
+
+	*sure7_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030858" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Yes, thank you."]
+		[batch]
+
+		/*-- kent_21.02.03へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure8"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.02.03
+選択肢後、合流
+-------------------------------*/
+*sure8
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure8_turn0"]
+	[/if]
+
+
+	*sure8_turn0
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030859" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Also, there's one more thing I wanted to tell"]
+		[maintxt_print text="     you."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030860" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     You've already come all this way today,"]
+		[maintxt_print text="     but I'd like it if you didn't walk around"]
+		[maintxt_print text="     outside alone anymore."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030861" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Someone should accompany you,"]
+		[maintxt_print text="     especially when you're out late or in areas"]
+		[maintxt_print text="     without many people around."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030862" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I'm concerned about that man,"]
+		[maintxt_print text="     Ukyo."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030863" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Seeing how you don't have your memories,"]
+		[maintxt_print text="     there's a chance that he'll try to take"]
+		[maintxt_print text="     advantage of that for reasons unknown."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030864" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It would be preferable if you checked to"]
+		[maintxt_print text="     make sure he's not around before you go"]
+		[maintxt_print text="     somewhere, at least for one week."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065239" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Verstehe ... Das stimmt. Er ist in letzter Zeit sogar ziemlich"]
+		[maintxt_print text="     oft an deinem Arbeitsplatz aufgetaucht."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065240" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wir können nicht mit Sicherheit sagen, dass er nicht vorhat,"]
+		[maintxt_print text="     dich auszunutzen, von daher sollten wir echt vorsichtig sein."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030865" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Although if you're feeling nervous about it,"]
+		[maintxt_print text="     you might find the constant looking around"]
+		[maintxt_print text="     to be more tiring."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030866" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I might just be worrying more than necessary"]
+		[maintxt_print text="     because I can't always be at your side, and"]
+		[maintxt_print text="     even less so now."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030867" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Anyway."]
+		[maintxt_print text="     Just stay here for today."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030868" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Starting tomorrow, I'll make arrangements"]
+		[maintxt_print text="     with Sawa, Mine, and others to provide you"]
+		[maintxt_print text="     with information."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030869" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I'm sure you'll want to regain your memories"]
+		[maintxt_print text="     as soon as possible."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030870" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...If you hear information from them, you"]
+		[maintxt_print text="     might begin to remember things."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030871" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     But to be honest, I'm afraid because I can't"]
+		[maintxt_print text="     be certain of what you'll remember."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="kanasimi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030872" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It might just be an excuse that I'm busy"]
+		[maintxt_print text="     preparing for the conference."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030873" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     In a way, I don't want to see the gradual"]
+		[maintxt_print text="     change in your attitude towards me, once"]
+		[maintxt_print text="     you remember everything."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030874" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...But I still know it's selfish of me to not"]
+		[maintxt_print text="     want you to remember these things, since"]
+		[maintxt_print text="     they are yours to remember."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030875" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Don't hold back for my sake."]
+		[maintxt_print text="     Go and reclaim your memories."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		[chara_app_pt_alp ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]/*キャラ登場*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// ※オリオン／オリオン
+		[maintxt_print text="     ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065241" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich frage mich, ob du Kent wirklich nicht mehr mögen würdest,"]
+		[maintxt_print text="     sofern du dich an alles erinnern solltest?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065242" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Was hast du vergessen? Was ist zwischen Kent und dir passiert?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065243" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich bezweifle, dass es irgendwas gibt, das jetzt noch dafür"]
+		[maintxt_print text="     sorgen würde, dass du ihn nicht mehr magst."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065244" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Du kannst dich nicht an alles erinnern. Und ich denke, wir"]
+		[maintxt_print text="     werden nie wissen, was passieren wird, wenn du dich erinnerst."]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		[txtwin_proc onoff="0"]
+		/*-------------------------------
+		【条件分岐】kent_21.02.03
+		家族と会食フラグＯＮ＞シーン：kent_21.03.00へ
+		家族と会食フラグＯＦＦ＞シーン：kent_21.02.04へ
+		-------------------------------*/
+		/* 分岐 */
+		[flag_number name="家族と会食" i="k"]
+		[if estimate="$k == 0"][thread_change label="sure9"]
+		[elseif estimate="$k == 1"][thread_change label="sure10"]
+		[/if]
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+
+
+/*-------------------------------
+●シーン：kent_21.02.04
+家族と会食フラグＯＦＦの場合
+-------------------------------*/
+*sure9
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure9_turn0"]
+	[/if]
+
+
+	*sure9_turn0
+
+		[ef_aicatch bgname="bg367" bgm="54" time="360"]/*アイキャッチ処理：BG367 BGMノーマル１*/
+
+		/*-------------------------------
+		【ケントルート２１日目終了】
+		kent_22.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="422" label="sure1"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.03.00
+背景：ＢＬ
+時間：夜　※CGや台詞から夜に変更[Yokoo]
+人物：ケント、オリオン
+モブ：ケントの母、ケントの父
+-------------------------------*/
+*sure10
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure10_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure10_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure10_turn2"]
+	[elseif estimate="$i == 3"] [calllua function="stcm2_goto" label="sure10_turn3"]
+	
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure10_turn15"]
+	[/if]
+	
+	
+	*sure10_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure10_turn0
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+
+		[flag_change name="switch" num="1"]
+
+		[return]
+
+
+	*sure10_turn1
+
+		/*-------------------------------
+		ＣＧ：『cg_kent08_a』（家族との食事）
+		ケントの両親と、ケント宅のダイニングで食事。
+		ちょっと困っている主人公、無表情で食べながら話をしているケント。
+		ケータリングを頼んだので、ちょっとしたディナー風です。
+		-------------------------------*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+		/* イベントＣＧ　ＥＶ○○○○ */
+		[txtwin_proc onoff="0"]/*テキストウィンドウを閉じる*/
+		[day_proc onoff="0"]/*日付表示消去*/
+
+		[batch]
+
+		[ezbg_change2 name="cg_kent08a" wait="2"]
+
+		/* 演出 -------------------------------------------------*/
+
+		/*-------------------------------------------------------*/
+
+		[batch]
+
+		[txtwin_proc onoff="1"]/*テキストウィンドウを開く*/
+		/*★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[bgm_play no="12" count="0"]/* ＢＧＭ再生 日常３　夕暮れ */
+
+		/*ボイス再生*/
+		[voice_play no="101816" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Go right ahead, eat as much as you want."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065245" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wa... War sie nicht verkühlt!? Was soll dann diese vornehme"]
+		[maintxt_print text="     Mahlzeit auf einmal?!"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030876" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Mother, it seems she's shocked in thinking"]
+		[maintxt_print text="     that you made this."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101817" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Oh dear, I'm sorry. Our meals are mostly"]
+		[maintxt_print text="     take-out or catered."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101818" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     My husband, Kent, and I are hardly at home."]
+		[maintxt_print text="     There's not much meaning in cooking meals"]
+		[maintxt_print text="     every day, since it is beyond our necessity."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065246" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich glaub nicht, dass das eine Frage der Notwendigkeit ist ..."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103701" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     This is obvious for prioritizing efficiency."]
+		[maintxt_print text="     If you think about our working wages per"]
+		[maintxt_print text="     hour, it's far cheaper to order food than to"]
+		[maintxt_print text="     make it ourselves."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065247" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Stundenlohn!? Ihr wandelt die Zeit, die ihr zum Kochen braucht,"]
+		[maintxt_print text="     in einen Geldwert um!?"]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101819" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     And taking a meal's nutritional value into"]
+		[maintxt_print text="     consideration, food carefully prepared by"]
+		[maintxt_print text="     professionals is far more balanced than"]
+		[maintxt_print text="     something I could make last-minute."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103702" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     This is also far more effective to expand our"]
+		[maintxt_print text="     son's palate."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101820" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     And that's why we prefer to not prepare"]
+		[maintxt_print text="     food ourselves."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065248" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Uh ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030877" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I realize this is fairly unusual, but do you"]
+		[maintxt_print text="     understand our reasoning?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="065249" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Haha ... Jetzt versteh ich, warum Kent so geworden ist, wie er"]
+		[maintxt_print text="     ist ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103703" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     Still..."]
+		[maintxt_print text="     You're quite a lovely young lady."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101821" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Yes, as we'd expect from our son."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103704" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     Well, one's genes attract others most"]
+		[maintxt_print text="     optimal for combination with one's own."]
+		[maintxt_print text="     This isn't a surprise at all."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101822" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Of course."]
+		[maintxt_print text="     We fully believed you would bring a lovely"]
+		[maintxt_print text="     young lady home, Kent."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_kent08_b』（ケント苦笑）
+		-------------------------------*/
+		[ezbg_change2 name="cg_kent08b" wait="1"]/*ＣＧ差分表示*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030878" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I'm not sure if I chose the optimal genes or"]
+		[maintxt_print text="     not."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101823" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Is that so?"]
+		[maintxt_print text="     By what could you possibly feel dissatisfied?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030879" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I'm not dissatisfied."]
+		[maintxt_print text="     But she might be."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101824" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Oh, dear."]
+		[maintxt_print text="     Are you two fighting?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030880" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     That's not really it."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101825" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     It's okay, romantic emotions are instinctual"]
+		[maintxt_print text="     for the survival of a species. It'll turn out"]
+		[maintxt_print text="     fine in the end."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030881" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I hope so."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：『cg_kent08_a』（ケント無表情）
+		-------------------------------*/
+		[ezbg_change2 name="cg_kent08a" wait="1"]/*ＣＧ差分表示*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103705" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     Young lady, Kent may be a little stubborn,"]
+		[maintxt_print text="     but he's an excellent son."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103706" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     Even if you and Kent have a disagreement,"]
+		[maintxt_print text="     I believe it would be of value to consider"]
+		[maintxt_print text="     a future with him."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103707" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     While our household may have nothing of"]
+		[maintxt_print text="     real merit to pass down, I can guarantee the"]
+		[maintxt_print text="     chance of you having any discomfort in your"]
+		[maintxt_print text="     life is extremely low."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="101826" count="0"]
+
+		[speaker_set name="Kent's Mother" chrid="CHRID_MOB"]	// ケントの母／ケントの母
+		[maintxt_print text="     Oh, also don't worry. We don't have any"]
+		[maintxt_print text="     intentions of interfering with your time"]
+		[maintxt_print text="     together."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030882" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Father, Mother, those are not the kind of"]
+		[maintxt_print text="     issues she's concerned with."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103708" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     However, such terms are very important in"]
+		[maintxt_print text="     marriage. Although I can understand why you"]
+		[maintxt_print text="     may prioritize emotions over those."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure10_turn2
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030883" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     We aren't at that stage yet."]
+		[batch]
+
+		/*-------------------------------
+		ため息
+		-------------------------------*/
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030884" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...This is why I said I didn't want to introduce"]
+		[maintxt_print text="     you yet."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030885" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Anyway, you don't have to say anything"]
+		[maintxt_print text="     concerning our dating."]
+		[maintxt_print text="     I'll handle this myself."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="103709" count="0"]
+
+		[speaker_set name="Kent's Father" chrid="CHRID_MOB"]	// ケントの父／ケントの父
+		[maintxt_print text="     Well, I suppose it's another important point"]
+		[maintxt_print text="     for a man to prove his qualities."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+
+		/*-------------------------------
+		ＣＧ：ここまで
+		-------------------------------*/
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+		[bgm_stop count="0"]/* ＢＧＭ停止 */
+
+		/*-------------------------------
+		次のシーンにゆっくり切り替え
+		-------------------------------*/
+		/*-------------------------------
+		背景：ケント自宅－外観
+		-------------------------------*/
+		[scenechange3 bgname="bg083" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[day_proc onoff="1"]/*日付表示*/
+
+		[chara_app_pt_alp ch_name="orion_b" pt_name="02" em_name="wara" color="NIGHT" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]/*キャラ登場*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		/*ボイス再生*/
+		[voice_play no="065250" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Vielen Dank, dass wir hier sein durften."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+
+		/*ボイス再生*/
+		[voice_play no="065251" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Haah ... Was für ein komisches Abendessen. Kents Familie ist"]
+		[maintxt_print text="     interessant, aber auch irgendwie merkwürdig."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="nikori" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="1" type="0" pos="2"]
+
+		/*ボイス再生*/
+		[voice_play no="065252" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wobei, Kent ist kein bisschen anders."]
+		[batch]
+
+		[ezchara_del ch_name="orion_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除*/
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[chara_app_pt ch_name="kent_b" pt_name="01b" em_name="hohoemi" color="NIGHT" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		/*ボイス再生*/
+		[voice_play no="030886" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Are you tired?"]
+		[maintxt_print text="     I'm sorry about the sudden change of plans."]
+		[maintxt_print text="     Let's just walk back slowly."]
+		[batch]
+
+		[ezchara_dis ch_name="kent_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]/*キャラ削除＿退避*/
+
+		/*-------------------------------
+		背景：ＳＹＵＩＮ坂
+		-------------------------------*/
+		[scenechange3 bgname="bg089" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[bgm_play no="17" count="0"]/* ＢＧＭ再生 温もり１　　　 */
+
+		[chara_app_pt ch_name="kent_b" pt_name="03_2" em_name="suma" color="NIGHT" place="CENTER" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]/*キャラ登場*/
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065253" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Allerdings muss man auch sagen, dass Kent im Vergleich zu seinen"]
+		[maintxt_print text="     Eltern wesentlich normaler ist."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065254" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Kent handelt nicht nur aufgrund seines Verstands, sondern auch"]
+		[maintxt_print text="     aufgrund von Gefühlen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+
+		/*ボイス再生*/
+		[voice_play no="065255" count="0"]
+
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Hm? #Name[0], denkst du dasselbe?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="metoji" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ※ケント／ケント
+		[maintxt_print text="..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="suma" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030887" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...Before, I employed the same reasoning as"]
+		[maintxt_print text="     my parents do."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="metoji" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030888" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It's natural to select the optimal woman for"]
+		[maintxt_print text="     species preservation. The emotional change"]
+		[maintxt_print text="     known as love occurs, and that leads to"]
+		[maintxt_print text="     marriage."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="komari" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030889" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     But ironically, the woman whom I favored"]
+		[maintxt_print text="     disliked me."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030890" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I feel as though I'm not in control, and I keep"]
+		[maintxt_print text="     making mistakes."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="akire" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030891" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     It may even affect my preparations for the"]
+		[maintxt_print text="     most important and life-changing event of"]
+		[maintxt_print text="     my academic career."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03_2" em_name="kanasimi" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030892" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Is this really what my genes are commanding"]
+		[maintxt_print text="     me to do? In that case, my genes are"]
+		[maintxt_print text="     defective."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030893" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Either that, or I may just have to admit that"]
+		[maintxt_print text="     there's no rational reason behind love, just"]
+		[maintxt_print text="     as you said."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="03" em_name="komari" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030894" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...I've been thinking on this a lot"]
+		[maintxt_print text="     lately."]
+		[batch]
+
+		/*-------------------------------
+		【選択肢】kent_21.03.00
+		不良品なんかじゃないですよ＞シーン：kent_21.03.01へ
+		愛に理由なんてないんです＞シーン：kent_21.03.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="Your genes aren't defective."]
+		[menutxt_set text="Love is irrational."]
+		[menu_set flag="select"][stop]
+		*sure10_turn2_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure10_turn3
+
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure11"]
+		[elseif estimate="$j == 1"][thread_change label="sure12"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.03.01
+選択肢：不良品なんかじゃないですよ
+-------------------------------*/
+*sure11
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure11_turn0"]
+	[/if]
+
+
+	*sure11_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="suma" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030895" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Are you saying that my genes really did"]
+		[maintxt_print text="     find their optimal partner?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		/*ボイス再生*/
+		[voice_play no="030896" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     And that means I can believe there's a"]
+		[maintxt_print text="     chance of things going well between us?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="tere1" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030897" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="...#Name[0]."]
+		[maintxt_print text="     If you say something like that,"]
+		[maintxt_print text="     I'll start developing expectations."]
+		[batch]
+
+		/*-------------------------------
+		フラグ：主人公好意＋１
+		-------------------------------*/
+                [flag_change name="主人公好意" num="1"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="mesorasi" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030898" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Well, even if our genetic pairing is"]
+		[maintxt_print text="     suitable..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030899" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Actually getting that pairing to"]
+		[maintxt_print text="     succeed might still be based on"]
+		[maintxt_print text="     the amount of effort we invest."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]/*キャラ削除*/
+
+		[ef_aicatch bgname="bg367" bgm="54" time="360"]/*アイキャッチ処理：BG367 BGMノーマル１*/
+
+		/*-------------------------------
+		【ケントルート２１日目終了】
+		kent_22.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="422" label="sure1"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：kent_21.03.02
+選択肢：愛に理由なんてないんです
+-------------------------------*/
+*sure12
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure12_turn0"]
+	[/if]
+
+
+	*sure12_turn0
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="nagasi" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*ポーズ変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030900" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     I see..."]
+		[maintxt_print text="     Lately, I've actually been wondering if"]
+		[maintxt_print text="     that's the case."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[ezchara_nextstate2 ch_name="kent_b" pt_name="01" em_name="hohoemi" color="NIGHT" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
+
+		/*ボイス再生*/
+		[voice_play no="030901" count="0"]
+
+		[speaker_set name="Kent" chrid="CHRID_KENT"]	// ケント／ケント
+		[maintxt_print text="     Because I've given my heart to"]
+		[maintxt_print text="     someone I might not even have a"]
+		[maintxt_print text="     future with..."]
+		[batch]
+
+		[ezchara_del ch_name="kent_b" dir="TO_CENTER" app_speed="ZERO_DEL_SPD" delay="8"]/*キャラ削除*/
+
+		[ef_aicatch bgname="bg367" bgm="54" time="360"]/*アイキャッチ処理：BG367 BGMノーマル１*/
+
+		/*-------------------------------
+		【ケントルート２１日目終了】
+		kent_22.01.00へ 
+		-------------------------------*/
+		[flag_set name="switch" num="0"]
+		[file_change no="422" label="sure1"]
+
+	[return]
+
+
+
