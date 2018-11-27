@@ -66,7 +66,7 @@
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
 		[maintxt_print text="     Oh, #Name[0]."]
-		[maintxt_print text="     Kent is at the table over there."]
+		[maintxt_print text="     Kent ist an dem Tisch dort drüben."]
 		[batch]
 
 		[ezchara_move2 ch_name="mine_s" place="LEFT" speed="FAST_MOVE" delay="NO_DELAY"]/*キャラ移動*/
@@ -85,27 +85,26 @@
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="080329" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     He wanted to know about Ukyo, and I"]
-		[maintxt_print text="     told him Ukyo was one of your regular"]
-		[maintxt_print text="     customers..."]
+		[maintxt_print text="     Er hat sich über Ukyo erkundigt und ich sagte ihm,"]
+		[maintxt_print text="     dass Ukyo einer unserer Stammkunden ist ..."]
+	
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="080330" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Don't tell me you're cheating on him with"]
-		[maintxt_print text="     Ukyo?"]
+		[maintxt_print text="     Sag mir nicht, dass du ihn mit Ukyo hintergehst?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -528,19 +527,18 @@
 		[voice_play no="080331" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Do you need something?"]
+		[maintxt_print text="     Benötigst du etwas?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		/*ボイス再生*/
 		[voice_play no="080332" count="0"]
 
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, are you looking for Kent?"]
-		[maintxt_print text="     He's waiting for you outside."]
+		[maintxt_print text="     Oh, suchst du nach Kent? Er wartet draußen auf dich."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="ZERO_APP_SPD"]/*表情変換*/
