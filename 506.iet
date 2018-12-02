@@ -490,8 +490,8 @@
 
 		[voice_play no="50415" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Good morning. Yesterday was nice, so I'm"]
-		[maintxt_print text="     here for breakfast."]
+		[maintxt_print text="     Guten Morgen. Gestern war es schön, deshalb bin ich zum"]
+		[maintxt_print text="     Frühstücken hier."]
 		[batch]
 
 		/*------------------------------
@@ -508,12 +508,10 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50416" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Sure, thanks."]
-		[maintxt_print text="     I would like some toast"]
-		[maintxt_print text="     and a coffee."]
+		[maintxt_print text="     Sicher, danke. Ich hätte gerne Toast und einen Kaffee."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -586,25 +584,24 @@
 		[txtwin_info line="2" type="0" pos="2"]
 		[voice_play no="50417" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Well there are some professionals that"]
-		[maintxt_print text="     despise them, but I personally don't mind."]
+		[maintxt_print text="     Nun ja, es gibt einige Profis, die sie hassen. Aber ich habe"]
+		[maintxt_print text="     nichts dagegen."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="50418" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Digital cameras these days are pretty well"]
-		[maintxt_print text="     made and easy to carry around."]
+		[maintxt_print text="     Digitalkameras sind heutzutage ziemlich gut gemacht und man"]
+		[maintxt_print text="     kann sie bequem herumtragen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 		[voice_play no="50419" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     So the good thing about them is that you can"]
-		[maintxt_print text="     take photos whenever you want."]
-		[maintxt_print text="     At least, that's what I think."]
+		[maintxt_print text="     Das Gute an ihnen ist, dass man Fotos machen kann, wann immer"]
+		[maintxt_print text="     man möchte. Zumindest denke ich das."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="tencho_s" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -620,12 +617,11 @@
 		------------------------------*/
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 		[voice_play no="50420" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Oh, don't take this as the general consensus."]
-		[maintxt_print text="     I feel like my way of thinking is a bit"]
-		[maintxt_print text="     unconventional."]
+		[maintxt_print text="     Oh, nimm nicht an, dass das die allgemeine Meinung ist."]
+		[maintxt_print text="     Ich glaube, meine Gedanken dazu sind etwas unkonventionell."]
 		[batch]
 
 		/*------------------------------
@@ -951,22 +947,20 @@
 		------------------------------*/
 		[chara_app_pt ch_name="ukyo_s" pt_name="01" em_name="wara" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50421" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     1180 yen, right?"]
-		[maintxt_print text="     Here you go."]
+		[maintxt_print text="     1180 Yen, nicht wahr? Hier, bitte."]
 		[batch]
 
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="ukyo_b" pt_name="01b" em_name="mesorasi" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50422" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     And also..."]
-		[maintxt_print text="     You should keep your distance from them."]
+		[maintxt_print text="     Außerdem... solltest du Abstand von ihnen halten."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -980,8 +974,8 @@
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50423" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     If you take one side, it won't be good."]
-		[maintxt_print text="     Do you hear me?"]
+		[maintxt_print text="     Wenn du dich für eine Seite entscheidest, geht das nicht"]
+		[maintxt_print text="     gut aus. Verstanden?"]
 		[batch]
 
 		/*------------------------------
