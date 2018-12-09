@@ -109,7 +109,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I'm home."]
+		[maintxt_print text="     Ich bin zuhause."]
 		[batch]
 
 /*--------------------------------------------
@@ -182,12 +182,11 @@
 		[batch]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I don't really want to leave"]
-		[maintxt_print text="     Ikki, though..."]
+		[maintxt_print text="     Ich will Ikki aber nicht wirklich verlassen ..."]
 		[batch]
 
 /*--------------------------------------------
@@ -230,11 +229,11 @@
 		[batch]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
+		
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...I don't even know"]
-		[maintxt_print text="     what to do..."]
+		[maintxt_print text="     ...Ich weiß nicht mal was ich tun soll ..."]
 		[batch]
 
 		/*------------------------------
@@ -1062,7 +1061,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     What...?"]
+		[maintxt_print text="     Was ...?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="jitome" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1133,7 +1132,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="komari" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1373,7 +1372,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     That's right..."]
+		[maintxt_print text="     Das stimmt..."]
 		[batch]
 
 /*--------------------------------------------
@@ -1499,7 +1498,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ikki_b" pt_name="01" em_name="metoji" color="EVEN" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1981,7 +1980,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     What...?"]
+		[maintxt_print text="     Was...?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
@@ -2169,24 +2168,22 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Also ist das was los war ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...So that's"]
-		[maintxt_print text="     what was going on..."]
-		[batch]
-
-		[txtwin_info line="3" type="0" pos="8"]
-
-		//[voice_play no="" count="0"]
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Ever since Rika met Ikki"]
-		[maintxt_print text="     back in middle school, this has"]
-		[maintxt_print text="     been in the works..."]
+		[maintxt_print text="     Schon seit Rikka Ikki damals in der Mittelschule getroffen"]
+		[maintxt_print text="     hatte, lief das hier so ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="fun1_s" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -2214,15 +2211,15 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...It's okay, I won't tell him."]
+		[maintxt_print text="     ...Es ist in Ordnung, ich werde es ihm nicht sagen"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...If he heard about this, it would"]
-		[maintxt_print text="     only hurt Ikki."]
+		[maintxt_print text="     ...Wenn er hierüber hören würde, wÜrde das Ikki nur selbst"]
+		[maintxt_print text="     verletzen."]
 		[batch]
 
 		[ezchara_del ch_name="fun1_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -2397,7 +2394,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I..."]
+		[maintxt_print text="     Ich..."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -2439,7 +2436,7 @@
 
 		[voice_play no="21246" count="0"]
 		[speaker_set name="Ikki" chrid="CHRID_IKKI"]	// イッキ／イッキ
-		[maintxt_print text="...#Name[0]."]
+		[maintxt_print text="     ...#Name[0]."]
 		[maintxt_print text="     Tell me what you remembered."]
 		[maintxt_print text="     Don't keep any more secrets from me."]
 		[batch]
@@ -2448,7 +2445,7 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 /*--------------------------------------------
 ノベル作業完了
@@ -2504,14 +2501,14 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...I..."]
+		[maintxt_print text="     ...Ich..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...The thing I remembered was..."]
+		[maintxt_print text="     ...Woran ich mich erinnert habe war ..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
