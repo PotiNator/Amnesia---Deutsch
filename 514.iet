@@ -1264,15 +1264,14 @@
 		[strse_waitcut]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="1"]
+		[txtwin_info line="1" type="0" pos="1"]
 
 //斉藤コメント0613　ウキョウの声が電話ボイスになってません。：済み by山口　※保留
 //斉藤コメント0613　・・・なってるのかな？：済み by山口
 
 		[voice_play no="50619" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Are you okay to talk right now? Are you on"]
-		[maintxt_print text="     your break?"]
+		[maintxt_print text="     Kannst du jetzt reden? Hast du gerade Pause?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -1282,13 +1281,12 @@
 		[maintxt_print text="     Kartentelefon an?"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="1"]
+		[txtwin_info line="2" type="0" pos="1"]
 
 		[voice_play no="50620" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I wanted to go to the cafe"]
-		[maintxt_print text="     but I felt... sick today."]
-		[maintxt_print text="     Did anything odd happen?"]
+		[maintxt_print text="     Ich wollte zum Café gehen, aber ich habe mich heute... übel"]
+		[maintxt_print text="     gefühlt. Ist etwas Seltsames passiert?"]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
@@ -1315,15 +1313,15 @@
 
 		[voice_play no="50621" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I see... Ikki's fans, huh?"]
+		[maintxt_print text="     Verstehe... Ikkis Fans also."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="1"]
 
 		[voice_play no="50622" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Even if Rika doesn't spearhead the operation,"]
-		[maintxt_print text="     I guess it still happens..."]
+		[maintxt_print text="     Selbst, wenn Rika nicht die Anführerin ist, passiert das wohl"]
+		[maintxt_print text="     immer noch..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -1332,13 +1330,12 @@
 		[maintxt_print text="     Rika? ... Ich frag mich, was er damit meint."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="1"]
+		[txtwin_info line="2" type="0" pos="1"]
 
 		[voice_play no="50623" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I think this is the most difficult ”fate.”"]
-		[maintxt_print text="     I mean I haven't experienced this one, so I"]
-		[maintxt_print text="     wouldn't know."]
+		[maintxt_print text="...Ich denke, das ist das schwierigste „Schicksal“. Aber ich habe"]
+		[maintxt_print text="     es noch nie erlebt, ich kann das also nicht wissen."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="1"]
@@ -1348,29 +1345,27 @@
 		[maintxt_print text="     ..."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="1"]
+		[txtwin_info line="2" type="0" pos="1"]
 
 		[voice_play no="50624" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Listen to me carefully."]
-		[maintxt_print text="     I think Ikki's fan is going to invite you out to"]
-		[maintxt_print text="     a cottage sometime soon."]
+		[maintxt_print text="     Hör mir genau zu. Ich glaube, Ikkis Fan wird dich bald in ein"]
+		[maintxt_print text="     Ferienhaus einladen."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="1"]
+		[txtwin_info line="2" type="0" pos="1"]
 
 		[voice_play no="50625" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     You CAN'T go there."]
-		[maintxt_print text="     Just make up any kind of excuse and say"]
-		[maintxt_print text="     no."]
+		[maintxt_print text="     Du DARFST NICHT dort hingehen. Denk dir einfach irgendeine"]
+		[maintxt_print text="     Ausrede aus und sag Nein."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="1"]
 
 		[voice_play no="50626" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Or you'll die. They'll kill you."]
+		[maintxt_print text="     Sonst wirst du sterben. Sie werden dich töten."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="orion_b" pt_name="02" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1384,8 +1379,8 @@
 
 		[voice_play no="50627" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     If my prediction is correct,"]
-		[maintxt_print text="     I think at night, in the forest..."]
+		[maintxt_print text="     Wenn meine Vorahnung richtig ist, vermutlich in der Nacht, im"]
+		[maintxt_print text="     Wald..."]
 		[batch]
 
 		/*-------------------------------
@@ -1398,9 +1393,8 @@
 
 		[voice_play no="50628" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Well..."]
-		[maintxt_print text="     Would you even believe something like that?"]
-		[maintxt_print text="     Sorry, I'm just kidding."]
+		[maintxt_print text="     Nun... Würdest du soetwas überhaupt glauben? Entschuldigung,"]
+		[maintxt_print text="     ich mache nur Witze."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -1425,18 +1419,18 @@
 
 		[voice_play no="50629" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     It'll be alright. If they invite you, you should"]
-		[maintxt_print text="     go. I'm sure if you talk to them in person,"]
-		[maintxt_print text="     things can be worked out."]
+		[maintxt_print text="     Alles wird gut sein. Wenn sie dich einladen, solltest du"]
+		[maintxt_print text="     hingehen. Wenn du persönlich mit ihnen sprichst, kann die"]
+		[maintxt_print text="     Sache sicherlich geradegebogen werden."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="1"]
 
 		[voice_play no="50630" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I think it might be better to take some time"]
-		[maintxt_print text="     to resolve these misunderstandings before"]
-		[maintxt_print text="     they get out of hand. You'll be civil, right?"]
+		[maintxt_print text="     Ich denke, es wäre besser, sich die Zeit zu nehmen, diese"]
+		[maintxt_print text="     Missverständnisse zu beseitigen, bevor sie außer Kontrolle"]
+		[maintxt_print text="     geraten. Du wirst höflich sein, oder?"]
 		[batch]
 
 		/*-------------------------------
@@ -1446,26 +1440,23 @@
 
 		[voice_play no="50631" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Haha. Yeah. I'm sure I don't have to worry"]
-		[maintxt_print text="     about you losing your temper. So listen"]
-		[maintxt_print text="     to me carefully. You'd beter go, okay?"]
+		[maintxt_print text="     Haha. Jap. Ich muss sicherlich nicht befürchten, dass du die"]
+		[maintxt_print text="     Beherrschung verlierst. Hör mir also genau zu. Geh dort"]
+		[maintxt_print text="     besser hin, verstanden?"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="1"]
+		[txtwin_info line="1" type="0" pos="1"]
 
 		[voice_play no="50632" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     If you go... Um... No...!"]
-		[maintxt_print text="     That's not it...!"]
+		[maintxt_print text="     Wenn du gehst... Äh... Nein...! So ist das nicht...!"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="1"]
+		[txtwin_info line="1" type="0" pos="1"]
 
 		[voice_play no="50633" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Anyways..."]
-		[maintxt_print text="     It'll be fine, trust me."]
-		[maintxt_print text="     Later."]
+		[maintxt_print text="     Wie auch immer... Es wird gutgehen, vertrau mir. Bis später."]
 		[batch]
 
 		[bgm_stop count="0"]		/* BGM停止 */
