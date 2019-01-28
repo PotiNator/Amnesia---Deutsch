@@ -875,12 +875,12 @@
 		[voice_play no="51310" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
 		[maintxt_print text="     I'm a sinner."]
-		[maintxt_print text="...I want to be relieved of this pain."]
+		[maintxt_print text="     ...I want to be relieved of this pain."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     No..."]
+		[maintxt_print text="     Nein ..."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -892,15 +892,15 @@
 
 		[txtwin_info line="3" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I won't let you rest in peace."]
-		[maintxt_print text="     You have to continue to suffer."]
-		[maintxt_print text="     You must continue to regret killing me..."]
+		[maintxt_print text="     Ich werde dich nicht in Frieden ruhen lassen. Du musst"]
+		[maintxt_print text="     weiterleiden. Du musst weiterhin bereuen, dass du mich"]
+		[maintxt_print text="     getötet hast ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     And the amount of suffering you feel..."]
-		[maintxt_print text="     you have to channel to make me happy."]
+		[maintxt_print text="     Und die Menge Leid die du fühlst ... musst du darin setzen,"]
+		[maintxt_print text="     mich glücklich zu machen."]
 		[batch]
 
 		[flag_change name="switch" num="1"]
@@ -921,66 +921,64 @@
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     This whole time, you were"]
-		[maintxt_print text="     by my side, yet I didn't even"]
-		[maintxt_print text="     realize it. I'm so sorry."]
-		[batch]
-
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     And..."]
-		[maintxt_print text="     I'm so, so sorry for dying"]
-		[maintxt_print text="     and leaving you behind..."]
+		[maintxt_print text="     Diese ganze Zeit warst du an meiner Seite, und doch habe ich"]
+		[maintxt_print text="     es nicht mal bemerkt. Es tut mir so leid."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     But from now on, I'll be right beside you."]
-		[maintxt_print text="     I'll protect you when you're suffering."]
-		[batch]
-
-		[txtwin_info line="3" type="0" pos="8"]
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I think if you and I are together, the person"]
-		[maintxt_print text="     in pain, and the person causing that pain,"]
-		[maintxt_print text="     there will definitely be a lot of suffering."]
-		[batch]
-
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     It won't be an easy life."]
-		[maintxt_print text="     We may not be able to overcome it."]
-		[maintxt_print text="     But..."]
+		[maintxt_print text="     Und ... Es tut mir so so leid, dass ich gestorben bin und"]
+		[maintxt_print text="     dich zurückgelassen habe ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I..."]
-		[maintxt_print text="     I will never let you go."]
+		[maintxt_print text="     Aber von jetst an werde ich direkt neben dir sein. Ich werde"]
+		[maintxt_print text="     dich beschützen, wenn du leidest."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich denke, wenn wir beide zusammen sind, die person, die"]
+		[maintxt_print text="     leided, und die person, die das Leid erzeugt, dann wird"]
+		[maintxt_print text="     es sicherlich viel Leid geben."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Es wird kein einfaches Leben sein. Vielleicht werden wir es"]
+		[maintxt_print text="     nicht überwinden können. Aber ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich ... Ich werde dich neimals loslassen"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Egal, was passiert oder passieren wird."]
 		[batch]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     No matter what happens,"]
-		[maintxt_print text="     or what ends up happening,"]
-		[batch]
-
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I promise to be by your side."]
-		[maintxt_print text="     So Ukyo... let's return together."]
+		[maintxt_print text="     Ich verspreche dir, an deiner Seite zu sein."]
+		[maintxt_print text="     Und delhalb, Ukyo ... lass uns zusammen zurück gehen."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Live on with me."]
+		[maintxt_print text="     Lebe weiter mit mir."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="51313" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="#Name[0]...!"]
+		[maintxt_print text="     #Name[0]...!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_meso" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -993,7 +991,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...It's okay, Ukyo."]
+		[maintxt_print text="     ...Es ist okay, Ukyo."]
 		[batch]
 
 		[ezchara_dis ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -1014,22 +1012,21 @@
 		[ezbg_change2 name="cg_ukyo13a" wait="BG_NORMAL"]
 		
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 		
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     You're not alone."]
-		[maintxt_print text="     You have me."]
+		[maintxt_print text="     Du bist nicht alleine. Du hast mich."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="2"]
 		[voice_play no="51315" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...Right..."]
+		[maintxt_print text="     ...Right..."]
 		[batch]
 
 		[voice_play no="51316" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I'm sorry. And..."]
+		[maintxt_print text="     ...I'm sorry. And..."]
 		[batch]
 
 		/*------------------------------
@@ -1144,32 +1141,31 @@
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
-		[maintxt_print text="     That's not true..."]
-		[batch]
-
-		[txtwin_info line="3" type="0" pos="8"]
-		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     I'm alive..."]
-		[maintxt_print text="     And the reason I'm able to be with Ukyo"]
-		[maintxt_print text="     is because of you, right?"]
+		[maintxt_print text="     Das ist nicht wahr ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     So that means you at least"]
-		[maintxt_print text="     made two people happy."]
+		[maintxt_print text="     Ich lebe ... Und der Grund, aus dem ich mit dir zusammen"]
+		[maintxt_print text="     sein kann, bist du, Ukyo, oder nicht?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Das heißt also, das du wenigstens zwei Leute glücklich"]
+		[maintxt_print text="     gemacht hast."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...Thank you."]
+		[maintxt_print text="     ...Danke."]
 		[batch]
 
 		[txtwin_info line="1" type="1" pos="8"]
 
 		[voice_play no="101016" count="0"]
 		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[txtwin_info line="2" type="1" pos="8"]
@@ -1328,8 +1324,8 @@
 		[txtwin_proc onoff="1"]
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Ukyo is late..."]
-		[maintxt_print text="     I wonder if he slept in again..."]
+		[maintxt_print text="     Ukyo es ist spät ... Ich frage mich, ob er schon wieder"]
+		[maintxt_print text="     verschlafen hat ..."]
 		[batch]
 
 		[txtwin_proc onoff="0"]
@@ -1348,11 +1344,10 @@
 		[maintxt_print text="     I got here on time."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Huh?! You were behind me?"]
-		[maintxt_print text="     Why didn't you say something?"]
+		[maintxt_print text="     Häh?! Du warst hinter mir? Warum hast du nichts gesagt?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
@@ -1366,7 +1361,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...Again?"]
+		[maintxt_print text="     ...Schon wieder?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -1379,7 +1374,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     That's more like a paparazzi picture."]
+		[maintxt_print text="     Das ist eher wie ein Paparazzifoto."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1395,8 +1390,8 @@
 
 		//[voice_play no="" count="0"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...I mean, what if I looked weird?"]
-		[maintxt_print text="     I don't want that..."]
+		[maintxt_print text="     ...Ich meine, was, wenn ich komisch aussähe?"]
+		[maintxt_print text="     Das will ich nicht ..."]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
@@ -1413,7 +1408,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Hmm..."]
+		[maintxt_print text="     Hmm ..."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1427,8 +1422,8 @@
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Fine, then. Maybe this time I can take a"]
-		[maintxt_print text="     photo of you. It'll be with my camera phone."]
+		[maintxt_print text="     Na gut. Vielleicht kann ich dieses mal ein Foto von dir"]
+		[maintxt_print text="     machen. Mit meiner Handykamera."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1444,8 +1439,8 @@
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     They're not that different..."]
-		[maintxt_print text="     But alright, I'll carry one around, then."]
+		[maintxt_print text="     Die sind nicht so verschieden ... Aber okay, ich werde dann"]
+		[maintxt_print text="     eine mitnehmen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1459,13 +1454,13 @@
 
 		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Pictures of both of us."]
-		[maintxt_print text="     Let's take a lot and turn them into an album,"]
+		[maintxt_print text="     Fotos von uns beiden. Lass uns ganz viele machen und dann"]
+		[maintxt_print text="     ein Album aus ihnen machen, okay?"]
 		[batch]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     okay? And we can reflect later on how"]
-		[maintxt_print text="     happy we are."]
+		[maintxt_print text="     Und dann können wir später daran denken, wie glücklich wir"]
+		[maintxt_print text="     sind."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1486,7 +1481,7 @@
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Huh?"]
+		[maintxt_print text="     Häh?"]
 		[batch]
 
 		[ezchara_dis ch_name="ukyo_b" dir="0" app_speed="3" delay="0"]
@@ -1559,19 +1554,18 @@
 		[txtwin_info line="1" type="0" pos="8"]
 		
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     They left..."]
+		[maintxt_print text="     Sie sind gegangen ..."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Those kids..."]
-		[maintxt_print text="     I feel like I knew them."]
-		[maintxt_print text="     But... I could be wrong."]
+		[maintxt_print text="     Diese Kinder ... Ich habe das gefühl, dass ich sie kenne."]
+		[maintxt_print text="     Aber ... das könnte falsch sein."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
-		[maintxt_print text="..."]
+		[maintxt_print text="     ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -1621,7 +1615,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     What are you talking about?"]
+		[maintxt_print text="     Wovon redest du?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1640,7 +1634,7 @@
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     What's the matter?"]
+		[maintxt_print text="     Was ist los?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1655,7 +1649,7 @@
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     Right... Me, too."]
+		[maintxt_print text="     Stimmt ...Ich auch."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -1670,7 +1664,7 @@
 
 		[txtwin_info line="1" type="0" pos="8"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     You don't have to worry about that."]
+		[maintxt_print text="     Du musst dir darüber keine Sorgen machen."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
@@ -1701,15 +1695,14 @@
 		[maintxt_print text="     I still feel like I'm in a dream."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="     It's not a dream."]
-		[maintxt_print text="     It's real. See?"]
+		[maintxt_print text="     Es ist kein Traum. Es ist real. Siehst du?"]
 		[batch]
 
+		[txtwin_info line="1" type="0" pos="2"]
 		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
-		[maintxt_print text="...My hands."]
-		[maintxt_print text="     They're warm, aren't they?"]
+		[maintxt_print text="     ...Meine Hände. Sie sind warm, nicht wahr?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
