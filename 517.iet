@@ -471,12 +471,11 @@
 		[chara_app_pt ch_name="ukyo_s" pt_name="01b" em_name="odoroki" color="NOON" place="RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 
 		[voice_play no="50732" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     What did you say...?!"]
-		[maintxt_print text="     The summer evening festival...?!"]
+		[maintxt_print text="     Was hast du gesagt...?! Das Sommerabendfest...?! "]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -490,8 +489,8 @@
 		[txtwin_info line="2" type="0" pos="2"]
 		[voice_play no="50733" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Your manager just told me! Is it true that"]
-		[maintxt_print text="     you're going to the summer evening festival?!"]
+		[maintxt_print text="     Dein Chef hat es mir gerade erzählt! Stimmt es, dass du zum"]
+		[maintxt_print text="     Sommerabendfest gehst?!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -511,11 +510,10 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 		[voice_play no="50734" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     The summer evening festival..."]
-		[maintxt_print text="     Ah... This is really bad."]
+		[maintxt_print text="     Das Sommerabendfest... Ah... Das ist wirklich schlecht."]
 		[batch]
 
 		[ezchara_del ch_name="tencho_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -529,48 +527,45 @@
 
 		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="ikari" color="NOON" place="MD_RIGHT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="2"]
+		[txtwin_info line="1" type="0" pos="2"]
 		[voice_play no="50735" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Hey, #Name[0]."]
-		[maintxt_print text="     This evening festival isn't a good idea."]
+		[maintxt_print text="     Hey, #Name[0]. Das Fest ist keine gute Idee."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="3" type="0" pos="2"]
 		[voice_play no="50736" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     The gas pump at the kiosk could explode, the"]
-		[maintxt_print text="     truck with all the drums could drive onto the"]
-		[maintxt_print text="     pavement, a billboard could fall down..."]
+		[maintxt_print text="     Die Tanksäule am Verkaufsstand könnte explodieren, der Truck"]
+		[maintxt_print text="     mit dem ganzen Schlagzeug könnte auf den Gehweg fahren, eine"]
+		[maintxt_print text="     Werbetafel könnte herabfallen..."]
 		[batch]
 
-		[txtwin_info line="4" type="0" pos="8"]
+		[txtwin_info line="3" type="0" pos="8"]
 
 		[voice_play no="50737" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     The oil from a cooking spatula could splash in"]
-		[maintxt_print text="     your face, the toothpick from the shape-"]
-		[maintxt_print text="     cutting game might pierce your chest, you"]
-		[maintxt_print text="     could drown in the goldfish-scooping game..."]
+		[maintxt_print text="     Öl könnte von einem Pfannenwender in dein Gesicht spritzen,"]
+		[maintxt_print text="     der Zahnstocher vom Stanzspiel könnte deine Brust durchbohren,"]
+		[maintxt_print text="     du könntest beim Goldfischspiel ertrinken... "]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="5"]
 
 		[voice_play no="50738" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     A candy apple might get stuck in your throat,"]
-		[maintxt_print text="     or you'll be buried under piles of bananas, or"]
-		[maintxt_print text="     hit your head on the karaoke machine..."]
+		[maintxt_print text="     Ein kandierter Apfel könnte dir im Hals stecken bleiben, oder"]
+		[maintxt_print text="     du könntest von einem Haufen Bananen begraben werden, oder dir"]
+		[maintxt_print text="     deinen Kopf an der Karaokemaschine stoßen..."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="2"]
+		[txtwin_info line="2" type="0" pos="2"]
 
 		[voice_play no="50739" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     And finally, you could fall in a trap hole and"]
-		[maintxt_print text="     die!?"]
-		[maintxt_print text="     All this could happen...!"]
+		[maintxt_print text="     Und zu guter Letzt: Du könntest in eine Fallgrube fallen und"]
+		[maintxt_print text="     sterben!? All das könnte geschehen...!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -617,9 +612,9 @@
 		[txtwin_info line="3" type="0" pos="2"]
 		[voice_play no="50740" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'll go... Man, I have to go."]
-		[maintxt_print text="     I can't leave her alone. Even if it means I"]
-		[maintxt_print text="     have to put my life on the line."]
+		[maintxt_print text="     Ich werde mitkommen... Mann, ich muss mitkommen. Ich kann sie"]
+		[maintxt_print text="     nicht alleine lassen. Selbst wenn das bedeutet, dass ich mein"]
+		[maintxt_print text="     Leben aufs Spiel setzen muss."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
