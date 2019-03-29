@@ -1,0 +1,1787 @@
+/*
+	ウキョウ　ベストエンド.txt
+*/
+
+//#include "Gf_stdio.h"
+//#include "Gf_adv.h"
+
+
+[var name="i" data="0"]
+[var name="j" data="0"]
+
+
+/*------------------------------
+アムネシア　ウキョウルート　ベストエンド
+第１稿						２０１１年０２月２２日　望月
+第２稿　相互監修				２０１１年０２月２２日　果村
+第３稿　パラメータ・ＣＧナンバリング            ２０１１年０２月２３日　望月
+第４稿	　チェック＆加筆修正			２０１１年０３月０４日　斉藤
+-------------------------------*/
+/*-------------------------------
+●シーン：ukyo_27.01.00
+背景：パラレルの中間・異空間
+時間：
+人物：オリオン・ニール・ウキョウ
+モブ：
+-------------------------------*/
+*sure1
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure1_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure1_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure1_turn2"]
+	[elseif estimate="$i == 3"] [calllua function="stcm2_goto" label="sure1_turn3"]
+	[/if]
+
+
+	*sure1_turn0
+
+		[day_proc onoff="0"]
+		[batch]
+
+		/*-------------------------------
+		背景はオープニングと同じで、
+		この街の空（遠景）をゆがませた物とか。
+		途中までオリオンは非表示です。
+		-------------------------------*/
+		[scenechange3 bgname="bg015" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+		[bgm_play no="5" count="0"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="64169" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Einmal, es war im August ..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="64170" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Da warst du Opfer einer Explosion am Universitätsgelände, und"]
+		[maintxt_print text="     das war der Zeitpunkt, als du von der Liebe deines Lebens, Ukyo,"]
+		[maintxt_print text="     getrennt wurdest."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64171" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und die Person, die sich von Ukyos Trauer angezogen fühlte,"]
+		[maintxt_print text="     war mein Meister, Nhil."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="64172" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Nhil ist ein Gott. Und seine Kräfte werden durch die"]
+		[maintxt_print text="     Verwirklichung der Wünsche der Menschen ergänzt."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="64173" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Nhil war durch verschiedene Welten gereist und war dabei, seine"]
+		[maintxt_print text="     Macht vollständig aufzubrauchen."]
+		[batch]
+
+		[voice_play no="64174" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Er suchte nach einer Person mit einem Wunsch, der stark genug"]
+		[maintxt_print text="     war, um sie wieder zu regenerieren, und da hat er Ukyo getroffen."]
+		[batch]
+		
+		[txtwin_info line="1" type="0" pos="8"]	// karakuri-ism 海外版追加
+
+		[voice_play no="64175" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyo wünschte sich von Nhil, dass du lebst."]
+		[batch]
+
+		[txtwaitset wait="30"]
+
+		[txtwin_info line="2" type="0" pos="6"]
+		[voice_play no="64176" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber ... selbst Nhil kann den Tod nicht rückgängig machen."]
+		[maintxt_print text="     In dieser Welt warst du gestorben."]
+		[batch]
+
+		[voice_play no="64177" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Deshalb ... hat Nhil Ukyo mit sich genommen und sich dazu"]
+		[maintxt_print text="     entschieden, nach einer Welt zu suchen, in der du noch lebst."]
+		[batch]
+
+		[voice_play no="64178" count="0"]
+		[txtwin_info line="2" type="0" pos="6"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und für diesen Zweck hat Nhil seinen Körper aufgegeben und sich"]
+		[maintxt_print text="     mit Ukyo fusioniert."]
+		[batch]
+
+		[voice_play no="64179" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Daher denke ich, dass es auch nachvollziehbar war, dass ich mich"]
+		[maintxt_print text="     zu dir angezogen fühle."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="6"]
+		[voice_play no="64180" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich mein, mein Schöpfer sucht nach dir. Natürlich werde ich"]
+		[maintxt_print text="     davon angezogen."]
+		[batch]
+
+		[voice_play no="64181" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     ...Und so hat Nhil, der mit Ukyo eins wurde, nach einer Welt"]
+		[maintxt_print text="     gesucht, in der du noch am Leben warst."]
+		[batch]
+		
+		[txtwin_info line="3" type="0" pos="6"]
+
+		[voice_play no="64182" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     ...Eigentlich hätte die Geschichte da enden sollen. Zu einer"]
+		[maintxt_print text="     Zeit, als Ukyo dich in einer anderen Welt wieder getroffen"]
+		[maintxt_print text="     hat ..."]
+		[batch]
+
+		[voice_play no="64183" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wenn er sichergehen könnte, dass du den August überleben würdest,"]
+		[maintxt_print text="     würde Ukyos Wünsch in Erfüllung gehen, und Nhil könnte sich"]
+		[maintxt_print text="     wieder von ihm trennen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64184" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber ... Ukyo ist immer, kurz nachdem er dich in einer Welt"]
+		[maintxt_print text="     wieder getroffen hat, ums Leben gekommen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64185" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Da Ukyo allerdings mit Nhil verschmolzen ist, ist er ein"]
+		[maintxt_print text="     Halb-Unsterblicher."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="1"]
+		[voice_play no="64186" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und dasselbe gilt auch für Nhil. Selbst wenn er versagen sollte,"]
+		[maintxt_print text="     solange er Ukyos Wunsch nicht erfüllt, könnte er sich nicht von"]
+		[maintxt_print text="     ihm trennen."]
+		[batch]
+		
+		[txtwin_info line="2" type="0" pos="1"]
+
+		[voice_play no="64187" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Daher blieb ihm nichts anderes übrig, als mit Ukyo zur nächsten"]
+		[maintxt_print text="     Welt zu reisen, wo du noch am Leben warst."]
+		[batch]
+
+		[voice_play no="64188" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber selbst dort hat es Ukyo geschafft, auf brutale Art und"]
+		[maintxt_print text="     Weise zu sterben. Und so ging die Reise immer weiter."]
+		[batch]
+		
+		[txtwin_info line="1" type="0" pos="1"]
+
+		[voice_play no="64189" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Immer und immer wieder ... Bis Nhil bemerkt hat ..."]
+		[batch]
+		
+		[txtwin_info line="3" type="0" pos="1"]
+
+		[voice_play no="64190" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Dass in jeder Welt eine starke Macht steckt, die alles daran"]
+		[maintxt_print text="     setzt, alles zu vernichten, was nie existierte und nicht"]
+		[maintxt_print text="     existieren sollte."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64191" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber auch als er es bemerkt hat, es war bereits zu spät."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="1"]
+		[voice_play no="64192" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wenn Ukyo noch vor seinem Tod sichergehen könnte, dass du in"]
+		[maintxt_print text="     Sicherheit bist, könnte sein Wunsch theoretisch in Erfüllung"]
+		[maintxt_print text="     gehen, aber ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64193" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber das Universum lässt diesen Wunsch nicht einfach so in"]
+		[maintxt_print text="     Erfüllung gehen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64194" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     25. August. Das ist der Tag, an dem Ukyo und du immer wieder"]
+		[maintxt_print text="     gestorben seid."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="1"]
+		[voice_play no="64195" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyo war der Einzige, der sich immer wieder an diese grausamen"]
+		[maintxt_print text="     Tode erinnert hat ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+		[voice_play no="64196" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und mit der Zeit ist er dann verrückt geworden."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="4"]
+		[voice_play no="64197" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyo kann nicht gleichzeitig mit dir in einer Welt existieren."]
+		[maintxt_print text="     Ginge es nach dieser Logik ... sollte er dich zuerst eliminieren."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="4"]
+		[voice_play no="64198" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Im Versuch, vor seiner Angst vor dem Tod davonzulaufen, wurde"]
+		[maintxt_print text="     ein anderer Ukyo erschaffen."]
+		[batch]
+		
+		[txtwin_info line="1" type="0" pos="4"]
+
+		[voice_play no="64199" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und der Rest ist genauso, wie Ukyo es dir erzählt hat."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn1
+
+		[txtwin_info line="2" type="0" pos="4"]
+		[voice_play no="64200" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Der andere Ukyo würde dich ausschalten, und der vernünftige"]
+		[maintxt_print text="     Ukyo würde trauern und dann in eine andere Welt reisen."]
+		[batch]
+
+		[voice_play no="64201" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     An dieser Stelle ist Ukyos Existent selbst schon ein Schiksal"]
+		[maintxt_print text="     zu sterben. Es gab keine andere Möglichkeit ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64202" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und das war der Moment, wo Nhil sich dazu entschieden hat,"]
+		[maintxt_print text="     den entscheidenen Sprung zu wagen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64203" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Um dafür zu sorgen, dass Ukyos Wunsch in Erfüllung geht, müssten"]
+		[maintxt_print text="     Ukyo und du gleichzeitig und auf derselben Welt existieren."]
+		[batch]
+
+		[voice_play no="64204" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Es gibt nur eine Welt von all den Parallelwelten, auf der dies"]
+		[maintxt_print text="     möglich ist."]
+		[batch]
+		
+		[txtwin_info line="1" type="0" pos="7"]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64205" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und das ist Ukyos und deine 'Welt des Ursprungs'."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64206" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Du hast Ukyo hier vor dem ersten August getroffen, und du bist"]
+		[maintxt_print text="     am 25. August gestorben. Das geschah in dieser Welt ..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+		
+		[voice_play no="64207" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Es musste diese Welt sein, sonst könnten weder Ukyo noch du"]
+		[maintxt_print text="     existieren. Und dadurch würde Ukyos Wunsch nie in Erfüllung"]
+		[maintxt_print text="     gehen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="7"]
+		[voice_play no="64208" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Deshalb ist Nhil hierher gekommen ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64209" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Er hat seine letzten Kräfte dafür gegeben, die Zeit dieser Welt"]
+		[maintxt_print text="     zurückzudrehen."]
+		[batch]
+
+		[voice_play no="64210" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     ...Das ist auch der Grund, weshalb das Wetter auf dieser Welt"]
+		[maintxt_print text="     für diesen Monat eher außergewöhnlich ist."]
+		[batch]
+		
+		[txtwin_info line="3" type="0" pos="7"]
+
+		[voice_play no="64211" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Er konnte zwar die Zeit zurückdrehen, aber nicht die physische"]
+		[maintxt_print text="     Welt selbst, weshalb es einen riesen Unterschied zwischen der"]
+		[maintxt_print text="     Zeit und der Jahreszeit gibt."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		
+		[voice_play no="64212" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wenn Nhil sich von Ukyo trennen könnte, könnte er bestimmt"]
+		[maintxt_print text="     wieder alles zum alten Zustand zurückverwandeln."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+		
+		[voice_play no="64213" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Wie auch immer, Nhil hat die Zeit zum ersten Juli diesen Jahres"]
+		[maintxt_print text="     zurückgedreht. Das ist der Tag, an dem Ukyo von Kobe weggezogen"]
+		[maintxt_print text="     ist."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64214" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Vier Tage später hätte Ukyo dich eigentlich treffen sollen,"]
+		[maintxt_print text="     aber ..."]
+		[batch]
+
+		[voice_play no="64215" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyo hatte Angst davor, dass er dich verletzen würde, weshalb"]
+		[maintxt_print text="     er nicht in deine Nähe gekommen ist."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="7"]
+		[voice_play no="64216" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber er konnte die Explosion, die am ersten August geschehen"]
+		[maintxt_print text="     würde, nicht einfach ignorieren, weshalb er mit dir gesprochen"]
+		[maintxt_print text="     hat."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="7"]
+		[voice_play no="64217" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Weil er wusste, dass es die letzte Möglichkeit sein würde, dich"]
+		[maintxt_print text="     zu sehen."]
+		[batch]
+
+		[txtwin_proc onoff="0"]		/* ウィンドウを閉じる　　 */
+
+		[batch]
+
+		[txtwaitset wait="30"]
+
+		/*-------------------------------
+		ウキョウＩＮ
+		目伏せで、わずかに透けてるかも
+		-------------------------------*/
+//		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="metoji" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[chara_app_pt_alp2 ch_name="ukyo_b" pt_name="01" em_name="metoji" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY" alpha="80"]
+
+		[txtwin_proc onoff="1"]		/* ウィンドウを開く　　　 */
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64218" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Siehst du's? Ich habe gerade dein Bewusstsein mit dem von"]
+		[maintxt_print text="     Ukyo verbunden."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64219" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyos Wunsch ist in Erfüllung gegangen. Du bist am Leben."]
+		[batch]
+
+		[voice_play no="64220" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Und nun ... liegt er im Sterben. Ukyo hat einen Wunsch."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64221" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Einfach ganz zu verschwinden."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64222" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Kannst du ihm verzeihen? Möchtest du, dass Ukyo weiterlebt?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64223" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ukyo hat viele schreckliche Dinge getan. Er hat viele Verbrechen"]
+		[maintxt_print text="     begangen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64224" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Das ist nichts, was man so einfach verzeihen kann, und auch"]
+		[maintxt_print text="     nicht sollte."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64225" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber ... Ukyo litt."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="64226" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Er wurde an den Punkt des Wahnsinns gebracht. Er hat seine"]
+		[maintxt_print text="     Familie verlassen, seine Freunde gemieden und befand sich"]
+		[maintxt_print text="     in einem immer wiederkehrenden Kreislauf des Todes ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64227" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Er wollte dich dennoch sehen."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64228" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Es war ihm egal, in welchem Zustand. Er wollte an deiner Seite"]
+		[maintxt_print text="     sein ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64229" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber ich sage dir nicht, dass das Ukyos Sünden vollständig"]
+		[maintxt_print text="     rechtfertigen sollte. Die finale Entscheidung liegt bei dir."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64230" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Also ... was möchtest du tun?"]
+		[batch]
+
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure1_turn2
+
+		/*-------------------------------
+		【選択肢】ukyo_27.01.00
+		ウキョウは……許せない＞シーン：ukyo_27.01.01へ
+		ウキョウを許します＞シーン：ukyo_27.01.02へ
+		-------------------------------*/
+		[txtwin_proc onoff="0"]
+		[menutxt_set text="I can't forgive him..."]
+		[menutxt_set text="I forgive him."]
+		[menu_set flag="select"][stop]
+		*sure1_turn2_menu
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+	*sure1_turn3
+		/* 分岐 */
+		[flag_number name="select" i="j"]
+		[if estimate="$j == 0"][thread_change label="sure2"]
+		[elseif estimate="$j == 1"][thread_change label="sure3"]
+		[/if]
+
+		[flag_set name="switch" num="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_27.01.01
+選択肢：ウキョウは……許せない
+-------------------------------*/
+*sure2
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure2_turn0"]
+	[/if]
+
+
+	*sure2_turn0
+
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64231" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Verstehe. Okay. Ich nehme es dir nicht übel. Ich denke, das"]
+		[maintxt_print text="     ist eine logische Entscheidung."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64232" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Meine Rolle endet also hier. Der Rest liegt ..."]
+		[batch]
+
+		[txtwin_info line="2" type="1" pos="8"]
+		[voice_play no="101008" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
+		[maintxt_print text="...It is my job to finish off"]
+		[maintxt_print text="     Ukyo."]
+		[batch]
+
+		[voice_play no="101009" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="#Name[0]."]
+		[maintxt_print text="...I apologize for what I did to you."]
+		[batch]
+
+		[voice_play no="101010" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     All of Ukyo's sins are my fault."]
+		[maintxt_print text="     I will carry that burden."]
+		[batch]
+
+		[voice_play no="101011" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     Now go home."]
+		[maintxt_print text="     To the world in which you existed."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		[bgm_stop count="0"]
+
+		/*-- ukyo_26.01.00へ --*/
+		[flag_set name="switch" num="0"]
+		[file_change no="526" label="sure1"]
+
+
+	[return]
+
+
+
+
+/*-------------------------------"
+●シーン：ukyo_27.01.02" );
+選択肢：ウキョウを許します
+-------------------------------*/
+*sure3
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure3_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure3_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure3_turn2"]
+	[elseif estimate="$i == 3"] [calllua function="stcm2_goto" label="sure3_turn3"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure3_turn15"]
+	[/if]
+	
+
+	*sure3_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure3_turn0
+
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[restrict_scene]
+			[flag_set name="switch" num="2"]
+			[return]
+
+		[/if]
+
+		[txtwin_proc onoff="1"]
+
+		[voice_play no="64233" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Verstehe ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64234" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich hatte mir schon gedacht, dass du das sagen würdest."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64235" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich mein, es war zwar eine kurze Zeit, aber unsere Beziehung"]
+		[maintxt_print text="     war doch sehr nahe. Ich kenne deine Persönlichkeit schon."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64236" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Deshalb überrascht mich deine Antwort nicht."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="64237" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Du hast Ukyo verziehen, und du wirst mit ihm zurückkehren."]
+		[maintxt_print text="     Bist du damit wirklich einverstanden?"]
+		[batch]
+
+		[txtwin_info line="1" type="1" pos="5"]
+		[voice_play no="51294" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...No."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64238" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]// オリオン／オリオン
+		[maintxt_print text="     Ukyo?"]
+		[batch]
+
+		[txtwin_info line="1" type="1" pos="5"]
+		[voice_play no="51295" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I can't return."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64239" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]// オリオン／オリオン
+		[maintxt_print text="     ...Warum nicht?"]
+		[batch]
+
+		/*-------------------------------
+		ウキョウ、目を開けます
+		-------------------------------*/
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="51296" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I killed her."]
+		[maintxt_print text="     Over and over again."]
+		[maintxt_print text="     I killed her to save myself."]
+		[batch]
+
+		[voice_play no="51297" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     The memory of my sins can never"]
+		[maintxt_print text="     be erased. I can't live on carrying"]
+		[maintxt_print text="     that burden..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="64240" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Obwohl sie dir verzeiht?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51298" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...That's right."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="64241" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Bist du dir sicher?"]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+
+		[voice_play no="64242" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Trotz des Schmerzes, den du über dich ergehen hast lassen ..."]
+		[maintxt_print text="     Du hast die ganze Zeit nach ihr gesucht ... und nun gibst du"]
+		[maintxt_print text="     so einfach auf?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51299" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I know this is merely my point of view,"]
+		[maintxt_print text="     but I've lived a long life."]
+		[batch]
+
+		[txtwin_info line="4" type="0" pos="5"]
+
+		[voice_play no="51300" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Yes, it was a life of deaths. I experienced"]
+		[maintxt_print text="     horrible deaths over and over, and I was"]
+		[maintxt_print text="     really scared to live and to have a"]
+		[maintxt_print text="     consciousness. It hurt."]
+		[batch]
+
+		/*------------------------------
+		ウキョウ苦笑
+		------------------------------*/
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="51301" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     And any world I went to,"]
+		[maintxt_print text="#Name[0] didn't"]
+		[maintxt_print text="     remember me."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51302" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     But in those short times until I died,"]
+		[maintxt_print text="     I watched her."]
+		[batch]
+
+		[voice_play no="51303" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Laughing, having fun,"]
+		[maintxt_print text="     getting upset, and..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51304" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Her becoming happy with someone."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="51305" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     And that..."]
+		[maintxt_print text="     never belonged to me, but"]
+		[maintxt_print text="     I was still happy."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51306" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I was really happy to have"]
+		[maintxt_print text="     met you again."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="51307" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     So everything is alright."]
+		[maintxt_print text="     I can't wish for any more."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="51308" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     If I live again..."]
+		[maintxt_print text="     I think that next time, I'll suffer"]
+		[maintxt_print text="     from an even deeper guilt."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51309" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I can't forget everything"]
+		[maintxt_print text="     and return to normal."]
+		[batch]
+
+		[voice_play no="51310" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I'm a sinner."]
+		[maintxt_print text="     ...I want to be relieved of this pain."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Nein ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51311" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="#Name[0]..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich werde dich nicht in Frieden ruhen lassen. Du musst"]
+		[maintxt_print text="     weiterleiden. Du musst weiterhin bereuen, dass du mich"]
+		[maintxt_print text="     getötet hast ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Und die Menge Leid die du fühlst ... musst du darin setzen,"]
+		[maintxt_print text="     mich glücklich zu machen."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure3_turn1
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_odo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51312" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     What...?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Diese ganze Zeit warst du an meiner Seite, und doch habe ich"]
+		[maintxt_print text="     es nicht mal bemerkt. Es tut mir so leid."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Und ... Es tut mir so so leid, dass ich gestorben bin und"]
+		[maintxt_print text="     dich zurückgelassen habe ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Aber von jetst an werde ich direkt neben dir sein. Ich werde"]
+		[maintxt_print text="     dich beschützen, wenn du leidest."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich denke, wenn wir beide zusammen sind, die person, die"]
+		[maintxt_print text="     leided, und die person, die das Leid erzeugt, dann wird"]
+		[maintxt_print text="     es sicherlich viel Leid geben."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Es wird kein einfaches Leben sein. Vielleicht werden wir es"]
+		[maintxt_print text="     nicht überwinden können. Aber ..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich ... Ich werde dich neimals loslassen"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Egal, was passiert oder passieren wird."]
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich verspreche dir, an deiner Seite zu sein."]
+		[maintxt_print text="     Und delhalb, Ukyo ... lass uns zusammen zurück gehen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Lebe weiter mit mir."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51313" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     #Name[0]...!"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_meso" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="51314" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     But... I..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Es ist okay, Ukyo."]
+		[batch]
+
+		[ezchara_dis ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure3_turn2
+	
+		/*------------------------------
+		cg_ukyo13・ウキョウを抱きしめる主人公
+		------------------------------*/
+		[bgm_play no="18" count="0"]
+		[ezbg_change2 name="cg_ukyo13a" wait="BG_NORMAL"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+		
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Du bist nicht alleine. Du hast mich."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="51315" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     ...Right..."]
+		[batch]
+
+		[voice_play no="51316" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     ...I'm sorry. And..."]
+		[batch]
+
+		/*------------------------------
+		cg_ukyo13a・ウキョウを抱きしめる主人公・ウキョウ眼伏せ・涙をこらえています
+		------------------------------*/
+		[ezbg_change2 name="cg_ukyo13b" wait="BG_FAST"]
+		
+		[txtwin_proc onoff="1"]
+		
+		[voice_play no="51317" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Thank you..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="2"]
+		[voice_play no="64243" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Haha. Sieht aus, als hättest du deine Entscheidung getroffen."]
+		[maintxt_print text="     Hast du ein Problem damit, Ukyo? Falls ja, dann tut es mir leid."]
+		[maintxt_print text="     Es ist deine eigene Schuld."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="64244" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Also gib einfach auf und verbringe den Rest deines Lebens damit,"]
+		[maintxt_print text="     sie zu beschützen. Okay ...?"]
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+		/*------------------------------
+		スチル終了
+		------------------------------*/
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure3_turn3
+
+		/*------------------------------
+		背景：パラレルの中間
+		------------------------------*/
+		[ezbg_change2 name="bg015" wait="BG_NORMAL"]
+		[batch]
+		[txtwin_proc onoff="1"]
+
+		[txtwin_info line="3" type="0" pos="8"]
+		[voice_play no="64245" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Dann endet meine Rolle hier also. Nhil und ich müssen dafür"]
+		[maintxt_print text="     bestraft werden, dass wir zu sehr in die Welt der Menschen"]
+		[maintxt_print text="     eingegriffen haben."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[voice_play no="64246" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Aber davor ..."]
+		[batch]
+
+		[txtwin_info line="2" type="1" pos="8"]
+		[voice_play no="101012" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
+		[maintxt_print text="#Name[0]. Ukyo."]
+		[maintxt_print text="     I am very sorry for what I put you through."]
+		[batch]
+
+		[txtwin_info line="3" type="1" pos="8"]
+		[voice_play no="101013" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     I wanted to know what humans were, and"]
+		[maintxt_print text="     what they wanted. That's why I continued to"]
+		[maintxt_print text="     fulfill people's wishes in this world."]
+		[batch]
+
+		[voice_play no="101014" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     And this is where we ended up."]
+		[maintxt_print text="     By making people's wishes come true,"]
+		[maintxt_print text="     I made a lot of people unhappy."]
+		[batch]
+
+		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="51318" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="     Nhil..."]
+		[batch]
+
+		[txtwin_info line="2" type="1" pos="8"]
+		[voice_play no="101015" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
+		[maintxt_print text="     I'm sorry, Ukyo."]
+		[maintxt_print text="     In the end, I couldn't make anyone happy."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]
+		[maintxt_print text="     Das ist nicht wahr ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ich lebe ... Und der Grund, aus dem ich mit dir zusammen"]
+		[maintxt_print text="     sein kann, bist du, Ukyo, oder nicht?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Das heißt also, das du wenigstens zwei Leute glücklich"]
+		[maintxt_print text="     gemacht hast."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Danke."]
+		[batch]
+
+		[txtwin_info line="1" type="1" pos="8"]
+
+		[voice_play no="101016" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
+		[maintxt_print text="     ..."]
+		[batch]
+
+		[txtwin_info line="2" type="1" pos="8"]
+
+		[voice_play no="101017" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     Ukyo."]
+		[maintxt_print text="     So... this is the woman you fell in love with."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51319" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]
+		[maintxt_print text="...That's right, Nhil."]
+		[maintxt_print text="     This is the woman I love with all my heart."]
+		[batch]
+
+		[ezchara_dis ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+		[batch]
+
+		/*------------------------------
+		ニール、微笑しています。優しく
+		------------------------------*/
+		[ezbg_change2 name="cg_ukyo14a" wait="BG_NORMAL"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="1" pos="2"]
+		[voice_play no="101018" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]	// ニール／ニール
+		[maintxt_print text="...So I guess she was worth searching"]
+		[maintxt_print text="     for."]
+		[batch]
+
+		[voice_play no="101019" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     Now it's time."]
+		[maintxt_print text="     I will make your wish come true."]
+		[batch]
+
+		[voice_play no="101020" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     I will heal Ukyo's injuries and rewrite"]
+		[maintxt_print text="     fate."]
+		[batch]
+
+		[voice_play no="101021" count="0"]
+		[speaker_set name="Nhil" chrid="CHRID_NEEL"]
+		[maintxt_print text="     Now go home."]
+		[maintxt_print text="     Back to the world you came from..."]
+		[batch]
+
+		/*-------------------------------
+		画面：帰還演出
+		-------------------------------*/
+		/*-------------------------------
+		オリオン表示"
+		-------------------------------*/
+		[ezbg_change2 name="cg_ukyo14b" wait="BG_FAST"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+		[voice_play no="64247" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]
+		[maintxt_print text="     Entschuldige, für alles, was ich getan habe. Und vielen Dank,"]
+		[maintxt_print text="     #Name[0]!"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="64248" count="0"]
+		[speaker_set name="Orion" chrid="CHRID_ORION"]	// オリオン／オリオン
+		[maintxt_print text="     Ich hoffe, wir sehen uns eines Tages wieder!"]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+
+		/*-- ukyo_27.03.00へ --*/
+		[flag_set name="switch" num="0"]
+		[thread_change label="sure4"]
+
+                [bgm_stop count="0"]
+
+	[return]
+
+
+
+/*-------------------------------
+●シーン：ukyo_27.03.00
+背景：駅前
+時間：昼
+人物：ウキョウ・オリオン
+モブ：
+-------------------------------*/
+*sure4
+
+	[flag_number name="switch" i="i"]
+	[if estimate="$i == 0"] [calllua function="stcm2_goto" label="sure4_turn0"]
+	[elseif estimate="$i == 1"] [calllua function="stcm2_goto" label="sure4_turn1"]
+	[elseif estimate="$i == 2"] [calllua function="stcm2_goto" label="sure4_turn2"]
+	/* 回想モード終了セット										*/
+	[elseif estimate="$i == 15"] [calllua function="stcm2_goto" label="sure4_turn15"]
+	[/if]
+	
+
+	*sure4_turn15
+	
+		[restoff_scene]
+		[memory_exit]						/*回想モード終了処理*/
+		[batch]
+		[calllua function="game_end"]
+		
+	[return]
+
+
+	*sure4_turn0
+                
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+
+			[restrict_scene]
+	 		[bgm_play no="9" count="0"]
+
+			[flag_set name="switch" num="1"]
+			[return]
+
+		[/if]
+		
+		/*-------------------------------
+		テロ：数日後
+		-------------------------------*/
+		[scenechange3 bgname="bg240" color="F_BLACK" speed="F_SP" dir="F_FADE"]
+
+		[txtwaitset wait="30"] 
+		[batch]
+
+		[scenechange3 bgname="bg000" color="F_BLACK" speed="F_SP" dir="F_LEFT"]
+		[batch]
+
+ 		[bgm_play no="9" count="0"]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Ukyo es ist spät ... Ich frage mich, ob er schon wieder"]
+		[maintxt_print text="     verschlafen hat ..."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+		[batch]
+
+		/*-------------------------------
+		ウキョウＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51320" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     I'm not late."]
+		[maintxt_print text="     I got here on time."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Häh?! Du warst hinter mir? Warum hast du nichts gesagt?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51321" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Because you were standing there looking"]
+		[maintxt_print text="     beautiful, so I had to take a photo."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Schon wieder?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51322" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Yup. I am a photographer, you know?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Das ist eher wie ein Paparazzifoto."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51323" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     What? So I can't?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		//[voice_play no="" count="0"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Ich meine, was, wenn ich komisch aussähe?"]
+		[maintxt_print text="     Das will ich nicht ..."]
+		[batch]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[voice_play no="51324" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     You didn't look weird."]
+		[maintxt_print text="     I only snap photos when"]
+		[maintxt_print text="     you look good, so relax."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Hmm ..."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51325" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     So... No?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Na gut. Vielleicht kann ich dieses mal ein Foto von dir"]
+		[maintxt_print text="     machen. Mit meiner Handykamera."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="3" type="0" pos="5"]
+
+		[voice_play no="51326" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Oh, no camera phones!"]
+		[maintxt_print text="     That's heresy!"]
+		[maintxt_print text="     You can take it with a digital camera, though."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Die sind nicht so verschieden ... Aber okay, ich werde dann"]
+		[maintxt_print text="     eine mitnehmen."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51327" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     And you're going to take pictures of me?"]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Fotos von uns beiden. Lass uns ganz viele machen und dann"]
+		[maintxt_print text="     ein Album aus ihnen machen, okay?"]
+		[batch]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Und dann können wir später daran denken, wie glücklich wir"]
+		[maintxt_print text="     sind."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51328" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Haha. Sounds good."]
+		[maintxt_print text="     Then we'll start with..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="4"]
+		[voice_play no="64249" count="0"]
+		[speaker_set name="???" chrid="CHRID_ORION"]	// オリオン／双子の男の子
+		[maintxt_print text="     Hey Lady. Du hast dein Taschentuch fallen gelassen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Häh?"]
+		[batch]
+
+		[ezchara_dis ch_name="ukyo_b" dir="0" app_speed="3" delay="0"]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure4_turn1
+
+		/*-------------------------------
+		cg_ukyo15・ウキョウと主人公とオリオンとニール
+		-------------------------------*/
+		[ezbg_change2 name="_cg_ukyo15" wait="BG_NORMAL"]
+		[batch]
+		[txtwaitset wait="30"]
+		[batch]
+		[ezbg_change2 name="cg_ukyo15a" wait="BG_NORMAL"]
+
+		[bgm_play no="15" count="0"]/* ＢＧＭ再生 感傷２　　　　 */
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="2"]
+
+		[voice_play no="51329" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     You're..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="2"]
+		[voice_play no="101022" count="0"]
+		[speaker_set name="???" chrid="CHRID_NEEL"]	// ニール／双子の男の子
+		[maintxt_print text="     Now, now, don't just drop something"]
+		[maintxt_print text="     important to you. Here you go."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="64250" count="0"]
+		[speaker_set name="???" chrid="CHRID_ORION"]	// オリオン／双子の男の子
+		[maintxt_print text="     Und jetzt lass uns gehen!"]
+		[batch]
+
+		[voice_play no="101023" count="0"]
+		[speaker_set name="???" chrid="CHRID_NEEL"]	// ニール／双子の男の子
+		[maintxt_print text="     Yeah, let's go."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[voice_play no="64251" count="0"]
+		[speaker_set name="???" chrid="CHRID_ORION"]	// オリオン／双子の男の子
+		[maintxt_print text="     Hey, meine Dame. Mein Herr ... Bis später!"]
+		[batch]
+
+		/*-------------------------------
+		ＳＥ：走り去る足音
+		-------------------------------*/
+		[strse_play no="93" delay="0"]
+		[strse_waitcut]
+		[batch]
+
+		/*-------------------------------
+		cg_ukyo15a・ウキョウと主人公とオリオンとニール・差分１・ニールとオリオン消失
+		-------------------------------*/
+		[ezbg_change2 name="cg_ukyo15b" wait="BG_NORMAL"]
+		
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="1" type="0" pos="8"]
+		
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Sie sind gegangen ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Diese Kinder ... Ich habe das Gefühl, dass ich sie kenne. Aber"]
+		[maintxt_print text="     ich könnte auch falsch liegen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ※ウキョウ／ウキョウ
+		[maintxt_print text="     ..."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+		[voice_play no="51330" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Ah, I see."]
+		[maintxt_print text="     So that's the ”punishment,” huh?"]
+		[batch]
+
+		/*----------------------------------------------------------*/
+		/* 回想モード終了チェック									*/
+		[flag_number name="scene_play" i="i"]		/*回想用フラグ*/
+		[if estimate="$i == 1"]
+			[txtwin_proc onoff="0"]
+			[batch]
+		
+			[flag_set name="switch" num="15"]
+			[return]
+
+		[/if]
+		/*----------------------------------------------------------*/
+		/*-------------------------------
+		スチル終了
+		-------------------------------*/
+		[ezbg_change2 name="bg000" wait="BG_NORMAL"]
+		
+		/*-------------------------------
+		ウキョウＩＮ
+		-------------------------------*/
+		[chara_app_pt ch_name="ukyo_b" pt_name="01a" em_name="sian" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
+
+		[txtwin_info line="3" type="0" pos="5"]
+		[voice_play no="51331" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...I don't know who decided on that,"]
+		[maintxt_print text="     but I guess his wish to understand"]
+		[maintxt_print text="     humans came true, after all."]
+		[batch]
+
+		[flag_change name="switch" num="1"]
+
+	[return]
+
+
+	*sure4_turn2
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Wovon redest du?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51332" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...Nothing."]
+		[batch]
+
+		[voice_play no="51333" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...Ah..."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Was ist los?"]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51334" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Nothing. I just thought of how fortunate and"]
+		[maintxt_print text="     happy I am."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Stimmt ... Ich auch."]
+		[batch]
+
+		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="03" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51335" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...Let's go."]
+		[maintxt_print text="     We gotta go buy a mirror for your room."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Du musst dir darüber keine Sorgen machen."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+		[voice_play no="51336" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     But I promised."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+
+		/*-------------------------------
+		ウキョウＯＵＴ
+		-------------------------------*/
+		[ezchara_del ch_name="ukyo_b" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
+
+		/*-------------------------------
+		背景・空
+		-------------------------------*/
+		[ezbg_change2 name="bg024" wait="BG_NORMAL"]
+		[batch]
+
+		[txtwin_proc onoff="1"]
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51337" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     It's really nice weather today."]
+		[maintxt_print text="     I still feel like I'm in a dream."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     Es ist kein Traum. Es ist real. Siehst du?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="2"]
+		[speaker_set name="#Name[0]" chrid="CHRID_HEROINE"]	// #Name[0]／#Name[0]
+		[maintxt_print text="     ...Meine Hände. Sie sind warm, nicht wahr?"]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="5"]
+
+		[voice_play no="51338" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Yeah...they are."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="5"]
+
+		[voice_play no="51339" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     As long as I can always feel your warmth,"]
+		[maintxt_print text="     I can keep living."]
+		[batch]
+
+		[txtwin_info line="1" type="0" pos="8"]
+
+		[voice_play no="51340" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="...I love you, #Name[0]."]
+		[batch]
+
+		[txtwin_info line="2" type="0" pos="8"]
+
+		[voice_play no="51341" count="0"]
+		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
+		[maintxt_print text="     Until the end of the world,"]
+		[maintxt_print text="     I will love only you."]
+		[batch]
+
+		[txtwin_proc onoff="0"]
+
+		[txtwaitset wait="120"]
+
+		[batch]
+
+		[blackout_start mode="0" mode2="0" color="F_WHITE" index="3" alpha="255" count="120"]
+		[txtwaitset wait="120"]
+		[batch]
+
+		[bgm_stop count="0"]
+		[ezbg_change2 name="bg_black" wait="BG_NOW"]
+		[batch]
+
+		/*-------------------------------
+		ＥＮＤ
+		-------------------------------*/
+		[movie_play name="ed_ukyo"]
+		[batch]
+
+		[blackout_end mode="0" mode2="0" index="3" count="F_SP_FAST"]
+		[txtwaitset wait="120"]
+		[batch]
+		
+		[spflag_number name="memopen_5" i="i"]
+		
+		[if estimate="$i == 0"]
+
+			[txtwin_proc onoff="1"]
+			[restrict_menu]
+			[restrict_txt]
+			
+			[txtwin_info line="2" type="1" pos="7"]
+			[maintxt_print text="[ERINNERUNGEN VON UKYO]"]
+			[maintxt_print text="     wurden freigeschaltet."]
+			[batch]
+			
+			[txtwin_proc onoff="0"]
+			[spflag_set name="memopen_5" num="1"]
+			[batch]
+
+		[/if]
+		
+		// GOOD「大切なもの、今度は落とさないでね」
+		[Trophy_Unlock id="TOROPHY_IDX_GOOD_END_JOKER"]
+		[set_clear_flag end_type="ED_GOOD" num="4"]
+		[spflag_set name="ウキョウクリア" num="1"]
+
+	[calllua function="game_end"]
+
+
+
+
+/*-------------------------------
+cg_ukyo14シーン再生用スレッド
+-------------------------------*/
+*sure99
+
+	[restrict_scene]
+	[bgm_play no="18" count="0"]
+	[flag_set name="switch" num="3"]
+	[thread_change label="sure3"]
+	[return]	
+
+
