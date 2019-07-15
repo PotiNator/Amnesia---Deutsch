@@ -76,12 +76,11 @@
 		[chara_app_pt ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80451" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Would you like to go to the beach?"]
-		[maintxt_print text="     Actually, let's just go."]
+		[maintxt_print text="     Willst du zum Strand? Ach, gehen wir einfach."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -116,19 +115,17 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="ikari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="80452" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     But...!"]
-		[maintxt_print text="     Rika is going to"]
-		[maintxt_print text="     go with Ikki!"]
+		[maintxt_print text="     Aber ...! Rika geht mit Ikki!"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80453" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     It's so not fair!"]
+		[maintxt_print text="     So unfair!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -142,7 +139,7 @@
 		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="80454" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     What, are you jealous?!"]
+		[maintxt_print text="     Was, bist du etwa neidisch?!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -162,28 +159,26 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="gnikori" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="80455" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Well fine, it doesn't have to be the beach."]
-		[maintxt_print text="     I just want to go hang out with all the"]
-		[maintxt_print text="     hotties!"]
+		[maintxt_print text="     Na gut, es muss nicht unbedingt der Strand sein."]
+		[maintxt_print text="     Ich will einfach nur mit den Schnuckelchen abhängen!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="1" type="0" pos="2"]
 		[voice_play no="11491" count="0"]
 		[speaker_set name="Shin" chrid="CHRID_SHIN"]	// シン／シン
-		[maintxt_print text="     Hotties...?"]
+		[maintxt_print text="     Schnuckelchen ...?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="80456" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Oh, I know!"]
-		[maintxt_print text="     Why don't we have a company trip with all"]
-		[maintxt_print text="     of the cafe employees??"]
+		[maintxt_print text="     Ah, Ich weiß was! Warum machen wir nicht einfach einen"]
+		[maintxt_print text="     Ausflug mit allen Cafémitarbeitern??"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -199,12 +194,11 @@
 		-------------------------------*/
 		[ezchara_del ch_name="mine_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="0"]
+		[txtwin_info line="1" type="0" pos="0"]
 
 		[voice_play no="80457" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Manager!"]
-		[maintxt_print text="     Let's go to the beach!"]
+		[maintxt_print text="     Chef! Gehen wir zum Strand!"]
 		[batch]
 
 		[ezchara_del ch_name="shin_s_work" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
@@ -234,7 +228,7 @@
 
 		[voice_play no="80458" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Yaaay!"]
+		[maintxt_print text="     Juhuuu!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="a" em_name="komari" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
@@ -273,7 +267,7 @@
 		[txtwin_info line="1" type="0" pos="8"]
 		[voice_play no="80459" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Aww..."]
+		[maintxt_print text="     Aww ..."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="2"]
@@ -309,13 +303,12 @@
 		[maintxt_print text="     all go together?"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="80460" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     A summer evening festival?!"]
-		[maintxt_print text="     I want to go! I sooo want to go!"]
-		[maintxt_print text="     I want to wear a yukata!"]
+		[maintxt_print text="     Ein Sommernachtsfest?! Da will ich hin! Da will ich"]
+		[maintxt_print text="     uuunbedingt hin! Und ich will einen Yukata tragen!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="shin_s_work" pt_name="c" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
