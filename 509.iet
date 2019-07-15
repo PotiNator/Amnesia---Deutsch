@@ -93,12 +93,11 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="mine_s" pt_name="a" em_name="wara" color="NOON" place="LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="80405" count="0"]
 		[speaker_set name="Mine" chrid="CHRID_MINE"]	// ミネ／ミネ
-		[maintxt_print text="     Well it's better she comes earlier than later,"]
-		[maintxt_print text="     right?"]
+		[maintxt_print text="     Nun, lieber kommt sie etwas zu früh, statt zu spät, oder?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="kent_s_work" pt_name="c" em_name="nagasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
