@@ -894,12 +894,11 @@
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
 		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50794" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...Bumping into you already, that's surprising."]
-		[maintxt_print text="     Well, good morning, #Name[0]."]
-		[maintxt_print text="     Are you doing some shopping?"]
+		[maintxt_print text="...So früh treffe ich schon auf dich, das ist überraschend. Guten"]
+		[maintxt_print text="     Morgen, #Name[0]. Gehst du einkaufen?"]
 		[batch]
 
 		[txtwin_info line="3" type="0" pos="8"]
@@ -915,19 +914,17 @@
 
 		[voice_play no="50795" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I just wanted to buy some outdoor gear."]
-		[maintxt_print text="     There's a store over there that sells camping"]
-		[maintxt_print text="     equipment, right?"]
+		[maintxt_print text="     Ich hatte vor, mir Outdoor-Austrüstung zu kaufen. Da drüben gibt"]
+		[maintxt_print text="     es einen Laden, der Camping-Ausstattung verkauft, nicht wahr?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="4" type="0" pos="5"]
+		[txtwin_info line="3" type="0" pos="5"]
 		[voice_play no="50796" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I've walked this town many times over, but"]
-		[maintxt_print text="     it's rare to see a store that sells that kind of"]
-		[maintxt_print text="     equipment. So I don't remember the location"]
-		[maintxt_print text="     quite accurately."]
+		[maintxt_print text="     Ich bin mehrmals durch diese Stadt gelaufen. Läden, die sowas"]
+		[maintxt_print text="     verkaufen, sieht man nicht oft. Ich kann mich nicht mehr genau"]
+		[maintxt_print text="     an den Standort erinnern."]
 		[batch]
 
 		/*-------------------------------
@@ -978,16 +975,16 @@
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50797" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Well, if you ask me whether I like it or not,"]
-		[maintxt_print text="     the answer is no."]
+		[maintxt_print text="     Nun, wenn du mich fragst, ob es mir gefällt oder nicht,"]
+		[maintxt_print text="     ist die Antwort nein."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50798" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     But I just have a tendency of being outdoors."]
-		[maintxt_print text="     I sleep outside a lot."]
+		[maintxt_print text="     Aber ich habe einfach den Hang, draußen zu sein. Ich schlafe"]
+		[maintxt_print text="     oft draußen."]
 		[batch]
 
 		/*-- ukyo_19.03.00へ --*/
@@ -1016,17 +1013,16 @@
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50799" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I'm looking for a sleeping bag. It's been cold"]
-		[maintxt_print text="     lately, so it's hard to nap outside."]
+		[maintxt_print text="     Ich sehe mich nach einem Schlafsack um. In letzter Zeit war es"]
+		[maintxt_print text="     kalt, das macht es schwierig, draußen ein Nickerchen zu machen."]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50800" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Well for me, I guess it's more of a legitimate"]
-		[maintxt_print text="     sleep than napping."]
-		[maintxt_print text="     I miss my bed."]
+		[maintxt_print text="     Nun ja, es ist mehr ein richtiger Schlaf als ein Nickerchen."]
+		[maintxt_print text="     Ich vermisse mein Bett."]
 		[batch]
 
 		/*-- ukyo_19.03.00へ --*/
@@ -1062,17 +1058,17 @@
 		[txtwin_info line="3" type="0" pos="5"]
 		[voice_play no="50801" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I was sleeping next to the river the other"]
-		[maintxt_print text="     day, and when I woke up I was in the water."]
-		[maintxt_print text="     I thought I was drowning."]
+		[maintxt_print text="     Neulich habe ich neben dem Fluss geschlafen, und als ich"]
+		[maintxt_print text="     aufgewacht bin, da lag ich im Wasser. Ich dachte, ich wäre"]
+		[maintxt_print text="     gerade dabei, zu ertrinken."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50802" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I wonder when I fell in. I guess I move a"]
-		[maintxt_print text="     lot in my sleep."]
+		[maintxt_print text="...Ich frage mich, wann ich da reingefallen bin. Ich bewege mich"]
+		[maintxt_print text="     wohl viel beim Schlafen."]
 		[batch]
 
 		/*-------------------------------
@@ -1120,11 +1116,10 @@
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50803" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Oh, well I don't have a bed, so it's not that"]
-		[maintxt_print text="     different."]
+		[maintxt_print text="     Oh, ich habe kein Bett, es ist also nicht allzu anders."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -1135,37 +1130,36 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01a" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50804" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I ”came back” on July 1st, but I haven't"]
-		[maintxt_print text="     unpacked at all. So I haven't bought bedding"]
-		[maintxt_print text="     or anything like that."]
+		[maintxt_print text="     Ich bin am 1. Juli 'zurückgekommen', aber ich habe noch nicht"]
+		[maintxt_print text="     alles ausgepackt. Deshalb habe ich noch kein Bettzeug besorgt."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50805" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I figured I couldn't sleep at home anyways,"]
-		[maintxt_print text="     so I skipped it."]
+		[maintxt_print text="     Ich dachte mir, dass ich zu Hause sowieso nicht schlafen kann,"]
+		[maintxt_print text="     also habe ich es seingelassen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01a" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50806" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     But I've been sleeping outside for the past"]
-		[maintxt_print text="     two months, and I'm getting tired."]
+		[maintxt_print text="     Aber ich habe die letzten zwei Monate draußen geschlafen, und"]
+		[maintxt_print text="     ich habe es satt."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="mesorasi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="3" type="0" pos="5"]
 		[voice_play no="50807" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I made a place to sleep with cardboard"]
-		[maintxt_print text="     boxes, but the city people got mad at me"]
-		[maintxt_print text="     and took it away."]
+		[maintxt_print text="     Ich habe mir einen Schlafplatz aus Pappe gemacht, aber die Leute"]
+		[maintxt_print text="     aus der Stadt sind wütend auf mich geworden und haben ihn mir"]
+		[maintxt_print text="     weggenommen."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -1201,7 +1195,7 @@
 		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50808" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     What...!?"]
+		[maintxt_print text="     Was...!?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -1211,38 +1205,35 @@
 		[maintxt_print text="     ...So nett musst du aber auch nicht zu ihm sein, oder?"]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50809" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Don't do that!"]
-		[maintxt_print text="     You can't say that to me!"]
+		[maintxt_print text="     Mach das nicht! Du kannst mir das nicht anbieten!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="t_odo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50810" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     You can't let me think so highly of you!"]
-		[maintxt_print text="     I'll take advantage of you!"]
+		[maintxt_print text="     Du kannst nicht zulassen, dass ich eine so gute Meinung von dir"]
+		[maintxt_print text="     habe! Ich werde dich ausnutzen!"]
 		[batch]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50811" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     And besides, ever since the first time we've"]
-		[maintxt_print text="     met, you've been too nice to me!  You're too"]
-		[maintxt_print text="     kind! A great girl! And cute!"]
+		[maintxt_print text="     Und außerdem warst du von Anfang an viel zu nett zu mir! Du"]
+		[maintxt_print text="     bist zu gütig! Du bist ein tolles Mädchen! Und süß!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_meso" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50812" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     But then you sometimes get all pouty"]
-		[maintxt_print text="     and really defensive, and kind of a crybaby"]
-		[maintxt_print text="     at times... It's no use!"]
+		[maintxt_print text="     Aber manchmal wirst du plötzlich ganz trotzig und gehst in die"]
+		[maintxt_print text="     Defensive, und wirst zur Heulsuse... Das bringt nichts!"]
 		[batch]
 
 		/*-------------------------------
@@ -1250,30 +1241,26 @@
 		-------------------------------*/
                 [flag_change name="主人公好意" num="1"]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50813" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I like you so much already."]
-		[maintxt_print text="     If I like you any more..."]
-		[maintxt_print text="     It'll just be painful later."]
+		[maintxt_print text="...Ich habe dich schon sehr gern. Wenn ich dich nur ein wenig mehr"]
+		[maintxt_print text="     mag... Wird das später nur schmerzhaft sein."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50814" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Just a little more time and I'll leave you"]
-		[maintxt_print text="     alone."]
+		[maintxt_print text="     Ein bisschen noch und dann werde ich dich in Ruhe lassen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50815" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     So until then..."]
-		[maintxt_print text="     Just be normal."]
-		[maintxt_print text="     The normal you is plenty."]
+		[maintxt_print text="     Bis dahin... Sei einfach normal. Das normale Du reicht völlig."]
 		[batch]
 
 		/*-- ukyo_19.03.00へ --*/
@@ -1301,7 +1288,7 @@
 		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50816" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     See you. I'll visit you at the cafe again."]
+		[maintxt_print text="     Bis dann. Ich werde dich wieder im Café besuchen kommen."]
 		[batch]
 
 		/*-------------------------------
@@ -1350,44 +1337,40 @@
 		[chara_app_pt ch_name="ukyo_s" pt_name="01a" em_name="komari" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="50817" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     What? Didn't you get on the train from here"]
-		[maintxt_print text="     to get back to your apartment?"]
+		[maintxt_print text="     Wie? Fährt man mit diesem Zug nicht zurück zu deiner Wohnung?"]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
 
 		[voice_play no="50818" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Then what about the cafe? Isn't Meido no"]
-		[maintxt_print text="     Hitsuji three stations that way?"]
+		[maintxt_print text="     Und was ist mit dem Café? Liegt das Meido no Hitsuji nicht drei"]
+		[maintxt_print text="     Haltestellen in dieser Richtung?"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="sian" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 		[voice_play no="50819" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...Wait, it's not?"]
-		[maintxt_print text="     Then, uh..."]
-		[maintxt_print text="     I know! Your college!"]
+		[maintxt_print text="...Warte, das stimmt nicht? Dann, äh... Ah, ich weiß! Deine Schule!"]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_s" pt_name="01a" em_name="odoroki" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="2" type="0" pos="8"]
+		[txtwin_info line="1" type="0" pos="8"]
 		[voice_play no="50820" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...What? It's not?!"]
-		[maintxt_print text="     Then... towards Seichi University?"]
+		[maintxt_print text="...Was? Nicht?! Dann... in Richtung der Seichi-Universität?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
 
 		[voice_play no="50821" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     That's not it, either?!"]
+		[maintxt_print text="     Das stimmt auch nicht?!"]
 		[batch]
 
 		[ezchara_del ch_name="ukyo_s" dir="TO_CENTER" app_speed="DEL_SPD" delay="NO_DELAY"]
