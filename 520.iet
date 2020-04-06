@@ -864,12 +864,11 @@
 		-------------------------------*/
 		[chara_app_pt ch_name="ukyo_b" pt_name="01" em_name="hohoemi" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50823" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Oh! You're at the park, too?"]
-		[maintxt_print text="     It is a nice day, isn't it?"]
+		[maintxt_print text="     Oh! Du bist auch im Park? Was für ein schöner Tag, nicht wahr?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -883,17 +882,16 @@
 
 		[voice_play no="50824" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Are you here for a walk...?"]
-		[maintxt_print text="     Seems like it. I'm about to take a nap."]
+		[maintxt_print text="     Gehst du hier spazieren...? Scheint so. Ich mache gleich ein"]
+		[maintxt_print text="     Nickerchen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="kusyou" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50825" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Lately, no matter how much I sleep, I can"]
-		[maintxt_print text="     never feel rested enough."]
-		[maintxt_print text="     Maybe I'm just at that age."]
+		[maintxt_print text="     In letzter Zeit fühle ich mich nie erholt, egal wie viel ich"]
+		[maintxt_print text="     schlafe. Vielleicht liegt es an meinem Alter."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -904,12 +902,11 @@
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01c" em_name="hohoemi" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50826" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     And with that said..."]
-		[maintxt_print text="     I guess this is a good spot."]
-		[maintxt_print text="     Good night."]
+		[maintxt_print text="     Jetzt, wo das gesagt ist... Ich denke, das hier ist eine gute"]
+		[maintxt_print text="     Stelle. Gute Nacht."]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="8"]
@@ -984,20 +981,19 @@
 		[chara_app_pt ch_name="ukyo_b" pt_name="01c" em_name="mesorasi" color="NOON" place="MD_LEFT" dir="FROM_CENTER" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD" delay="NO_DELAY"]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50828" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Um... Sorry, but..."]
-		[maintxt_print text="     Could you maybe..."]
-		[maintxt_print text="     Not stare at me like that...?"]
+		[maintxt_print text="     Äh... Entschuldigung, aber... Kannst du mich vielleicht..."]
+		[maintxt_print text="     Nicht so anstarren...?"]
 		[batch]
 
 		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50829" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...It's hard for me to fall asleep."]
+		[maintxt_print text="...Es fällt mir schwer, einzuschlafen."]
 		[batch]
 
 		[txtwin_info line="2" type="0" pos="8"]
@@ -1056,8 +1052,8 @@
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50830" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Sorry. I'll try and go to a corner"]
-		[maintxt_print text="     somewhere."]
+		[maintxt_print text="     Tut mir leid. Ich werde versuchen, irgendwo in eine Ecke zu"]
+		[maintxt_print text="     gehen."]
 		[batch]
 
 		/*-------------------------------
@@ -1088,57 +1084,53 @@
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 
 		[txtwin_proc onoff="1"]
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 		[voice_play no="50831" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     No, you can't."]
-		[maintxt_print text="...Rather, YOU can't."]
+		[maintxt_print text="     Das darfst du nicht... DU darfst das nicht."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="metoji" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50832" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="...I don't really care about the others, but"]
-		[maintxt_print text="     I can't sleep knowing you're watching."]
+		[maintxt_print text="...Die anderen sind mir irgendwie egal, aber ich kann nicht schlafen,"]
+		[maintxt_print text="     wenn ich weiß, dass du zusiehst."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01b" em_name="suma" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="3" type="0" pos="5"]
 		[voice_play no="50833" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     I think you and I have known each other for"]
-		[maintxt_print text="     a relatively long time, but I've never really"]
-		[maintxt_print text="     slept in front of you."]
+		[maintxt_print text="     Wir kennen uns schon ziemlich lange, würde ich sagen. Aber ich"]
+		[maintxt_print text="     habe noch nie wirklich in deiner Gegenwart geschlafen."]
 		[batch]
 
-		[txtwin_info line="2" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50834" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     More like... I rarely ever have."]
-		[maintxt_print text="     Lately has been an exception."]
+		[maintxt_print text="     Nun ja... so gut wie nie. Neulich gab es eine Ausnahme."]
 		[batch]
 
 		/*-------------------------------
 		ウキョウ照れ
 		-------------------------------*/
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_meso" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="2" type="0" pos="5"]
 
 		[voice_play no="50835" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     So... when I know you're watching, I get"]
-		[maintxt_print text="     self-conscious..."]
-		[maintxt_print text="     And a little embarrassed."]
+		[maintxt_print text="     Also... Wenn ich weiß, dass du zusiehst, werde ich unsicher..."]
+		[maintxt_print text="     Und ein wenig verlegen."]
 		[batch]
 
 		[ezchara_nextstate2 ch_name="ukyo_b" pt_name="01" em_name="t_odo" color="NOON" z_pos="ZPOS_FORE" app_speed="FAST_APP_SPD"]
 		[txtwin_info line="2" type="0" pos="5"]
 		[voice_play no="50836" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Isn't this something a girl would say?!"]
-		[maintxt_print text="     Why am I acting like this?!"]
+		[maintxt_print text="     Sowas würde ein Mädchen sagen, oder?! Warum stelle ich mich so"]
+		[maintxt_print text="     an?!"]
 		[batch]
 
 		/*-------------------------------
@@ -1146,13 +1138,11 @@
 		-------------------------------*/
 		[flag_change name="主人公好意" num="1"]
 
-		[txtwin_info line="3" type="0" pos="5"]
+		[txtwin_info line="1" type="0" pos="5"]
 
 		[voice_play no="50837" count="0"]
 		[speaker_set name="Ukyo" chrid="CHRID_UKYO"]	// ウキョウ／ウキョウ
-		[maintxt_print text="     Well, regardless!"]
-		[maintxt_print text="     I'm going to go sleep in the corner!"]
-		[maintxt_print text="     Be sure to stay away!"]
+		[maintxt_print text="     Trotzdem werde ich in der Ecke schlafen! Bleib bloß weg!"]
 		[batch]
 
 		/*-------------------------------
